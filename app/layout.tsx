@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Fraunces, DM_Sans } from "next/font/google";
+import { Inter, DM_Sans } from "next/font/google";
+import { LanguageProvider } from "./context/LanguageContext";
+import AnimatedBackground from "./components/AnimatedBackground";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const inter = Inter({
   subsets: ["latin"],
-  style: "italic",
-  weight: "800",
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
 });
 
@@ -22,8 +23,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${dmSans.variable}`}>
-        {children}
+      <body className={`${inter.variable} ${dmSans.variable} antialiased overflow-x-hidden`}>
+        <AnimatedBackground />
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

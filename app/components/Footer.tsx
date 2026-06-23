@@ -1,41 +1,48 @@
 import Image from "next/image";
 
-const FOOTER_LINKS = ["Home", "Services", "Portfolio", "Team", "Pricing", "Contact"];
+const FOOTER_LINKS = ["Home", "Services", "Pricing", "Contact"];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] py-8 px-6">
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Logo */}
-        <a href="/" className="flex-shrink-0">
-          <Image
-            src="/malera.png"
-            alt="Malera Studio"
-            width={80}
-            height={22}
-            className="h-5 w-auto opacity-60 hover:opacity-100 transition-opacity"
-            style={{ width: "auto", height: "auto" }}
-          />
-        </a>
+    <footer className="relative mt-16 sm:mt-24">
+      {/* ── Glass separator line ── */}
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <div className="glass-divider" />
+      </div>
 
-        {/* Nav links */}
-        <ul className="flex flex-wrap justify-center gap-6 text-xs font-medium text-white/30">
-          {FOOTER_LINKS.map((link) => (
-            <li key={link}>
-              <a
-                href={`#${link.toLowerCase()}`}
-                className="hover:text-white transition-colors"
-              >
-                {link}
-              </a>
-            </li>
-          ))}
-        </ul>
+      {/* ── Glass footer bar ── */}
+      <div className="glass-subtle glass-specular relative overflow-hidden mx-3 sm:mx-4 my-3 sm:my-4 rounded-2xl">
+        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 py-4 sm:py-5 px-4 sm:px-6">
+          {/* Logo */}
+          <a href="/" className="flex-shrink-0">
+            <Image
+              src="/malera-transparent.png"
+              alt="Malera Studio"
+              width={80}
+              height={20}
+              className="h-4 sm:h-5 w-auto opacity-40 hover:opacity-75 transition-all duration-500"
+            />
+          </a>
 
-        {/* Copyright */}
-        <p className="text-xs text-white/15 font-mono">
-          © {new Date().getFullYear()} Malera Studio
-        </p>
+          {/* Nav links */}
+          <ul className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-1 text-[10px] sm:text-xs font-medium text-white/30">
+            {FOOTER_LINKS.map((link) => (
+              <li key={link}>
+                <a
+                  href={`#${link.toLowerCase()}`}
+                  className="hover:text-white/55 transition-all duration-300"
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Copyright */}
+          <p className="text-[10px] sm:text-xs text-white/15 font-mono">
+            © {new Date().getFullYear()} Malera Studio
+          </p>
+        </div>
       </div>
     </footer>
   );
