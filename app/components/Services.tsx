@@ -1,109 +1,77 @@
-"use client";
-
-import { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { useLanguage } from "@/app/context/LanguageContext";
-import { SplitReveal } from "@/app/components/anim/SplitReveal";
-import { Typewriter } from "@/app/components/anim/Typewriter";
-import { ArrowUpRight } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-const translations = {
-  en: {
-    label: "What we do",
-    heading: "Our services",
-    subtext: "We keep our focus narrow on purpose.\nA few things we are actually good at.",
-    services: [
-      { number: "01", title: "Web Development", description: "Websites and web apps built from scratch.\nFast, clean and maintained after launch." },
-      { number: "02", title: "Mobile Apps", description: "Android applications built with\nExpo and React Native." },
-      { number: "03", title: "Video Production", description: "Video editing and content production\nfor social media and commercial use." },
-      { number: "04", title: "AI Bots and Automation", description: "Custom AI tools built for specific\nbusiness needs." },
-      { number: "05", title: "Brand Identity", description: "Logo, visual system and brand guidelines\nfor businesses that want to look the part." },
-    ],
+const SERVICES = [
+  {
+    num: "01",
+    title: "Web Development",
+    desc: "Custom websites and web applications built with modern frameworks. Fast, accessible, and SEO-optimized.",
   },
-  sq: {
-    label: "Çfarë bëjmë",
-    heading: "Shërbimet tona",
-    subtext: "E mbajmë fokusin tonë të ngushtë qëllimisht.\nDisa gjëra ku jemi vërtetë të mirë.",
-    services: [
-      { number: "01", title: "Web Development", description: "Faqe dhe aplikacione web të ndërtuar nga e para.\nTë shpejta, të pastra dhe të mirëmbajtura pas lansimit." },
-      { number: "02", title: "Mobile Apps", description: "Aplikacione Android të ndërtuar me\nExpo dhe React Native." },
-      { number: "03", title: "Video Production", description: "Editim video dhe prodhim content\npër social media dhe përdorim komercial." },
-      { number: "04", title: "AI Bots dhe Automatizim", description: "Mjete AI të ndërtuara për nevoja\nspecifike biznesi." },
-      { number: "05", title: "Identitet Marke", description: "Logo, sistem vizual dhe udhëzime marke\npër biznese që duan të duken si duhet." },
-    ],
+  {
+    num: "02",
+    title: "Mobile Apps",
+    desc: "Native and cross-platform mobile applications for iOS and Android. Seamless user experiences.",
   },
-};
+  {
+    num: "03",
+    title: "Video Production",
+    desc: "Professional video production from concept to final cut. Brand films, commercials, and social content.",
+  },
+  {
+    num: "04",
+    title: "AI Bots & Automation",
+    desc: "Intelligent automation solutions and AI-powered chatbots that streamline your business workflows.",
+  },
+  {
+    num: "05",
+    title: "Brand Identity",
+    desc: "Complete brand identity design including logos, typography, color systems, and brand guidelines.",
+  },
+];
 
 export default function Services() {
-  const { lang } = useLanguage();
-  const t = translations[lang];
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useGSAP(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
-
-    gsap.from(".service-row", {
-      opacity: 0,
-      y: 24,
-      duration: 0.6,
-      ease: "power3.out",
-      stagger: 0.08,
-      scrollTrigger: { trigger: ".services-rows", start: "top 80%", once: true },
-    });
-  }, { scope: sectionRef });
-
   return (
-    <section
-      ref={sectionRef}
-      id="services"
-      className="py-32 px-6 sm:px-16"
-      style={{ background: "#080808" }}
-    >
+    <section id="services" className="py-24 md:py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 lg:gap-24">
-          {/* Left — sticky heading */}
-          <div className="lg:sticky lg:top-32 self-start">
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#C9A84C]">
-              {t.label}
-            </span>
-            <SplitReveal tag="h2" className="font-fraunces font-bold text-[clamp(40px,5vw,64px)] leading-[1.0] tracking-[-0.025em] text-white mt-4">
-              {t.heading}
-            </SplitReveal>
-            <p className="font-dm font-light text-[14px] text-[#555555] leading-[1.7] mt-12 whitespace-pre-line max-w-[280px]">
-              {t.subtext}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          {/* Left column — sticky */}
+          <div className="md:sticky md:top-24 md:self-start">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C9A84C] mb-4">
+              CAPABILITIES
+            </p>
+            <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-white mb-4">
+              Our services
+            </h2>
+            <p className="text-white/40 text-base leading-relaxed max-w-[280px]">
+              End-to-end digital solutions from a team that cares about craft.
             </p>
           </div>
 
-          {/* Right — rows */}
-          <div className="services-rows mt-8 lg:mt-0">
-            {t.services.map((s, i) => (
+          {/* Right column — service rows */}
+          <div>
+            {SERVICES.map((svc, i) => (
               <div
-                key={i}
-                className="service-row group grid items-start py-8 border-t border-[#1C1C1C] last:border-b last:border-b-[#1C1C1C] hover:bg-white/[0.015] transition-colors duration-200 cursor-default"
-                style={{ gridTemplateColumns: "48px 1fr 24px", gap: "0 24px" }}
+                key={svc.num}
+                className={`group flex items-start gap-6 py-6 cursor-pointer ${
+                  i < SERVICES.length - 1 ? "border-b border-white/[0.06]" : ""
+                }`}
               >
-                <Typewriter
-                  text={s.number}
-                  delay={i * 150}
-                  className="font-mono text-[11px] text-[#2A2A2A] pt-[3px] transition-colors duration-200 group-hover:text-[#C9A84C]"
-                />
-                <div>
-                  <h3 className="font-dm font-medium text-[18px] leading-[1.3] tracking-[-0.01em] text-white">
-                    {s.title}
+                {/* Number */}
+                <span className="font-mono text-sm text-white/20 group-hover:text-[#C9A84C] transition-colors shrink-0 pt-0.5">
+                  {svc.num}
+                </span>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-medium text-white mb-1">
+                    {svc.title}
                   </h3>
-                  <p className="font-dm font-light text-[14px] text-[#555555] leading-[1.7] mt-2 whitespace-pre-line">
-                    {s.description}
+                  <p className="text-sm text-white/35 leading-relaxed">
+                    {svc.desc}
                   </p>
                 </div>
-                <ArrowUpRight
-                  size={16}
-                  className="text-[#2A2A2A] mt-[3px] transition-all duration-200 group-hover:text-[#C9A84C] group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"
-                />
+
+                {/* Arrow */}
+                <span className="font-mono text-white/15 group-hover:text-[#C9A84C] transition-colors shrink-0 pt-0.5">
+                  →
+                </span>
               </div>
             ))}
           </div>
@@ -112,4 +80,3 @@ export default function Services() {
     </section>
   );
 }
-
