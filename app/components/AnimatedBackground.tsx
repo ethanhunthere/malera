@@ -98,7 +98,7 @@ function Codestream() {
   return (
     <group ref={groupRef}>
       {ribbons.map((ribbon, ri) => (
-        <points key={ri} ref={(el) => { pointsRefs.current[ri] = el; }}>
+        <points key={ri} ref={(el) => { pointsRefs.current[ri] = el as THREE.Points | null; }}>
           <bufferGeometry>
             <bufferAttribute
               attach="attributes-position"
@@ -449,7 +449,7 @@ function Architect() {
   return (
     <group ref={groupRef}>
       {/* ── Main trail — long golden line ── */}
-      <line ref={trailLineRef}>
+      <line ref={trailLineRef as any}>
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
@@ -466,7 +466,7 @@ function Architect() {
       </line>
 
       {/* ── Core trail — shorter, brighter, whiter ── */}
-      <line ref={trailLine2Ref}>
+      <line ref={trailLine2Ref as any}>
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
