@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <>
       <header className="relative z-30">
-          <nav className="relative z-10 max-w-[1200px] mx-auto flex items-center h-14 sm:h-16 px-4 sm:px-6">
+          <nav className="relative z-10 max-w-[1200px] mx-auto flex items-center h-12 sm:h-16 px-3 sm:px-6">
             {/* Logo — left */}
             <a href="/" className="flex-shrink-0">
               <Image
@@ -26,7 +26,7 @@ export default function Navbar() {
                 alt="Malera Studio"
                 width={160}
                 height={40}
-                className="h-7 sm:h-9 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                className="h-6 sm:h-9 w-auto opacity-90 hover:opacity-100 transition-opacity"
                 priority
               />
             </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
       {/* Mobile fullscreen overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 sm:gap-8 px-6 lg:hidden"
+          className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-5 sm:gap-8 px-6 lg:hidden"
           style={{
             background: 'linear-gradient(180deg, rgba(5,5,5,0.40) 0%, rgba(5,5,5,0.25) 100%)',
             backdropFilter: 'blur(240px) saturate(320%) brightness(1.06) contrast(0.97)',
@@ -94,7 +94,7 @@ export default function Navbar() {
               key={link}
               href={`#${link.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
-              className="relative z-10 text-white text-xl sm:text-2xl font-medium hover:text-[#C9A84C] transition-all duration-300"
+              className="relative z-10 text-white text-lg sm:text-2xl font-medium hover:text-[#C9A84C] transition-all duration-300"
             >
               {link}
             </a>

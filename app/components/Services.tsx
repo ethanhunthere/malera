@@ -28,20 +28,20 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-28 sm:pt-40 md:pt-52 pb-16 sm:pb-24 md:pb-32 px-4 sm:px-6 relative overflow-hidden">
+    <section id="services" className="pt-10 sm:pt-28 md:pt-36 pb-12 sm:pb-24 md:pb-32 px-3 sm:px-6 relative overflow-x-clip">
       {/* ── Ambient orbs — responsive, contained ── */}
       <div className="absolute top-1/4 left-0 w-[min(700px,80vw)] h-[min(700px,80vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute top-2/3 left-1/3 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-warm" />
 
       {/* ── Floating shards ── */}
-      <div className="hidden sm:block absolute top-[15%] right-[8%] w-20 h-14 glass-shard rotate-[20deg]" />
-      <div className="hidden sm:block absolute bottom-[20%] left-[5%] w-28 h-16 glass-shard -rotate-[8deg]" />
+      <div data-shard-section="services" className="hidden sm:block absolute top-[15%] right-[8%] w-20 h-14 glass-shard rotate-[20deg]" />
+      <div data-shard-section="services" className="hidden sm:block absolute bottom-[20%] left-[5%] w-28 h-16 glass-shard -rotate-[8deg]" />
 
-      <div className="max-w-[900px] mx-auto relative z-10">
+      <div className="max-w-[900px] mx-auto relative z-10 overflow-hidden">
         {/* ── Showcase panel ── */}
         <div className="mb-12 sm:mb-16">
-          <div className="relative glass-ultra rounded-3xl p-6 sm:p-8 md:p-10 overflow-hidden mx-auto max-w-[600px]">
+          <div className="relative glass-ultra rounded-3xl p-4 sm:p-6 md:p-10 overflow-hidden mx-auto max-w-[600px]">
               {/* Gold rim border — chrome-edge-gold effect */}
               <div className="absolute inset-0 rounded-3xl pointer-events-none z-10" style={{
                 border: '1px solid transparent',
@@ -72,7 +72,7 @@ export default function Services() {
               {/* Headline — massive and commanding */}
               <h2 className="relative z-20 font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white mb-4 sm:mb-6 leading-[0.9]"
                 style={{
-                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                  fontSize: 'clamp(2rem, 5vw, 4.5rem)',
                   textShadow: '0 0 2px rgba(255,255,255,0.25), 0 0 16px rgba(255,255,255,0.08), 0 0 40px rgba(255,255,255,0.03)',
                 }}
               >
@@ -80,7 +80,7 @@ export default function Services() {
               </h2>
 
               {/* Description — more visible */}
-              <p className="relative z-20 text-white/60 text-sm sm:text-base leading-relaxed max-w-[280px]">
+              <p className="relative z-20 text-white/60 text-sm sm:text-base leading-relaxed max-w-full sm:max-w-[280px]">
                 End-to-end digital solutions from a team that cares about craft.
               </p>
 
@@ -101,7 +101,7 @@ export default function Services() {
             {SERVICES.map((svc) => (
               <div
                 key={svc.num}
-                className="w-full max-w-[600px] group flex items-start gap-4 sm:gap-6 px-4 sm:px-6 py-5 sm:py-6 cursor-pointer rounded-2xl glass-raised glass-card-hover glass-specular glass-rim"
+                className="w-full max-w-[600px] group flex items-start gap-3 sm:gap-6 px-3 sm:px-6 py-4 sm:py-6 cursor-pointer rounded-2xl glass-raised glass-card-hover glass-specular glass-rim overflow-hidden"
               >
                 {/* Number */}
                 <span className="relative z-10 font-mono text-xs sm:text-sm text-white/20 group-hover:text-[#C9A84C] group-hover:scale-110 transition-all duration-500 shrink-0 pt-0.5">
@@ -126,6 +126,9 @@ export default function Services() {
             ))}
           </div>
       </div>
+
+      {/* Sentinel — triggers hero shards to shatter near end of services */}
+      <div data-shard-sentinel="hero" className="w-full h-px pointer-events-none" />
     </section>
   );
 }
