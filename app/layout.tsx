@@ -18,9 +18,6 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Malera Studio",
   description: "We just build good stuff.",
-  icons: {
-    icon: "/malera-transparent.png",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
