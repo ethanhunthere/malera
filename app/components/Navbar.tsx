@@ -7,7 +7,6 @@ const NAV_LINKS = ["Services", "Pricing", "Contact"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lang, setLang] = useState<"EN" | "SQ">("EN");
   const [scrolled, setScrolled] = useState(false);
 
   // Lock body scroll when mobile menu is open
@@ -58,30 +57,30 @@ export default function Navbar() {
             </ul>
 
             {/* Right side */}
-            <div className="flex items-center gap-2 sm:gap-4 ml-auto">
-              {/* Language toggle */}
-              <button
-                onClick={() => setLang(lang === "EN" ? "SQ" : "EN")}
-                className="text-[10px] sm:text-xs font-mono text-white/50 hover:text-white/80 transition-colors uppercase tracking-wider"
-              >
-                {lang === "EN" ? "EN / SQ" : "SQ / EN"}
-              </button>
-
+            <div className="flex items-center gap-1.5 sm:gap-4 ml-auto">
               {/* CTA — hidden below lg */}
               <a
                 href="#contact"
-                className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-xs xl:text-sm font-medium px-4 xl:px-5 py-1.5 xl:py-2 rounded-full"
+                className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-xs 2xl:text-sm min-[3000px]:text-base font-medium px-3 xl:px-5 py-1.5 xl:py-2 rounded-full"
               >
                 Start a Project
               </a>
 
-              {/* Mobile menu toggle */}
+              {/* Hamburger — mobile only */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="lg:hidden text-white/70 text-xs sm:text-sm font-medium uppercase tracking-wider hover:text-white transition-colors"
-                aria-label="Menu"
+                className="lg:hidden flex flex-col items-center justify-center gap-[5px] w-8 h-8 group"
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
               >
-                {menuOpen ? "Close" : "Menu"}
+                <span className={`block h-[2px] w-5 rounded-full bg-white/70 group-hover:bg-white transition-all duration-300 origin-center ${
+                  menuOpen ? "rotate-45 translate-y-[7px]" : ""
+                }`} />
+                <span className={`block h-[2px] w-5 rounded-full bg-white/70 group-hover:bg-white transition-all duration-300 ${
+                  menuOpen ? "opacity-0 scale-x-0" : ""
+                }`} />
+                <span className={`block h-[2px] w-5 rounded-full bg-white/70 group-hover:bg-white transition-all duration-300 origin-center ${
+                  menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                }`} />
               </button>
             </div>
           </nav>
@@ -90,14 +89,15 @@ export default function Navbar() {
       {/* Mobile fullscreen overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-5 sm:gap-8 px-6 lg:hidden"
+          onClick={() => setMenuOpen(false)}
+          className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-4 sm:gap-8 px-6 lg:hidden"
           style={{
             background: 'linear-gradient(180deg, rgba(5,5,5,0.40) 0%, rgba(5,5,5,0.25) 100%)',
             backdropFilter: 'blur(240px) saturate(320%) brightness(1.06) contrast(0.97)',
           }}
         >
           {/* Ambient orb behind menu */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] ambient-orb ambient-orb-gold" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,90vw)] h-[min(600px,90vw)] ambient-orb ambient-orb-gold" />
 
           {NAV_LINKS.map((link) => (
             <a
@@ -112,7 +112,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="relative z-10 mt-4 glass-btn-solid text-[#080808] text-sm font-medium px-6 py-3 rounded-full"
+            className="relative z-10 mt-3 sm:mt-4 glass-btn-solid text-[#080808] text-sm font-medium px-6 py-3 rounded-full"
           >
             Start a Project
           </a>
@@ -132,7 +132,7 @@ export default function Navbar() {
             alt="Malera Studio"
             width={120}
             height={28}
-            className="h-5 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            className="h-4 sm:h-5 2xl:h-6 min-[3000px]:h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
             priority
           />
         </a>

@@ -272,6 +272,138 @@
 }
 
 /* ══════════════════════════════════════════════════════════
+   GOLD GLASS (services) — 5% gold / 95% glass, ambient bg
+   ══════════════════════════════════════════════════════════ */
+
+/* Gold-frosted panel — champagne glass, receding into background */
+.glass-frosted-gold {
+  background:
+    linear-gradient(155deg,
+      rgba(201,168,76,0.03) 0%,
+      rgba(201,168,76,0.012) 15%,
+      rgba(201,168,76,0.005) 35%,
+      rgba(255,255,255,0.004) 55%,
+      rgba(201,168,76,0.006) 75%,
+      rgba(201,168,76,0.016) 100%);
+  border: 0.5px solid rgba(201,168,76,0.04);
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(201,168,76,0.04),
+    inset 0 1px 0 0 rgba(201,168,76,0.015),
+    0 0 0 1px rgba(0,0,0,0.06),
+    0 1px 8px rgba(0,0,0,0.18),
+    0 4px 24px rgba(0,0,0,0.16);
+  backdrop-filter: blur(260px) saturate(320%) brightness(1.06) contrast(0.96);
+}
+.glass-frosted-gold::before {
+  content: "";
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: linear-gradient(
+    145deg,
+    rgba(201,168,76,0.04) 0%,
+    rgba(201,168,76,0.012) 20%,
+    transparent 48%,
+    transparent 100%
+  );
+}
+.glass-frosted-gold::after {
+  content: "";
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: linear-gradient(
+    -35deg,
+    rgba(201,168,76,0.015) 0%,
+    rgba(201,168,76,0.005) 15%,
+    transparent 38%,
+    transparent 100%
+  );
+}
+
+/* Gold card — transparent body, visible left-edge gold line only */
+.glass-card-gold {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.glass-card-gold::before {
+  content: "";
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  /* Left-edge gold line */
+  background: linear-gradient(
+    180deg,
+    rgba(201,168,76,0.28) 0%,
+    rgba(201,168,76,0.15) 30%,
+    rgba(201,168,76,0.06) 60%,
+    rgba(201,168,76,0.02) 100%
+  );
+  width: 1px;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  height: auto;
+  border-radius: 0;
+}
+.glass-card-gold::after {
+  content: "";
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: transparent;
+}
+
+/* Gold card hover — still subtle, just a whisper of life */
+.glass-card-gold-hover {
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.55s ease,
+    background 0.55s ease;
+}
+.glass-card-gold-hover:hover {
+  background:
+    linear-gradient(165deg,
+      rgba(201,168,76,0.025) 0%,
+      rgba(255,255,255,0.012) 25%,
+      rgba(201,168,76,0.008) 50%,
+      rgba(255,255,255,0.008) 70%,
+      rgba(201,168,76,0.018) 100%);
+  border-color: transparent;
+  box-shadow:
+    0 0.5px 0 0 rgba(255,255,255,0.06),
+    0 1px 0 0 rgba(0,0,0,0.06),
+    0 0 0 1px rgba(0,0,0,0.03),
+    0 1px 4px rgba(0,0,0,0.08),
+    0 0 14px rgba(201,168,76,0.04),
+    0 0 32px rgba(201,168,76,0.018);
+  transform: translateY(-1px) scale(1.006);
+}
+.glass-card-gold-hover:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(201,168,76,0.42) 0%,
+    rgba(201,168,76,0.22) 30%,
+    rgba(201,168,76,0.10) 60%,
+    rgba(201,168,76,0.04) 100%
+  );
+  width: 1px;
+  left: 0;
+  top: 8%;
+  bottom: 8%;
+  height: auto;
+  border-radius: 0;
+}
+.glass-card-gold-hover:hover::after {
+  background: linear-gradient(
+    -45deg,
+    rgba(201,168,76,0.02) 0%,
+    rgba(201,168,76,0.008) 10%,
+    transparent 22%,
+    transparent 100%
+  );
+}
+.glass-card-gold-hover:active {
+  transform: translateY(-0.5px) scale(0.997);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* ══════════════════════════════════════════════════════════
    SPECULAR HIGHLIGHT — dual-angle Apple edge flash, v2 wider
    ══════════════════════════════════════════════════════════ */
 .glass-specular {
@@ -454,6 +586,155 @@
 .glass-btn-solid:active {
   transform: translateY(0) scale(0.97);
   transition: transform 0.08s ease;
+}
+
+/* ══════════════════════════════════════════════════════════
+   HERO BUTTONS — frosted glass (white) & smoked glass (dark)
+   ══════════════════════════════════════════════════════════ */
+
+/* ── White frosted glass: "See our work" ── */
+.hero-btn-primary {
+  position: relative;
+  color: rgba(6,6,6,0.94);
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.96) 0%,
+      rgba(255,255,255,0.88) 15%,
+      rgba(255,255,255,0.82) 45%,
+      rgba(255,255,255,0.78) 70%,
+      rgba(255,255,255,0.85) 100%
+    );
+  border: 0.5px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255,255,255,0.95),
+    inset 0 1px 0 0 rgba(255,255,255,0.60),
+    inset 0 -1px 0 0 rgba(0,0,0,0.06),
+    0 0 0 0.5px rgba(255,255,255,0.25),
+    0 1px 3px rgba(0,0,0,0.10),
+    0 4px 12px rgba(0,0,0,0.14),
+    0 10px 30px rgba(0,0,0,0.16);
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.55s ease,
+    border-color 0.55s ease,
+    background 0.55s ease,
+    color 0.55s ease;
+}
+.hero-btn-primary:hover {
+  color: rgba(4,4,4,0.98);
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.99) 0%,
+      rgba(255,255,255,0.94) 15%,
+      rgba(255,255,255,0.88) 45%,
+      rgba(255,255,255,0.84) 70%,
+      rgba(255,255,255,0.90) 100%
+    );
+  border-color: rgba(255,255,255,0.70);
+  backdrop-filter: blur(30px) saturate(220%);
+  -webkit-backdrop-filter: blur(30px) saturate(220%);
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255,255,255,1),
+    inset 0 1px 0 0 rgba(255,255,255,0.70),
+    inset 0 -1px 0 0 rgba(0,0,0,0.08),
+    0 0 0 0.5px rgba(255,255,255,0.40),
+    0 2px 6px rgba(0,0,0,0.12),
+    0 8px 20px rgba(0,0,0,0.18),
+    0 16px 44px rgba(0,0,0,0.22),
+    0 0 80px rgba(201,168,76,0.08),
+    0 0 140px rgba(201,168,76,0.03);
+  transform: translateY(-2px);
+}
+.hero-btn-primary:active {
+  transform: translateY(0) scale(0.97);
+  transition: transform 0.1s ease;
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255,255,255,0.60),
+    inset 0 1px 0 0 rgba(255,255,255,0.30),
+    inset 0 -1px 0 0 rgba(0,0,0,0.04),
+    0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* ── Dark smoked glass: "Get in touch" ── */
+.hero-btn-secondary {
+  position: relative;
+  color: rgba(255,255,255,0.88);
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.16) 0%,
+      rgba(255,255,255,0.12) 20%,
+      rgba(255,255,255,0.08) 50%,
+      rgba(255,255,255,0.06) 75%,
+      rgba(255,255,255,0.10) 100%
+    );
+  border: 0.5px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255,255,255,0.22),
+    inset 0 1px 0 0 rgba(255,255,255,0.10),
+    inset 0 -1px 0 0 rgba(0,0,0,0.20),
+    0 0 0 0.5px rgba(255,255,255,0.08),
+    0 1px 3px rgba(0,0,0,0.14),
+    0 6px 14px rgba(0,0,0,0.20),
+    0 12px 36px rgba(0,0,0,0.24);
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.55s ease,
+    border-color 0.55s ease,
+    background 0.55s ease,
+    color 0.55s ease;
+}
+.hero-btn-secondary:hover {
+  color: rgba(255,255,255,0.98);
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,0.24) 0%,
+      rgba(255,255,255,0.18) 20%,
+      rgba(255,255,255,0.12) 50%,
+      rgba(255,255,255,0.09) 75%,
+      rgba(255,255,255,0.15) 100%
+    );
+  border-color: rgba(255,255,255,0.30);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255,255,255,0.32),
+    inset 0 1px 0 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 0 rgba(0,0,0,0.25),
+    0 0 0 0.5px rgba(255,255,255,0.14),
+    0 2px 8px rgba(0,0,0,0.18),
+    0 8px 22px rgba(0,0,0,0.26),
+    0 18px 50px rgba(0,0,0,0.30),
+    0 0 100px rgba(255,255,255,0.03);
+  transform: translateY(-2px);
+}
+.hero-btn-secondary:active {
+  transform: translateY(0) scale(0.97);
+  transition: transform 0.1s ease;
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255,255,255,0.12),
+    inset 0 1px 0 0 rgba(0,0,0,0.14),
+    0 1px 3px rgba(0,0,0,0.20);
+}
+
+/* Shared arrow base */
+.hero-btn-arrow {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.95em;
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.5s ease,
+              color 0.5s ease;
+}
+.hero-btn-primary:hover .hero-btn-arrow {
+  transform: translateX(4px);
+}
+.hero-btn-secondary:hover .hero-btn-arrow {
+  transform: translateX(4px);
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -650,27 +931,122 @@
 }
 
 /* ══════════════════════════════════════════════════════════
-   O → L MORPH — second O in GOOD transforms into L
+   MORPH CHARACTER — spatial O↔L swap (driven by JS Web Animations API)
+   CSS only sets the resting state; animations handled in Hero.tsx
    ══════════════════════════════════════════════════════════ */
-.char-morph .morph-o {
-  transition: opacity 0.45s ease, filter 0.45s ease;
+
+/* Gold morph — FULL gold gradient for the O↔L */
+.char-gold-morph {
+  font-weight: 800;
+  background: linear-gradient(
+    180deg,
+    #F5D77A 0%,
+    #D4A843 25%,
+    #C9A84C 40%,
+    #E8C860 55%,
+    #B8912F 75%,
+    #C9A84C 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #C9A84C; /* fallback */
+  filter: drop-shadow(0 0 0.04em rgba(201, 168, 76, 0.7))
+          drop-shadow(0 0 0.12em rgba(201, 168, 76, 0.35))
+          drop-shadow(0 0 0.3em rgba(201, 168, 76, 0.12));
 }
-.char-morph.morph-active .morph-o {
-  opacity: 0;
-  filter: blur(6px);
+
+/* ── Partial gold flanking chars ──
+   Gold radiates outward from the morph center:
+   • D (right):  gold on left edge  → warm ivory on right edge  (90deg)
+   • O (left):   gold on right edge → warm ivory on left edge   (270deg)
+   The warm champagne/cream bridge colors make the gold→white transition invisible. */
+
+.char-gold-partial-r {
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #B8912F 0%,
+    #C9A84C 18%,
+    #D4A843 32%,
+    #E8C860 48%,
+    #F5D77A 60%,
+    #E8D5A8 72%,
+    #F2E8D4 82%,
+    #FBF7F0 91%,
+    rgba(255,255,255,0.94) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #FBF7F0; /* warm ivory fallback */
+  filter: drop-shadow(0 0 0.03em rgba(201, 168, 76, 0.45))
+          drop-shadow(0 0 0.06em rgba(201, 168, 76, 0.18));
 }
+
+.char-gold-partial-l {
+  font-weight: 800;
+  background: linear-gradient(
+    270deg,
+    #B8912F 0%,
+    #C9A84C 18%,
+    #D4A843 32%,
+    #E8C860 48%,
+    #F5D77A 60%,
+    #E8D5A8 72%,
+    #F2E8D4 82%,
+    #FBF7F0 91%,
+    rgba(255,255,255,0.94) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #FBF7F0; /* warm ivory fallback */
+  filter: drop-shadow(0 0 0.03em rgba(201, 168, 76, 0.45))
+          drop-shadow(0 0 0.06em rgba(201, 168, 76, 0.18));
+}
+
+.char-morph {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* Morph letters — inherit the same rich gold gradient */
+.char-morph .morph-o,
 .char-morph .morph-l {
-  transition:
-    opacity 0.5s ease 0.15s,
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
-    filter 0.5s ease 0.15s;
-  transform: scaleX(0) scaleY(0.3);
-  filter: blur(8px);
+  font-weight: 800;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    180deg,
+    #F5D77A 0%,
+    #D4A843 25%,
+    #C9A84C 40%,
+    #E8C860 55%,
+    #B8912F 75%,
+    #C9A84C 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
-.char-morph.morph-active .morph-l {
+
+.char-morph .morph-o {
+  display: inline-block;
   opacity: 1;
-  transform: scaleX(1) scaleY(1);
-  filter: blur(0px);
+  transform: none;
+  filter: none;
+}
+
+.char-morph .morph-l {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  opacity: 0;
+  filter: none;
+  transform: scaleX(-1) translateX(-100%); /* hidden at D's right side; negated because scaleX(-1) flips direction */
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -739,6 +1115,20 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Ultra-wide: scale base font size up so rem-based elements grow */
+  font-size: 16px;
+}
+@media (min-width: 2000px) {
+  html { font-size: 18px; }
+}
+@media (min-width: 3000px) {
+  html { font-size: 21px; }
+}
+@media (min-width: 4000px) {
+  html { font-size: 24px; }
+}
+@media (min-width: 5000px) {
+  html { font-size: 28px; }
 }
 
 body {
@@ -747,6 +1137,8 @@ body {
   color: #fff;
   font-family: var(--font-body);
   overflow-x: hidden;
+  /* Prevent horizontal scroll at all sizes */
+  max-width: 100vw;
 }
 
 /* ── Grain texture overlay ── */

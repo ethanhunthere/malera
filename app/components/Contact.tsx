@@ -1,93 +1,95 @@
 export default function Contact() {
   return (
-    <section className="pt-10 sm:pt-28 md:pt-36 pb-12 sm:pb-24 md:pb-32 px-3 sm:px-6 relative overflow-x-clip">
-      {/* ── Ambient orbs — soft white/warm, calming ── */}
-      <div className="absolute top-1/3 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
-      <div className="absolute bottom-1/4 left-0 w-[min(400px,50vw)] h-[min(400px,50vw)] ambient-orb ambient-orb-warm" />
+    <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
+      {/* ── Ambient orbs ── */}
+      <div className="absolute top-1/4 left-0 w-[min(500px,60vw)] h-[min(500px,60vw)] 2xl:w-[min(800px,60vw)] 2xl:h-[min(800px,60vw)] ambient-orb ambient-orb-gold" />
+      <div className="absolute bottom-0 right-0 w-[min(400px,50vw)] h-[min(400px,50vw)] 2xl:w-[min(650px,50vw)] 2xl:h-[min(650px,50vw)] ambient-orb ambient-orb-white" />
 
-      <div id="contact" className="max-w-[700px] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
-        {/* ── Header: clean, no panel, no frame ── */}
-        <div className="mb-10 sm:mb-14 text-center">
-          <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
+      <div id="contact" className="w-full max-w-[min(92vw,850px)] 2xl:max-w-[min(80vw,1300px)] min-[3000px]:max-w-[min(75vw,1800px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
+        {/* ── Header ── */}
+        <div className="mb-8 sm:mb-14 text-center">
+          <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
             LET&apos;S TALK
           </p>
 
-          <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white mb-4 leading-[0.9]"
+          <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white leading-[0.9] mb-4"
             style={{
-              fontSize: 'clamp(2rem, 5vw, 4.5rem)',
+              fontSize: 'clamp(1.5rem, 5vw, 7rem)',
             }}
           >
-            Get in<br />touch
+            Ready to build<br />something great?
           </h2>
 
-          <p className="text-white/40 text-sm sm:text-base leading-relaxed max-w-[320px] mx-auto">
-            Have a project in mind? We&apos;d love to hear about it.
+          <p className="text-white/40 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[360px] 2xl:max-w-[480px] mx-auto">
+            Tell us about your project. No strings attached — just a conversation to see if we&apos;re the right fit.
           </p>
         </div>
 
-        {/* ── Contact cards in a frosted container ── */}
-        <div className="relative glass-frosted rounded-2xl p-4 sm:p-6 overflow-hidden">
-          <div className="flex flex-col gap-2 sm:gap-3">
-          {/* Email */}
-          <a
-            href="mailto:hello@malera.studio"
-            className="w-full max-w-[600px] group flex items-center gap-3 sm:gap-6 px-3 sm:px-6 py-4 sm:py-6 cursor-pointer rounded-2xl glass-raised glass-card-hover glass-specular glass-rim overflow-hidden"
-          >
-            <span className="relative z-10 font-mono text-xs sm:text-sm text-white/20 group-hover:text-[#C9A84C] group-hover:scale-110 transition-all duration-500 shrink-0">
-              @
-            </span>
-            <div className="relative z-10 flex-1 min-w-0">
-              <h3 className="text-base sm:text-lg font-medium text-white/80 group-hover:text-white transition-colors duration-500 mb-0.5">
-                Email us
-              </h3>
-              <p className="text-xs sm:text-sm text-white/45 group-hover:text-white/60 transition-colors duration-500">
-                hello@malera.studio
-              </p>
-            </div>
-            <span className="relative z-10 font-mono text-white/10 group-hover:text-[#C9A84C] group-hover:translate-x-1 transition-all duration-500 shrink-0">
-              →
-            </span>
-          </a>
+        {/* ── Hero CTA: dominant email card ── */}
+        <a
+          href="mailto:hello@malera.studio"
+          className="group block relative mb-4 sm:mb-6 rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.01]"
+        >
+          {/* Dark glass container */}
+          <div className="relative glass-deep rounded-2xl p-4 sm:p-10 md:p-12 text-center overflow-hidden transition-all duration-700 group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_20px_80px_rgba(0,0,0,0.5),0_0_120px_rgba(201,168,76,0.08)]">
+            {/* Top gold accent line */}
+            <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent group-hover:via-[#C9A84C]/70 transition-all duration-700" />
 
-          {/* Instagram */}
+            {/* Icon ring */}
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-20 sm:h-20 2xl:w-24 2xl:h-24 rounded-2xl bg-[#C9A84C]/10 ring-1 ring-[#C9A84C]/20 mb-4 sm:mb-6 group-hover:bg-[#C9A84C]/15 group-hover:ring-[#C9A84C]/35 group-hover:scale-105 transition-all duration-500">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#C9A84C] sm:w-7 sm:h-7 2xl:w-8 2xl:h-8">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 4-10 8L2 4" />
+              </svg>
+            </div>
+
+            <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-lg sm:text-2xl md:text-3xl 2xl:text-4xl mb-3 group-hover:tracking-wide transition-all duration-500">
+              hello@malera.studio
+            </h3>
+
+            <p className="text-white/45 text-xs sm:text-base 2xl:text-lg mb-5 sm:mb-8 max-w-[380px] 2xl:max-w-[500px] mx-auto">
+              Drop us a line and we&apos;ll get back to you — usually within a day.
+            </p>
+
+            {/* CTA pill */}
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm 2xl:text-base font-semibold group-hover:bg-[#C9A84C] group-hover:text-black group-hover:gap-3 transition-all duration-500">
+              Send a message
+              <span className="font-mono text-lg leading-none group-hover:translate-x-0.5 transition-transform duration-500">→</span>
+            </span>
+
+            {/* Bottom subtle line */}
+            <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+          </div>
+        </a>
+
+        {/* ── Instagram — balanced beside the hero card ── */}
+        <div className="flex justify-center">
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full max-w-[600px] group flex items-center gap-3 sm:gap-6 px-3 sm:px-6 py-4 sm:py-6 cursor-pointer rounded-2xl glass-raised glass-card-hover glass-specular glass-rim overflow-hidden"
+            className="group flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl glass-card glass-card-hover transition-all duration-500 hover:-translate-y-0.5 w-full max-w-[420px]"
           >
-            <span className="relative z-10 font-mono text-xs sm:text-sm text-white/20 group-hover:text-[#C9A84C] group-hover:scale-110 transition-all duration-500 shrink-0">
-              @
-            </span>
-            <div className="relative z-10 flex-1 min-w-0">
-              <h3 className="text-base sm:text-lg font-medium text-white/80 group-hover:text-white transition-colors duration-500 mb-0.5">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.06] flex items-center justify-center shrink-0 group-hover:bg-white/[0.08] group-hover:ring-white/[0.14] transition-all duration-500">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 group-hover:text-[#C9A84C] transition-colors duration-500">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-sm sm:text-base font-medium text-white/80 group-hover:text-white transition-colors duration-500 mb-0.5">
                 Instagram
               </h3>
-              <p className="text-xs sm:text-sm text-white/45 group-hover:text-white/60 transition-colors duration-500">
+              <p className="text-xs sm:text-sm text-white/40 group-hover:text-white/55 transition-colors duration-500">
                 @malera.studio
               </p>
             </div>
-            <span className="relative z-10 font-mono text-white/10 group-hover:text-[#C9A84C] group-hover:translate-x-1 transition-all duration-500 shrink-0">
+            <span className="font-mono text-white/10 group-hover:text-[#C9A84C] group-hover:translate-x-0.5 transition-all duration-500 shrink-0 text-sm">
               →
             </span>
           </a>
-
-          {/* Location */}
-          <div className="w-full max-w-[600px] group flex items-center gap-3 sm:gap-6 px-3 sm:px-6 py-4 sm:py-6 cursor-default rounded-2xl glass-raised glass-specular overflow-hidden">
-            <span className="relative z-10 font-mono text-xs sm:text-sm text-white/20 shrink-0">
-              ⌂
-            </span>
-            <div className="relative z-10 flex-1 min-w-0">
-              <h3 className="text-base sm:text-lg font-medium text-white/80 mb-0.5">
-                Location
-              </h3>
-              <p className="text-xs sm:text-sm text-white/45">
-                Pristina, Kosovo
-              </p>
-            </div>
-          </div>
         </div>
-        </div>{/* close glass-frosted */}
       </div>
     </section>
   );

@@ -1,0 +1,188 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
+const PROJECTS = [
+  {
+    id: "01",
+    title: "NOVRIX.IO",
+    url: "https://novrix.io",
+    category: "On-Chain Intelligence",
+    year: "2025",
+    accent: "rgba(99,102,241,0.3)",
+    hero: "Trinity of Intelligence",
+    description:
+      "A crypto-native intelligence terminal that distills on-chain data into actionable signal. Three core modules, Sentiment, Metrilytics, and Whale Tracking, surface market psychology, protocol-level metrics, and capital flows so you trade with evidence, not noise. Built for clarity in a market that punishes weak assumptions.",
+    tags: ["Next.js", "Cloudflare", "On-Chain Data", "Real-Time"],
+  },
+  {
+    id: "02",
+    title: "RADIOFONTANA.ORG",
+    url: "https://radiofontana.org",
+    category: "Digital Radio & News",
+    year: "2025",
+    accent: "rgba(52,211,153,0.3)",
+    hero: "Sound Without Borders",
+    description:
+      "Albania's 98.8 FM, broadcasting live from Istog, Kosovo. A full-spectrum digital radio platform with 24/7 live streaming, real-time news across politics, sport, technology, showbiz, health, and business, plus weather, curated highlights, and a growing social footprint across Facebook, Instagram, YouTube, and TikTok.",
+    tags: ["Streaming", "Web Audio", "Node.js", "Cloudflare"],
+  },
+  {
+    id: "03",
+    title: "BARBERBROTHERS.STYLE",
+    url: "https://barberbrothers.style",
+    category: "Booking & Brand",
+    year: "2025",
+    accent: "rgba(251,191,36,0.3)",
+    hero: "Precision Cuts, No Waiting",
+    description:
+      "A premium barbershop in Fushë Kosovë built around one promise: real appointments, no phone calls. Four independent barbers run their own booking slots through a streamlined online system. Bilingual Albanian-English, with a philosophy of discipline in the process and elegance in the result.",
+    tags: ["Next.js", "Stripe", "Booking API", "CMS"],
+  },
+];
+
+export default function Portfolio() {
+  return (
+    <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
+      {/* ── Ambient orbs ── */}
+      <div className="absolute top-1/3 left-0 w-[min(400px,50vw)] h-[min(400px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.4 }} />
+      <div className="absolute bottom-1/4 right-0 w-[min(300px,40vw)] h-[min(300px,40vw)] ambient-orb" style={{ opacity: 0.25 }} />
+
+      <div id="portfolio" className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
+        {/* ── Header ── */}
+        <div className="mb-8 sm:mb-14">
+          <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C]/35 mb-4">
+            PORTFOLIO
+          </p>
+
+          <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white/65 mb-4 leading-[0.9]"
+            style={{
+              fontSize: 'clamp(1.5rem, 5vw, 6rem)',
+              textShadow: '0 0 120px rgba(201,168,76,0.08), 0 0 40px rgba(201,168,76,0.04)',
+            }}
+          >
+            WHAT WE&apos;VE BUILT
+          </h2>
+
+          <p className="text-white/28 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[550px] 2xl:max-w-[700px]">
+            Hover to open the live site. To embed the scrollable previews here, add this header on each domain:
+          </p>
+          <code className="inline-block mt-2 font-mono text-[10px] 2xl:text-xs text-[#C9A84C]/30 bg-black/30 rounded px-3 py-1.5">
+            Content-Security-Policy: frame-ancestors malera.studio
+          </code>
+        </div>
+
+        {/* ── Grid ── */}
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 2xl:gap-10">
+          {PROJECTS.map((project, idx) => (
+            <SiteCard key={project.id} project={project} idx={idx} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Single site card — embedded iframe + rich description
+   ───────────────────────────────────────────── */
+function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }) {
+  const [loaded, setLoaded] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    // Fallback: hide spinner after 5s even if cross-origin onLoad never fires
+    timerRef.current = setTimeout(() => setLoaded(true), 5000);
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, []);
+
+  const handleLoad = () => {
+    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
+    setLoaded(true);
+  };
+
+  return (
+    <div
+      className="group relative rounded-2xl overflow-hidden
+        glass-card-gold glass-card-gold-hover
+        animate-[pricing-card-in_0.6s_ease-out_both]"
+      style={{ animationDelay: `${idx * 100}ms` }}
+    >
+      {/* ── Preview window ── */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[2/1] lg:aspect-[3/1] 2xl:aspect-[4/1] overflow-hidden bg-black/60">
+        {/* ── Gold spinning indicator ── */}
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[4] transition-opacity duration-500 ${loaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <svg className="animate-spin h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="13" stroke="rgba(255,255,255,0.04)" strokeWidth="1.5" />
+            <circle cx="16" cy="16" r="13" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="60 80" strokeDashoffset="20" strokeOpacity="0.5" />
+          </svg>
+        </div>
+
+        {/* ── Live iframe ── */}
+        <iframe
+          src={project.url}
+          title={project.title}
+          className="absolute inset-0 w-full h-full border-none z-[2]"
+          scrolling="yes"
+          onLoad={handleLoad}
+        />
+
+        {/* ── Glass rim ── */}
+        <div className="absolute inset-0 pointer-events-none z-[3]
+          ring-1 ring-inset ring-white/[0.04]
+          shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_0_-1px_0_rgba(0,0,0,0.15)]" />
+      </div>
+
+      {/* ── Info panel ── */}
+      <div className="relative px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 lg:gap-8">
+        {/* ── Left: title + hero ── */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.08em] text-white/30">
+              {project.category}
+            </span>
+          </div>
+          <h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base lg:text-lg font-bold tracking-[-0.02em] text-white/70
+            group-hover:text-white/85 transition-colors duration-500 mb-0.5">
+            {project.title}
+          </h3>
+          <p className="text-[10px] sm:text-[11px] text-[#C9A84C]/30 font-mono tracking-[0.06em] italic mb-2">
+            {project.hero}
+          </p>
+          <p className="text-[11px] sm:text-xs leading-relaxed text-white/[0.22] group-hover:text-white/[0.3] transition-colors duration-500 max-w-[55ch]">
+            {project.description}
+          </p>
+        </div>
+
+        {/* ── Right: visit ── */}
+        <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-3 sm:pt-3 shrink-0">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] text-[#C9A84C]/50
+              border border-[#C9A84C]/20 rounded-full px-4 py-1.5
+              hover:text-[#C9A84C] hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/[0.04]
+              transition-all duration-300
+              group-hover:border-[#C9A84C]/30"
+          >
+            VISIT SITE ↗
+          </a>
+        </div>
+      </div>
+
+      {/* ── Gold accent divider between preview and info ── */}
+      <div className="absolute left-4 right-4 top-[calc(100%-var(--info-height,0px))] pointer-events-none
+        h-px bg-gradient-to-r from-transparent via-[#C9A84C]/10 to-transparent
+        opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+      {/* ── Hover gold accent glow ── */}
+      <div className="absolute inset-0 rounded-2xl pointer-events-none
+        opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+        style={{
+          boxShadow: `inset 0 1px 0 0 rgba(201,168,76,0.06), 0 0 40px ${project.accent}`,
+        }}
+      />
+    </div>
+  );
+}
