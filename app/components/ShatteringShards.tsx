@@ -67,32 +67,31 @@ export default function ShatteringShards() {
   const idCounter = useRef(0);
 
   useEffect(() => {
-    // Build shards covering the entire viewport on mount
+    // Build small shards covering the entire viewport — like shattered safety glass
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
     const built: Shard[] = [];
 
-    // Grid-based placement with overlap to avoid gaps
-    const cols = 6;
-    const rows = 5;
+    // Dense grid of tiny fragments — real broken glass has many small pieces
+    const shardBaseSize = 28; // small shards
+    const cols = Math.ceil(vw / shardBaseSize);
+    const rows = Math.ceil(vh / shardBaseSize);
     const cellW = vw / cols;
     const cellH = vh / rows;
 
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
-        // Jitter position within cell
-        const baseX = col * cellW;
-        const baseY = row * cellH;
-        const padW = cellW * 0.25;
-        const padH = cellH * 0.25;
+        // Jitter within cell for organic fracture pattern
+        const jitterW = cellW * 0.4;
+        const jitterH = cellH * 0.4;
 
-        const shardW = cellW + padW + Math.random() * padW;
-        const shardH = cellH + padH + Math.random() * padH;
-        const shardX = baseX - padW * 0.5 + Math.random() * padW * 0.5;
-        const shardY = baseY - padH * 0.5 + Math.random() * padH * 0.5;
+        const shardW = cellW + jitterW + Math.random() * jitterW * 0.6;
+        const shardH = cellH + jitterH + Math.random() * jitterH * 0.6;
+        const shardX = col * cellW - jitterW * 0.3 + Math.random() * jitterW * 0.3;
+        const shardY = row * cellH - jitterH * 0.3 + Math.random() * jitterH * 0.3;
 
-        // Impact point: center-ish of viewport (where the "break" originates)
+        // Impact point: center of viewport
         const cx = vw * 0.5;
         const cy = vh * 0.45;
         const shardCX = shardX + shardW / 2;
@@ -102,16 +101,14 @@ export default function ShatteringShards() {
         const dx = shardCX - cx;
         const dy = shardCY - cy;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        const burstPower = 180 + Math.random() * 320; // px/s initial burst speed
+        const burstPower = 140 + Math.random() * 280;
 
-        // Horizontal drift: burst + random, persists during fall
-        const vx = (dx / dist) * burstPower + (Math.random() - 0.5) * 120;
-        // Vertical: burst upward (negative) + gravity overcomes it
-        const vy = (dy / dist) * burstPower * 0.6 - 100 - Math.random() * 200;
+        const vx = (dx / dist) * burstPower + (Math.random() - 0.5) * 100;
+        const vy = (dy / dist) * burstPower * 0.5 - 80 - Math.random() * 180;
 
-        const rotation = (Math.random() - 0.5) * 540; // ±270° spin
-        const duration = 1800 + Math.random() * 2200; // 1.8–4s fall
-        const delay = Math.random() * 350; // staggered break
+        const rotation = (Math.random() - 0.5) * 480;
+        const duration = 1400 + Math.random() * 2000;
+        const delay = Math.random() * 300;
 
         built.push({
           id: idCounter.current++,
