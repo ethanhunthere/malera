@@ -12,15 +12,17 @@ export default function Footer() {
       <div data-shard-sentinel="services" className="w-full h-px pointer-events-none" />
 
       {/* ── Glass separator line ── */}
-      <div className="max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto px-2 sm:px-6">
+      <div className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] mx-auto px-2 sm:px-6">
         <div className="glass-divider" />
       </div>
 
       {/* ── Footer content ── */}
-      <div className="max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto px-2 sm:px-6 py-8 sm:py-14">
-        <div className="flex flex-col sm:flex-row sm:justify-between gap-8 sm:gap-16">
+      <div className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] mx-auto px-2 sm:px-6 py-8 sm:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12 lg:gap-16">
+          {/* ── Spacer ── */}
+          <div className="hidden sm:block" />
           {/* ── About ── */}
-          <div className="sm:max-w-[280px] 2xl:sm:max-w-[380px]">
+          <div>
             <h4 className="font-mono text-[9px] sm:text-[11px] 2xl:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#C9A84C] mb-4 sm:mb-5">
               About
             </h4>
@@ -77,7 +79,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="mt-8 sm:mt-14 pt-5 sm:pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
+        <div className="mt-8 sm:mt-14 pt-5 sm:pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center sm:items-end sm:justify-end gap-2 sm:gap-6">
           <p className="text-white/18 text-[10px] sm:text-xs 2xl:text-sm font-mono">
             ©&nbsp;{year}&nbsp;Malera Studio. All rights reserved.
           </p>

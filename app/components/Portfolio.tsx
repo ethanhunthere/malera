@@ -88,18 +88,35 @@ export default function Portfolio() {
    Single site card  embedded iframe + rich description
    ───────────────────────────────────────────── */
 function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }) {
-  const [loaded, setLoaded] = useState(false);
+  const [reveal, setReveal] = useState(false);
+  const iframeDone = useRef(false);
+  const minTimeDone = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const fallbackRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    // Fallback: hide spinner after 5s even if cross-origin onLoad never fires
-    timerRef.current = setTimeout(() => setLoaded(true), 5000);
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+    // Minimum 3-second loading window so sites can fully fetch
+    timerRef.current = setTimeout(() => {
+      minTimeDone.current = true;
+      if (iframeDone.current) setReveal(true);
+    }, 3000);
+
+    // Fallback: force-reveal after 8s even if iframe onLoad never fires (cross-origin quirk)
+    fallbackRef.current = setTimeout(() => {
+      minTimeDone.current = true;
+      iframeDone.current = true;
+      setReveal(true);
+    }, 8000);
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      if (fallbackRef.current) clearTimeout(fallbackRef.current);
+    };
   }, []);
 
   const handleLoad = () => {
-    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
-    setLoaded(true);
+    iframeDone.current = true;
+    if (minTimeDone.current) setReveal(true);
   };
 
   return (
@@ -112,18 +129,21 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
       {/* ── Preview window ── */}
       <div className="relative w-full aspect-[5/6] sm:aspect-[2/1] lg:aspect-[3/1] 2xl:aspect-[4/1] overflow-hidden bg-black/60">
         {/* ── Gold spinning indicator ── */}
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[4] transition-opacity duration-500 ${loaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`absolute inset-0 z-[4] flex flex-col items-center justify-center gap-3 transition-opacity duration-700 ${reveal ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <svg className="animate-spin h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="13" stroke="rgba(255,255,255,0.04)" strokeWidth="1.5" />
             <circle cx="16" cy="16" r="13" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="60 80" strokeDashoffset="20" strokeOpacity="0.5" />
           </svg>
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.12em] text-white/25">
+            LOADING LIVE PREVIEW
+          </span>
         </div>
 
         {/* ── Live iframe ── */}
         <iframe
           src={project.url}
           title={project.title}
-          className="absolute inset-0 w-full h-full border-none z-[2]"
+          className={`absolute inset-0 w-full h-full border-none z-[2] transition-opacity duration-700 ${reveal ? 'opacity-100' : 'opacity-0'}`}
           scrolling="yes"
           onLoad={handleLoad}
         />
