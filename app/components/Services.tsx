@@ -34,10 +34,6 @@ export default function Services() {
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute top-2/3 left-1/3 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-warm" />
 
-      {/* ── Floating shards ── */}
-      <div data-shard-section="services" className="hidden sm:block absolute top-[15%] right-[8%] w-20 h-14 glass-shard rotate-[20deg]" />
-      <div data-shard-section="services" className="hidden sm:block absolute bottom-[20%] left-[5%] w-28 h-16 glass-shard -rotate-[8deg]" />
-
       <div className="max-w-[900px] mx-auto relative z-10 overflow-hidden">
         {/* ── Showcase panel ── */}
         <div className="mb-12 sm:mb-16">

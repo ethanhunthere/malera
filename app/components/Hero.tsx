@@ -128,11 +128,6 @@ export default function Hero() {
       <div className="absolute bottom-16 right-1/4 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-white" />
       <div className="absolute top-1/3 left-1/3 w-[min(300px,40vw)] h-[min(300px,40vw)] ambient-orb ambient-orb-warm" />
 
-      {/* ── Floating glass shards ── */}
-      <div data-shard-section="hero" className="hidden sm:block absolute top-1/4 right-[15%] w-24 h-16 glass-shard rotate-12" />
-      <div data-shard-section="hero" className="hidden sm:block absolute bottom-1/3 left-[10%] w-32 h-20 glass-shard -rotate-6" />
-      <div data-shard-section="hero" className="hidden sm:block absolute top-[60%] right-[25%] w-16 h-10 glass-shard rotate-[-15deg]" />
-
       <div className="max-w-[900px] mx-auto w-full relative z-10 flex flex-col items-center overflow-visible">
         {/* ── Studio name (flies in from navbar logo) ── */}
         <p

@@ -1,137 +1,188 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const CODE_SYMBOLS = [
-  "0", "1", "{", "}", "(", ")", "[", "]", "/", "<", ">", ";", ":", ".",
-];
-
-function randomTriangle(): string {
-  // Real broken glass forms random triangles — 3 points scattered around the bounding box
-  const a = `${10 + Math.random() * 80}% ${Math.random() * 20}%`;
-  const b = `${80 + Math.random() * 20}% ${60 + Math.random() * 40}%`;
-  const c = `${Math.random() * 40}% ${70 + Math.random() * 30}%`;
-  return `polygon(${a}, ${b}, ${c})`;
-}
-
-interface Fragment {
+// ── Dark glass shard ── jagged polygon, almost black, single specular edge ──
+interface Shard {
   id: number;
-  x: number;
-  y: number;
-  size: number;
-  clipPath: string;
-  gradientAngle: number;
-  symbol: string | null;
-  driftX: number;
-  driftY: number;
-  rotation: number;
-  duration: number;
-  delay: number;
+  x: number; // viewport-relative left
+  y: number; // viewport-relative top
+  w: number;
+  h: number;
+  clipPath: string; // polygon() with 4-7 vertices
+  gradientAngle: number; // direction of the subtle specular sheen
+  // physics
+  vx: number; // horizontal drift velocity (px/s)
+  vy: number; // initial vertical velocity (px/s) — burst upward, gravity pulls down
+  rotation: number; // total spin over lifetime (deg)
+  duration: number; // fall duration in ms
+  delay: number; // stagger delay in ms
 }
 
-function buildFragments(
-  _baseId: number,
-  cx: number,
-  cy: number,
-  w: number,
-  h: number,
-): Fragment[] {
-  // 4-6 jagged triangles per original shard — like real broken glass
-  const count = 4 + Math.floor(Math.random() * 3);
-  const frags: Fragment[] = [];
-  for (let i = 0; i < count; i++) {
-    const size = 12 + Math.random() * 24;
-    // Real glass tumbles — wide rotation range
-    const rot = (Math.random() - 0.5) * 720;
-    const dx = (Math.random() - 0.5) * 340;
-    const dy = 200 + Math.random() * 600;
-    frags.push({
-      id: 0,
-      x: cx + (Math.random() - 0.5) * w * 1.1,
-      y: cy + (Math.random() - 0.5) * h * 1.1,
-      size,
-      clipPath: randomTriangle(),
-      gradientAngle: Math.floor(Math.random() * 360),
-      symbol: Math.random() < 0.25 ? CODE_SYMBOLS[Math.floor(Math.random() * CODE_SYMBOLS.length)] : null,
-      driftX: dx,
-      driftY: dy,
-      rotation: rot,
-      duration: 3500 + Math.random() * 4500,
-      delay: Math.random() * 500,
-    });
+// ── Generate a jagged polygon for a given bounding box ──
+function jaggedPolygon(w: number, h: number): string {
+  const verts = 4 + Math.floor(Math.random() * 4); // 4-7 vertices
+  const points: string[] = [];
+  for (let i = 0; i < verts; i++) {
+    // Distribute vertices around the perimeter with random inset
+    const t = i / verts;
+    const edgeTolerance = 0.18; // how far from edge center
+    let px: number, py: number;
+    if (t < 0.25) {
+      px = Math.random() * w;
+      py = -edgeTolerance * h + Math.random() * edgeTolerance * 2 * h;
+    } else if (t < 0.5) {
+      px = w - edgeTolerance * w + Math.random() * edgeTolerance * 2 * w;
+      py = Math.random() * h;
+    } else if (t < 0.75) {
+      px = Math.random() * w;
+      py = h - edgeTolerance * h + Math.random() * edgeTolerance * 2 * h;
+    } else {
+      px = -edgeTolerance * w + Math.random() * edgeTolerance * 2 * w;
+      py = Math.random() * h;
+    }
+    points.push(`${(px / w) * 100}% ${(py / h) * 100}%`);
   }
-  return frags;
+  return `polygon(${points.join(", ")})`;
+}
+
+// ── Dark glass gradient — almost black, one subtle specular highlight ──
+function darkGlassGradient(angle: number): string {
+  // Dark tinted glass: deep charcoal body, single barely-visible white reflection streak
+  return `linear-gradient(${angle}deg,
+    rgba(18,18,22,0.92) 0%,
+    rgba(15,15,18,0.94) 15%,
+    rgba(22,22,28,0.88) 28%,
+    rgba(40,40,50,0.70) 32%,
+    rgba(60,60,72,0.55) 33%,
+    rgba(22,22,28,0.88) 35%,
+    rgba(12,12,15,0.96) 50%,
+    rgba(10,10,12,0.97) 100%
+  )`;
 }
 
 export default function ShatteringShards() {
-  const [fragments, setFragments] = useState<Fragment[]>([]);
-  const shatteredRef = useRef(new Set<string>());
+  const [shards, setShards] = useState<Shard[]>([]);
+  const [shattered, setShattered] = useState(false);
   const idCounter = useRef(0);
 
-  const shatterSection = useCallback((section: "hero" | "services") => {
-    if (shatteredRef.current.has(section)) return;
-    shatteredRef.current.add(section);
-
-    const selector = `[data-shard-section="${section}"]`;
-    const shards = document.querySelectorAll(selector);
-    if (shards.length === 0) return;
-
-    const newFrags: Fragment[] = [];
-    shards.forEach((el, idx) => {
-      el.classList.add("shard-shattered");
-      const rect = el.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const frags = buildFragments(idx, cx, cy, rect.width, rect.height);
-      frags.forEach((f) => { f.id = idCounter.current++; });
-      newFrags.push(...frags);
-    });
-
-    setFragments((prev) => [...prev, ...newFrags]);
-
-    const maxT = Math.max(...newFrags.map((f) => f.duration + f.delay));
-    setTimeout(() => {
-      setFragments((prev) =>
-        prev.filter((f) => !newFrags.some((nf) => nf.id === f.id)),
-      );
-    }, maxT + 600);
-  }, []);
-
   useEffect(() => {
-    const t = setTimeout(() => {
-      shatterSection("hero");
-      shatterSection("services");
-    }, 600);
-    return () => clearTimeout(t);
-  }, [shatterSection]);
+    // Build shards covering the entire viewport on mount
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    const built: Shard[] = [];
+
+    // Grid-based placement with overlap to avoid gaps
+    const cols = 6;
+    const rows = 5;
+    const cellW = vw / cols;
+    const cellH = vh / rows;
+
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        // Jitter position within cell
+        const baseX = col * cellW;
+        const baseY = row * cellH;
+        const padW = cellW * 0.25;
+        const padH = cellH * 0.25;
+
+        const shardW = cellW + padW + Math.random() * padW;
+        const shardH = cellH + padH + Math.random() * padH;
+        const shardX = baseX - padW * 0.5 + Math.random() * padW * 0.5;
+        const shardY = baseY - padH * 0.5 + Math.random() * padH * 0.5;
+
+        // Impact point: center-ish of viewport (where the "break" originates)
+        const cx = vw * 0.5;
+        const cy = vh * 0.45;
+        const shardCX = shardX + shardW / 2;
+        const shardCY = shardY + shardH / 2;
+
+        // Burst direction: away from impact center
+        const dx = shardCX - cx;
+        const dy = shardCY - cy;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const burstPower = 180 + Math.random() * 320; // px/s initial burst speed
+
+        // Horizontal drift: burst + random, persists during fall
+        const vx = (dx / dist) * burstPower + (Math.random() - 0.5) * 120;
+        // Vertical: burst upward (negative) + gravity overcomes it
+        const vy = (dy / dist) * burstPower * 0.6 - 100 - Math.random() * 200;
+
+        const rotation = (Math.random() - 0.5) * 540; // ±270° spin
+        const duration = 1800 + Math.random() * 2200; // 1.8–4s fall
+        const delay = Math.random() * 350; // staggered break
+
+        built.push({
+          id: idCounter.current++,
+          x: shardX,
+          y: shardY,
+          w: shardW,
+          h: shardH,
+          clipPath: jaggedPolygon(shardW, shardH),
+          gradientAngle: 120 + Math.random() * 120, // top-left or top-right sheen
+          vx,
+          vy,
+          rotation,
+          duration,
+          delay,
+        });
+      }
+    }
+
+    setShards(built);
+
+    // Shatter after a moment — glass breaks
+    const breakTimer = setTimeout(() => {
+      setShattered(true);
+    }, 800);
+
+    // Clean up shards after longest animation completes
+    const maxDuration = Math.max(...built.map((s) => s.duration + s.delay));
+    const cleanupTimer = setTimeout(() => {
+      setShards([]);
+    }, 800 + maxDuration + 400);
+
+    return () => {
+      clearTimeout(breakTimer);
+      clearTimeout(cleanupTimer);
+    };
+  }, []);
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none z-[100]"
+      className="fixed inset-0 z-[100] overflow-hidden"
+      style={{ pointerEvents: shattered ? "none" : "auto" }}
       aria-hidden="true"
     >
-      {fragments.map((f) => (
-        <div
-          key={f.id}
-          className="absolute glass-fragment"
-          style={{
-            left: f.x,
-            top: f.y,
-            width: f.size,
-            height: f.size,
-            clipPath: f.clipPath,
-            background: `linear-gradient(${f.gradientAngle}deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.04) 30%, transparent 55%, rgba(255,255,255,0.10) 100%)`,
-            animation: `glass-tumble ${f.duration}ms ${f.delay}ms cubic-bezier(0.12, 0, 0.4, 1) forwards`,
-            ["--burst-x" as string]: `${-f.driftX * 0.15}px`,
-            ["--burst-y" as string]: `${-f.driftY * 0.08}px`,
-            ["--drift-x" as string]: `${f.driftX}px`,
-            ["--drift-y" as string]: `${f.driftY}px`,
-            ["--spin" as string]: `${f.rotation}deg`,
-          } as React.CSSProperties}
-        >
-          {f.symbol && <span className="glass-etch">{f.symbol}</span>}
-        </div>
-      ))}
+      {shards.map((s) => {
+        const isShattered = shattered;
+        return (
+          <div
+            key={s.id}
+            className="dark-glass-shard"
+            style={{
+              position: "absolute",
+              left: s.x,
+              top: s.y,
+              width: s.w,
+              height: s.h,
+              clipPath: s.clipPath,
+              background: darkGlassGradient(s.gradientAngle),
+              willChange: isShattered ? "transform, opacity" : "auto",
+              ...(isShattered
+                ? {
+                    animation: `dark-glass-fall ${s.duration}ms ${s.delay}ms cubic-bezier(0.22, 0, 0.55, 1) forwards`,
+                    ["--vx" as string]: `${s.vx}px`,
+                    ["--vy" as string]: `${s.vy}px`,
+                    ["--rot" as string]: `${s.rotation}deg`,
+                  }
+                : {}),
+            } as React.CSSProperties}
+          />
+        );
+      })}
     </div>
   );
 }
+
