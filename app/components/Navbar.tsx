@@ -28,7 +28,7 @@ export default function Navbar() {
     <>
       <header className="relative z-30">
           <nav className="relative z-10 max-w-[1200px] mx-auto flex items-center h-12 sm:h-16 px-3 sm:px-6">
-            {/* Logo — left */}
+            {/* Logo  left */}
             <a href="/" className="flex-shrink-0">
               <Image
                 src="/malera-transparent.png"
@@ -40,7 +40,7 @@ export default function Navbar() {
               />
             </a>
 
-            {/* Center nav — absolutely centered */}
+            {/* Center nav  absolutely centered */}
             <ul className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
               {NAV_LINKS.map((link) => (
                 <li key={link}>
@@ -48,7 +48,7 @@ export default function Navbar() {
                     href={`#${link.toLowerCase()}`}
                     className="relative group inline-flex items-center h-8 px-3 xl:px-4 text-xs xl:text-sm font-medium text-white/45 hover:text-[#C9A84C] transition-colors duration-300"
                   >
-                    {/* Gold underline — slides in from center */}
+                    {/* Gold underline  slides in from center */}
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-[#C9A84C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out origin-center" />
                     <span className="tracking-wide">{link}</span>
                   </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
 
             {/* Right side */}
             <div className="flex items-center gap-1.5 sm:gap-4 ml-auto">
-              {/* CTA — hidden below lg */}
+              {/* CTA  hidden below lg */}
               <a
                 href="#contact"
                 className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-xs 2xl:text-sm min-[3000px]:text-base font-medium px-3 xl:px-5 py-1.5 xl:py-2 rounded-full"
@@ -66,7 +66,7 @@ export default function Navbar() {
                 Start a Project
               </a>
 
-              {/* Hamburger — mobile only */}
+              {/* Hamburger  mobile only */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="lg:hidden flex flex-col items-center justify-center gap-[5px] w-8 h-8 group"
@@ -118,7 +118,7 @@ export default function Navbar() {
           </a>
         </div>
       )}
-      {/* Scroll navbar — real dark glass, logo only */}
+      {/* Scroll navbar  real dark glass, logo only */}
       <div
         className={`fixed top-0 left-0 right-0 z-50 hidden sm:flex justify-center py-2 glass-bar transition-all duration-500 ${
           scrolled

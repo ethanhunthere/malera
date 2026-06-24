@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Malera Studio",
+  title: "Terms of Service | Malera Studio",
 };
 
 export default function TermsPage() {
@@ -68,7 +68,7 @@ export default function TermsPage() {
 
             <h2>6. Revisions & Scope Changes</h2>
             <p>
-              Each proposal includes a defined number of revision rounds. Changes beyond scope will be estimated separately. We communicate openly about scope — no surprises, no hidden fees.
+              Each proposal includes a defined number of revision rounds. Changes beyond scope will be estimated separately. We communicate openly about scope, no surprises, no hidden fees.
             </p>
 
             <h2>7. Termination</h2>
@@ -83,7 +83,7 @@ export default function TermsPage() {
 
             <h2>9. Governing Law</h2>
             <p>
-              These terms are governed by the laws of Kosovo. Any disputes will be resolved through good-faith negotiation first — we&apos;ve found that almost everything can be worked out with a conversation.
+              These terms are governed by the laws of Kosovo. Any disputes will be resolved through good-faith negotiation first, we&apos;ve found that almost everything can be worked out with a conversation.
             </p>
 
             <h2>10. Contact</h2>

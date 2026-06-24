@@ -125,7 +125,7 @@ function NeuralNetwork({
       </defs>
 
       {/* ════════════════════════════════════════════════════════
-          LAYER 0 — Panel source neurons (input layer)
+          LAYER 0  Panel source neurons (input layer)
           ════════════════════════════════════════════════════════ */}
       {Array.from({ length: 7 }, (_, i) => {
         const sx = geo.panelLeft + 15 + (geo.panelRight - geo.panelLeft - 30) * (i / 6);
@@ -159,7 +159,7 @@ function NeuralNetwork({
       />
 
       {/* ════════════════════════════════════════════════════════
-          LAYER 0.5 — Panel → card fan-out (direct ownership links)
+          LAYER 0.5  Panel → card fan-out (direct ownership links)
           ════════════════════════════════════════════════════════ */}
       {geo.cards.map((card, i) => {
         const cardX = card.left + 4;
@@ -239,7 +239,7 @@ function NeuralNetwork({
       })}
 
       {/* ════════════════════════════════════════════════════════
-          LAYER 1 — Data backbone (hidden layer trunk)
+          LAYER 1  Data backbone (hidden layer trunk)
           ════════════════════════════════════════════════════════ */}
       <line
         x1={trunkX} y1={trunkTop} x2={trunkX} y2={trunkBottom}
@@ -311,7 +311,7 @@ function NeuralNetwork({
       })}
 
       {/* ════════════════════════════════════════════════════════
-          LAYER 2 — Synaptic branches: backbone → card inputs
+          LAYER 2  Synaptic branches: backbone → card inputs
           ════════════════════════════════════════════════════════ */}
       {geo.cards.map((card, i) => {
         const cy = (card.top + card.bottom) / 2;
@@ -373,7 +373,7 @@ function NeuralNetwork({
       })}
 
       {/* ════════════════════════════════════════════════════════
-          LAYER 3 — Inter-card mesh (output layer cross-talk)
+          LAYER 3  Inter-card mesh (output layer cross-talk)
           ════════════════════════════════════════════════════════ */}
       {meshPairs.map(({ from, to, dist }) => {
         const active = hoveredIdx === from || hoveredIdx === to;
@@ -485,7 +485,7 @@ export default function Services() {
 
   return (
     <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
-      {/* ── Ambient orbs — responsive, contained ── */}
+      {/* ── Ambient orbs  responsive, contained ── */}
       <div className="absolute top-1/4 left-0 w-[min(700px,80vw)] h-[min(700px,80vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute top-2/3 left-1/3 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-warm" />
@@ -545,7 +545,7 @@ export default function Services() {
                 </p>
               </div>
 
-              {/* Binary number — right side, nearly invisible */}
+              {/* Binary number  right side, nearly invisible */}
               <span className="relative z-0 font-mono text-[12px] sm:text-sm font-light text-white/[0.05] group-hover:text-[#C9A84C]/[0.12] transition-all duration-600 shrink-0 select-none">
                 {binary}
               </span>
@@ -555,7 +555,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Sentinel — triggers hero shards to shatter near end of services */}
+      {/* Sentinel  triggers hero shards to shatter near end of services */}
       <div data-shard-sentinel="hero" className="w-full h-px pointer-events-none" />
     </section>
   );

@@ -8,12 +8,12 @@ import * as THREE from "three";
 ╔══════════════════════════════════════════════════════════════╗
 ║   MALERA STUDIO · ANIMATED BACKGROUND                       ║
 ║                                                              ║
-║   Two elements, one story — we just build good stuff:        ║
+║   Two elements, one story  we just build good stuff:        ║
 ║                                                              ║
-║   1. CODESTREAM — flowing ribbons of code-structure dots     ║
+║   1. CODESTREAM  flowing ribbons of code-structure dots     ║
 ║      along curved 3D paths, like source code as a waterfall. ║
 ║                                                              ║
-║   2. THE ARCHITECT — a golden cursor moving through          ║
+║   2. THE ARCHITECT  a golden cursor moving through          ║
 ║      the scene, editing, leaving code trails.                ║
 ║      The visible hand of the developer in 3D.                ║
 ║                                                              ║
@@ -121,17 +121,17 @@ function Codestream() {
 
 /* ═══════════════════════════════════════════════════════════
    ELEMENT 2: THE ARCHITECT · REDESIGNED
-   A living cursor — the visible hand of the developer
+   A living cursor  the visible hand of the developer
    working in 3D. Features:
    · Distinctive tall bar cursor shape with core glow
    · Continuous flowing trail line (ring buffer)
    · Expanding pulse rings at edit points
-   · Speed ramping — slow at waypoints, fast in between
+   · Speed ramping  slow at waypoints, fast in between
    · Subtle wobble & rotation for organic movement
    · Spark emission during travel
    ═══════════════════════════════════════════════════════════ */
 
-const TRAIL_LENGTH = 160;     // ring buffer size — longer trail
+const TRAIL_LENGTH = 160;     // ring buffer size  longer trail
 const TRAIL_FADE_START = 0.6; // where fading begins (0-1 from head)
 function Architect() {
   const groupRef = useRef<THREE.Group>(null);
@@ -177,7 +177,7 @@ function Architect() {
   const sparkVelocities = useRef<THREE.Vector3[]>([]);
   const SPARK_COUNT = 40;
 
-  // ── Binary digit sprites — 0s and 1s trailing the cursor ──
+  // ── Binary digit sprites  0s and 1s trailing the cursor ──
   const BINARY_COUNT = 45;
   const binarySpriteRefs = useRef<(THREE.Sprite | null)[]>([]);
   const binaryData = useRef<
@@ -221,7 +221,7 @@ function Architect() {
     const segFrac = segmentFloat - Math.floor(segmentFloat);
     const nextIndex = (segIndex + 1) % numPoints;
 
-    // ── Speed ramping — ease-in-out per segment ──
+    // ── Speed ramping  ease-in-out per segment ──
     // Use a sigmoid-like curve: slow at edges, fast in middle
     const speedCurve = (x: number) => {
       // smoothstep-like: slow at 0 and 1, fastest at 0.5
@@ -276,7 +276,7 @@ function Architect() {
       barRef.current.position.y = wobbleY;
     }
 
-    // ── Cursor blink — variable pulse ──
+    // ── Cursor blink  variable pulse ──
     const nearEditPoint = segFrac < 0.06 || segFrac > 0.94;
     const hovering = nearEditPoint && currentSpeed.current < 0.3;
     const blinkSpeed = hovering ? 5 : 1.8;
@@ -335,7 +335,7 @@ function Architect() {
       mat.opacity = 0.04 + fadeFraction * 0.12;
     }
 
-    // Secondary (core) trail — shorter
+    // Secondary (core) trail  shorter
     if (trailLine2Ref.current && trailLen.current > 1) {
       const geom2 = trailLine2Ref.current.geometry;
       const posAttr2 = geom2.attributes.position as THREE.BufferAttribute;
@@ -398,7 +398,7 @@ function Architect() {
       (spark.material as THREE.MeshBasicMaterial).opacity = (1 - progress) * 0.5;
     });
 
-    // ── Binary digits — spawn 0s and 1s along the trail ──
+    // ── Binary digits  spawn 0s and 1s along the trail ──
     binarySpawnTimer.current -= delta;
     if (currentSpeed.current > 0.08 && binarySpawnTimer.current <= 0) {
       binarySpawnTimer.current = 0.08 + Math.random() * 0.12;
@@ -448,7 +448,7 @@ function Architect() {
 
   return (
     <group ref={groupRef}>
-      {/* ── Main trail — long golden line ── */}
+      {/* ── Main trail  long golden line ── */}
       <line ref={trailLineRef as any}>
         <bufferGeometry>
           <bufferAttribute
@@ -465,7 +465,7 @@ function Architect() {
         />
       </line>
 
-      {/* ── Core trail — shorter, brighter, whiter ── */}
+      {/* ── Core trail  shorter, brighter, whiter ── */}
       <line ref={trailLine2Ref as any}>
         <bufferGeometry>
           <bufferAttribute
@@ -506,7 +506,7 @@ function Architect() {
         );
       })}
 
-      {/* ── Binary digit trail — 0s and 1s floating off the cursor ── */}
+      {/* ── Binary digit trail  0s and 1s floating off the cursor ── */}
       {Array.from({ length: BINARY_COUNT }, (_, i) => {
         if (!binaryData.current[i]) {
           binaryData.current[i] = {
@@ -573,7 +573,7 @@ function Architect() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   AMBIENT DUST — minimal golden atmosphere particles
+   AMBIENT DUST  minimal golden atmosphere particles
    Digital sawdust, the byproduct of active construction.
    ═══════════════════════════════════════════════════════════ */
 function AmbientDust() {
@@ -619,10 +619,10 @@ function AmbientDust() {
 function Scene() {
   return (
     <>
-      {/* 1. CODESTREAM — flowing code tapestry */}
+      {/* 1. CODESTREAM  flowing code tapestry */}
       <Codestream />
 
-      {/* 2. THE ARCHITECT — the golden cursor at work */}
+      {/* 2. THE ARCHITECT  the golden cursor at work */}
       <Architect />
 
       {/* Subtle: ambient dust for depth */}

@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Malera Studio",
+  title: "Privacy Policy | Malera Studio",
 };
 
 export default function PrivacyPage() {
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           >
             <h2>1. What We Collect</h2>
             <p>
-              Malera Studio collects only the information you voluntarily provide when you contact us — your name, email address, and any details you choose to share about your project. We do not use tracking cookies, analytics scripts, or any form of automated data collection on this website.
+              Malera Studio collects only the information you voluntarily provide when you contact us: your name, email address, and any details you choose to share about your project. We do not use tracking cookies, analytics scripts, or any form of automated data collection on this website.
             </p>
 
             <h2>2. How We Use Your Information</h2>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
 
             <h2>3. Data Storage</h2>
             <p>
-              Email correspondence is stored on our email provider&apos;s servers (Google Workspace). We do not maintain a separate customer database or CRM. If you&apos;d like us to delete your correspondence, just ask — we&apos;ll remove it promptly.
+              Email correspondence is stored on our email provider&apos;s servers (Google Workspace). We do not maintain a separate customer database or CRM. If you&apos;d like us to delete your correspondence, just ask, we&apos;ll remove it promptly.
             </p>
 
             <h2>4. Third-Party Services</h2>

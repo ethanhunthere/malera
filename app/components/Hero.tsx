@@ -152,8 +152,8 @@ export default function Hero() {
         ], { duration: totalDur, easing: ease, fill: 'both' });
       };
 
-      // ── Loop (no initial delay — fires immediately on each recurse) ──
-      const FLStart = totalDur + lDelay;   // 1120ms — time for a fade-in/out to fully complete
+      // ── Loop (no initial delay  fires immediately on each recurse) ──
+      const FLStart = totalDur + lDelay;   // 1120ms  time for a fade-in/out to fully complete
       const lStay = 3000;                    // L stays fully visible 3s
       const oStay = 10000;                   // O stays fully visible 10s
 
@@ -187,7 +187,7 @@ export default function Hero() {
             const prev = (section as HTMLElement & { _morphLoop?: ReturnType<typeof setTimeout> })._morphLoop;
             if (prev) clearTimeout(prev);
             runAnimation();
-            // Initial 10s delay — O is already visible on page load, wait before first morph
+            // Initial 10s delay  O is already visible on page load, wait before first morph
             const initTimer = setTimeout(() => {
               startMorphLoop();
             }, 10000);
@@ -215,11 +215,11 @@ export default function Hero() {
       className="flex flex-col items-center justify-start pt-12 sm:pt-20 pb-4 sm:pb-12 px-2 sm:px-6 relative overflow-x-clip bg-dot-grid"
     >
       {/* ── Cinema-grade ambient light ── */}
-      {/* Key light — large soft white from below center */}
+      {/* Key light  large soft white from below center */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(900px,85vw)] h-[min(600px,55vh)] 2xl:w-[min(1400px,85vw)] 2xl:h-[min(900px,55vh)] ambient-orb ambient-orb-key" />
-      {/* Fill light — cool white wash from top right */}
+      {/* Fill light  cool white wash from top right */}
       <div className="absolute top-0 right-0 w-[min(650px,65vw)] h-[min(650px,65vw)] 2xl:w-[min(1000px,65vw)] 2xl:h-[min(1000px,65vw)] ambient-orb ambient-orb-fill" />
-      {/* Rim light — subtle warm accent from top left */}
+      {/* Rim light  subtle warm accent from top left */}
       <div className="absolute top-1/4 -left-20 sm:-left-40 w-[min(450px,50vw)] h-[min(450px,50vw)] 2xl:w-[min(700px,50vw)] 2xl:h-[min(700px,50vw)] ambient-orb ambient-orb-rim" />
 
       <div className="w-full max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto relative z-10 flex flex-col items-center overflow-visible">
@@ -277,7 +277,7 @@ export default function Hero() {
           <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
 
           <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 w-full sm:w-auto justify-center">
-            {/* Primary — See our work */}
+            {/* Primary  See our work */}
             <a
               href="#services"
               className="hero-btn-primary group inline-flex items-center justify-center gap-2 text-[10px] sm:text-sm 2xl:text-base font-semibold px-5 sm:px-8 py-2.5 sm:py-4 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
@@ -285,7 +285,7 @@ export default function Hero() {
               See our work
               <span className="hero-btn-arrow text-black/25 group-hover:text-black/50">→</span>
             </a>
-            {/* Secondary — Get in touch */}
+            {/* Secondary  Get in touch */}
             <a
               href="#contact"
               className="hero-btn-secondary group inline-flex items-center justify-center gap-2 text-white/70 text-[10px] sm:text-sm 2xl:text-base font-medium px-5 sm:px-8 py-2.5 sm:py-4 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"

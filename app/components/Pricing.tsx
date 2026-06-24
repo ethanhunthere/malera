@@ -48,12 +48,12 @@ const PLANS = [
 export default function Pricing() {
   return (
     <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
-      {/* ── Ambient orbs — cool, minimal white only ── */}
+      {/* ── Ambient orbs  cool, minimal white only ── */}
       <div className="absolute top-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] 2xl:w-[min(800px,60vw)] 2xl:h-[min(800px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute bottom-0 left-0 w-[min(350px,40vw)] h-[min(350px,40vw)] 2xl:w-[min(600px,40vw)] 2xl:h-[min(600px,40vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.5 }} />
 
       <div id="pricing" className="w-full max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
-        {/* ── Header — minimal, no glass, no gold ── */}
+        {/* ── Header  minimal, no glass, no gold ── */}
         <div className="mb-8 sm:mb-14">
           <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-white/30 mb-4">
             PRICING
@@ -178,7 +178,7 @@ export default function Pricing() {
                     style={{ transitionDelay: `${fi * 50}ms` }}
                   >
                     <span className="mt-px shrink-0 transition-all duration-500 text-white/15 group-hover:text-white/30">
-                      —
+                      &bull;
                     </span>
                     {feat}
                   </li>

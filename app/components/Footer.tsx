@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="relative mt-8 sm:mt-16">
-      {/* Sentinel — triggers services shards to shatter when footer comes into view */}
+      {/* Sentinel  triggers services shards to shatter when footer comes into view */}
       <div data-shard-sentinel="services" className="w-full h-px pointer-events-none" />
 
       {/* ── Glass separator line ── */}
@@ -25,7 +25,7 @@ export default function Footer() {
               About
             </h4>
             <p className="text-white/35 text-[11px] sm:text-sm 2xl:text-base leading-relaxed">
-              A small creative studio building digital products, brands, and experiences. No fluff — just good work.
+              A small creative studio building digital products, brands, and experiences. No fluff, just good work.
             </p>
           </div>
 

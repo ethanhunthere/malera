@@ -13,7 +13,7 @@ interface Shard {
   gradientAngle: number; // direction of the subtle specular sheen
   // physics
   vx: number; // horizontal drift velocity (px/s)
-  vy: number; // initial vertical velocity (px/s) — burst upward, gravity pulls down
+  vy: number; // initial vertical velocity (px/s)  burst upward, gravity pulls down
   rotation: number; // total spin over lifetime (deg)
   duration: number; // fall duration in ms
   delay: number; // stagger delay in ms
@@ -46,7 +46,7 @@ function jaggedPolygon(w: number, h: number): string {
   return `polygon(${points.join(", ")})`;
 }
 
-// ── Dark glass gradient — almost black, one subtle specular highlight ──
+// ── Dark glass gradient  almost black, one subtle specular highlight ──
 function darkGlassGradient(angle: number): string {
   // Dark tinted glass: deep charcoal body, single barely-visible white reflection streak
   return `linear-gradient(${angle}deg,
@@ -67,13 +67,13 @@ export default function ShatteringShards() {
   const idCounter = useRef(0);
 
   useEffect(() => {
-    // Build small shards covering the entire viewport — like shattered safety glass
+    // Build small shards covering the entire viewport  like shattered safety glass
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
     const built: Shard[] = [];
 
-    // Dense grid of tiny fragments — real broken glass has many small pieces
+    // Dense grid of tiny fragments  real broken glass has many small pieces
     const shardBaseSize = 28; // small shards
     const cols = Math.ceil(vw / shardBaseSize);
     const rows = Math.ceil(vh / shardBaseSize);
@@ -129,7 +129,7 @@ export default function ShatteringShards() {
 
     setShards(built);
 
-    // Shatter after a moment — glass breaks
+    // Shatter after a moment  glass breaks
     const breakTimer = setTimeout(() => {
       setShattered(true);
     }, 800);

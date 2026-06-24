@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import GlassDivider from "./GlassDivider";
 
 const PROJECTS = [
   {
@@ -65,17 +66,17 @@ export default function Portfolio() {
           </h2>
 
           <p className="text-white/28 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[550px] 2xl:max-w-[700px]">
-            Hover to open the live site. To embed the scrollable previews here, add this header on each domain:
+            Live previews of our latest work. Click a card to visit the full site.
           </p>
-          <code className="inline-block mt-2 font-mono text-[10px] 2xl:text-xs text-[#C9A84C]/30 bg-black/30 rounded px-3 py-1.5">
-            Content-Security-Policy: frame-ancestors malera.studio
-          </code>
         </div>
 
         {/* ── Grid ── */}
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 2xl:gap-10">
+        <div className="grid grid-cols-1 gap-10 sm:gap-8 lg:gap-10 2xl:gap-12">
           {PROJECTS.map((project, idx) => (
-            <SiteCard key={project.id} project={project} idx={idx} />
+            <div key={project.id}>
+              {idx > 0 && <GlassDivider />}
+              <SiteCard project={project} idx={idx} />
+            </div>
           ))}
         </div>
       </div>
@@ -84,7 +85,7 @@ export default function Portfolio() {
 }
 
 /* ─────────────────────────────────────────────
-   Single site card — embedded iframe + rich description
+   Single site card  embedded iframe + rich description
    ───────────────────────────────────────────── */
 function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }) {
   const [loaded, setLoaded] = useState(false);
@@ -109,7 +110,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       {/* ── Preview window ── */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[2/1] lg:aspect-[3/1] 2xl:aspect-[4/1] overflow-hidden bg-black/60">
+      <div className="relative w-full aspect-[5/6] sm:aspect-[2/1] lg:aspect-[3/1] 2xl:aspect-[4/1] overflow-hidden bg-black/60">
         {/* ── Gold spinning indicator ── */}
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[4] transition-opacity duration-500 ${loaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <svg className="animate-spin h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 32 32" fill="none">
@@ -129,27 +130,27 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
 
         {/* ── Glass rim ── */}
         <div className="absolute inset-0 pointer-events-none z-[3]
-          ring-1 ring-inset ring-white/[0.04]
-          shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_0_-1px_0_rgba(0,0,0,0.15)]" />
+          ring-1 ring-inset ring-white/[0.06]
+          shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.15)]" />
       </div>
 
       {/* ── Info panel ── */}
-      <div className="relative px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 lg:gap-8">
+      <div className="relative px-5 sm:px-6 py-6 sm:py-5 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 lg:gap-8">
         {/* ── Left: title + hero ── */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.08em] text-white/30">
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.08em] text-white/55">
               {project.category}
             </span>
           </div>
-          <h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base lg:text-lg font-bold tracking-[-0.02em] text-white/70
-            group-hover:text-white/85 transition-colors duration-500 mb-0.5">
+          <h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base lg:text-lg font-bold tracking-[-0.02em] text-white/90
+            group-hover:text-white transition-colors duration-500 mb-0.5">
             {project.title}
           </h3>
-          <p className="text-[10px] sm:text-[11px] text-[#C9A84C]/30 font-mono tracking-[0.06em] italic mb-2">
+          <p className="text-[10px] sm:text-[11px] text-[#C9A84C]/55 font-mono tracking-[0.06em] italic mb-2">
             {project.hero}
           </p>
-          <p className="text-[11px] sm:text-xs leading-relaxed text-white/[0.22] group-hover:text-white/[0.3] transition-colors duration-500 max-w-[55ch]">
+          <p className="text-[11px] sm:text-xs leading-relaxed text-white/[0.40] group-hover:text-white/[0.55] transition-colors duration-500 max-w-[55ch]">
             {project.description}
           </p>
         </div>
@@ -160,11 +161,11 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] text-[#C9A84C]/50
-              border border-[#C9A84C]/20 rounded-full px-4 py-1.5
-              hover:text-[#C9A84C] hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/[0.04]
+            className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] text-[#C9A84C]/70
+              border border-[#C9A84C]/35 rounded-full px-4 py-1.5
+              hover:text-[#C9A84C] hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/[0.06]
               transition-all duration-300
-              group-hover:border-[#C9A84C]/30"
+              group-hover:border-[#C9A84C]/45"
           >
             VISIT SITE ↗
           </a>
@@ -173,14 +174,14 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
 
       {/* ── Gold accent divider between preview and info ── */}
       <div className="absolute left-4 right-4 top-[calc(100%-var(--info-height,0px))] pointer-events-none
-        h-px bg-gradient-to-r from-transparent via-[#C9A84C]/10 to-transparent
+        h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent
         opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
       {/* ── Hover gold accent glow ── */}
       <div className="absolute inset-0 rounded-2xl pointer-events-none
         opacity-0 group-hover:opacity-100 transition-opacity duration-700"
         style={{
-          boxShadow: `inset 0 1px 0 0 rgba(201,168,76,0.06), 0 0 40px ${project.accent}`,
+          boxShadow: `inset 0 1px 0 0 rgba(201,168,76,0.08), 0 0 50px ${project.accent}`,
         }}
       />
     </div>

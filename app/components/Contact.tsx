@@ -21,7 +21,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-white/40 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[360px] 2xl:max-w-[480px] mx-auto">
-            Tell us about your project. No strings attached — just a conversation to see if we&apos;re the right fit.
+            Tell us about your project. No strings attached, just a conversation to see if we&apos;re the right fit.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function Contact() {
             </h3>
 
             <p className="text-white/45 text-xs sm:text-base 2xl:text-lg mb-5 sm:mb-8 max-w-[380px] 2xl:max-w-[500px] mx-auto">
-              Drop us a line and we&apos;ll get back to you — usually within a day.
+              Drop us a line and we&apos;ll get back to you, usually within a day.
             </p>
 
             {/* CTA pill */}
@@ -62,7 +62,7 @@ export default function Contact() {
           </div>
         </a>
 
-        {/* ── Instagram — balanced beside the hero card ── */}
+        {/* ── Instagram  balanced beside the hero card ── */}
         <div className="flex justify-center">
           <a
             href="https://instagram.com"
