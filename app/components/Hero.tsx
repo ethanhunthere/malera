@@ -5,6 +5,7 @@ import { useEffect, useRef, useCallback } from "react";
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const studioRef = useRef<HTMLParagraphElement>(null);
+  const morphRef = useRef<HTMLSpanElement>(null);
   const hasRun = useRef(false);
   const studioText = "MALERA STUDIO";
 
@@ -93,17 +94,38 @@ export default function Hero() {
     if (!section) return;
 
     let timeoutId: ReturnType<typeof setTimeout>;
+    let loopTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const startMorphLoop = () => {
+      // Phase 1 — 10s of "O", then morph to L
+      const toL = setTimeout(() => {
+        if (morphRef.current) morphRef.current.classList.add("morph-active");
+        // Phase 2 — 5s of "L", then morph back to O & restart
+        loopTimer = setTimeout(() => {
+          if (morphRef.current) morphRef.current.classList.remove("morph-active");
+          startMorphLoop();
+        }, 5000);
+      }, 10000);
+      loopTimer = toL;
+      (section as HTMLElement & { _morphLoop?: ReturnType<typeof setTimeout> })._morphLoop = loopTimer;
+    };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Delay so page has settled, then animate
           timeoutId = setTimeout(() => {
-            hasRun.current = false; // allow re-trigger
+            hasRun.current = false;
+            if (morphRef.current) morphRef.current.classList.remove("morph-active");
+            // Clear any running loop
+            const prev = (section as HTMLElement & { _morphLoop?: ReturnType<typeof setTimeout> })._morphLoop;
+            if (prev) clearTimeout(prev);
             runAnimation();
+            startMorphLoop();
           }, 1000);
         } else {
           clearTimeout(timeoutId);
+          const prev = (section as HTMLElement & { _morphLoop?: ReturnType<typeof setTimeout> })._morphLoop;
+          if (prev) clearTimeout(prev);
         }
       },
       { threshold: 0.15 }
@@ -119,14 +141,15 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center justify-start pt-14 sm:pt-20 pb-4 sm:pb-12 px-3 sm:px-6 relative overflow-x-clip"
+      className="flex flex-col items-center justify-start pt-14 sm:pt-20 pb-4 sm:pb-12 px-3 sm:px-6 relative overflow-x-clip bg-dot-grid"
     >
-      {/* ── Ambient light orbs ── */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(1000px,90vw)] h-[min(700px,60vh)] ambient-orb ambient-orb-gold" />
-      <div className="absolute top-1/5 -right-10 sm:-right-40 w-[min(600px,70vw)] h-[min(600px,70vw)] ambient-orb ambient-orb-white" />
-      <div className="absolute top-1/2 -left-10 sm:-left-60 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-gold" />
-      <div className="absolute bottom-16 right-1/4 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-white" />
-      <div className="absolute top-1/3 left-1/3 w-[min(300px,40vw)] h-[min(300px,40vw)] ambient-orb ambient-orb-warm" />
+      {/* ── Cinema-grade ambient light ── */}
+      {/* Key light — large soft white from below center */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(900px,85vw)] h-[min(600px,55vh)] ambient-orb ambient-orb-key" />
+      {/* Fill light — cool white wash from top right */}
+      <div className="absolute top-0 right-0 w-[min(650px,65vw)] h-[min(650px,65vw)] ambient-orb ambient-orb-fill" />
+      {/* Rim light — subtle warm accent from top left */}
+      <div className="absolute top-1/4 -left-20 sm:-left-40 w-[min(450px,50vw)] h-[min(450px,50vw)] ambient-orb ambient-orb-rim" />
 
       <div className="max-w-[900px] mx-auto w-full relative z-10 flex flex-col items-center overflow-visible">
         {/* ── Studio name (flies in from navbar logo) ── */}
@@ -147,57 +170,63 @@ export default function Hero() {
         </p>
 
         {/* ── Headline ── */}
-        <div className="mb-6 sm:mb-8 w-full overflow-hidden">
+        <div className="mb-7 sm:mb-10 w-full overflow-hidden">
           {/* Line 1: WE JUST BUILD */}
-          <h1 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white text-center uppercase leading-[0.9] max-w-full"
+          <h1 className="font-[family-name:var(--font-display)] font-extrabold tracking-[0.02em] text-white text-center uppercase leading-[0.85] max-w-full premium-text"
             style={{
               fontSize: 'clamp(2.75rem, 11vw, 7rem)',
-              textShadow: '0 0 2px rgba(255,255,255,0.25), 0 0 16px rgba(255,255,255,0.08), 0 0 40px rgba(255,255,255,0.03)',
             }}
           >
             We just build
           </h1>
 
-          {/* Line 2: GOOD STUFF */}
-          <h1 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white text-center uppercase leading-[0.9] max-w-full"
+          {/* Line 2: GO(O→L)D STUFF */}
+          <h1 className="font-[family-name:var(--font-display)] font-extrabold tracking-[0.02em] text-white text-center uppercase leading-[0.85] max-w-full premium-text"
             style={{
               fontSize: 'clamp(2.75rem, 11vw, 7rem)',
-              textShadow: '0 0 2px rgba(255,255,255,0.25), 0 0 16px rgba(255,255,255,0.08), 0 0 40px rgba(255,255,255,0.03)',
             }}
           >
-            Good stuff
+            GO
+            <span ref={morphRef} className="char-morph inline relative">
+              <span className="morph-o inline">O</span>
+              <span className="morph-l inline absolute left-0 w-full text-center opacity-0">L</span>
+            </span>
+            D STUFF
           </h1>
         </div>
 
         {/* ── Subtext + buttons ── */}
         <div className="flex flex-col items-center gap-4 sm:gap-8 mb-6 sm:mb-16 w-full max-w-[500px]">
           {/* Subtext */}
-          <p className="text-xs sm:text-sm lg:text-base text-white/50 leading-relaxed text-center uppercase tracking-wide max-w-[280px] sm:max-w-none">
+          <p className="text-xs sm:text-sm lg:text-base text-white/40 font-light leading-relaxed text-center uppercase tracking-[0.15em] max-w-[300px] sm:max-w-none">
             Websites, apps and videos.<br />Built out of Kosovo.
           </p>
+
+          {/* ── Decorative separator ── */}
+          <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center">
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-1.5 glass-btn-solid text-[#080808] text-[11px] sm:text-sm font-semibold px-4 sm:px-7 py-2 sm:py-3.5 rounded-full uppercase tracking-wider w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 glass-btn-solid text-[#080808] text-[11px] sm:text-sm font-semibold px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full uppercase tracking-[0.12em] w-full sm:w-auto transition-all duration-500"
             >
               See our work
-              <span className="font-mono text-[#080808]/40">→</span>
+              <span className="font-mono text-[#080808]/30 text-sm">→</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-1.5 glass-btn text-white/90 text-[11px] sm:text-sm font-semibold px-4 sm:px-7 py-2 sm:py-3.5 rounded-full uppercase tracking-wider hover:text-[#C9A84C] w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 glass-btn text-white/85 text-[11px] sm:text-sm font-medium px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full uppercase tracking-[0.12em] hover:text-white w-full sm:w-auto"
             >
               Get in touch
-              <span className="font-mono text-white/20 group-hover:text-[#C9A84C]/60">→</span>
+              <span className="font-mono text-white/20 group-hover:text-white/50 text-sm transition-colors duration-500">→</span>
             </a>
           </div>
         </div>
 
         {/* ── Bottom tagline ── */}
-        <p className="font-mono text-[9px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.3em] text-white/15 text-center">
-          Kosovo · Est 2026 · AI Powered
+        <p className="font-mono text-[9px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.35em] text-white/12 text-center mt-0">
+          Kosovo&nbsp;&nbsp;·&nbsp;&nbsp;Est&nbsp;2026&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;Powered
         </p>
       </div>
     </section>

@@ -507,6 +507,10 @@
 /* ══════════════════════════════════════════════════════════
    AMBIENT LIGHT ORBS — v2 2x intensity, deeper volumetric
    ══════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════
+   CINEMA-GRADE AMBIENT LIGHT — three-point lighting system
+   Key (main), Fill (wash), Rim (accent) — no gold
+   ══════════════════════════════════════════════════════════ */
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
@@ -515,6 +519,38 @@
   opacity: 0.55;
   z-index: 0;
 }
+/* Key light — main illumination from below, pure white */
+.ambient-orb-key {
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.12) 0%,
+    rgba(255,255,255,0.06) 18%,
+    rgba(255,255,255,0.02) 35%,
+    rgba(255,255,255,0.005) 55%,
+    transparent 75%
+  );
+}
+/* Fill light — cool white wash, broad coverage */
+.ambient-orb-fill {
+  background: radial-gradient(
+    circle at center,
+    rgba(220,225,240,0.09) 0%,
+    rgba(220,225,240,0.035) 22%,
+    rgba(220,225,240,0.008) 45%,
+    transparent 70%
+  );
+}
+/* Rim light — subtle warm accent, directional */
+.ambient-orb-rim {
+  background: radial-gradient(
+    circle at center,
+    rgba(240,235,225,0.08) 0%,
+    rgba(240,235,225,0.03) 20%,
+    rgba(240,235,225,0.006) 42%,
+    transparent 68%
+  );
+}
+/* Legacy orb variants — still used by Navbar & Services */
 .ambient-orb-gold {
   background: radial-gradient(
     circle at center,
@@ -542,6 +578,108 @@
     rgba(255,180,60,0.01) 50%,
     transparent 70%
   );
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCROLL NAVBAR — real dark glass bar, full-width
+   Smoked glass: visible-through, cool-tinted, specular rim
+   ══════════════════════════════════════════════════════════ */
+.glass-bar {
+  background:
+    /* Cool tinted dark glass — like a smoked car window */
+    linear-gradient(180deg,
+      rgba(14,14,18,0.64) 0%,
+      rgba(10,10,13,0.58) 28%,
+      rgba(7,7,9,0.53) 55%,
+      rgba(10,10,13,0.58) 100%
+    );
+  backdrop-filter: blur(200px) saturate(320%) brightness(0.94) contrast(1.02);
+  -webkit-backdrop-filter: blur(200px) saturate(320%) brightness(0.94) contrast(1.02);
+  border-bottom: 0.5px solid rgba(255,255,255,0.09);
+  box-shadow:
+    /* Top edge catch — light hitting the glass rim */
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    /* Depth beneath the glass */
+    0 1px 2px rgba(0,0,0,0.45),
+    0 4px 14px rgba(0,0,0,0.35);
+}
+/* Specular top edge — bright line on glass, like a reflection */
+.glass-bar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    transparent 15%,
+    rgba(255,255,255,0.15) 30%,
+    rgba(255,255,255,0.25) 50%,
+    rgba(255,255,255,0.15) 70%,
+    transparent 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+/* Subtle top-cool gradient wash — glass is slightly cooler at top */
+.glass-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(200,210,230,0.04) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PREMIUM TEXT — layered depth for hero headlines
+   ══════════════════════════════════════════════════════════ */
+.premium-text {
+  text-shadow:
+    /* Tight inner-glow — crisp edge */
+    0 0 1px rgba(255,255,255,0.35),
+    /* Mid-distance halo — soft bloom */
+    0 0 8px rgba(255,255,255,0.10),
+    0 0 24px rgba(255,255,255,0.04),
+    /* Far scatter — ambient depth */
+    0 0 60px rgba(255,255,255,0.015),
+    /* Subtle directional light from top-left */
+    0 -1px 2px rgba(255,255,255,0.06);
+}
+
+/* ══════════════════════════════════════════════════════════
+   O → L MORPH — second O in GOOD transforms into L
+   ══════════════════════════════════════════════════════════ */
+.char-morph .morph-o {
+  transition: opacity 0.45s ease, filter 0.45s ease;
+}
+.char-morph.morph-active .morph-o {
+  opacity: 0;
+  filter: blur(6px);
+}
+.char-morph .morph-l {
+  transition:
+    opacity 0.5s ease 0.15s,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+    filter 0.5s ease 0.15s;
+  transform: scaleX(0) scaleY(0.3);
+  filter: blur(8px);
+}
+.char-morph.morph-active .morph-l {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+  filter: blur(0px);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SUBTLE DOT GRID TEXTURE — premium background depth
+   ══════════════════════════════════════════════════════════ */
+.bg-dot-grid {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -650,4 +788,19 @@ body::after {
 ::selection {
   background: rgba(201,168,76,0.28);
   color: #fff;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PRICING CARD ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
+
+@keyframes pricing-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

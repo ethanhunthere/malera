@@ -3,17 +3,27 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const NAV_LINKS = ["Home", "Services", "Pricing", "Contact"];
+const NAV_LINKS = ["Services", "Pricing", "Contact"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState<"EN" | "SQ">("EN");
+  const [scrolled, setScrolled] = useState(false);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+
+  // Show scroll navbar when past the main header
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
@@ -108,6 +118,25 @@ export default function Navbar() {
           </a>
         </div>
       )}
+      {/* Scroll navbar — real dark glass, logo only */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-50 hidden sm:flex justify-center py-2 glass-bar transition-all duration-500 ${
+          scrolled
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full pointer-events-none"
+        }`}
+      >
+        <a href="/">
+          <Image
+            src="/malera-transparent.png"
+            alt="Malera Studio"
+            width={120}
+            height={28}
+            className="h-5 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            priority
+          />
+        </a>
+      </div>
     </>
   );
 }

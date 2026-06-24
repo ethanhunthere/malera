@@ -28,13 +28,13 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-10 sm:pt-28 md:pt-36 pb-12 sm:pb-24 md:pb-32 px-3 sm:px-6 relative overflow-x-clip">
+    <section className="pt-10 sm:pt-28 md:pt-36 pb-12 sm:pb-24 md:pb-32 px-3 sm:px-6 relative overflow-x-clip">
       {/* ── Ambient orbs — responsive, contained ── */}
       <div className="absolute top-1/4 left-0 w-[min(700px,80vw)] h-[min(700px,80vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute top-2/3 left-1/3 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-warm" />
 
-      <div className="max-w-[900px] mx-auto relative z-10 overflow-hidden">
+      <div id="services" className="max-w-[900px] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Showcase panel ── */}
         <div className="mb-12 sm:mb-16">
           <div className="relative glass-ultra rounded-3xl p-4 sm:p-6 md:p-10 overflow-hidden mx-auto max-w-[600px]">
@@ -59,6 +59,7 @@ export default function Services() {
                 }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] shadow-[0_0_10px_rgba(201,168,76,0.6),0_0_24px_rgba(201,168,76,0.25)]" />
               </div>
+
 
               {/* Label */}
               <p className="relative z-20 font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#C9A84C] mb-4 sm:mb-5 text-glow">

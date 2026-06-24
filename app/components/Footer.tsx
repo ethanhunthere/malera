@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const FOOTER_LINKS = ["Home", "Services", "Pricing", "Contact"];
+const FOOTER_LINKS = ["Services", "Pricing", "Contact"];
 
 export default function Footer() {
   return (
