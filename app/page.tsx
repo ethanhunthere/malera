@@ -4,7 +4,7 @@ import Services from "./components/Services";
 import PortfolioLazy from "./components/PortfolioLazy";
 import PricingLazy from "./components/PricingLazy";
 import ContactLazy from "./components/ContactLazy";
-import FooterLazy from "./components/FooterLazy";
+import Footer from "./components/Footer";
 import GlassDivider from "./components/GlassDivider";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <PricingLazy />
       <GlassDivider />
       <ContactLazy />
-      <FooterLazy />
+      <Footer />
     </>
   );
 }
