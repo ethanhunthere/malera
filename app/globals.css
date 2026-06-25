@@ -974,38 +974,40 @@
   font-weight: 800;
   background: linear-gradient(
     90deg,
-    #E8D5A8 0%,
-    #F2E8D4 15%,
-    #FBF7F0 30%,
-    rgba(255,255,255,0.96) 50%,
-    rgba(255,255,255,0.99) 70%,
-    #FFFFFF 100%
+    #D4A843 0%,
+    #E8C860 20%,
+    #F5D77A 40%,
+    #E8D5A8 55%,
+    #F2E8D4 70%,
+    #FBF7F0 85%,
+    rgba(255,255,255,0.97) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #FBF7F0; /* warm ivory fallback */
-  filter: drop-shadow(0 0 0.02em rgba(201, 168, 76, 0.20))
-          drop-shadow(0 0 0.04em rgba(201, 168, 76, 0.08));
+  filter: drop-shadow(0 0 0.02em rgba(201, 168, 76, 0.30))
+          drop-shadow(0 0 0.05em rgba(201, 168, 76, 0.12));
 }
 
 .char-gold-partial-l {
   font-weight: 800;
   background: linear-gradient(
     270deg,
-    #E8D5A8 0%,
-    #F2E8D4 15%,
-    #FBF7F0 30%,
-    rgba(255,255,255,0.96) 50%,
-    rgba(255,255,255,0.99) 70%,
-    #FFFFFF 100%
+    #D4A843 0%,
+    #E8C860 20%,
+    #F5D77A 40%,
+    #E8D5A8 55%,
+    #F2E8D4 70%,
+    #FBF7F0 85%,
+    rgba(255,255,255,0.97) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #FBF7F0; /* warm ivory fallback */
-  filter: drop-shadow(0 0 0.02em rgba(201, 168, 76, 0.20))
-          drop-shadow(0 0 0.04em rgba(201, 168, 76, 0.08));
+  filter: drop-shadow(0 0 0.02em rgba(201, 168, 76, 0.30))
+          drop-shadow(0 0 0.05em rgba(201, 168, 76, 0.12));
 }
 
 .char-morph {
