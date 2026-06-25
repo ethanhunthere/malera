@@ -7,17 +7,17 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-8 sm:mt-16">
-      {/* Sentinel  triggers services shards to shatter when footer comes into view */}
+    <footer className="relative mt-8 sm:mt-16 flex flex-col items-center">
+      {/* Sentinel – triggers services shards to shatter when footer comes into view */}
       <div data-shard-sentinel="services" className="w-full h-px pointer-events-none" />
 
       {/* ── Glass separator line ── */}
-      <div className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] mx-auto px-6">
+      <div className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] px-6">
         <div className="glass-divider" />
       </div>
 
       {/* ── Footer content ── */}
-      <div className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] mx-auto px-6 py-14">
+      <div className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] px-6 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-16 text-center sm:text-left">
           {/* ── About ── */}
           <div>
