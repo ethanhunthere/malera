@@ -7,7 +7,7 @@ import GlassDivider from "@/src/features/layout/components/GlassDivider";
 import { Portfolio, Pricing, Contact } from "@/src/features/home/dynamic";
 
 export const metadata: Metadata = {
-  title: "Malera Studio — We Just Build Good Stuff",
+  title: "Malera Studio - We Just Build Good Stuff",
   description:
     "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
 };

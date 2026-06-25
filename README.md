@@ -2,7 +2,7 @@
 
 > We just build good stuff.
 
-**Malera Studio** is a creative digital studio based in Pristina, Kosovo. We build websites, apps, brands, and video — end-to-end digital solutions crafted with precision.
+**Malera Studio** is a creative digital studio based in Pristina, Kosovo. We build websites, apps, brands, and video - end-to-end digital solutions crafted with precision.
 
 ---
 
@@ -23,7 +23,7 @@
 
 ```
 malera/
-├── app/                          # Next.js App Router — routes & layouts
+├── app/                          # Next.js App Router - routes & layouts
 │   ├── globals.css               # Global styles & Tailwind utilities
 │   ├── layout.tsx                # Root layout (fonts, providers, background)
 │   ├── page.tsx                  # Home page
@@ -56,9 +56,9 @@ malera/
 
 Each feature module under `src/features/` encapsulates a distinct domain:
 
-- **`home`** — All page sections: Hero, Services, Portfolio, Pricing, Contact.
-- **`layout`** — Reusable shell components: Navbar, Footer, GlassDivider.
-- **`effects`** — Three.js powered visuals: animated background, shattering shards.
+- **`home`** - All page sections: Hero, Services, Portfolio, Pricing, Contact.
+- **`layout`** - Reusable shell components: Navbar, Footer, GlassDivider.
+- **`effects`** - Three.js powered visuals: animated background, shattering shards.
 
 Client-only components are lazy-loaded via `dynamic.tsx` barrel files that act as `"use client"` boundaries.
 
@@ -79,7 +79,7 @@ npm install
 
 ### Build (required for preview)
 
-This project uses `output: "export"` for static generation. `npm run dev` is **not supported** — build and serve locally instead:
+This project uses `output: "export"` for static generation. `npm run dev` is **not supported** - build and serve locally instead:
 
 ```bash
 npm run build
@@ -100,9 +100,9 @@ npm run lint
 
 The project outputs a fully static site to the `out/` directory. Deploy to any static host:
 
-- **Cloudflare Pages** — connect the GitHub repo, set build command to `npm run build` and output directory to `out`.
-- **Vercel** — auto-detects Next.js; add `output: "export"` override if needed.
-- **Any CDN** — point it at the `out/` directory.
+- **Cloudflare Pages** - connect the GitHub repo, set build command to `npm run build` and output directory to `out`.
+- **Vercel** - auto-detects Next.js; add `output: "export"` override if needed.
+- **Any CDN** - point it at the `out/` directory.
 
 ---
 
@@ -115,6 +115,6 @@ The project outputs a fully static site to the `out/` directory. Deploy to any s
 
 ## 📧 Contact
 
-**Malera Studio** — Pristina, Kosovo  
+**Malera Studio** - Pristina, Kosovo  
 [hello@malera.studio](mailto:hello@malera.studio)  
 [@malera.studio](https://instagram.com)

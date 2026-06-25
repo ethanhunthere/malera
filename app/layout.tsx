@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.malera.studio"),
-  title: "Malera Studio — We Just Build Good Stuff",
+  title: "Malera Studio - We Just Build Good Stuff",
   description:
     "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
   keywords: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Malera Studio — We Just Build Good Stuff",
+    title: "Malera Studio - We Just Build Good Stuff",
     description:
       "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
     url: "/",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         url: "/malera-transparent.png",
         width: 1200,
         height: 630,
-        alt: "Malera Studio — We Just Build Good Stuff",
+        alt: "Malera Studio - We Just Build Good Stuff",
       },
     ],
     locale: "en_US",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@malerastudio",
     creator: "@malerastudio",
-    title: "Malera Studio — We Just Build Good Stuff",
+    title: "Malera Studio - We Just Build Good Stuff",
     description:
       "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
     images: ["/malera-transparent.png"],
