@@ -31,7 +31,7 @@ export default function Navbar() {
             {/* Logo  left */}
             <a href="/" className="flex-shrink-0">
               <Image
-                src="/malera-transparent.png"
+                src="/malera-transparent.webp"
                 alt="Malera Studio"
                 width={160}
                 height={40}

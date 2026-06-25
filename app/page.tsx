@@ -1,10 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
-import Pricing from "./components/Pricing";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import PortfolioLazy from "./components/PortfolioLazy";
+import PricingLazy from "./components/PricingLazy";
+import ContactLazy from "./components/ContactLazy";
+import FooterLazy from "./components/FooterLazy";
 import GlassDivider from "./components/GlassDivider";
 
 export default function Home() {
@@ -15,12 +15,12 @@ export default function Home() {
       <GlassDivider />
       <Services />
       <GlassDivider />
-      <Portfolio />
+      <PortfolioLazy />
       <GlassDivider />
-      <Pricing />
+      <PricingLazy />
       <GlassDivider />
-      <Contact />
-      <Footer />
+      <ContactLazy />
+      <FooterLazy />
     </>
   );
 }

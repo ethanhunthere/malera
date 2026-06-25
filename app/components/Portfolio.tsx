@@ -3,6 +3,22 @@
 import { useState, useEffect, useRef } from "react";
 import GlassDivider from "./GlassDivider";
 
+/* Inline icons to avoid lucide-react dep */
+const AlertIcon = () => (
+  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-[#C9A84C]/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+    <line x1="12" y1="9" x2="12" y2="13" />
+    <line x1="12" y1="17" x2="12.01" y2="17" />
+  </svg>
+);
+const ExternalIcon = () => (
+  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
 const PROJECTS = [
   {
     id: "01",
@@ -89,34 +105,44 @@ export default function Portfolio() {
    ───────────────────────────────────────────── */
 function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }) {
   const [reveal, setReveal] = useState(false);
+  const [iframeFailed, setIframeFailed] = useState(false);
   const iframeDone = useRef(false);
   const minTimeDone = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const fallbackRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const loadTimestamp = useRef(0);
 
   useEffect(() => {
     // Minimum 3-second loading window so sites can fully fetch
     timerRef.current = setTimeout(() => {
       minTimeDone.current = true;
-      if (iframeDone.current) setReveal(true);
+      if (iframeDone.current && !iframeFailed) setReveal(true);
     }, 3000);
 
-    // Fallback: force-reveal after 8s even if iframe onLoad never fires (cross-origin quirk)
+    // After 5s of no successful load (or CSP block), show fallback
     fallbackRef.current = setTimeout(() => {
-      minTimeDone.current = true;
-      iframeDone.current = true;
-      setReveal(true);
-    }, 8000);
+      // If onLoad fired instantly (<500ms), it's likely a CSP block, not a real page load
+      const loadWasInstant = loadTimestamp.current > 0 && loadTimestamp.current < 500;
+      if (!iframeDone.current || (loadWasInstant && minTimeDone.current)) {
+        setIframeFailed(true);
+      }
+      if (!iframeFailed && !iframeDone.current) {
+        iframeDone.current = true;
+        setReveal(true);
+      }
+    }, 5000);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
       if (fallbackRef.current) clearTimeout(fallbackRef.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleLoad = () => {
+    loadTimestamp.current = Date.now();
     iframeDone.current = true;
-    if (minTimeDone.current) setReveal(true);
+    if (minTimeDone.current && !iframeFailed) setReveal(true);
   };
 
   return (
@@ -140,13 +166,33 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
         </div>
 
         {/* ── Live iframe ── */}
-        <iframe
-          src={project.url}
-          title={project.title}
-          className={`absolute inset-0 w-full h-full border-none z-[2] transition-opacity duration-700 ${reveal ? 'opacity-100' : 'opacity-0'}`}
-          scrolling="yes"
-          onLoad={handleLoad}
-        />
+        {iframeFailed ? (
+          <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center gap-4 bg-black/70 px-6 text-center">
+            <AlertIcon />
+            <p className="text-white/35 text-[11px] sm:text-sm leading-relaxed max-w-[320px]">
+              This site&apos;s security policy prevents embedding a live preview.
+            </p>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-[11px] tracking-[0.12em] text-[#C9A84C]/80
+                border border-[#C9A84C]/40 rounded-full px-5 py-2
+                hover:text-[#C9A84C] hover:border-[#C9A84C]/60 hover:bg-[#C9A84C]/[0.08]
+                transition-all duration-300"
+            >
+              OPEN IN NEW TAB <ExternalIcon />
+            </a>
+          </div>
+        ) : (
+          <iframe
+            src={project.url}
+            title={project.title}
+            className={`absolute inset-0 w-full h-full border-none z-[2] transition-opacity duration-700 ${reveal ? 'opacity-100' : 'opacity-0'}`}
+            scrolling="yes"
+            onLoad={handleLoad}
+          />
+        )}
 
         {/* ── Glass rim ── */}
         <div className="absolute inset-0 pointer-events-none z-[3]
