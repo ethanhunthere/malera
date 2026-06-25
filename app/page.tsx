@@ -17,8 +17,8 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Malera Studio",
-    url: "https://malera.studio",
-    logo: "https://malera.studio/malera-transparent.png",
+    url: "https://www.malera.studio",
+    logo: "https://www.malera.studio/malera-transparent.png",
     description:
       "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
     foundingDate: "2026",
@@ -40,12 +40,12 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Malera Studio",
-    url: "https://malera.studio",
+    url: "https://www.malera.studio",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://malera.studio/?q={search_term_string}",
+        urlTemplate: "https://www.malera.studio/?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -54,8 +54,8 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Malera Studio",
-    image: "https://malera.studio/malera-transparent.png",
-    url: "https://malera.studio",
+    image: "https://www.malera.studio/malera-transparent.png",
+    url: "https://www.malera.studio",
     telephone: "+383-44-000-000",
     email: "hello@malera.studio",
     address: {
@@ -97,7 +97,7 @@ const structuredData = [
     description:
       "Custom websites and web applications built with modern frameworks. Fast, accessible, and SEO-optimized.",
     areaServed: "Kosovo, Balkans, Worldwide",
-    url: "https://malera.studio/#services",
+    url: "https://www.malera.studio/#services",
   },
   {
     "@context": "https://schema.org",
@@ -110,7 +110,7 @@ const structuredData = [
     description:
       "Native and cross-platform mobile applications for iOS and Android. Seamless user experiences.",
     areaServed: "Kosovo, Balkans, Worldwide",
-    url: "https://malera.studio/#services",
+    url: "https://www.malera.studio/#services",
   },
   {
     "@context": "https://schema.org",
@@ -123,7 +123,7 @@ const structuredData = [
     description:
       "Professional video production from concept to final cut. Brand films, commercials, and social content.",
     areaServed: "Kosovo, Balkans, Worldwide",
-    url: "https://malera.studio/#services",
+    url: "https://www.malera.studio/#services",
   },
   {
     "@context": "https://schema.org",
@@ -136,7 +136,7 @@ const structuredData = [
     description:
       "Intelligent automation solutions and AI-powered chatbots that streamline your business workflows.",
     areaServed: "Kosovo, Balkans, Worldwide",
-    url: "https://malera.studio/#services",
+    url: "https://www.malera.studio/#services",
   },
   {
     "@context": "https://schema.org",
@@ -149,7 +149,7 @@ const structuredData = [
     description:
       "Complete brand identity design including logos, typography, color systems, and brand guidelines.",
     areaServed: "Kosovo, Balkans, Worldwide",
-    url: "https://malera.studio/#services",
+    url: "https://www.malera.studio/#services",
   },
   {
     "@context": "https://schema.org",
@@ -159,43 +159,43 @@ const structuredData = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://malera.studio",
+        item: "https://www.malera.studio",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://malera.studio/#services",
+        item: "https://www.malera.studio/#services",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Portfolio",
-        item: "https://malera.studio/#portfolio",
+        item: "https://www.malera.studio/#portfolio",
       },
       {
         "@type": "ListItem",
         position: 4,
         name: "Pricing",
-        item: "https://malera.studio/#pricing",
+        item: "https://www.malera.studio/#pricing",
       },
       {
         "@type": "ListItem",
         position: 5,
         name: "Contact",
-        item: "https://malera.studio/#contact",
+        item: "https://www.malera.studio/#contact",
       },
       {
         "@type": "ListItem",
         position: 6,
         name: "Privacy Policy",
-        item: "https://malera.studio/privacy",
+        item: "https://www.malera.studio/privacy",
       },
       {
         "@type": "ListItem",
         position: 7,
         name: "Terms of Service",
-        item: "https://malera.studio/terms",
+        item: "https://www.malera.studio/terms",
       },
     ],
   },

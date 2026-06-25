@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://malera.studio"),
+  metadataBase: new URL("https://www.malera.studio"),
   title: "Malera Studio — We Just Build Good Stuff",
   description:
     "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "Malera Studio",
     "web design Balkans",
   ],
-  authors: [{ name: "Malera Studio", url: "https://malera.studio" }],
+  authors: [{ name: "Malera Studio", url: "https://www.malera.studio" }],
   creator: "Malera Studio",
   publisher: "Malera Studio",
   robots: {

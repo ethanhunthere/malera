@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://malera.studio",
+  siteUrl: "https://www.malera.studio",
   generateRobotsTxt: false,
   outDir: "out",
   sitemapSize: 5000,

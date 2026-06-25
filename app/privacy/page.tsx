@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://malera.studio/privacy",
+    canonical: "https://www.malera.studio/privacy",
   },
   openGraph: {
     title: "Privacy Policy | Malera Studio",
     description:
       "Privacy Policy for Malera Studio. Learn how we collect, use, and protect your information.",
-    url: "https://malera.studio/privacy",
+    url: "https://www.malera.studio/privacy",
   },
 };
 

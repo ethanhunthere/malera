@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://malera.studio/terms",
+    canonical: "https://www.malera.studio/terms",
   },
   openGraph: {
     title: "Terms of Service | Malera Studio",
     description:
       "Terms of Service for Malera Studio. Read about our engagement, payment, and intellectual property terms.",
-    url: "https://malera.studio/terms",
+    url: "https://www.malera.studio/terms",
   },
 };
 

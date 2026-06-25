@@ -1,5 +1,5 @@
 # robots.txt for Malera Studio
-# https://malera.studio
+# https://www.malera.studio
 
 User-agent: *
 Allow: /
@@ -22,4 +22,4 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-Sitemap: https://malera.studio/sitemap.xml
+Sitemap: https://www.malera.studio/sitemap.xml

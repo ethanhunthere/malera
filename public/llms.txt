@@ -80,7 +80,7 @@ Best for platforms, SaaS products, full-stack applications, AI integrations, das
 - Location: Pristina, Kosovo
 - Email: hello@malera.studio
 - Instagram: https://instagram.com/malera.studio
-- Website: https://malera.studio
+- Website: https://www.malera.studio
 
 We work with clients locally in Kosovo, across the Balkans, and remotely worldwide.
 
@@ -98,11 +98,11 @@ Every engagement starts with a conversation. We define the problem, agree on sco
 
 ## Important Links
 
-- Home: https://malera.studio
-- Services: https://malera.studio/#services
-- Portfolio: https://malera.studio/#portfolio
-- Pricing: https://malera.studio/#pricing
-- Contact: https://malera.studio/#contact
-- Privacy Policy: https://malera.studio/privacy
-- Terms of Service: https://malera.studio/terms
-- Sitemap: https://malera.studio/sitemap.xml
+- Home: https://www.malera.studio
+- Services: https://www.malera.studio/#services
+- Portfolio: https://www.malera.studio/#portfolio
+- Pricing: https://www.malera.studio/#pricing
+- Contact: https://www.malera.studio/#contact
+- Privacy Policy: https://www.malera.studio/privacy
+- Terms of Service: https://www.malera.studio/terms
+- Sitemap: https://www.malera.studio/sitemap.xml
