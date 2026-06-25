@@ -4,6 +4,21 @@ import Footer from "@/src/features/layout/components/Footer";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Malera Studio",
+  description:
+    "Terms of Service for Malera Studio. Read about our engagement, payment, and intellectual property terms.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://malera.studio/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Malera Studio",
+    description:
+      "Terms of Service for Malera Studio. Read about our engagement, payment, and intellectual property terms.",
+    url: "https://malera.studio/terms",
+  },
 };
 
 export default function TermsPage() {

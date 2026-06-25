@@ -1,0 +1,108 @@
+# Malera Studio
+
+## About
+
+Malera Studio is a small creative studio based in Pristina, Kosovo. We build digital products, brands, and experiences for clients in Kosovo, the Balkans, and worldwide. Our tagline is "We just build good stuff."
+
+We combine modern web and mobile development with video production, brand identity design, and AI-powered automation. Every project is approached with a focus on clarity, performance, and long-term value.
+
+## Founding Story
+
+Malera Studio was founded in 2026 in Kosovo by a team of designers, developers, and makers who believe good work should speak for itself. The studio was started to bring world-class digital craft to local and regional businesses without the overhead and complexity of traditional agencies.
+
+## Team Philosophy
+
+We keep our team small and our standards high. We do not chase trends or add complexity for the sake of it. Our philosophy is simple: understand the problem, choose the right tools, and build something that works beautifully.
+
+## Services
+
+### 1. Web Development
+Custom websites and web applications built with modern frameworks. Our work is fast, accessible, responsive, and SEO-optimized. We build landing pages, marketing sites, CMS-driven platforms, dashboards, and full-stack web applications.
+
+### 2. Mobile Apps
+Native and cross-platform mobile applications for iOS and Android. We focus on seamless user experiences, clean interfaces, and reliable performance.
+
+### 3. Video Production
+Professional video production from concept to final cut. This includes brand films, commercials, promotional content, and social media videos.
+
+### 4. AI Bots and Automation
+Intelligent automation solutions and AI-powered chatbots that streamline business workflows. We build tools that save time, reduce manual work, and improve customer experiences.
+
+### 5. Brand Identity
+Complete brand identity design including logos, typography, color systems, brand guidelines, and visual direction.
+
+## Portfolio
+
+### NOVRIX.IO
+- URL: https://novrix.io
+- Category: On-Chain Intelligence
+- Year: 2025
+- Description: A crypto-native intelligence terminal that distills on-chain data into actionable signal. Features three core modules: Sentiment, Metrilytics, and Whale Tracking. Built with Next.js, Cloudflare, on-chain data, and real-time processing.
+
+### RADIOFONTANA.ORG
+- URL: https://radiofontana.org
+- Category: Digital Radio and News
+- Year: 2025
+- Description: Albania's 98.8 FM, broadcasting live from Istog, Kosovo. A full-spectrum digital radio platform with 24/7 live streaming, real-time news, weather, curated highlights, and social integration. Built with streaming, web audio, Node.js, and Cloudflare.
+
+### BARBERBROTHERS.STYLE
+- URL: https://barberbrothers.style
+- Category: Booking and Brand
+- Year: 2025
+- Description: A premium barbershop in Fushë Kosovë built around real online appointments. Four independent barbers run their own booking slots through a streamlined system. Bilingual Albanian-English. Built with Next.js, Stripe, a booking API, and a CMS.
+
+## Tech Stack and Tools
+
+We choose tools based on what each project actually needs. Our typical stack includes:
+
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend and APIs: Node.js, Cloudflare Workers, serverless platforms
+- Mobile: React Native and native platforms when needed
+- Infrastructure: Cloudflare Pages, Cloudflare Workers
+- Design and Video: Figma, Adobe Creative Suite, motion tools
+- AI and Automation: OpenAI APIs, custom bots, workflow automation
+
+## Pricing
+
+We work on fixed-price engagements with detailed scope documents upfront. Any changes beyond the original scope are discussed and quoted separately before work continues.
+
+### Essential — €1,500
+Best for a landing page or small site up to 5 pages. Includes responsive design, basic SEO, two revision rounds, and delivery within one week.
+
+### Business — €4,500
+Best for growing businesses that need up to 15 pages, a CMS, deeper SEO, motion and interaction, analytics, and three revision rounds.
+
+### Build It Together — Custom Pricing
+Best for platforms, SaaS products, full-stack applications, AI integrations, dashboards, and ongoing partnerships. Scope and pricing are defined together.
+
+## Location and Contact
+
+- Location: Pristina, Kosovo
+- Email: hello@malera.studio
+- Instagram: https://instagram.com/malera.studio
+- Website: https://malera.studio
+
+We work with clients locally in Kosovo, across the Balkans, and remotely worldwide.
+
+## Values
+
+- Clarity over complexity
+- Performance over bloat
+- Long-term partnerships over one-off transactions
+- Good design is good business
+- AI should amplify human work, not replace judgment
+
+## Work Philosophy
+
+Every engagement starts with a conversation. We define the problem, agree on scope, and build in focused iterations. We communicate openly, avoid surprises, and deliver work we are proud to stand behind.
+
+## Important Links
+
+- Home: https://malera.studio
+- Services: https://malera.studio/#services
+- Portfolio: https://malera.studio/#portfolio
+- Pricing: https://malera.studio/#pricing
+- Contact: https://malera.studio/#contact
+- Privacy Policy: https://malera.studio/privacy
+- Terms of Service: https://malera.studio/terms
+- Sitemap: https://malera.studio/sitemap.xml

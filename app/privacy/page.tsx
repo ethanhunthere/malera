@@ -4,6 +4,21 @@ import Footer from "@/src/features/layout/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Malera Studio",
+  description:
+    "Privacy Policy for Malera Studio. Learn how we collect, use, and protect your information.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://malera.studio/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Malera Studio",
+    description:
+      "Privacy Policy for Malera Studio. Learn how we collect, use, and protect your information.",
+    url: "https://malera.studio/privacy",
+  },
 };
 
 export default function PrivacyPage() {
