@@ -10,7 +10,7 @@ export default function TermsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6">
+      <main className="relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6">
         <div className="max-w-[680px] mx-auto">
           <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#C9A84C] mb-4">
             LEGAL
