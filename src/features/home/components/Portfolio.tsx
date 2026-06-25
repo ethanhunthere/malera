@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import GlassDivider from "./GlassDivider";
+import GlassDivider from "@/src/features/layout/components/GlassDivider";
 
 /* Inline icons to avoid lucide-react dep */
 const AlertIcon = () => (

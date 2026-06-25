@@ -45,7 +45,7 @@ export default function Navbar() {
               {NAV_LINKS.map((link) => (
                 <li key={link}>
                   <a
-                    href={`#${link.toLowerCase()}`}
+                    href={`/#${link.toLowerCase()}`}
                     className="relative group inline-flex items-center h-8 px-3 xl:px-4 text-xs xl:text-sm font-medium text-white/45 hover:text-[#C9A84C] transition-colors duration-300"
                   >
                     {/* Gold underline  slides in from center */}
@@ -60,7 +60,7 @@ export default function Navbar() {
             <div className="flex items-center gap-1.5 sm:gap-4 ml-auto">
               {/* CTA  hidden below lg */}
               <a
-                href="#contact"
+                href="/#contact"
                 className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-xs 2xl:text-sm min-[3000px]:text-base font-medium px-3 xl:px-5 py-1.5 xl:py-2 rounded-full"
               >
                 Start a Project
@@ -102,7 +102,7 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`/#${link.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="relative z-10 text-white text-lg sm:text-2xl font-medium hover:text-[#C9A84C] transition-all duration-300"
             >
@@ -110,7 +110,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setMenuOpen(false)}
             className="relative z-10 mt-3 sm:mt-4 glass-btn-solid text-[#080808] text-sm font-medium px-6 py-3 rounded-full"
           >
@@ -128,7 +128,7 @@ export default function Navbar() {
       >
         <a href="/">
           <Image
-            src="/malera-transparent.png"
+            src="/malera-transparent.webp"
             alt="Malera Studio"
             width={120}
             height={28}

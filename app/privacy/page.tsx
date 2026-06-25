@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/src/features/layout/components/Navbar";
+import Footer from "@/src/features/layout/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Malera Studio",

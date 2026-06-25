@@ -1,11 +1,9 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import PortfolioLazy from "./components/PortfolioLazy";
-import PricingLazy from "./components/PricingLazy";
-import ContactLazy from "./components/ContactLazy";
-import Footer from "./components/Footer";
-import GlassDivider from "./components/GlassDivider";
+import Navbar from "@/src/features/layout/components/Navbar";
+import Hero from "@/src/features/home/components/Hero";
+import Services from "@/src/features/home/components/Services";
+import Footer from "@/src/features/layout/components/Footer";
+import GlassDivider from "@/src/features/layout/components/GlassDivider";
+import { Portfolio, Pricing, Contact } from "@/src/features/home/dynamic";
 
 export default function Home() {
   return (
@@ -15,11 +13,11 @@ export default function Home() {
       <GlassDivider />
       <Services />
       <GlassDivider />
-      <PortfolioLazy />
+      <Portfolio />
       <GlassDivider />
-      <PricingLazy />
+      <Pricing />
       <GlassDivider />
-      <ContactLazy />
+      <Contact />
       <Footer />
     </>
   );

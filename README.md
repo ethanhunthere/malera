@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Malera Studio
 
-## Getting Started
+> We just build good stuff.
 
-First, run the development server:
+**Malera Studio** is a creative digital studio based in Pristina, Kosovo. We build websites, apps, brands, and video — end-to-end digital solutions crafted with precision.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | [Next.js 16](https://nextjs.org) (App Router, Turbopack) |
+| UI | [React 19](https://react.dev), [Tailwind CSS v4](https://tailwindcss.com) |
+| 3D / VFX | [Three.js](https://threejs.org) via [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber) + [@react-three/drei](https://github.com/pmndrs/drei) |
+| Type Safety | [TypeScript 5](https://www.typescriptlang.org) |
+| Linting | [ESLint 9](https://eslint.org) + [`eslint-config-next`](https://nextjs.org/docs/app/api-reference/config/eslint) |
+| Hosting | Static Export → any CDN / Cloudflare Pages |
+
+---
+
+## 📁 Project Structure
+
+```
+malera/
+├── app/                          # Next.js App Router — routes & layouts
+│   ├── globals.css               # Global styles & Tailwind utilities
+│   ├── layout.tsx                # Root layout (fonts, providers, background)
+│   ├── page.tsx                  # Home page
+│   ├── privacy/page.tsx          # Privacy policy
+│   └── terms/page.tsx            # Terms of service
+│
+├── src/
+│   ├── features/                 # Feature modules (grouped by domain)
+│   │   ├── home/                 # Home page sections
+│   │   │   ├── components/       # Hero, Services, Portfolio, Pricing, Contact
+│   │   │   └── dynamic.tsx       # Client-side lazy-loading barrel
+│   │   ├── layout/               # Shared layout primitives
+│   │   │   └── components/       # Navbar, Footer, GlassDivider
+│   │   └── effects/              # 3D / visual effects
+│   │       ├── components/       # AnimatedBackground, ShatteringShards
+│   │       └── dynamic.tsx       # Client-side lazy-loading barrel
+│   └── shared/                   # Cross-cutting utilities
+│       ├── context/              # React context providers
+│       └── types/                # Shared TypeScript type definitions
+│
+├── public/                       # Static assets (images, fonts, headers)
+├── next.config.ts                # Next.js configuration (static export)
+├── tsconfig.json                 # TypeScript configuration
+├── eslint.config.mjs             # ESLint configuration
+├── postcss.config.mjs            # PostCSS / Tailwind configuration
+└── package.json                  # Dependencies & scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Feature Organization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Each feature module under `src/features/` encapsulates a distinct domain:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **`home`** — All page sections: Hero, Services, Portfolio, Pricing, Contact.
+- **`layout`** — Reusable shell components: Navbar, Footer, GlassDivider.
+- **`effects`** — Three.js powered visuals: animated background, shattering shards.
 
-## Learn More
+Client-only components are lazy-loaded via `dynamic.tsx` barrel files that act as `"use client"` boundaries.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+- Node.js ≥ 18
+- npm ≥ 9
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install
+```
+
+### Build (required for preview)
+
+This project uses `output: "export"` for static generation. `npm run dev` is **not supported** — build and serve locally instead:
+
+```bash
+npm run build
+cd out && python3 -m http.server 3000
+```
+
+Then open [http://localhost:3000](http://localhost:3000).
+
+### Lint
+
+```bash
+npm run lint
+```
+
+---
+
+## 🚢 Deployment
+
+The project outputs a fully static site to the `out/` directory. Deploy to any static host:
+
+- **Cloudflare Pages** — connect the GitHub repo, set build command to `npm run build` and output directory to `out`.
+- **Vercel** — auto-detects Next.js; add `output: "export"` override if needed.
+- **Any CDN** — point it at the `out/` directory.
+
+---
+
+## 📄 Legal
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)
+
+---
+
+## 📧 Contact
+
+**Malera Studio** — Pristina, Kosovo  
+[hello@malera.studio](mailto:hello@malera.studio)  
+[@malera.studio](https://instagram.com)

@@ -1,6 +1,6 @@
 const COMPANY_LINKS = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy/" },
+  { label: "Terms of Service", href: "/terms/" },
 ];
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
 
       {/* ── Footer content ── */}
       <div className="mx-auto max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] px-6 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-16 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-16 text-center justify-items-center">
           {/* ── About ── */}
           <div>
             <h4 className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
