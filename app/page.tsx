@@ -54,7 +54,7 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Malera Studio",
-    image: "https://malera.studio/og-image.png",
+    image: "https://malera.studio/malera-transparent.png",
     url: "https://malera.studio",
     telephone: "+383-44-000-000",
     email: "hello@malera.studio",

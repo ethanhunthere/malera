@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Malera Studio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/malera-transparent.png",
         width: 1200,
         height: 630,
         alt: "Malera Studio — We Just Build Good Stuff",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "Malera Studio — We Just Build Good Stuff",
     description:
       "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
-    images: ["/og-image.png"],
+    images: ["/malera-transparent.png"],
   },
   manifest: "/manifest.json",
   alternates: {
