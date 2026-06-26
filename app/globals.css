@@ -1264,29 +1264,127 @@ body::after {
 }
 
 /* ══════════════════════════════════════════════════════════
-   SERVICES PANEL EDGE FLOW ANIMATIONS
+   SERVICES PANEL → CARDS CONDUIT LINES
+   Two vertical gold threads that run from the panel top
+   down through all service cards, with flowing data packets
+   and a dissolving particle fade at the bottom.
    ══════════════════════════════════════════════════════════ */
-.edge-flow-left {
-  background: linear-gradient(to bottom,
-    rgba(201,168,76,0.18) 0%,
-    rgba(201,168,76,0.12) 30%,
-    rgba(201,168,76,0.04) 60%,
-    transparent 100%);
-  background-size: 100% 200%;
-  animation: edgeFlow 3s ease-in-out infinite alternate;
+
+/* ── Shared base for both conduits ── */
+.edge-conduit-left,
+.edge-conduit-right {
+  --conduit-glow: rgba(201,168,76,0.25);
+  --conduit-mid: rgba(201,168,76,0.08);
+  border-radius: 1px;
 }
 
-.edge-flow-right {
-  background: linear-gradient(to bottom,
-    rgba(201,168,76,0.22) 0%,
-    rgba(201,168,76,0.12) 30%,
-    rgba(201,168,76,0.04) 60%,
-    transparent 100%);
-  background-size: 100% 200%;
-  animation: edgeFlow 3.5s ease-in-out infinite alternate;
+/* ── Left conduit: base gradient + 2 data packets ── */
+.edge-conduit-left {
+  background:
+    /* packet 1 — fast, bright */
+    linear-gradient(to bottom,
+      transparent 0%, transparent 35%,
+      rgba(201,168,76,0.6) 38%, rgba(201,168,76,0.55) 42%,
+      rgba(201,168,76,0.15) 48%, transparent 52%,
+      transparent 100%) 0% 0% / 100% 300%,
+    /* packet 2 — slower, trailing */
+    linear-gradient(to bottom,
+      transparent 0%, transparent 55%,
+      rgba(201,168,76,0.35) 58%, rgba(201,168,76,0.3) 62%,
+      rgba(201,168,76,0.08) 67%, transparent 71%,
+      transparent 100%) 0% 20% / 100% 300%,
+    /* base gradient — gold fades to dissolve */
+    linear-gradient(to bottom,
+      rgba(201,168,76,0.22) 0%,
+      rgba(201,168,76,0.16) 15%,
+      rgba(201,168,76,0.10) 35%,
+      rgba(201,168,76,0.05) 55%,
+      rgba(201,168,76,0.02) 75%,
+      transparent 92%,
+      transparent 100%);
+  animation:
+    conduitPacket1 2.8s ease-in-out infinite,
+    conduitPacket2 4.2s ease-in-out 0.6s infinite;
+  box-shadow:
+    0 0 6px rgba(201,168,76,0.12),
+    0 0 18px rgba(201,168,76,0.04);
 }
 
-@keyframes edgeFlow {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 0% 100%; }
+/* ── Right conduit: slightly different timing for organic feel ── */
+.edge-conduit-right {
+  background:
+    /* packet 1 */
+    linear-gradient(to bottom,
+      transparent 0%, transparent 35%,
+      rgba(201,168,76,0.55) 38%, rgba(201,168,76,0.5) 42%,
+      rgba(201,168,76,0.12) 48%, transparent 52%,
+      transparent 100%) 0% 10% / 100% 300%,
+    /* packet 2 */
+    linear-gradient(to bottom,
+      transparent 0%, transparent 55%,
+      rgba(201,168,76,0.3) 58%, rgba(201,168,76,0.25) 62%,
+      rgba(201,168,76,0.06) 67%, transparent 71%,
+      transparent 100%) 0% 30% / 100% 300%,
+    /* base gradient */
+    linear-gradient(to bottom,
+      rgba(201,168,76,0.22) 0%,
+      rgba(201,168,76,0.16) 15%,
+      rgba(201,168,76,0.10) 35%,
+      rgba(201,168,76,0.05) 55%,
+      rgba(201,168,76,0.02) 75%,
+      transparent 92%,
+      transparent 100%);
+  animation:
+    conduitPacket1 3.2s ease-in-out 0.4s infinite,
+    conduitPacket2 4.8s ease-in-out 1.0s infinite;
+  box-shadow:
+    0 0 6px rgba(201,168,76,0.12),
+    0 0 18px rgba(201,168,76,0.04);
+}
+
+/* ── Dissolving particle spray at conduit bottom ── */
+.edge-conduit-left::after,
+.edge-conduit-right::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 20px;
+  height: 40px;
+  background:
+    radial-gradient(ellipse at 50% 0%,
+      rgba(201,168,76,0.10) 0%,
+      rgba(201,168,76,0.03) 30%,
+      transparent 70%);
+  animation: conduitDust 2.5s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Keyframes ── */
+@keyframes conduitPacket1 {
+  0%   { background-position: 0% 0%, 0% 20%, 0% 0%; }
+  100% { background-position: 0% 100%, 0% 20%, 0% 0%; }
+}
+
+@keyframes conduitPacket2 {
+  0%   { background-position: 0% 0%, 0% 30%, 0% 0%; }
+  100% { background-position: 0% 0%, 0% 130%, 0% 0%; }
+}
+
+@keyframes conduitDust {
+  0%   { opacity: 0.3; transform: translate(-50%, 50%) scaleY(0.6); }
+  100% { opacity: 0.9; transform: translate(-50%, 50%) scaleY(1.3); }
+}
+
+/* ── Card left-edge breathes in sync with conduit ── */
+.glass-card-gold::before {
+  animation: cardEdgeBreathe 4s ease-in-out infinite;
+}
+
+@keyframes cardEdgeBreathe {
+  0%, 100% { opacity: 0.85; }
+  40%      { opacity: 1; }
+  60%      { opacity: 0.7; }
 }

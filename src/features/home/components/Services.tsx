@@ -492,7 +492,20 @@ export default function Services() {
         <NeuralNetwork geo={geo} hoveredIdx={hoveredIdx} containerWidth={containerWidth} />
 
         {/* ── Parent showcase panel ── */}
-        <div className="mb-10 sm:mb-16 relative" ref={panelRef}>
+        <div className="relative"> {/* wrapper so edges span panel + cards */}
+          {/* ── Left gold conduit — runs the full height, connecting panel to all cards ── */}
+          <div
+            className="absolute left-0 w-[1.5px] pointer-events-none z-20 edge-conduit-left"
+            style={{ top: '12%', bottom: '-2%' }}
+          />
+
+          {/* ── Right gold conduit — mirrors left, frames the entire service stack ── */}
+          <div
+            className="absolute right-0 w-[1.5px] pointer-events-none z-20 edge-conduit-right"
+            style={{ top: '12%', bottom: '-2%' }}
+          />
+
+          <div className="mb-10 sm:mb-16" ref={panelRef}>
           <div className="relative z-10 rounded-3xl overflow-hidden mx-auto
             bg-transparent
             shadow-[0_0_0_1px_rgba(0,0,0,0.25),0_4px_20px_rgba(0,0,0,0.18),0_0_40px_rgba(201,168,76,0.03)]
@@ -526,18 +539,6 @@ export default function Services() {
               </p>
             </div>
           </div>
-
-          {/* ── Left gold edge — extends below panel, animated flowing gradient ── */}
-          <div
-            className="absolute left-0 w-[1.5px] pointer-events-none z-20 edge-flow-left"
-            style={{ top: '12%', bottom: '-20%' }}
-          />
-
-          {/* ── Right gold edge — extends below panel, animated flowing gradient ── */}
-          <div
-            className="absolute right-0 w-[1.5px] pointer-events-none z-20 edge-flow-right"
-            style={{ top: '12%', bottom: '-20%' }}
-          />
         </div>
 
         {/* ── Service cards ── */}
@@ -570,6 +571,7 @@ export default function Services() {
             );
           })}
         </div>
+        </div> {/* end edge-conduit wrapper */}
       </Container>
 
       {/* Sentinel  triggers hero shards to shatter near end of services */}
