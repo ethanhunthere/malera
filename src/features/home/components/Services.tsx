@@ -492,27 +492,20 @@ export default function Services() {
         <NeuralNetwork geo={geo} hoveredIdx={hoveredIdx} containerWidth={containerWidth} />
 
         {/* ── Parent showcase panel ── */}
-        <div className="mb-10 sm:mb-16" ref={panelRef}>
+        <div className="mb-10 sm:mb-16 relative" ref={panelRef}>
           <div className="relative z-10 rounded-3xl overflow-hidden mx-auto
             bg-transparent
             shadow-[0_0_0_1px_rgba(0,0,0,0.25),0_4px_20px_rgba(0,0,0,0.18),0_0_40px_rgba(201,168,76,0.03)]
             backdrop-blur-[4px]"
           >
-            {/* Premium gradient border */}
-            <div className="absolute inset-0 rounded-3xl pointer-events-none"
+            {/* Premium gradient border — top only, no bottom */}
+            <div className="absolute inset-x-0 top-0 h-px pointer-events-none"
               style={{
-                padding: '1px',
-                background: 'linear-gradient(135deg, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.06) 20%, rgba(201,168,76,0.01) 45%, rgba(201,168,76,0.01) 55%, rgba(201,168,76,0.05) 80%, rgba(201,168,76,0.22) 100%)',
-                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                WebkitMaskComposite: 'xor',
-                maskComposite: 'exclude',
+                background: 'linear-gradient(90deg, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.08) 50%, rgba(201,168,76,0.22) 100%)',
               }}
             />
             {/* Parent-only top sheen */}
             <div className="absolute inset-x-[15%] top-0 h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent pointer-events-none" />
-
-            {/* Left gold edge (same family as children, but taller) */}
-            <div className="absolute top-[12%] bottom-[12%] left-0 w-[1.5px] bg-gradient-to-b from-[#C9A84C]/18 to-transparent pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-10 p-5 sm:p-7 md:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-8">
@@ -533,6 +526,18 @@ export default function Services() {
               </p>
             </div>
           </div>
+
+          {/* ── Left gold edge — extends below panel, animated flowing gradient ── */}
+          <div
+            className="absolute left-0 w-[1.5px] pointer-events-none z-20 edge-flow-left"
+            style={{ top: '12%', bottom: '-20%' }}
+          />
+
+          {/* ── Right gold edge — extends below panel, animated flowing gradient ── */}
+          <div
+            className="absolute right-0 w-[1.5px] pointer-events-none z-20 edge-flow-right"
+            style={{ top: '12%', bottom: '-20%' }}
+          />
         </div>
 
         {/* ── Service cards ── */}

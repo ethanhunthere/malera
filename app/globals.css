@@ -1262,3 +1262,31 @@ body::after {
     font-size: 0.9375rem;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   SERVICES PANEL EDGE FLOW ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
+.edge-flow-left {
+  background: linear-gradient(to bottom,
+    rgba(201,168,76,0.18) 0%,
+    rgba(201,168,76,0.12) 30%,
+    rgba(201,168,76,0.04) 60%,
+    transparent 100%);
+  background-size: 100% 200%;
+  animation: edgeFlow 3s ease-in-out infinite alternate;
+}
+
+.edge-flow-right {
+  background: linear-gradient(to bottom,
+    rgba(201,168,76,0.22) 0%,
+    rgba(201,168,76,0.12) 30%,
+    rgba(201,168,76,0.04) 60%,
+    transparent 100%);
+  background-size: 100% 200%;
+  animation: edgeFlow 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes edgeFlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
