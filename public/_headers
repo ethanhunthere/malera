@@ -1,3 +1,7 @@
+# Override Cloudflare's default Permissions-Policy (removes interest-cohort warning)
+/*
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
 # Cache static assets for 1 year (fingerprinted URLs)
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable

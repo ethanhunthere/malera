@@ -136,7 +136,6 @@ export default function Navbar() {
             width={120}
             height={28}
             className="h-4 sm:h-5 2xl:h-6 min-[3000px]:h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
-            priority
           />
         </a>
       </div>
