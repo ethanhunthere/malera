@@ -481,7 +481,7 @@ export default function Services() {
   }, [measure]);
 
   return (
-    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-16 lg:py-20 2xl:py-24">
+    <section className="relative overflow-x-clip py-10 sm:py-12 md:py-16 lg:py-20 2xl:py-24">
       {/* ── Ambient orbs  responsive, contained ── */}
       <div className="absolute top-1/4 left-0 w-[min(700px,80vw)] h-[min(700px,80vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
