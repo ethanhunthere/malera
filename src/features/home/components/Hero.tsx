@@ -213,7 +213,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-x-clip bg-dot-grid pt-6 sm:pt-7 md:pt-8 lg:pt-8 2xl:pt-10 pb-12 sm:pb-16 md:pb-24 lg:pb-32 2xl:pb-40"
+      className="relative overflow-x-clip bg-dot-grid pt-6 sm:pt-7 md:pt-8 lg:pt-10 2xl:pt-12 pb-12 sm:pb-16 md:pb-24 lg:pb-32 2xl:pb-40"
     >
       {/* ── Cinema-grade ambient light ── */}
       {/* Key light  large soft white from below center */}
