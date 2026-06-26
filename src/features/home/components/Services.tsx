@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+import Container from "@/src/features/layout/components/Container";
 
 const SERVICES = [
   {
@@ -484,42 +485,57 @@ export default function Services() {
   }, [measure]);
 
   return (
-    <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
+    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44">
       {/* ── Ambient orbs  responsive, contained ── */}
       <div className="absolute top-1/4 left-0 w-[min(700px,80vw)] h-[min(700px,80vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute top-2/3 left-1/3 w-[min(350px,50vw)] h-[min(350px,50vw)] ambient-orb ambient-orb-warm" />
 
-      <div id="services" className="w-full max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10"
-        ref={containerRef}
-      >
+      <Container id="services" className="relative z-10 scroll-mt-2 sm:scroll-mt-10" ref={containerRef}>
         {/* ── Neural network SVG (behind cards, above orbs) ── */}
         <NeuralNetwork geo={geo} hoveredIdx={hoveredIdx} containerWidth={containerWidth} />
 
-        {/* ── Showcase panel ── */}
+        {/* ── Parent showcase panel ── */}
         <div className="mb-10 sm:mb-16" ref={panelRef}>
-          <div className="relative glass-frosted-gold rounded-3xl p-5 sm:p-8 md:p-12 overflow-hidden mx-auto max-w-[600px] 2xl:max-w-[750px] min-[3000px]:max-w-[1000px]">
-
-
-            {/* Label */}
-            <p className="relative z-20 font-mono text-[10px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[#C9A84C]/35 mb-6 sm:mb-8">
-              Capabilities
-            </p>
-
-            {/* Headline */}
-            <h2 className="relative z-20 font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white/65 mb-5 sm:mb-7 leading-[0.88]"
+          <div className="relative z-10 rounded-3xl overflow-hidden mx-auto
+            bg-transparent
+            shadow-[0_0_0_1px_rgba(0,0,0,0.25),0_4px_20px_rgba(0,0,0,0.18),0_0_40px_rgba(201,168,76,0.03)]
+            backdrop-blur-[4px]"
+          >
+            {/* Premium gradient border */}
+            <div className="absolute inset-0 rounded-3xl pointer-events-none"
               style={{
-                fontSize: 'clamp(1.8rem, 6vw, 8rem)',
-                textShadow: '0 0 1px rgba(201,168,76,0.10), 0 0 8px rgba(201,168,76,0.04)',
+                padding: '1px',
+                background: 'linear-gradient(135deg, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.06) 20%, rgba(201,168,76,0.01) 45%, rgba(201,168,76,0.01) 55%, rgba(201,168,76,0.05) 80%, rgba(201,168,76,0.22) 100%)',
+                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                WebkitMaskComposite: 'xor',
+                maskComposite: 'exclude',
               }}
-            >
-              Our<br />services
-            </h2>
+            />
+            {/* Parent-only top sheen */}
+            <div className="absolute inset-x-[15%] top-0 h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent pointer-events-none" />
 
-            {/* Description */}
-            <p className="relative z-20 text-white/28 text-sm sm:text-base 2xl:text-lg leading-relaxed max-w-full sm:max-w-[300px] 2xl:max-w-[400px]">
-              End-to-end digital solutions from a team that cares about craft.
-            </p>
+            {/* Left gold edge (same family as children, but taller) */}
+            <div className="absolute top-[12%] bottom-[12%] left-0 w-[1.5px] bg-gradient-to-b from-[#C9A84C]/18 to-transparent pointer-events-none" />
+
+            {/* Content */}
+            <div className="relative z-10 p-5 sm:p-7 md:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-8">
+              <div className="flex-1 min-w-0">
+                {/* Headline */}
+                <h2 className="font-[family-name:var(--font-display)] font-bold uppercase tracking-[0.02em] text-white/90 leading-[0.95]"
+                  style={{
+                    fontSize: 'clamp(1.6rem, 5vw, 6rem)',
+                  }}
+                >
+                  Our Core Services
+                </h2>
+              </div>
+
+              {/* Description */}
+              <p className="lg:max-w-[320px] 2xl:max-w-[400px] text-white/40 text-sm sm:text-base 2xl:text-lg leading-relaxed lg:text-right">
+                End-to-end digital solutions from a team that cares about craft.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -533,14 +549,14 @@ export default function Services() {
               ref={(el) => { cardRefs.current[idx] = el; }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="w-full max-w-[600px] 2xl:max-w-[750px] min-[3000px]:max-w-[1000px] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover"
+              className="w-full max-w-full sm:max-w-[90%] lg:max-w-[85%] 2xl:max-w-[80%] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover"
             >
               {/* Content */}
               <div className="relative z-10 flex-1 min-w-0">
-                <h3 className="text-[13px] sm:text-base 2xl:text-lg font-semibold text-white group-hover:text-white transition-colors duration-[600ms] mb-0.5 sm:mb-1 tracking-[-0.01em]">
+                <h3 className="text-[12px] sm:text-[15px] 2xl:text-lg font-medium text-white/90 group-hover:text-white uppercase tracking-[0.04em] transition-colors duration-[600ms] mb-1 sm:mb-1.5">
                   {svc.title}
                 </h3>
-                <p className="text-[11px] sm:text-sm 2xl:text-base text-white group-hover:text-white leading-relaxed transition-colors duration-[600ms]">
+                <p className="text-[11px] sm:text-[13px] 2xl:text-base text-white/50 group-hover:text-white/70 leading-relaxed transition-colors duration-[600ms]">
                   {svc.desc}
                 </p>
               </div>
@@ -553,7 +569,7 @@ export default function Services() {
             );
           })}
         </div>
-      </div>
+      </Container>
 
       {/* Sentinel  triggers hero shards to shatter near end of services */}
       <div data-shard-sentinel="hero" className="w-full h-px pointer-events-none" />

@@ -1119,6 +1119,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scroll at the root */
+  overflow-x: hidden;
   /* Ultra-wide: scale base font size up so rem-based elements grow */
   font-size: 16px;
 }
@@ -1198,5 +1200,65 @@ body::after {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   LEGAL PAGES
+   ══════════════════════════════════════════════════════════ */
+
+.legal-content p {
+  color: rgb(255 255 255 / 0.55);
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.legal-content p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 1rem 0;
+}
+
+.legal-content ul:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content li {
+  color: rgb(255 255 255 / 0.5);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  padding: 0.35em 0 0.35em 1.4em;
+  position: relative;
+}
+
+.legal-content li::before {
+  content: "";
+  position: absolute;
+  left: 0.15em;
+  top: 0.85em;
+  width: 0.35em;
+  height: 1px;
+  background: rgb(255 255 255 / 0.12);
+}
+
+.legal-content a {
+  color: #C9A84C;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.legal-content a:hover {
+  color: #D4B35A;
+}
+
+@media (min-width: 640px) {
+  .legal-content p,
+  .legal-content li {
+    font-size: 0.9375rem;
   }
 }

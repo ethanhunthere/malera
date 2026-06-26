@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Container from "@/src/features/layout/components/Container";
 
 const NAV_LINKS = ["Services", "Pricing", "Contact"];
 
@@ -27,7 +28,8 @@ export default function Navbar() {
   return (
     <>
       <header className="relative z-30">
-          <nav className="relative z-10 max-w-[1200px] mx-auto flex items-center h-12 sm:h-16 px-3 sm:px-6">
+        <Container>
+          <nav className="relative z-10 flex items-center h-12 sm:h-16">
             {/* Logo  left */}
             <a href="/" className="flex-shrink-0">
               <Image
@@ -84,6 +86,7 @@ export default function Navbar() {
               </button>
             </div>
           </nav>
+        </Container>
       </header>
 
       {/* Mobile fullscreen overlay */}

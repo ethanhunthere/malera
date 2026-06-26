@@ -1,3 +1,5 @@
+import Container from "@/src/features/layout/components/Container";
+
 const COMPANY_LINKS = [
   { label: "Privacy Policy", href: "/privacy/" },
   { label: "Terms of Service", href: "/terms/" },
@@ -12,13 +14,13 @@ export default function Footer() {
       <div data-shard-sentinel="services" className="w-full h-px pointer-events-none" />
 
       {/* ── Glass separator line ── */}
-      <div className="mx-auto max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] px-6">
+      <Container>
         <div className="glass-divider" />
-      </div>
+      </Container>
 
       {/* ── Footer content ── */}
-      <div className="mx-auto max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] px-6 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-16 text-center justify-items-center">
+      <Container className="py-10 sm:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 text-center justify-items-center">
           {/* ── About ── */}
           <div>
             <h4 className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
@@ -80,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="mt-14 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="mt-10 sm:mt-14 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-center gap-6">
           <p className="text-white/18 text-xs font-mono">
             ©&nbsp;{year}&nbsp;Malera Studio. All rights reserved.
           </p>
@@ -88,7 +90,7 @@ export default function Footer() {
             Pristina, Kosovo
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

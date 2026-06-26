@@ -1,3 +1,5 @@
+import Container from "@/src/features/layout/components/Container";
+
 const PLANS = [
   {
     name: "Essential",
@@ -47,12 +49,12 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
+    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44">
       {/* ── Ambient orbs  cool, minimal white only ── */}
       <div className="absolute top-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] 2xl:w-[min(800px,60vw)] 2xl:h-[min(800px,60vw)] ambient-orb ambient-orb-white" />
       <div className="absolute bottom-0 left-0 w-[min(350px,40vw)] h-[min(350px,40vw)] 2xl:w-[min(600px,40vw)] 2xl:h-[min(600px,40vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.5 }} />
 
-      <div id="pricing" className="w-full max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
+      <Container id="pricing" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header  minimal, no glass, no gold ── */}
         <div className="mb-8 sm:mb-14">
           <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-white/30 mb-4">
@@ -67,7 +69,7 @@ export default function Pricing() {
             A PRICE THAT MAKES SENSE
           </h2>
 
-          <p className="text-white/35 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[420px] 2xl:max-w-[550px]">
+          <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[420px] 2xl:max-w-[550px]">
             Fixed-price engagements with detailed scope documents upfront. Any changes beyond original scope are discussed and quoted separately before work continues.
           </p>
         </div>
@@ -210,7 +212,7 @@ export default function Pricing() {
             </div>
           )})}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

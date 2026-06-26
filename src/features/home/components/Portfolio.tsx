@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import GlassDivider from "@/src/features/layout/components/GlassDivider";
+import Container from "@/src/features/layout/components/Container";
 
 /* Inline icons to avoid lucide-react dep */
 const AlertIcon = () => (
@@ -60,12 +61,12 @@ const PROJECTS = [
 
 export default function Portfolio() {
   return (
-    <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
+    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44">
       {/* ── Ambient orbs ── */}
       <div className="absolute top-1/3 left-0 w-[min(400px,50vw)] h-[min(400px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.4 }} />
       <div className="absolute bottom-1/4 right-0 w-[min(300px,40vw)] h-[min(300px,40vw)] ambient-orb" style={{ opacity: 0.25 }} />
 
-      <div id="portfolio" className="w-full max-w-[min(92vw,600px)] sm:max-w-[min(93vw,1100px)] lg:max-w-[min(93vw,1600px)] 2xl:max-w-[min(95vw,2200px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
+      <Container id="portfolio" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header ── */}
         <div className="mb-8 sm:mb-14">
           <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C]/35 mb-4">
@@ -81,7 +82,7 @@ export default function Portfolio() {
             WHAT WE&apos;VE BUILT
           </h2>
 
-          <p className="text-white/28 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[550px] 2xl:max-w-[700px]">
+          <p className="text-white/28 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[550px] 2xl:max-w-[700px]">
             Live previews of our latest work. Click a card to visit the full site.
           </p>
         </div>
@@ -95,7 +96,7 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
@@ -153,7 +154,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       {/* ── Preview window ── */}
-      <div className="relative w-full aspect-[5/6] sm:aspect-[2/1] lg:aspect-[3/1] 2xl:aspect-[4/1] overflow-hidden bg-black/60">
+      <div className="relative w-full aspect-[5/6] sm:aspect-[2/1] lg:aspect-[2/1] 2xl:aspect-[2.5/1] min-[3000px]:aspect-[2/1] overflow-hidden bg-black/60">
         {/* ── Gold spinning indicator ── */}
         <div className={`absolute inset-0 z-[4] flex flex-col items-center justify-center gap-3 transition-opacity duration-700 ${reveal ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <svg className="animate-spin h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 32 32" fill="none">

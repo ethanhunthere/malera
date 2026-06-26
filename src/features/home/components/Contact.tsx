@@ -1,11 +1,13 @@
+import Container from "@/src/features/layout/components/Container";
+
 export default function Contact() {
   return (
-    <section className="pt-8 sm:pt-28 md:pt-36 pb-10 sm:pb-24 md:pb-32 px-2 sm:px-6 relative overflow-x-clip">
+    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44">
       {/* ── Ambient orbs ── */}
       <div className="absolute top-1/4 left-0 w-[min(500px,60vw)] h-[min(500px,60vw)] 2xl:w-[min(800px,60vw)] 2xl:h-[min(800px,60vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-0 right-0 w-[min(400px,50vw)] h-[min(400px,50vw)] 2xl:w-[min(650px,50vw)] 2xl:h-[min(650px,50vw)] ambient-orb ambient-orb-white" />
 
-      <div id="contact" className="w-full max-w-[min(92vw,850px)] 2xl:max-w-[min(80vw,1300px)] min-[3000px]:max-w-[min(75vw,1800px)] mx-auto relative z-10 scroll-mt-2 sm:scroll-mt-10">
+      <Container id="contact" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header ── */}
         <div className="mb-8 sm:mb-14 text-center">
           <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
@@ -20,7 +22,7 @@ export default function Contact() {
             Ready to build<br />something great?
           </h2>
 
-          <p className="text-white/40 text-xs sm:text-base 2xl:text-lg leading-relaxed max-w-[360px] 2xl:max-w-[480px] mx-auto">
+          <p className="text-white/40 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[360px] 2xl:max-w-[480px] mx-auto">
             Tell us about your project. No strings attached, just a conversation to see if we&apos;re the right fit.
           </p>
         </div>
@@ -28,7 +30,7 @@ export default function Contact() {
         {/* ── Hero CTA: dominant email card ── */}
         <a
           href="mailto:hello@malera.studio"
-          className="group block relative mb-4 sm:mb-6 rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.01]"
+          className="group block relative mb-4 sm:mb-6 rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.01] max-w-[850px] 2xl:max-w-[1000px] mx-auto"
         >
           {/* Dark glass container */}
           <div className="relative glass-deep rounded-2xl p-4 sm:p-10 md:p-12 text-center overflow-hidden transition-all duration-700 group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_20px_80px_rgba(0,0,0,0.5),0_0_120px_rgba(201,168,76,0.08)]">
@@ -43,7 +45,7 @@ export default function Contact() {
               </svg>
             </div>
 
-            <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-lg sm:text-2xl md:text-3xl 2xl:text-4xl mb-3 group-hover:tracking-wide transition-all duration-500">
+            <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-base sm:text-2xl md:text-3xl 2xl:text-4xl mb-3 group-hover:tracking-wide transition-all duration-500 break-words">
               hello@malera.studio
             </h3>
 
@@ -90,7 +92,7 @@ export default function Contact() {
             </span>
           </a>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

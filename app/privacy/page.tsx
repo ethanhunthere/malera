@@ -5,7 +5,7 @@ import Footer from "@/src/features/layout/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy | Malera Studio",
   description:
-    "Privacy Policy for Malera Studio. Learn how we collect, use, and protect your information.",
+    "How Malera Studio collects, uses, and protects your information.",
   robots: {
     index: false,
     follow: true,
@@ -16,79 +16,216 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy | Malera Studio",
     description:
-      "Privacy Policy for Malera Studio. Learn how we collect, use, and protect your information.",
+      "How Malera Studio collects, uses, and protects your information.",
     url: "https://www.malera.studio/privacy",
   },
 };
+
+const sections = [
+  {
+    id: "overview",
+    label: "Overview",
+    body: (
+      <>
+        <p>
+          Malera Studio respects your privacy. This policy explains what
+          information we collect, how we use it, and the choices available to
+          you. It applies to all interactions with our website, services, and
+          team.
+        </p>
+        <p>
+          By using our website or engaging our services, you acknowledge the
+          practices described here.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "collection",
+    label: "Information We Collect",
+    body: (
+      <>
+        <p>
+          Malera Studio collects only information you voluntarily provide
+          through forms, email, calls, meetings, project briefs, or direct
+          communication. This may include:
+        </p>
+        <ul>
+          <li>Name and email address</li>
+          <li>Company name and role</li>
+          <li>Project details, goals, and requirements</li>
+          <li>Budget range and timeline</li>
+          <li>Files, messages, assets, and business information you share</li>
+        </ul>
+        <p>
+          We do not use tracking cookies, analytics scripts, or automated data
+          collection on this website.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "usage",
+    label: "How We Use Information",
+    body: (
+      <p>
+        Information is used to respond to inquiries, qualify projects, prepare
+        proposals, manage work, deliver services, provide support, and maintain
+        professional communication. We do not sell personal information. We do
+        not share private client information except when necessary to operate
+        the website, deliver services, use approved service providers, comply
+        with legal requirements, or with your permission.
+      </p>
+    ),
+  },
+  {
+    id: "client-data",
+    label: "Client & Project Data",
+    body: (
+      <p>
+        Project details, business information, strategy, files, credentials,
+        assets, and internal materials are treated with confidentiality. Access
+        is limited to team members directly involved in your project. We do not
+        maintain a separate customer database or CRM beyond what is necessary
+        for ongoing work.
+      </p>
+    ),
+  },
+  {
+    id: "communication",
+    label: "Communication",
+    body: (
+      <p>
+        Email correspondence is stored on our email provider&rsquo;s servers
+        (Google Workspace). We retain communications for the duration of the
+        professional relationship and a reasonable period afterward. You may
+        request deletion of your correspondence at any time.
+      </p>
+    ),
+  },
+  {
+    id: "third-party",
+    label: "Third-Party Services",
+    body: (
+      <p>
+        This website is hosted on Cloudflare Pages. Cloudflare may collect
+        technical logs (IP addresses, request data) as part of its
+        infrastructure operations. These logs are not accessible to us and are
+        governed by Cloudflare&rsquo;s privacy policy. Additional service
+        providers (hosting, email, payment processing) may be used during
+        project delivery. We select providers with strong privacy practices and
+        limit data shared to what is operationally necessary.
+      </p>
+    ),
+  },
+  {
+    id: "security",
+    label: "Data Security",
+    body: (
+      <p>
+        We apply reasonable technical and organizational measures to protect
+        your information against unauthorized access, loss, or misuse. No method
+        of electronic storage or transmission is completely secure, and we
+        cannot guarantee absolute security.
+      </p>
+    ),
+  },
+  {
+    id: "retention",
+    label: "Data Retention",
+    body: (
+      <p>
+        We retain personal information only as long as necessary to fulfill the
+        purposes described in this policy, or as required by applicable law.
+        When information is no longer needed, we delete or anonymize it.
+      </p>
+    ),
+  },
+  {
+    id: "rights",
+    label: "Your Rights",
+    body: (
+      <>
+        <p>You may request, at any time:</p>
+        <ul>
+          <li>Access to the personal information we hold about you</li>
+          <li>Correction of inaccurate or incomplete data</li>
+          <li>Deletion of your personal information</li>
+          <li>Withdrawal of consent for us to contact you</li>
+        </ul>
+        <p>
+          To exercise any of these rights, email{" "}
+          <a href="mailto:hello@malera.studio">hello@malera.studio</a>.
+          We will respond within 30 days.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "updates",
+    label: "Policy Updates",
+    body: (
+      <p>
+        This policy may be updated periodically. Changes are posted here with an
+        updated date. Material changes will be noted clearly. Continued use of
+        our website or services after an update constitutes acceptance of the
+        revised policy.
+      </p>
+    ),
+  },
+  {
+    id: "contact",
+    label: "Contact",
+    body: (
+      <p>
+        Questions about this policy or your data? Contact us at{" "}
+        <a href="mailto:hello@malera.studio">hello@malera.studio</a>.
+      </p>
+    ),
+  },
+];
 
 export default function PrivacyPage() {
   return (
     <>
       <Navbar />
-      <main className="relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6">
+      <main className="relative z-10 pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6">
         <div className="max-w-[680px] mx-auto">
-          <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#C9A84C] mb-4">
-            LEGAL
+          {/* Header */}
+          <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#C9A84C] mb-5">
+            Legal
           </p>
-          <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] leading-[0.95] mb-6">
+          <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.04em] leading-[1] mb-5">
             Privacy Policy
           </h1>
-          <p className="text-white/35 text-sm mb-10">
-            Last updated: June 2026
+          <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-[560px] mb-3">
+            How we collect, use, and protect your information. Clear, concise,
+            and written for people who value transparency.
+          </p>
+          <p className="text-white/25 text-xs sm:text-sm mb-16">
+            Last updated &mdash; June 2026
           </p>
 
-          <div className="prose prose-invert prose-sm sm:prose-base max-w-none
-            prose-headings:font-[family-name:var(--font-display)] prose-headings:font-bold prose-headings:text-white prose-headings:tracking-[-0.02em]
-            prose-h2:text-xl sm:prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-            prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-white/55 prose-p:leading-relaxed
-            prose-strong:text-white/75
-            prose-ul:text-white/50 prose-li:marker:text-white/20
-            prose-a:text-[#C9A84C] prose-a:no-underline hover:prose-a:underline"
-          >
-            <h2>1. What We Collect</h2>
-            <p>
-              Malera Studio collects only the information you voluntarily provide when you contact us: your name, email address, and any details you choose to share about your project. We do not use tracking cookies, analytics scripts, or any form of automated data collection on this website.
-            </p>
+          {/* Sections */}
+          <div className="space-y-14 sm:space-y-16">
+            {sections.map((section, i) => (
+              <section key={section.id}>
+                <div className="flex items-baseline gap-3 mb-4">
+                  <span className="font-mono text-[11px] sm:text-xs text-white/15 tabular-nums shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h2 className="font-[family-name:var(--font-display)] font-bold text-white text-lg sm:text-xl tracking-[-0.02em] leading-tight">
+                    {section.label}
+                  </h2>
+                </div>
+                <div className="legal-content">{section.body}</div>
+              </section>
+            ))}
+          </div>
 
-            <h2>2. How We Use Your Information</h2>
-            <p>
-              Your information is used solely to respond to your inquiry and, if we agree to work together, to manage our professional relationship. We do not sell, rent, or share your personal data with third parties for marketing purposes. Ever.
-            </p>
-
-            <h2>3. Data Storage</h2>
-            <p>
-              Email correspondence is stored on our email provider&apos;s servers (Google Workspace). We do not maintain a separate customer database or CRM. If you&apos;d like us to delete your correspondence, just ask, we&apos;ll remove it promptly.
-            </p>
-
-            <h2>4. Third-Party Services</h2>
-            <p>
-              This website is hosted on Cloudflare Pages. Cloudflare may collect basic technical logs (IP addresses, request data) as part of its infrastructure. These are not accessible to us and are governed by Cloudflare&apos;s own privacy policy.
-            </p>
-
-            <h2>5. Your Rights</h2>
-            <p>
-              You have the right to:
-            </p>
-            <ul>
-              <li>Request a copy of any personal data we hold about you</li>
-              <li>Ask us to correct or delete your data</li>
-              <li>Withdraw consent for us to contact you at any time</li>
-            </ul>
-            <p>
-              To exercise any of these rights, email us at <strong>hello@malera.studio</strong>.
-            </p>
-
-            <h2>6. Changes to This Policy</h2>
-            <p>
-              We may update this policy occasionally. Any changes will be posted here with an updated date. If we make material changes, we&apos;ll note them clearly.
-            </p>
-
-            <h2>7. Contact</h2>
-            <p>
-              Questions about this policy? Reach us at{" "}
-              <a href="mailto:hello@malera.studio">hello@malera.studio</a>.
-            </p>
+          {/* Bottom divider */}
+          <div className="mt-20 pt-0">
+            <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
           </div>
         </div>
       </main>

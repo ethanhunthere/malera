@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback } from "react";
+import Container from "@/src/features/layout/components/Container";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -212,7 +213,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center justify-start pt-12 sm:pt-20 pb-4 sm:pb-12 px-2 sm:px-6 relative overflow-x-clip bg-dot-grid"
+      className="relative overflow-x-clip bg-dot-grid py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44"
     >
       {/* ── Cinema-grade ambient light ── */}
       {/* Key light  large soft white from below center */}
@@ -222,7 +223,7 @@ export default function Hero() {
       {/* Rim light  subtle warm accent from top left */}
       <div className="absolute top-1/4 -left-20 sm:-left-40 w-[min(450px,50vw)] h-[min(450px,50vw)] 2xl:w-[min(700px,50vw)] 2xl:h-[min(700px,50vw)] ambient-orb ambient-orb-rim" />
 
-      <div className="w-full max-w-[min(92vw,900px)] 2xl:max-w-[min(85vw,1400px)] min-[3000px]:max-w-[min(80vw,2000px)] mx-auto relative z-10 flex flex-col items-center overflow-visible">
+      <Container className="relative z-10 flex flex-col items-center overflow-visible">
         {/* ── Studio name (flies in from navbar logo) ── */}
         <p
           ref={studioRef}
@@ -241,11 +242,11 @@ export default function Hero() {
         </p>
 
         {/* ── Headline ── */}
-        <div className="mb-5 sm:mb-10 w-full flex flex-col items-center gap-[0.02em]">
+        <div className="mb-5 sm:mb-10 w-full flex flex-col items-center gap-[0.02em] overflow-hidden">
           <h1
-            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase"
+            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase max-w-full"
             style={{
-              fontSize: 'clamp(1.5rem, 8vw, 10rem)',
+              fontSize: 'clamp(1.25rem, 8vw, 10rem)',
               textShadow: '0 0 1px rgba(255,255,255,0.25), 0 0 6px rgba(255,255,255,0.06), 0 -1px 2px rgba(255,255,255,0.04)',
             } as React.CSSProperties}
           >
@@ -253,9 +254,9 @@ export default function Hero() {
           </h1>
 
           <h1
-            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase"
+            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase max-w-full"
             style={{
-              fontSize: 'clamp(1.5rem, 8vw, 10rem)',
+              fontSize: 'clamp(1.25rem, 8vw, 10rem)',
               textShadow: '0 0 2px rgba(255,255,255,0.30), 0 0 12px rgba(255,255,255,0.08), 0 0 40px rgba(255,255,255,0.03), 0 -1px 2px rgba(255,255,255,0.06)',
             } as React.CSSProperties}
           >
@@ -269,7 +270,7 @@ export default function Hero() {
         </div>
 
         {/* ── Subtext + buttons ── */}
-        <div className="flex flex-col items-center gap-3 sm:gap-8 mb-5 sm:mb-16 w-full max-w-[320px] sm:max-w-[500px] 2xl:max-w-[650px]">
+        <div className="flex flex-col items-center gap-3 sm:gap-8 mb-5 sm:mb-16 w-full max-w-[min(100%,320px)] sm:max-w-[500px] 2xl:max-w-[650px]">
           <p className="text-[11px] sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl text-white/35 font-light leading-relaxed text-center tracking-wide">
             Websites, apps &amp; video.<br />Built from Kosovo.
           </p>
@@ -300,7 +301,7 @@ export default function Hero() {
         <p className="font-mono text-[8px] sm:text-[11px] 2xl:text-xs min-[3000px]:text-sm uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white/10 text-center mt-0">
           Pristina&nbsp;&nbsp;·&nbsp;&nbsp;Est&nbsp;2026
         </p>
-      </div>
+      </Container>
     </section>
   );
 }
