@@ -7,12 +7,15 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["700", "800"],
+  display: "swap",
   variable: "--font-display",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
   variable: "--font-body",
 });
 
@@ -20,7 +23,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#080808",
+  themeColor: "#030303",
   colorScheme: "dark",
 };
 
@@ -97,6 +100,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             (function() {
