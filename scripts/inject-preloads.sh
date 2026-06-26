@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# Postbuild: inject preload links for ALL JS chunks into every HTML file.
-# Static exports don't emit dynamic-import preloads, so the browser
-# waits for JS execution before downloading chunks  causing 2-3s black screen.
-# This forces immediate download of everything.
+# Postbuild: inject preload links for JS chunks into every HTML file.
+# Only preloads chunks that appear as <script> tags on that page PLUS the
+# Three.js chunk (largest dynamic import, needed above-fold for background).
+# Static exports don't emit dynamic-import preloads, so this forces early
+# download of critical chunks while avoiding "preload not used" warnings.
 set -euo pipefail
 
 OUT_DIR="${1:-out}"
@@ -19,23 +20,35 @@ if [ ! -d "$CHUNKS_DIR" ]; then
   exit 1
 fi
 
-# Build preload tags
-PRELOADS=""
-for chunk in "$CHUNKS_DIR"/*.js; do
-  filename=$(basename "$chunk")
-  PRELOADS+="<link rel=\"preload\" as=\"script\" href=\"/_next/static/chunks/$filename\"/>
-"
-done
+# Find the Three.js chunk (largest file, ~872KB, always needed for background)
+THREE_CHUNK=$(ls -S "$CHUNKS_DIR"/*.js 2>/dev/null | head -1 | xargs basename)
 
-CHUNK_COUNT=$(ls "$CHUNKS_DIR"/*.js 2>/dev/null | wc -l)
 HTML_COUNT=0
+TOTAL_PRELOADS=0
 
-# Inject before </head> in every HTML file
+# Process each HTML file
 while IFS= read -r -d '' html; do
-  # Insert preloads before </head>
+  # Extract chunk filenames that appear in <script src="..."> tags on this page
+  SCRIPT_CHUNKS=$(grep -oP 'src="/_next/static/chunks/\K[a-z0-9_-]+\.js' "$html" | sort -u)
+
+  PRELOADS=""
+  for chunk in $SCRIPT_CHUNKS; do
+    PRELOADS+="<link rel=\"preload\" as=\"script\" href=\"/_next/static/chunks/$chunk\"/>
+"
+  done
+
+  # Always preload the Three.js chunk (dynamic import, but needed above-fold)
+  if [ -n "$THREE_CHUNK" ] && ! echo "$SCRIPT_CHUNKS" | grep -qF "$THREE_CHUNK"; then
+    PRELOADS+="<link rel=\"preload\" as=\"script\" href=\"/_next/static/chunks/$THREE_CHUNK\"/>
+"
+  fi
+
+  COUNT=$(echo "$PRELOADS" | grep -c "preload" || true)
+  TOTAL_PRELOADS=$((TOTAL_PRELOADS + COUNT))
+
   awk -v preloads="$PRELOADS" '{gsub(/<\/head>/, preloads "</head>"); print}' "$html" > "$html.tmp"
   mv "$html.tmp" "$html"
   HTML_COUNT=$((HTML_COUNT + 1))
 done < <(find "$OUT_DIR" -name "*.html" -print0)
 
-echo "✅ Injected $CHUNK_COUNT chunk preloads into $HTML_COUNT HTML files"
+echo "✅ Injected ~$((TOTAL_PRELOADS / HTML_COUNT)) preloads/page into $HTML_COUNT HTML files ($THREE_CHUNK)"
