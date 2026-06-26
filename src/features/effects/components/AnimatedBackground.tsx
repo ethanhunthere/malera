@@ -4,6 +4,17 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
+// Suppress THREE.Clock deprecation — @react-three/fiber uses it internally.
+// Remove when fiber migrates to THREE.Timer.
+if (typeof window !== "undefined") {
+  const _warn = console.warn;
+  console.warn = (...args: unknown[]) => {
+    const msg = String(args[0] ?? "");
+    if (msg.includes("THREE.Clock") && msg.includes("deprecated")) return;
+    _warn.apply(console, args);
+  };
+}
+
 /*
 ╔══════════════════════════════════════════════════════════════╗
 ║   MALERA STUDIO · ANIMATED BACKGROUND                       ║
