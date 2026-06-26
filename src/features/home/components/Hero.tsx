@@ -270,7 +270,7 @@ export default function Hero() {
         </div>
 
         {/* ── Subtext + buttons ── */}
-        <div className="flex flex-col items-center gap-3 sm:gap-8 mb-5 sm:mb-6 w-full max-w-[min(100%,320px)] sm:max-w-[500px] 2xl:max-w-[650px]">
+        <div className="flex flex-col items-center gap-3 sm:gap-8 mb-6 sm:mb-8 w-full max-w-[min(100%,320px)] sm:max-w-[500px] 2xl:max-w-[650px]">
           <p className="text-[11px] sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl text-white/35 font-light leading-relaxed text-center tracking-wide">
             Websites, apps &amp; video.<br />Built from Kosovo.
           </p>
