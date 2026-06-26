@@ -39,9 +39,8 @@ const sections = [
     label: "Services",
     body: (
       <p>
-        Malera Studio provides AI websites, mobile apps, AI automation, digital
-        products, brand identity, product design, and creative production
-        services. The exact scope, deliverables, and timeline for each project
+        Malera Studio provides web development, mobile apps, AI automation, and
+        video production services. The exact scope, deliverables, and timeline for each project
         are defined in a written proposal, statement of work, invoice, or
         confirmed agreement.
       </p>

@@ -9,7 +9,7 @@ import { Portfolio, Pricing, Contact } from "@/src/features/home/dynamic";
 export const metadata: Metadata = {
   title: "Malera Studio - We Just Build Good Stuff",
   description:
-    "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
+    "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
 };
 
 const structuredData = [
@@ -20,7 +20,7 @@ const structuredData = [
     url: "https://www.malera.studio",
     logo: "https://www.malera.studio/malera-transparent.png",
     description:
-      "A small creative studio from Kosovo building websites, apps, and videos. AI-powered, human-driven.",
+      "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
     foundingDate: "2026",
     foundingLocation: {
       "@type": "Place",
@@ -83,7 +83,6 @@ const structuredData = [
       "Mobile App Development",
       "Video Production",
       "AI Automation",
-      "Brand Identity",
     ],
   },
   {
@@ -135,19 +134,6 @@ const structuredData = [
     },
     description:
       "Intelligent automation solutions and AI-powered chatbots that streamline your business workflows.",
-    areaServed: "Kosovo, Balkans, Worldwide",
-    url: "https://www.malera.studio/#services",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: "Brand Identity",
-    provider: {
-      "@type": "Organization",
-      name: "Malera Studio",
-    },
-    description:
-      "Complete brand identity design including logos, typography, color systems, and brand guidelines.",
     areaServed: "Kosovo, Balkans, Worldwide",
     url: "https://www.malera.studio/#services",
   },

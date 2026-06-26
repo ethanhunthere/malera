@@ -24,11 +24,7 @@ const SERVICES = [
     title: "AI Bots & Automation",
     desc: "Intelligent automation solutions and AI-powered chatbots that streamline your business workflows.",
   },
-  {
-    num: "05",
-    title: "Brand Identity",
-    desc: "Complete brand identity design including logos, typography, color systems, and brand guidelines.",
-  },
+
 ];
 
 /* ── Geometry (pixels relative to container) ── */

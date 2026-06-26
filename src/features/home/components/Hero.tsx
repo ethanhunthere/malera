@@ -213,7 +213,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-x-clip bg-dot-grid py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44"
+      className="relative overflow-x-clip bg-dot-grid pt-8 sm:pt-10 md:pt-12 lg:pt-14 2xl:pt-16 pb-12 sm:pb-16 md:pb-24 lg:pb-32 2xl:pb-40"
     >
       {/* ── Cinema-grade ambient light ── */}
       {/* Key light  large soft white from below center */}
@@ -246,7 +246,7 @@ export default function Hero() {
           <h1
             className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase max-w-full"
             style={{
-              fontSize: 'clamp(1.25rem, 8vw, 10rem)',
+              fontSize: 'clamp(1.25rem, 7vw, 7rem)',
               textShadow: '0 0 1px rgba(255,255,255,0.25), 0 0 6px rgba(255,255,255,0.06), 0 -1px 2px rgba(255,255,255,0.04)',
             } as React.CSSProperties}
           >
@@ -256,7 +256,7 @@ export default function Hero() {
           <h1
             className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase max-w-full"
             style={{
-              fontSize: 'clamp(1.25rem, 8vw, 10rem)',
+              fontSize: 'clamp(1.25rem, 7vw, 7rem)',
               textShadow: '0 0 2px rgba(255,255,255,0.30), 0 0 12px rgba(255,255,255,0.08), 0 0 40px rgba(255,255,255,0.03), 0 -1px 2px rgba(255,255,255,0.06)',
             } as React.CSSProperties}
           >
