@@ -11,11 +11,19 @@ const AnimatedBackground = dynamic(
   }
 );
 
-/* ── Golden cursor trail — fires instantly while Three.js downloads ── */
+/* ── Golden cursor trail — fires instantly while Three.js downloads ──
+   Disabled on touch devices (useless without a mouse cursor).  On desktop
+   the resize handler is debounced to 150 ms so pinch / trackpad zoom
+   doesn't flood the canvas with reallocations. */
 function GoldenTrail() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // ── Skip entirely on touch-only devices ──
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -41,13 +49,20 @@ function GoldenTrail() {
     let frameCount = 0;
     let baseAlpha = 0;
 
-    const resize = () => {
+    const doResize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       canvas.style.width = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    // Debounced resize — zoom fires hundreds of events, we only need one
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(doResize, 150);
     };
 
     const onMove = (e: MouseEvent) => {
@@ -112,14 +127,15 @@ function GoldenTrail() {
       raf = requestAnimationFrame(tick);
     };
 
-    resize();
-    window.addEventListener("resize", resize);
+    doResize();
+    window.addEventListener("resize", onResize);
     window.addEventListener("mousemove", onMove, { passive: true });
     raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMove);
     };
   }, []);

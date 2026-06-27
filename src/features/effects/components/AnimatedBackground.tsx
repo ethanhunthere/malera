@@ -650,13 +650,20 @@ export default function AnimatedBackground() {
     <div className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 55, near: 0.1, far: 50 }}
-        dpr={[1, 1.5]}
+        dpr={[1, 1]}
         gl={{
           antialias: false,
           alpha: true,
           powerPreference: "low-power",
+          failIfMajorPerformanceCaveat: false,
         }}
         style={{ background: "transparent" }}
+        onCreated={({ gl }) => {
+          // Don't crash the page if WebGL context is lost during zoom
+          gl.domElement.addEventListener("webglcontextlost", (e) => {
+            e.preventDefault();
+          }, false);
+        }}
       >
         <Scene />
       </Canvas>
