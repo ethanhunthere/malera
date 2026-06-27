@@ -105,7 +105,7 @@ export default function Navbar() {
           {/* ── Top: subtle gold line ── */}
           <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/25 to-transparent" />
 
-          {/* ── Nav links: centered, numbered, large ── */}
+          {/* ── Nav links: centered, large ── */}
           <nav className="flex-1 flex flex-col justify-center px-8 sm:px-14">
             {NAV_LINKS.map((link, i) => (
               <div
@@ -120,9 +120,6 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="block py-5"
                 >
-                  <span className="block font-mono text-[0.625rem] sm:text-[0.6875rem] tracking-[0.2em] text-[#C9A84C]/35 mb-2">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
                   <span className="block font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold tracking-[-0.02em] text-white/80 group-hover:text-white transition-colors duration-300">
                     {link}
                   </span>
