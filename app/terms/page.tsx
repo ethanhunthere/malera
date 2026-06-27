@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/src/features/layout/components/Navbar";
 import Footer from "@/src/features/layout/components/Footer";
+import Container from "@/src/features/layout/components/Container";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Malera Studio",
@@ -229,10 +230,10 @@ export default function TermsPage() {
   return (
     <>
       <Navbar />
-      <main className="relative z-10 pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6">
-        <div className="max-w-[680px] mx-auto">
+      <main className="relative z-10 pt-28 sm:pt-36 pb-20 sm:pb-28">
+        <Container className="max-w-[680px]">
           {/* Header */}
-          <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#C9A84C] mb-5">
+          <p className="font-mono text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.22em] text-[#C9A84C] mb-5">
             Legal
           </p>
           <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.04em] leading-[1] mb-5">
@@ -251,7 +252,7 @@ export default function TermsPage() {
             {sections.map((section, i) => (
               <section key={section.id}>
                 <div className="flex items-baseline gap-3 mb-4">
-                  <span className="font-mono text-[11px] sm:text-xs text-white/15 tabular-nums shrink-0">
+                  <span className="font-mono text-[0.6875rem] sm:text-xs text-white/15 tabular-nums shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h2 className="font-[family-name:var(--font-display)] font-bold text-white text-lg sm:text-xl tracking-[-0.02em] leading-tight">
@@ -267,7 +268,7 @@ export default function TermsPage() {
           <div className="mt-20 pt-0">
             <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
           </div>
-        </div>
+        </Container>
       </main>
       <Footer />
     </>

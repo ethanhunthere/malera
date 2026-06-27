@@ -69,7 +69,7 @@ export default function Portfolio() {
       <Container id="portfolio" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header ── */}
         <div className="mb-8 sm:mb-14">
-          <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C]/35 mb-4">
+          <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C]/35 mb-4">
             PORTFOLIO
           </p>
 
@@ -161,7 +161,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             <circle cx="16" cy="16" r="13" stroke="rgba(255,255,255,0.04)" strokeWidth="1.5" />
             <circle cx="16" cy="16" r="13" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="60 80" strokeDashoffset="20" strokeOpacity="0.5" />
           </svg>
-          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.12em] text-white/25">
+          <span className="font-mono text-[0.5625rem] sm:text-[0.625rem] tracking-[0.12em] text-white/25">
             LOADING LIVE PREVIEW
           </span>
         </div>
@@ -170,14 +170,14 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
         {iframeFailed ? (
           <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center gap-4 bg-black/70 px-6 text-center">
             <AlertIcon />
-            <p className="text-white/35 text-[11px] sm:text-sm leading-relaxed max-w-[320px]">
+            <p className="text-white/35 text-[0.6875rem] sm:text-sm leading-relaxed max-w-[320px]">
               This site&apos;s security policy prevents embedding a live preview.
             </p>
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-[11px] tracking-[0.12em] text-[#C9A84C]/80
+              className="inline-flex items-center gap-2 font-mono text-[0.625rem] sm:text-[0.6875rem] tracking-[0.12em] text-[#C9A84C]/80
                 border border-[#C9A84C]/40 rounded-full px-5 py-2
                 hover:text-[#C9A84C] hover:border-[#C9A84C]/60 hover:bg-[#C9A84C]/[0.08]
                 transition-all duration-300"
@@ -206,7 +206,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
         {/* ── Left: title + hero ── */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.08em] text-white/55">
+            <span className="font-mono text-[0.5625rem] sm:text-[0.625rem] tracking-[0.08em] text-white/55">
               {project.category}
             </span>
           </div>
@@ -214,10 +214,10 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             group-hover:text-white transition-colors duration-500 mb-0.5">
             {project.title}
           </h3>
-          <p className="text-[10px] sm:text-[11px] text-[#C9A84C]/55 font-mono tracking-[0.06em] italic mb-2">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] text-[#C9A84C]/55 font-mono tracking-[0.06em] italic mb-2">
             {project.hero}
           </p>
-          <p className="text-[11px] sm:text-xs leading-relaxed text-white/[0.40] group-hover:text-white/[0.55] transition-colors duration-500 max-w-[55ch]">
+          <p className="text-[0.6875rem] sm:text-xs leading-relaxed text-white/[0.40] group-hover:text-white/[0.55] transition-colors duration-500 max-w-[55ch]">
             {project.description}
           </p>
         </div>
@@ -228,7 +228,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] text-[#C9A84C]/70
+            className="font-mono text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] text-[#C9A84C]/70
               border border-[#C9A84C]/35 rounded-full px-4 py-1.5
               hover:text-[#C9A84C] hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/[0.06]
               transition-all duration-300

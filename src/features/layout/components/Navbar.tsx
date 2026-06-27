@@ -37,7 +37,7 @@ export default function Navbar() {
                 alt="Malera Studio"
                 width={160}
                 height={40}
-                className="h-6 sm:h-9 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                className="h-6 sm:h-9 2xl:h-10 min-[3000px]:h-12 w-auto opacity-90 hover:opacity-100 transition-opacity"
                 priority
               />
             </a>

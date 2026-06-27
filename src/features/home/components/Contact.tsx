@@ -10,7 +10,7 @@ export default function Contact() {
       <Container id="contact" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header ── */}
         <div className="mb-8 sm:mb-14 text-center">
-          <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
+          <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
             LET&apos;S TALK
           </p>
 
@@ -45,11 +45,11 @@ export default function Contact() {
               </svg>
             </div>
 
-            <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-base sm:text-2xl md:text-3xl 2xl:text-4xl mb-3 group-hover:tracking-wide transition-all duration-500 break-words">
+            <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-base sm:text-2xl md:text-3xl 2xl:text-4xl min-[3000px]:text-5xl min-[5000px]:text-6xl mb-3 group-hover:tracking-wide transition-all duration-500 break-words">
               hello@malera.studio
             </h3>
 
-            <p className="text-white/45 text-xs sm:text-base 2xl:text-lg mb-5 sm:mb-8 max-w-[380px] 2xl:max-w-[500px] mx-auto">
+            <p className="text-white/45 text-xs sm:text-base 2xl:text-lg min-[3000px]:text-xl mb-5 sm:mb-8 max-w-[380px] 2xl:max-w-[500px] mx-auto">
               Drop us a line and we&apos;ll get back to you, usually within a day.
             </p>
 

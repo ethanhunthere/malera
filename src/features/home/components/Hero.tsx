@@ -213,21 +213,21 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-x-clip bg-dot-grid pt-6 sm:pt-7 md:pt-10 lg:pt-14 2xl:pt-16 pb-8 sm:pb-10 md:pb-12 lg:pb-16 2xl:pb-20"
+      className="relative overflow-x-clip bg-dot-grid pt-8 sm:pt-10 md:pt-14 lg:pt-20 2xl:pt-28 pb-12 sm:pb-14 md:pb-18 lg:pb-24 2xl:pb-32"
     >
       {/* ── Cinema-grade ambient light ── */}
       {/* Key light  large soft white from below center */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(900px,85vw)] h-[min(600px,55vh)] 2xl:w-[min(1400px,85vw)] 2xl:h-[min(900px,55vh)] ambient-orb ambient-orb-key" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(1100px,90vw)] h-[min(750px,60vh)] 2xl:w-[min(1700px,90vw)] 2xl:h-[min(1100px,60vh)] ambient-orb ambient-orb-key" />
       {/* Fill light  cool white wash from top right */}
-      <div className="absolute top-0 right-0 w-[min(650px,65vw)] h-[min(650px,65vw)] 2xl:w-[min(1000px,65vw)] 2xl:h-[min(1000px,65vw)] ambient-orb ambient-orb-fill" />
+      <div className="absolute top-0 right-0 w-[min(800px,70vw)] h-[min(800px,70vw)] 2xl:w-[min(1200px,70vw)] 2xl:h-[min(1200px,70vw)] ambient-orb ambient-orb-fill" />
       {/* Rim light  subtle warm accent from top left */}
-      <div className="absolute top-1/4 -left-20 sm:-left-40 w-[min(450px,50vw)] h-[min(450px,50vw)] 2xl:w-[min(700px,50vw)] 2xl:h-[min(700px,50vw)] ambient-orb ambient-orb-rim" />
+      <div className="absolute top-1/4 -left-20 sm:-left-40 w-[min(550px,55vw)] h-[min(550px,55vw)] 2xl:w-[min(850px,55vw)] 2xl:h-[min(850px,55vw)] ambient-orb ambient-orb-rim" />
 
       <Container className="relative z-10 flex flex-col items-center overflow-visible">
         {/* ── Studio name (flies in from navbar logo) ── */}
         <p
           ref={studioRef}
-          className="font-mono text-[8px] sm:text-[11px] 2xl:text-sm min-[3000px]:text-base uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[#C9A84C] text-center mb-2 sm:mb-5 select-none"
+          className="font-mono text-[0.625rem] sm:text-[0.8125rem] 2xl:text-base min-[3000px]:text-lg uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[#C9A84C] text-center mb-3 sm:mb-7 select-none"
           aria-label={studioText}
         >
           {studioText.split("").map((char, i) => (
@@ -244,9 +244,9 @@ export default function Hero() {
         {/* ── Headline ── */}
         <div className="mb-5 sm:mb-10 w-full flex flex-col items-center gap-[0.02em] overflow-hidden">
           <h1
-            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase max-w-full"
+            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] tracking-[-0.02em] uppercase max-w-full"
             style={{
-              fontSize: 'clamp(1.25rem, 7vw, 7rem)',
+              fontSize: 'clamp(1.7rem, 6.5vw, 6.5rem)',
               textShadow: '0 0 1px rgba(255,255,255,0.25), 0 0 6px rgba(255,255,255,0.06), 0 -1px 2px rgba(255,255,255,0.04)',
             } as React.CSSProperties}
           >
@@ -254,9 +254,9 @@ export default function Hero() {
           </h1>
 
           <h1
-            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] whitespace-nowrap tracking-[-0.02em] uppercase max-w-full"
+            className="font-[family-name:var(--font-display)] font-extrabold text-white text-center leading-[0.85] tracking-[-0.02em] uppercase max-w-full"
             style={{
-              fontSize: 'clamp(1.25rem, 7vw, 7rem)',
+              fontSize: 'clamp(1.7rem, 6.5vw, 6.5rem)',
               textShadow: '0 0 2px rgba(255,255,255,0.30), 0 0 12px rgba(255,255,255,0.08), 0 0 40px rgba(255,255,255,0.03), 0 -1px 2px rgba(255,255,255,0.06)',
             } as React.CSSProperties}
           >
@@ -270,18 +270,18 @@ export default function Hero() {
         </div>
 
         {/* ── Subtext + buttons ── */}
-        <div className="flex flex-col items-center gap-3 sm:gap-8 mb-8 sm:mb-10 w-full max-w-[min(100%,320px)] sm:max-w-[500px] 2xl:max-w-[650px]">
-          <p className="text-[11px] sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl text-white/35 font-light leading-relaxed text-center tracking-wide">
+        <div className="flex flex-col items-center gap-4 sm:gap-10 mb-10 sm:mb-14 w-full max-w-[min(100%,360px)] sm:max-w-[550px] 2xl:max-w-[720px]">
+          <p className="text-[0.75rem] sm:text-base lg:text-lg 2xl:text-xl min-[3000px]:text-2xl text-white/35 font-light leading-relaxed text-center tracking-wide">
             Websites, apps &amp; video.<br />Built from Kosovo.
           </p>
 
-          <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+          <div className="w-20 sm:w-28 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
 
-          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 w-full sm:w-auto justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto justify-center">
             {/* Primary  See our work */}
             <a
               href="#services"
-              className="hero-btn-primary group inline-flex items-center justify-center gap-2 text-[10px] sm:text-sm 2xl:text-base font-semibold px-5 sm:px-8 py-2.5 sm:py-4 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
+              className="hero-btn-primary group inline-flex items-center justify-center gap-2 text-[0.6875rem] sm:text-base 2xl:text-lg font-semibold px-6 sm:px-10 py-3 sm:py-5 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
             >
               See our work
               <span className="hero-btn-arrow text-black/25 group-hover:text-black/50">→</span>
@@ -289,7 +289,7 @@ export default function Hero() {
             {/* Secondary  Get in touch */}
             <a
               href="#contact"
-              className="hero-btn-secondary group inline-flex items-center justify-center gap-2 text-white/70 text-[10px] sm:text-sm 2xl:text-base font-medium px-5 sm:px-8 py-2.5 sm:py-4 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
+              className="hero-btn-secondary group inline-flex items-center justify-center gap-2 text-white/70 text-[0.6875rem] sm:text-base 2xl:text-lg font-medium px-6 sm:px-10 py-3 sm:py-5 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
             >
               Get in touch
               <span className="hero-btn-arrow text-white/10 group-hover:text-white/50">→</span>
@@ -298,7 +298,7 @@ export default function Hero() {
         </div>
 
         {/* ── Bottom tagline ── */}
-        <p className="font-mono text-[8px] sm:text-[11px] 2xl:text-xs min-[3000px]:text-sm uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white/10 text-center mt-0">
+        <p className="font-mono text-[0.5625rem] sm:text-[0.75rem] 2xl:text-sm min-[3000px]:text-base uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white/10 text-center mt-0">
           Pristina&nbsp;&nbsp;·&nbsp;&nbsp;Est&nbsp;2026
         </p>
       </Container>

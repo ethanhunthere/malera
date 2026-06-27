@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 text-center justify-items-center">
           {/* ── About ── */}
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
+            <h4 className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
               About
             </h4>
             <div className="space-y-0.5 text-white/35 text-sm leading-relaxed">
@@ -36,7 +36,7 @@ export default function Footer() {
 
           {/* ── Company ── */}
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
+            <h4 className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
               Company
             </h4>
             <ul className="space-y-2.5">
@@ -55,7 +55,7 @@ export default function Footer() {
 
           {/* ── Contact ── */}
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
+            <h4 className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
               Contact
             </h4>
             <ul className="space-y-2.5">

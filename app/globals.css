@@ -411,6 +411,12 @@
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
+/* Targeted removal of the inner left-edge gold line for service cards only */
+.services-card-no-line::before,
+.services-card-no-line:hover::before {
+  display: none;
+}
+
 /* ══════════════════════════════════════════════════════════
    SPECULAR HIGHLIGHT  dual-angle Apple edge flash, v2 wider
    ══════════════════════════════════════════════════════════ */

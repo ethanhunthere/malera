@@ -481,7 +481,7 @@ export default function Services() {
   }, [measure]);
 
   return (
-    <section className="relative overflow-x-clip py-10 sm:py-12 md:py-16 lg:py-20 2xl:py-24">
+    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44">
       {/* ── Ambient orbs  responsive, contained ── */}
       <div className="absolute top-1/4 left-0 w-[min(700px,80vw)] h-[min(700px,80vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-1/4 right-0 w-[min(500px,60vw)] h-[min(500px,60vw)] ambient-orb ambient-orb-white" />
@@ -551,20 +551,20 @@ export default function Services() {
               ref={(el) => { cardRefs.current[idx] = el; }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="w-full max-w-[94%] sm:max-w-[86%] lg:max-w-[82%] 2xl:max-w-[78%] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover"
+              className="w-full max-w-[94%] sm:max-w-[86%] lg:max-w-[82%] 2xl:max-w-[78%] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover services-card-no-line"
             >
               {/* Content */}
               <div className="relative z-10 flex-1 min-w-0">
-                <h3 className="text-[12px] sm:text-[15px] 2xl:text-lg font-medium text-white/90 group-hover:text-white uppercase tracking-[0.04em] transition-colors duration-[600ms] mb-1 sm:mb-1.5">
+                <h3 className="text-[0.75rem] sm:text-[0.9375rem] 2xl:text-lg font-medium text-white/90 group-hover:text-white uppercase tracking-[0.04em] transition-colors duration-[600ms] mb-1 sm:mb-1.5">
                   {svc.title}
                 </h3>
-                <p className="text-[11px] sm:text-[13px] 2xl:text-base text-white/50 group-hover:text-white/70 leading-relaxed transition-colors duration-[600ms]">
+                <p className="text-[0.6875rem] sm:text-[0.8125rem] 2xl:text-base text-white/50 group-hover:text-white/70 leading-relaxed transition-colors duration-[600ms]">
                   {svc.desc}
                 </p>
               </div>
 
               {/* Binary number  right side, nearly invisible */}
-              <span className="relative z-0 font-mono text-[12px] sm:text-sm font-light text-white/[0.05] group-hover:text-[#C9A84C]/[0.12] transition-all duration-600 shrink-0 select-none">
+              <span className="relative z-0 font-mono text-[0.75rem] sm:text-sm font-light text-white/[0.05] group-hover:text-[#C9A84C]/[0.12] transition-all duration-600 shrink-0 select-none">
                 {binary}
               </span>
             </div>

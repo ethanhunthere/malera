@@ -76,7 +76,7 @@ export default function Pricing() {
       <Container id="pricing" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header  minimal, no glass, no gold ── */}
         <div className="mb-8 sm:mb-14">
-          <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-white/30 mb-4">
+          <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-white/30 mb-4">
             PRICING
           </p>
 
@@ -88,13 +88,13 @@ export default function Pricing() {
             A PRICE THAT MAKES SENSE
           </h2>
 
-          <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[420px] 2xl:max-w-[550px]">
+          <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[420px] 2xl:max-w-[550px] min-[3000px]:max-w-[700px]">
             Fixed-price engagements with detailed scope documents upfront. Any changes beyond original scope are discussed and quoted separately before work continues.
           </p>
         </div>
 
         {/* ── Cards ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-4">
           {PLANS.map((plan, i) => {
             const tier = plan.tier; // 0=Starter, 1=Pro, 2=Business, 3=Enterprise
 
@@ -181,10 +181,10 @@ export default function Pricing() {
 
             const badgeLabel = ["Early stage", "Most popular", "Best value", "Custom"][tier];
             const badgeClass = [
-              "bg-white/[0.05] text-[8px] font-normal uppercase tracking-wider px-2 py-0.5 rounded-bl",
-              "bg-white/90 text-black text-[9px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-bl",
-              "bg-white text-black text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl",
-              "bg-white text-black text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-bl",
+              "bg-white/[0.05] text-[0.5rem] font-normal uppercase tracking-wider px-2 py-0.5 rounded-bl",
+              "bg-white/90 text-black text-[0.5625rem] font-medium uppercase tracking-wider px-2 py-0.5 rounded-bl",
+              "bg-white text-black text-[0.625rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl",
+              "bg-white text-black text-[0.6875rem] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-bl",
             ][tier];
 
             const hoverScale = [
@@ -266,7 +266,7 @@ export default function Pricing() {
               {/* ── Detail link ── */}
               <a
                 href={["/starterdetails", "/prodetails", "/businessdetails", "/enterprisedetails"][tier]}
-                className="relative z-10 block text-center font-mono text-[11px] text-white/40 hover:text-white/80 transition-colors duration-200 mt-2 hover:underline"
+                className="relative z-10 block text-center font-mono text-[0.6875rem] text-white/40 hover:text-white/80 transition-colors duration-200 mt-2 hover:underline"
               >
                 See what&apos;s included
               </a>
