@@ -3,6 +3,8 @@ import { Inter, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import { LanguageProvider } from "@/src/shared/context/LanguageContext";
 import AnimatedBackground from "@/src/features/effects/dynamic";
+import Navbar from "@/src/features/layout/components/Navbar";
+import Footer from "@/src/features/layout/components/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -122,7 +124,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
         <AnimatedBackground />
         <LanguageProvider>
+          <Navbar />
           {children}
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

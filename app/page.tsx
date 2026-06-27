@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import Navbar from "@/src/features/layout/components/Navbar";
 import Hero from "@/src/features/home/components/Hero";
-import Footer from "@/src/features/layout/components/Footer";
 import GlassDivider from "@/src/features/layout/components/GlassDivider";
 import {
   Portfolio,
@@ -207,7 +205,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Navbar />
       <Hero />
       <GlassDivider />
       <Services />
@@ -217,7 +214,6 @@ export default function Home() {
       <Pricing />
       <GlassDivider />
       <Contact />
-      <Footer />
     </>
   );
 }

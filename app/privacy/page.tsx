@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/src/features/layout/components/Navbar";
-import Footer from "@/src/features/layout/components/Footer";
 import Container from "@/src/features/layout/components/Container";
 
 export const metadata: Metadata = {
@@ -189,7 +187,6 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <Navbar />
       <main className="relative z-10 pt-28 sm:pt-36 pb-20 sm:pb-28">
         <Container className="max-w-[680px]">
           {/* Header */}
@@ -230,7 +227,6 @@ export default function PrivacyPage() {
           </div>
         </Container>
       </main>
-      <Footer />
     </>
   );
 }
