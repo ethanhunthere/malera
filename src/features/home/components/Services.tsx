@@ -551,7 +551,7 @@ export default function Services() {
               ref={(el) => { cardRefs.current[idx] = el; }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="w-full max-w-full sm:max-w-[90%] lg:max-w-[85%] 2xl:max-w-[80%] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover"
+              className="w-full max-w-[94%] sm:max-w-[86%] lg:max-w-[82%] 2xl:max-w-[78%] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover"
             >
               {/* Content */}
               <div className="relative z-10 flex-1 min-w-0">
