@@ -263,6 +263,14 @@ export default function Pricing() {
                 />
               </a>
 
+              {/* ── Detail link ── */}
+              <a
+                href={["/starterdetails", "/prodetails", "/businessdetails", "/enterprisedetails"][tier]}
+                className="relative z-10 block text-center font-mono text-[11px] text-white/40 hover:text-white/80 transition-colors duration-200 mt-2 hover:underline"
+              >
+                See what&apos;s included
+              </a>
+
             </div>
           )})}
         </div>
