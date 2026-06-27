@@ -1181,10 +1181,10 @@ body::after {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(201,168,76,0.20);
+  background: rgba(255,255,255,0.08);
   border-radius: 2px;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(201,168,76,0.40); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
 
 /* ── Selection ── */
 ::selection {

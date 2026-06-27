@@ -89,28 +89,27 @@ export default function Navbar() {
         </Container>
       </header>
 
-      {/* Mobile fullscreen overlay */}
+      {/* Mobile fullscreen overlay — glass */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 z-40 flex flex-col lg:hidden"
-          style={{ background: '#030303' }}
+          className="fixed inset-0 z-40 flex flex-col lg:hidden glass-ultra rounded-none"
         >
           {/* ── Ambient depth ── */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/3 left-0 w-[min(400px,70vw)] h-[min(400px,70vw)] ambient-orb ambient-orb-gold" style={{ opacity: 0.3 }} />
-            <div className="absolute bottom-0 right-0 w-[min(300px,50vw)] h-[min(300px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.15 }} />
+            <div className="absolute top-1/3 left-0 w-[min(400px,70vw)] h-[min(400px,70vw)] ambient-orb ambient-orb-gold" style={{ opacity: 0.25 }} />
+            <div className="absolute bottom-0 right-0 w-[min(300px,50vw)] h-[min(300px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.12 }} />
           </div>
 
           {/* ── Top: subtle gold line ── */}
           <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/25 to-transparent" />
 
-          {/* ── Nav links: centered, large ── */}
-          <nav className="flex-1 flex flex-col justify-center px-8 sm:px-14">
+          {/* ── Nav links: centered, large, each wrapped in glass card ── */}
+          <nav className="flex-1 flex flex-col justify-center px-6 sm:px-12 gap-3">
             {NAV_LINKS.map((link, i) => (
               <div
                 key={link}
-                className="group"
+                className="glass-card rounded-2xl group"
                 style={{
                   animation: `menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) ${i * 0.1}s both`,
                 }}
@@ -118,14 +117,12 @@ export default function Navbar() {
                 <a
                   href={`/#${link.toLowerCase()}`}
                   onClick={() => setMenuOpen(false)}
-                  className="block py-5"
+                  className="block px-5 py-4 sm:py-5"
                 >
-                  <span className="block font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold tracking-[-0.02em] text-white/80 group-hover:text-white transition-colors duration-300">
+                  <span className="block font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-[-0.02em] text-white/75 group-hover:text-white transition-colors duration-300">
                     {link}
                   </span>
                 </a>
-                {/* Gold hairline under each link */}
-                <div className="h-px bg-gradient-to-r from-[#C9A84C]/12 via-[#C9A84C]/6 to-transparent" />
               </div>
             ))}
           </nav>
@@ -144,7 +141,7 @@ export default function Navbar() {
             >
               Start a Project
             </a>
-            <p className="text-white/12 text-[0.625rem] sm:text-[0.6875rem] font-mono tracking-[0.12em]">
+            <p className="text-white/10 text-[0.625rem] sm:text-[0.6875rem] font-mono tracking-[0.12em]">
               Pristina&nbsp;&nbsp;·&nbsp;&nbsp;Est&nbsp;2026
             </p>
           </div>
