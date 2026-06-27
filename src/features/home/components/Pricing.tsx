@@ -179,9 +179,9 @@ export default function Pricing() {
             const shineOpacity = ["0.05", "0.06", "0.08", "0.12"][tier];
             const shinePeak    = ["0.08", "0.10", "0.14", "0.20"][tier];
 
-            const badgeLabel = ["", "Most popular", "Best value", "Custom"][tier];
+            const badgeLabel = ["Early stage", "Most popular", "Best value", "Custom"][tier];
             const badgeClass = [
-              "",
+              "bg-white/[0.05] text-[8px] font-normal uppercase tracking-wider px-2 py-0.5 rounded-bl",
               "bg-white/90 text-black text-[9px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-bl",
               "bg-white text-black text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl",
               "bg-white text-black text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-bl",
