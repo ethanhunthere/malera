@@ -29,15 +29,6 @@ export default function Contact() {
       <div className="absolute bottom-0 right-[-5%] w-[min(450px,55vw)] h-[min(450px,55vw)] 2xl:w-[min(700px,55vw)] 2xl:h-[min(700px,55vw)] ambient-orb ambient-orb-white" />
 
       <Container id="contact" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
-        {/* ═══════════ Ghost watermark ═══════════ */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0"
-          style={{ marginTop: 'clamp(-2rem, -3vw, -1rem)' }}>
-          <p className="font-[family-name:var(--font-display)] font-extrabold text-[clamp(5rem,18vw,20rem)] leading-none tracking-[-0.05em] text-white/[0.015] whitespace-nowrap"
-            aria-hidden="true">
-            CONTACT
-          </p>
-        </div>
-
         {/* ═══════════ Header ═══════════ */}
         <div className="relative z-10 mb-10 sm:mb-16 lg:mb-20">
           <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
