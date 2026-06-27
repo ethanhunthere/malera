@@ -93,32 +93,67 @@ export default function Navbar() {
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-4 sm:gap-8 px-6 lg:hidden"
-          style={{
-            background: 'linear-gradient(180deg, rgba(5,5,5,0.40) 0%, rgba(5,5,5,0.25) 100%)',
-            backdropFilter: 'blur(240px) saturate(320%) brightness(1.06) contrast(0.97)',
-          }}
+          className="fixed inset-0 z-40 flex flex-col lg:hidden"
+          style={{ background: '#030303' }}
         >
-          {/* Ambient orb behind menu */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,90vw)] h-[min(600px,90vw)] ambient-orb ambient-orb-gold" />
+          {/* ── Ambient depth ── */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/3 left-0 w-[min(400px,70vw)] h-[min(400px,70vw)] ambient-orb ambient-orb-gold" style={{ opacity: 0.3 }} />
+            <div className="absolute bottom-0 right-0 w-[min(300px,50vw)] h-[min(300px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.15 }} />
+          </div>
 
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link}
-              href={`/#${link.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-              className="relative z-10 text-white text-lg sm:text-2xl font-medium hover:text-[#C9A84C] transition-all duration-300"
-            >
-              {link}
-            </a>
-          ))}
-          <a
-            href="/#contact"
-            onClick={() => setMenuOpen(false)}
-            className="relative z-10 mt-3 sm:mt-4 glass-btn-solid text-[#080808] text-sm font-medium px-6 py-3 rounded-full"
+          {/* ── Top: subtle gold line ── */}
+          <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/25 to-transparent" />
+
+          {/* ── Nav links: centered, numbered, large ── */}
+          <nav className="flex-1 flex flex-col justify-center px-8 sm:px-14">
+            {NAV_LINKS.map((link, i) => (
+              <div
+                key={link}
+                className="group"
+                style={{
+                  animation: `menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) ${i * 0.1}s both`,
+                }}
+              >
+                <a
+                  href={`/#${link.toLowerCase()}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-5"
+                >
+                  <span className="block font-mono text-[0.625rem] sm:text-[0.6875rem] tracking-[0.2em] text-[#C9A84C]/35 mb-2">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="block font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold tracking-[-0.02em] text-white/80 group-hover:text-white transition-colors duration-300">
+                    {link}
+                  </span>
+                </a>
+                {/* Gold hairline under each link */}
+                <div className="h-px bg-gradient-to-r from-[#C9A84C]/12 via-[#C9A84C]/6 to-transparent" />
+              </div>
+            ))}
+          </nav>
+
+          {/* ── Bottom: CTA + subtle info ── */}
+          <div
+            className="pb-10 sm:pb-14 flex flex-col items-center gap-5 px-8"
+            style={{
+              animation: 'menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s both',
+            }}
           >
-            Start a Project
-          </a>
+            <a
+              href="/#contact"
+              onClick={() => setMenuOpen(false)}
+              className="glass-btn-solid text-[#080808] text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full tracking-[0.04em]"
+            >
+              Start a Project
+            </a>
+            <p className="text-white/12 text-[0.625rem] sm:text-[0.6875rem] font-mono tracking-[0.12em]">
+              Pristina&nbsp;&nbsp;·&nbsp;&nbsp;Est&nbsp;2026
+            </p>
+          </div>
+
+          {/* ── Bottom: subtle gold line ── */}
+          <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent" />
         </div>
       )}
       {/* Scroll navbar  real dark glass, logo only */}

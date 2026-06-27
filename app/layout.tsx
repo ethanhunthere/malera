@@ -100,6 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <link rel="preload" as="image" href="/malera-transparent.webp" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -117,7 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${dmSans.variable} antialiased overflow-x-hidden`}>
+      <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
         <AnimatedBackground />
         <LanguageProvider>
           {children}
