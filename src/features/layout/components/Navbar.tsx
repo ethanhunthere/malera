@@ -104,29 +104,30 @@ export default function Navbar() {
         </Container>
       </header>
 
-      {/* Mobile fullscreen overlay — pure transparent glass */}
+      {/* Mobile fullscreen overlay — premium glass */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 z-40 flex flex-col lg:hidden overflow-hidden glass-pro rounded-none"
+          className="fixed inset-0 z-40 flex flex-col lg:hidden overflow-hidden glass-overlay rounded-none"
         >
           {/* ── Ambient depth ── */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/3 left-0 w-[min(400px,70vw)] h-[min(400px,70vw)] ambient-orb ambient-orb-gold" style={{ opacity: 0.25 }} />
-            <div className="absolute bottom-0 right-0 w-[min(300px,50vw)] h-[min(300px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.12 }} />
+            <div className="absolute top-1/4 left-0 w-[min(450px,75vw)] h-[min(450px,75vw)] ambient-orb ambient-orb-gold" style={{ opacity: 0.18 }} />
+            <div className="absolute bottom-0 right-0 w-[min(350px,55vw)] h-[min(350px,55vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.08 }} />
           </div>
 
           {/* ── Top: subtle gold line ── */}
-          <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/25 to-transparent" />
+          <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
 
-          {/* ── Nav links: centered, large, each wrapped in glass card ── */}
-          <nav className="flex-1 flex flex-col justify-center px-6 sm:px-12 gap-3">
+          {/* ── Nav links: glass tiles with gold edge glow ── */}
+          <nav className="flex-1 flex flex-col justify-center px-5 sm:px-10 gap-3">
             {NAV_LINKS.map((link, i) => (
               <div
                 key={link}
-                className="glass-subtle rounded-2xl group"
+                className="glass-subtle rounded-2xl group relative"
                 style={{
                   animation: `menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) ${i * 0.1}s both`,
+                  borderColor: 'rgba(201,168,76,0.07)',
                 }}
               >
                 <a
@@ -134,7 +135,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="block px-5 py-4 sm:py-5"
                 >
-                  <span className="block font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-[-0.02em] text-white/75 group-hover:text-white transition-colors duration-300">
+                  <span className="block font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-[-0.02em] text-white/70 group-hover:text-white transition-colors duration-300">
                     {link}
                   </span>
                 </a>
