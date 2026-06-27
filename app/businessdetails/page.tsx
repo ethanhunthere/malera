@@ -5,7 +5,7 @@ import Footer from "@/src/features/layout/components/Footer";
 export const metadata: Metadata = {
   title: "What Business Includes | Malera Studio",
   description:
-    "A detailed breakdown of the Business plan — web apps, e-commerce, front end and back end work, AI integration, dashboards, payment systems, revisions, and documentation.",
+    "A detailed breakdown of the Business plan — web apps, e-commerce, full-stack development, AI integration, dashboards, payments, revisions, and documentation.",
   robots: {
     index: false,
     follow: true,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What Business Includes | Malera Studio",
     description:
-      "A detailed breakdown of the Business plan — web apps, e-commerce, front end and back end work, AI integration, dashboards, payment systems, revisions, and documentation.",
+      "A detailed breakdown of the Business plan — web apps, e-commerce, full-stack development, AI integration, dashboards, payments, revisions, and documentation.",
     url: "https://www.malera.studio/businessdetails",
   },
 };
@@ -24,193 +24,120 @@ export const metadata: Metadata = {
 const sections = [
   {
     id: "webapp",
-    label: "What web app or e-commerce means for your project",
+    label: "Web app or e-commerce",
     body: (
       <>
         <p>
-          Business is the tier where the project becomes a product. A web app is
-          not a website with a few interactive elements — it is a tool people
-          use to do something: book appointments, manage inventory, track
-          orders, analyze data, collaborate with a team. E-commerce means a
-          store that handles real transactions, real inventory, and real
-          customers.
-        </p>
-        <p>
-          We treat these projects like software products, not marketing pages.
-          That means user flows, state management, error handling, edge cases,
-          and performance under load. The scope is bigger because the stakes are
-          bigger — and we design and build accordingly.
+          This is for when a standard website is the wrong tool. If you are
+          selling products, managing bookings, running a platform, or building
+          something users log into — this is the plan. We scope the product
+          properly before any work starts.
         </p>
       </>
     ),
   },
   {
     id: "fullstack",
-    label: "What front end and back end work we handle",
+    label: "Front end and back end",
     body: (
       <>
         <p>
-          On the Business plan, we handle both sides of the stack. The front end
-          is what your users see and interact with — built for speed,
-          accessibility, and a polished experience on every device. The back end
-          is the engine underneath: databases, APIs, authentication, server
-          logic, and everything that makes the front end actually work.
-        </p>
-        <p>
-          We choose the right technology for the job, not the one that is
-          trending this week. If your project needs a relational database, we
-          use one. If it needs real-time updates, we build that. If it needs to
-          handle thousands of concurrent users, we design for it from the start.
-          You do not need to know the technical details — you just need to know
-          it works.
+          We handle the full stack. The interface your users see and the
+          systems running behind it. Databases, authentication, APIs, admin
+          panels — all of it.
         </p>
       </>
     ),
   },
   {
     id: "ai",
-    label: "How we decide where AI genuinely helps",
+    label: "AI where it genuinely helps",
     body: (
       <>
         <p>
-          AI is a tool, not a magic wand. On Business projects, we look for
-          places where AI actually makes a difference: automating repetitive
-          tasks, analyzing patterns in customer data, generating personalized
-          content at scale, or powering a chatbot that can actually answer
-          questions instead of just linking to a FAQ page.
-        </p>
-        <p>
-          We do not shove AI into corners where it does not belong. If a feature
-          is better served by deterministic logic, we use deterministic logic.
-          If AI can genuinely save time, reduce friction, or create a better
-          experience, we integrate it thoughtfully — with fallback behavior,
-          error handling, and a clear understanding of what happens when the AI
-          gets it wrong.
+          We look at your product and figure out where AI actually saves time
+          or improves the experience. We integrate it. We test it. We make sure
+          it works before it ships. Features for the sake of features is
+          something we avoid.
         </p>
       </>
     ),
   },
   {
     id: "dashboards",
-    label: "What dashboards and internal tools we can build",
+    label: "Dashboards and internal tools",
     body: (
       <>
         <p>
-          Most businesses run on spreadsheets and hope. We build admin
-          dashboards and internal tools that replace the spreadsheets — real
-          interfaces for managing content, viewing analytics, processing orders,
-          handling support tickets, or whatever your team needs to do their
-          jobs.
-        </p>
-        <p>
-          These are not afterthoughts bolted onto a website. They are
-          purpose-built tools with role-based access, search and filtering,
-          export capabilities, and workflows designed around how your team
-          actually operates. We spend time understanding your internal processes
-          before we build anything.
+          If your team needs to manage orders, users, content, reports, or
+          anything else — we build the internal tools that make that possible.
+          Clean interfaces that your team can actually use.
         </p>
       </>
     ),
   },
   {
-    id: "payments",
-    label: "What payment systems and third-party integrations we connect",
+    id: "integrations",
+    label: "Integrations",
     body: (
       <>
         <p>
-          If your project takes payments, we integrate the right payment
-          processor for your region, your currency, and your business model.
-          Stripe, PayPal, local payment gateways — we handle the integration,
-          the webhooks, the error states, and the edge cases.
-        </p>
-        <p>
-          Beyond payments, we connect whatever third-party services your
-          business relies on: CRMs, email platforms, shipping providers,
-          accounting software, analytics tools, communication APIs. The goal is
-          a system where data flows between services without someone manually
-          copy-pasting between tabs.
+          Payment systems, shipping APIs, CRM connections, email platforms,
+          third party tools — we connect what your product needs. We document
+          every integration so your team understands what is connected and why.
         </p>
       </>
     ),
   },
   {
     id: "revisions",
-    label: "What three revision rounds cover on a full build",
+    label: "Revision rounds",
     body: (
       <>
         <p>
-          Business projects are larger, so they get three rounds of revisions.
-          Round one covers the core functionality and user flows — does the app
-          do what it is supposed to do, and does it do it well. Round two covers
-          design refinement, interaction polish, and edge case handling. Round
-          three is for content, copy, and final details.
-        </p>
-        <p>
-          Three rounds gives everyone enough runway to get it right without the
-          project ballooning. Each round has a defined feedback window and a
-          clear scope. Changes beyond the original scope are handled as separate
-          work — quoted, scoped, and scheduled independently so the main project
-          stays on track.
+          Three rounds on a build this size gives proper space. After each
+          round we incorporate feedback before moving forward. Scope changes
+          beyond what was agreed are discussed and quoted separately before we
+          continue.
         </p>
       </>
     ),
   },
   {
     id: "support",
-    label: "What post-launch support looks like in practice",
+    label: "After launch",
     body: (
       <>
         <p>
-          After launch, we stay. Business projects include a defined post-launch
-          support period where we monitor the application, fix bugs, handle
-          unexpected issues, and make sure everything runs smoothly under real
-          traffic.
-        </p>
-        <p>
-          We do not hand over the keys and walk away. We are available during
-          your first weeks live — when real users hit the app and real edge
-          cases surface. Beyond the support period, we offer ongoing maintenance
-          and development as a separate arrangement.
+          We stay involved after the product goes live. If something needs
+          fixing we fix it. We monitor for issues in the first weeks after
+          launch.
         </p>
       </>
     ),
   },
   {
     id: "docs",
-    label: "What documentation we deliver when we are done",
+    label: "Documentation",
     body: (
       <>
         <p>
-          You get full documentation: architecture overview, database schema,
-          API endpoints, deployment instructions, environment variables,
-          third-party service configurations, and a guide for your team to
-          understand how everything fits together.
-        </p>
-        <p>
-          The documentation is written for humans, not robots. Your developers
-          should be able to pick it up and understand the system without
-          spelunking through code. If you ever need to hand the project to
-          another team, they will not be starting from zero.
+          When we hand over we provide full documentation. What was built, how
+          it works, how to maintain it, how to extend it. Your team can take it
+          from there.
         </p>
       </>
     ),
   },
   {
     id: "who",
-    label: "Who this plan works best for",
+    label: "Who this is for",
     body: (
       <>
         <p>
-          Business is for companies building something real. A SaaS product
-          going from idea to MVP. An e-commerce brand scaling beyond a basic
-          Shopify store. A service business that needs a custom booking and
-          management system. A company that has outgrown off-the-shelf solutions
-          and needs something built around their actual workflow.
-        </p>
-        <p>
-          If your project has real complexity — multiple user roles, payment
-          processing, third-party integrations, custom logic — Business is where
-          it belongs. We treat it with the seriousness it deserves.
+          Founders building a product, a platform, or a tool. Businesses that
+          need something custom built for how they actually operate. Companies
+          replacing legacy systems with something modern.
         </p>
       </>
     ),
@@ -265,8 +192,7 @@ export default function BusinessDetailsPage() {
           <div className="mt-20">
             <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-10" />
             <p className="text-white/40 text-sm mb-5">
-              Building something real? Let us talk about scope, timeline, and
-              whether we are the right team for it.
+              Ready to talk scope?
             </p>
             <a
               href="/#contact"

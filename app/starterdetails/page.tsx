@@ -5,7 +5,7 @@ import Footer from "@/src/features/layout/components/Footer";
 export const metadata: Metadata = {
   title: "What Starter Includes | Malera Studio",
   description:
-    "A detailed breakdown of the Starter plan — what 5 pages covers, how we structure them, responsive design, SEO setup, revisions, deliverables, and who it is best for.",
+    "A detailed breakdown of the Starter plan — 5 pages, responsive design, SEO setup, revisions, deliverables, and who it is for.",
   robots: {
     index: false,
     follow: true,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What Starter Includes | Malera Studio",
     description:
-      "A detailed breakdown of the Starter plan — what 5 pages covers, how we structure them, responsive design, SEO setup, revisions, deliverables, and who it is best for.",
+      "A detailed breakdown of the Starter plan — 5 pages, responsive design, SEO setup, revisions, deliverables, and who it is for.",
     url: "https://www.malera.studio/starterdetails",
   },
 };
@@ -24,147 +24,94 @@ export const metadata: Metadata = {
 const sections = [
   {
     id: "pages",
-    label: "What 5 pages covers and how we structure them",
+    label: "The 5 pages",
     body: (
       <>
         <p>
-          Five pages is enough to say what you need to say. Most small businesses
-          land here: Home, About, Services, Contact, and one more — a portfolio
-          page, a pricing breakdown, a blog landing page, whatever moves the
-          needle for your situation.
-        </p>
-        <p>
-          We do not use templates. Every page is built from scratch, structured
-          around what your audience actually needs to know before they reach out.
-          We figure out the information architecture together before a single
-          line of code is written. You get a site map that makes sense, pages
-          that flow into each other, and no filler.
+          We structure your 5 pages around what actually matters for your
+          business. Typically: Home, About, Services, Portfolio or Gallery,
+          Contact. Every page is planned with you before we start building. If
+          your business needs a different structure, we adjust.
         </p>
       </>
     ),
   },
   {
     id: "responsive",
-    label: "What responsive design means in practice",
+    label: "Responsive design",
     body: (
       <>
         <p>
-          Responsive design is not &ldquo;it looks okay on mobile.&rdquo; It
-          means every single element on every single page is tested on real
-          devices — phones, tablets, laptops, large desktop screens — and
-          nothing breaks. Text stays readable without pinching. Buttons are
-          large enough to tap. Images do not overflow. Menus collapse properly.
-        </p>
-        <p>
-          We test on actual phones and tablets, not just browser resizing. Your
-          site will look and feel right whether someone is on a 320px-wide phone
-          or a 5000px-wide studio display.
+          Every element is tested on phones, tablets, and desktop screens. We
+          build mobile first, which means the experience on a phone is treated
+          as the primary one, and desktop builds from there.
         </p>
       </>
     ),
   },
   {
     id: "seo",
-    label: "What SEO setup we do specifically",
+    label: "SEO setup",
     body: (
       <>
         <p>
-          SEO on the Starter plan is foundational. We handle the things that
-          matter most for search engines to understand your site: proper heading
-          hierarchy, meta titles and descriptions for every page, semantic HTML
-          structure, image alt text, clean URLs, and a sitemap that Google can
-          read.
-        </p>
-        <p>
-          We also set up Open Graph tags so links look good when shared on
-          social media. This is the baseline that gets you into the game. You
-          will not rank for competitive keywords overnight, but you will have a
-          site that search engines can actually crawl, index, and understand —
-          which is more than most small business sites can say.
+          We set up your page titles, meta descriptions, and headings
+          correctly. We submit your site to Google Search Console. We make sure
+          your pages load fast enough to rank. This is the foundation. It puts
+          you on the map.
         </p>
       </>
     ),
   },
   {
     id: "revisions",
-    label: "What the revision round covers and what it does not",
+    label: "Revisions",
     body: (
       <>
         <p>
-          You get one round of revisions after we deliver the first full build.
-          This covers adjustments to layout, typography, spacing, color,
-          content, and imagery — anything that falls within the original five
-          pages and the agreed scope.
-        </p>
-        <p>
-          What it does not cover: adding new pages, building new features,
-          redesigning the entire site from scratch, or integrating third-party
-          services that were not discussed upfront. Those are separate
-          conversations, quoted separately, and handled after the initial
-          project wraps.
-        </p>
-        <p>
-          The revision round is there so we can dial in the details together.
-          Most projects land exactly where they need to after one round of
-          thoughtful feedback.
+          One revision round means we gather your feedback after the first full
+          version is ready and address everything in one pass. Send us a
+          consolidated list and we handle it.
         </p>
       </>
     ),
   },
   {
     id: "deliverables",
-    label: "What files and assets you receive at the end",
+    label: "What you receive",
     body: (
       <>
         <p>
-          When we are done, you own everything. We hand over the full source
-          code, all assets, all design files if applicable, and any
-          documentation you need to hand the site off to another developer or
-          manage it yourself.
-        </p>
-        <p>
-          There are no ongoing licensing fees, no proprietary lock-in, no
-          monthly charges for the code we wrote. The site is yours. We can host
-          it for you if you want, or you can take it anywhere.
+          The full source code if you want it. Credentials to your hosting and
+          domain. A handover document explaining how everything works. You own
+          it completely.
         </p>
       </>
     ),
   },
   {
     id: "support",
-    label: "What support looks like after we finish",
+    label: "After we finish",
     body: (
       <>
         <p>
-          After launch, we stay reachable for a reasonable period. If something
-          breaks, we fix it. If you need a small text change or an image swap,
-          we handle it. The Starter plan includes a short post-launch window
-          where you can reach us without a new invoice.
-        </p>
-        <p>
-          For anything larger — new pages, new features, redesign work — we
-          quote it as a new engagement. The relationship does not end at launch.
-          It just changes shape.
+          We are reachable by email for 30 days if something unexpected comes
+          up. Anything beyond that is covered under a separate maintenance
+          agreement.
         </p>
       </>
     ),
   },
   {
     id: "who",
-    label: "Who this plan works best for",
+    label: "Who this is for",
     body: (
       <>
         <p>
-          Starter is for people who know exactly what they need and do not want
-          to overcomplicate it. A small business launching their first real
-          site. A freelancer who needs a portfolio. A local service that just
-          needs to be findable online. A landing page for a product or event.
-        </p>
-        <p>
-          If your scope is small, your timeline is reasonable, and you value
-          quality over quantity — this is the right fit. If you need a CMS, a
-          blog, user accounts, or anything that scales beyond five pages, Pro is
-          the better starting point.
+          Early stage businesses launching their first professional site.
+          Businesses with an outdated site that just needs to be replaced
+          cleanly. Anyone who wants something real built fast without
+          unnecessary complexity.
         </p>
       </>
     ),
@@ -219,8 +166,7 @@ export default function StarterDetailsPage() {
           <div className="mt-20">
             <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-10" />
             <p className="text-white/40 text-sm mb-5">
-              Ready to get started? Reach out and we will figure out if Starter
-              is the right fit for what you need.
+              Ready to get started?
             </p>
             <a
               href="/#contact"

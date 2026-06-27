@@ -5,7 +5,7 @@ import Footer from "@/src/features/layout/components/Footer";
 export const metadata: Metadata = {
   title: "What Pro Includes | Malera Studio",
   description:
-    "A detailed breakdown of the Pro plan — what up to 15 pages means, how the CMS works, advanced SEO, animations, analytics, revisions, and ongoing support.",
+    "A detailed breakdown of the Pro plan — up to 15 pages, CMS, advanced SEO, animations, analytics, revisions, and ongoing availability.",
   robots: {
     index: false,
     follow: true,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What Pro Includes | Malera Studio",
     description:
-      "A detailed breakdown of the Pro plan — what up to 15 pages means, how the CMS works, advanced SEO, animations, analytics, revisions, and ongoing support.",
+      "A detailed breakdown of the Pro plan — up to 15 pages, CMS, advanced SEO, animations, analytics, revisions, and ongoing availability.",
     url: "https://www.malera.studio/prodetails",
   },
 };
@@ -24,168 +24,106 @@ export const metadata: Metadata = {
 const sections = [
   {
     id: "pages",
-    label: "What up to 15 pages means and how we plan them",
+    label: "Up to 15 pages",
     body: (
       <>
         <p>
-          Fifteen pages is not just five pages scaled up. It is a site with
-          structure — a homepage, about page, service pages, case studies, a
-          blog, a contact page, and room for growth. We plan the information
-          architecture so the site can expand without breaking the navigation or
-          confusing visitors.
-        </p>
-        <p>
-          We think about how someone moves through the site: what they see first,
-          what questions come next, and where they end up. The page count is not
-          a limit to hit — it is a framework for building something that makes
-          sense and leaves room for more.
+          Fifteen pages gives room for a proper site structure. Product or
+          service pages, team pages, case studies, blog, legal pages — we plan
+          the full architecture with you before we write a single line of code.
         </p>
       </>
     ),
   },
   {
     id: "cms",
-    label: "How the CMS works and what you can edit yourself",
+    label: "The CMS",
     body: (
       <>
         <p>
-          We set up a content management system so you can update text, swap
-          images, add blog posts, and manage your content without calling us.
-          The CMS is configured specifically for your site — not a generic
-          WordPress install with fifty plugins you do not need.
-        </p>
-        <p>
-          You can edit pages, write new blog posts, update service descriptions,
-          change pricing if needed, and manage your portfolio or case study
-          entries. The CMS is designed so you cannot accidentally break the
-          design. Layout, typography, and structure stay intact no matter what
-          content you put in.
+          We build your site with a content management system that lets you
+          update text, images, and content yourself without touching code. You
+          get a walkthrough of how to use it when we hand over.
         </p>
       </>
     ),
   },
   {
     id: "seo",
-    label: "What advanced SEO covers beyond the basics",
+    label: "Advanced SEO",
     body: (
       <>
         <p>
-          Beyond the foundational SEO included in Starter, Pro-level SEO goes
-          deeper. We do keyword research for your industry, optimize page
-          content around what people are actually searching for, set up
-          structured data so Google displays rich results, and build internal
-          linking structures that help search engines understand your site.
-        </p>
-        <p>
-          We also configure canonical URLs, handle redirects properly, set up
-          proper XML sitemaps with priority and change frequency, and make sure
-          your site loads fast enough to pass Core Web Vitals. This is SEO that
-          compounds over time — the kind that builds authority rather than
-          chasing algorithm tricks.
+          Beyond the basics. We research which terms your customers actually
+          search for. We structure your pages around those terms. We set up
+          schema markup so search engines understand your content. We connect
+          Google Analytics and Search Console and make sure data is flowing
+          correctly.
         </p>
       </>
     ),
   },
   {
     id: "animations",
-    label: "What animations and interactions we implement",
+    label: "Animations and interactions",
     body: (
       <>
         <p>
-          Animations on a website should feel considered, not distracting. We
-          implement scroll-triggered reveals, hover states that give feedback,
-          page transitions that feel smooth, and subtle motion that guides
-          attention without screaming for it.
-        </p>
-        <p>
-          Every animation is built for performance — no jank, no dropped frames,
-          no 500-millisecond delays that make the site feel slow. We use modern
-          CSS animations and lightweight JavaScript where it makes sense. The
-          goal is a site that feels alive without ever feeling like it is trying
-          too hard.
+          We add motion where it makes the experience feel more considered.
+          Page transitions, scroll reveals, hover states. Everything
+          intentional.
         </p>
       </>
     ),
   },
   {
     id: "analytics",
-    label: "What analytics setup includes and what you can track",
+    label: "Analytics",
     body: (
       <>
         <p>
-          We set up analytics from day one so you can see what is happening on
-          your site: how many people visit, where they come from, which pages
-          they spend time on, and where they drop off. We configure event
-          tracking for key actions — form submissions, button clicks, content
-          downloads — so you know what is working.
-        </p>
-        <p>
-          You get a dashboard you can actually read, not a wall of numbers that
-          require a data science degree. We walk you through what matters and
-          what you can ignore. Analytics is not just about vanity metrics — it
-          is about understanding whether your site is doing its job.
+          From day one your site tracks what matters. Where visitors come from,
+          which pages they spend time on, where they leave. We set up the
+          events that are relevant to your business goals.
         </p>
       </>
     ),
   },
   {
     id: "revisions",
-    label: "What two revision rounds cover across the project",
+    label: "Revision rounds",
     body: (
       <>
         <p>
-          Pro includes two rounds of revisions. The first round covers the
-          initial build — layout, content, design direction, and structure. We
-          take your feedback, apply it thoughtfully, and deliver a polished
-          second version. The second round is for fine-tuning: spacing tweaks,
-          color adjustments, copy edits, and the small things that separate good
-          from great.
-        </p>
-        <p>
-          Two rounds means there is room to get it right without the project
-          dragging on indefinitely. It is enough time for real collaboration
-          without scope creep. New pages, new features, or major structural
-          changes fall outside the revision rounds and are handled as separate
-          scope discussions.
+          Two rounds means we build the full site, you review everything, we
+          address your feedback, you review again, we finalize. It gives space
+          to refine without dragging the project out.
         </p>
       </>
     ),
   },
   {
     id: "availability",
-    label: "What ongoing availability looks like after launch",
+    label: "After launch",
     body: (
       <>
         <p>
-          After launch, we do not disappear. Pro includes a post-launch window
-          where we are reachable for questions, small fixes, and quick
-          adjustments. If something breaks, we fix it. If you need guidance on
-          using the CMS, we walk you through it.
-        </p>
-        <p>
-          For ongoing work — new pages, new features, content updates beyond
-          small changes — we quote it as new scope. But the line is always open.
-          We want the site to succeed, and we stand behind the work we delivered.
+          We are available after launch for questions and small adjustments. If
+          something comes up we respond.
         </p>
       </>
     ),
   },
   {
     id: "who",
-    label: "Who this plan works best for",
+    label: "Who this is for",
     body: (
       <>
         <p>
-          Pro is for businesses that need more than a brochure site. A growing
-          company with services to explain and content to publish. A startup
-          that needs a real web presence with room to expand. A professional
-          practice that wants to look as polished online as they do in person.
-        </p>
-        <p>
-          If you need a CMS, want to publish content regularly, care about SEO,
-          and value a site that feels considered at every touchpoint — Pro is
-          the right tier. It is the sweet spot for most serious small and
-          mid-size businesses.
+          Businesses that have outgrown a simple site and need something that
+          works harder. Companies that want to own and update their content
+          without depending on a developer for every change. Anyone building
+          something meant to last a few years.
         </p>
       </>
     ),
@@ -240,8 +178,7 @@ export default function ProDetailsPage() {
           <div className="mt-20">
             <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-10" />
             <p className="text-white/40 text-sm mb-5">
-              Think Pro is the right fit? Let us talk about your project and see
-              if we are a match.
+              Ready to get started?
             </p>
             <a
               href="/#contact"
