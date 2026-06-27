@@ -89,11 +89,11 @@ export default function Navbar() {
         </Container>
       </header>
 
-      {/* Mobile fullscreen overlay — glass */}
+      {/* Mobile fullscreen overlay — pure transparent glass */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 z-40 flex flex-col lg:hidden glass-ultra rounded-none"
+          className="fixed inset-0 z-40 flex flex-col lg:hidden overflow-hidden glass-pro rounded-none"
         >
           {/* ── Ambient depth ── */}
           <div className="absolute inset-0 pointer-events-none">
@@ -109,7 +109,7 @@ export default function Navbar() {
             {NAV_LINKS.map((link, i) => (
               <div
                 key={link}
-                className="glass-card rounded-2xl group"
+                className="glass-subtle rounded-2xl group"
                 style={{
                   animation: `menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) ${i * 0.1}s both`,
                 }}
