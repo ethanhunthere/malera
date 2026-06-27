@@ -1,16 +1,17 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import Container from "@/src/features/layout/components/Container";
+import ContactForm from "@/src/features/home/components/ContactForm";
 
 /*
 ╔══════════════════════════════════════════════════════════════╗
 ║   CONTACT  ·  100/100  ·  Editorial glass layout            ║
 ║                                                              ║
 ║   Ghost watermark behind the heading.                        ║
-║   Left:  email + WhatsApp (serious contact channels)         ║
+║   Left:  inline contact form + WhatsApp (serious channels)   ║
 ║   Right: Instagram, LinkedIn, Facebook (social presence)     ║
 ║   Vertical gold hairline between columns.                    ║
-║   Right side matches left height exactly.                    ║
+║   Form posts via AJAX — no redirect, straight to Gmail.      ║
 ╚══════════════════════════════════════════════════════════════╝
 */
 
@@ -56,44 +57,10 @@ export default function Contact() {
         {/* ═══════════ Split layout: primary (left) | divider | social (right) ═══════════ */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1px_380px] xl:grid-cols-[1fr_1px_440px] 2xl:grid-cols-[1fr_1px_520px] gap-0 max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
 
-          {/* ── LEFT: Email + WhatsApp (stacked) ── */}
+          {/* ── LEFT: Contact form + WhatsApp (stacked) ── */}
           <div className="flex flex-col gap-3 sm:gap-4 pr-0 lg:pr-8 xl:pr-12 2xl:pr-16">
-            {/* ── Email card ── */}
-            <a
-              href="mailto:hello@malera.studio"
-              className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.006] flex-1"
-            >
-              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 overflow-hidden transition-all duration-700 h-full flex flex-col">
-                {/* ── Gold corner accent (top-left) ── */}
-                <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 overflow-hidden opacity-40 group-hover:opacity-70 transition-opacity duration-700">
-                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
-                  <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
-                </div>
-
-                {/* ── Email icon ring ── */}
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 2xl:w-20 2xl:h-20 rounded-2xl bg-[#C9A84C]/8 ring-1 ring-[#C9A84C]/15 mb-5 sm:mb-8 group-hover:bg-[#C9A84C]/12 group-hover:ring-[#C9A84C]/30 group-hover:scale-105 transition-all duration-500">
-                  <Mail className="text-[#C9A84C] w-5 h-5 sm:w-7 sm:h-7 2xl:w-8 2xl:h-8" strokeWidth={1.5} />
-                </div>
-
-                {/* ── Email address ── */}
-                <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-lg sm:text-2xl md:text-3xl 2xl:text-4xl min-[3000px]:text-5xl mb-3 sm:mb-4 group-hover:tracking-wide transition-all duration-500 break-words">
-                  hello@malera.studio
-                </h3>
-
-                {/* ── Description ── */}
-                <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed mb-6 sm:mb-8 flex-1">
-                  Drop us a line and we&apos;ll get back to you, usually within a day. No forms, no robots — just a real person on the other end.
-                </p>
-
-                {/* ── CTA button ── */}
-                <span className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm 2xl:text-base font-semibold self-start
-                  group-hover:bg-[#C9A84C] group-hover:text-black group-hover:gap-3 group-hover:shadow-[0_4px_32px_rgba(201,168,76,0.3)]
-                  transition-all duration-500">
-                  Send a message
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform duration-500" />
-                </span>
-              </div>
-            </a>
+            {/* ── Inline contact form ── */}
+            <ContactForm />
 
             {/* ── WhatsApp card ── */}
             <a
@@ -133,7 +100,7 @@ export default function Contact() {
           <div className="hidden lg:block w-px bg-gradient-to-b from-transparent via-[#C9A84C]/20 to-transparent" />
 
           {/* ── RIGHT: Instagram, LinkedIn, Facebook — matches left height ── */}
-          <div className="mt-8 lg:mt-0 lg:pl-8 xl:pl-12 2xl:pl-16 flex flex-col gap-2 sm:gap-3 lg:gap-0">
+          <div className="mt-8 lg:mt-0 lg:pl-8 xl:pl-12 2xl:pl-16 flex flex-col gap-3 sm:gap-4">
             {SOCIALS.map(({ label, href, Icon, sub }) => (
               <a
                 key={label}
