@@ -96,129 +96,152 @@ export default function Pricing() {
         {/* ── Cards ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
           {PLANS.map((plan, i) => {
-            const isMid = plan.tier === 1;
-            const isPremium = plan.tier === 2;
-            const isEnterprise = plan.tier === 3;
+            const tier = plan.tier; // 0=Starter, 1=Pro, 2=Business, 3=Enterprise
+
+            // ── Intensity scale ──
+            const ringClass = [
+              "ring-1 ring-white/[0.04]",                                          // 25%
+              "ring-1 ring-white/[0.08]",                                          // 50%
+              "ring-1 ring-white/[0.16]",                                          // 75%
+              "ring-1 ring-white/[0.22]",                                          // 100%
+            ][tier];
+
+            const shadowClass = [
+              "",                                                                    // 25% — none
+              "shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]",                     // 50% — whisper
+              "shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_4px_24px_rgba(0,0,0,0.3)]", // 75%
+              "shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_8px_32px_rgba(0,0,0,0.4)]", // 100%
+            ][tier];
+
+            const nameClass = [
+              "text-sm sm:text-base tracking-wide font-medium text-white/60",          // 25% — understated
+              "text-base sm:text-lg tracking-wide font-semibold text-white/75",        // 50%
+              "text-lg sm:text-xl tracking-wide font-bold text-white/90",              // 75%
+              "text-xl sm:text-2xl tracking-wide font-bold text-white",                // 100%
+            ][tier];
+
+            const priceSizeClass = [
+              "text-2xl sm:text-3xl",   // 25%
+              "text-2xl sm:text-3xl",   // 50%
+              "text-2xl sm:text-3xl",   // 75%
+              "text-3xl sm:text-4xl",   // 100%
+            ][tier];
+
+            const priceWeightClass = [
+              "font-light",       // 25% — light
+              "font-medium",       // 50%
+              "font-bold",         // 75%
+              "font-extrabold",    // 100%
+            ][tier];
+
+            const descClass = [
+              "text-white/25 group-hover:text-white/35",
+              "text-white/35 group-hover:text-white/50",
+              "text-white/45 group-hover:text-white/60",
+              "text-white/55 group-hover:text-white/70",
+            ][tier];
+
+            const separatorClass = [
+              "bg-white/[0.03] group-hover:bg-white/[0.05]",
+              "bg-white/[0.05] group-hover:bg-white/[0.08]",
+              "bg-white/[0.08] group-hover:bg-white/[0.14]",
+              "bg-white/[0.12] group-hover:bg-white/[0.18]",
+            ][tier];
+
+            const featureClass = [
+              "text-white/30 group-hover:text-white/40",
+              "text-white/35 group-hover:text-white/50",
+              "text-white/45 group-hover:text-white/60",
+              "text-white/55 group-hover:text-white/70",
+            ][tier];
+
+            const bulletClass = [
+              "text-white/10 group-hover:text-white/18",
+              "text-white/12 group-hover:text-white/22",
+              "text-white/18 group-hover:text-white/32",
+              "text-white/28 group-hover:text-white/45",
+            ][tier];
+
+            const topAccentClass = [
+              "h-px bg-gradient-to-r from-transparent via-white/[0.05] to-transparent group-hover:via-white/[0.08]",
+              "h-px bg-gradient-to-r from-transparent via-white/[0.10] to-transparent group-hover:via-white/[0.16]",
+              "h-[1.5px] bg-gradient-to-r from-transparent via-white/[0.20] to-transparent group-hover:via-white/[0.30]",
+              "h-[2px] bg-gradient-to-r from-transparent via-white/35 to-transparent group-hover:via-white/50",
+            ][tier];
+
+            const ctaClass = [
+              "bg-transparent ring-1 ring-white/[0.08] text-white/45 hover:bg-white/[0.04] hover:ring-white/[0.14] hover:text-white/65 hover:scale-[1.01]",
+              "bg-white/[0.05] ring-1 ring-white/[0.10] text-white/60 hover:bg-white/[0.08] hover:ring-white/[0.18] hover:text-white/85 hover:scale-[1.02]",
+              "bg-white text-black hover:bg-white/90 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,255,255,0.10)]",
+              "bg-white text-black hover:bg-white/90 hover:scale-[1.03] hover:shadow-[0_4px_28px_rgba(255,255,255,0.15)]",
+            ][tier];
+
+            const shineOpacity = ["0.05", "0.06", "0.10", "0.14"][tier];
+            const shinePeak    = ["0.08", "0.10", "0.16", "0.22"][tier];
+
+            const badgeLabel = ["", "Most popular", "Best value", "Custom"][tier];
+            const badgeClass = [
+              "",
+              "bg-white/90 text-black text-[9px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-bl",
+              "bg-white text-black text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl",
+              "bg-white text-black text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-bl",
+            ][tier];
+
+            const hoverScale = [
+              "",
+              "hover:scale-[1.005]",
+              "hover:scale-[1.01]",
+              "hover:scale-[1.015]",
+            ][tier];
 
             return (
             <div
               key={plan.name}
-              className={`group relative rounded-2xl flex flex-col transition-all duration-700 ease-out
+              className={`group relative rounded-lg flex flex-col transition-all duration-500 ease-out
                 animate-[pricing-card-in_0.6s_ease-out_both]
-                ${isEnterprise
-                  ? "bg-gradient-to-b from-white/[0.10] to-white/[0.03] ring-[1.5px] ring-[#C9A84C]/[0.25] shadow-[0_0_0_1px_rgba(201,168,76,0.10),0_12px_60px_rgba(0,0,0,0.5),0_0_120px_rgba(201,168,76,0.04),inset_0_1px_0_rgba(255,255,255,0.08)] p-5 sm:p-6 hover:bg-gradient-to-b hover:from-white/[0.14] hover:to-white/[0.05] hover:ring-[#C9A84C]/[0.40] hover:shadow-[0_0_0_1px_rgba(201,168,76,0.18),0_20px_80px_rgba(0,0,0,0.6),0_0_180px_rgba(201,168,76,0.08),inset_0_1px_0_rgba(255,255,255,0.14)] hover:scale-[1.03]"
-                  : isPremium
-                    ? "bg-gradient-to-b from-white/[0.08] to-white/[0.02] ring-[1.5px] ring-white/[0.18] shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_12px_60px_rgba(0,0,0,0.5),0_0_120px_rgba(255,255,255,0.06),inset_0_1px_0_rgba(255,255,255,0.08)] p-5 sm:p-6 hover:bg-gradient-to-b hover:from-white/[0.12] hover:to-white/[0.04] hover:ring-white/[0.30] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.14),0_20px_80px_rgba(0,0,0,0.6),0_0_180px_rgba(255,255,255,0.10),inset_0_1px_0_rgba(255,255,255,0.14)] hover:scale-[1.03]"
-                    : isMid
-                      ? "bg-white/[0.05] ring-1 ring-white/[0.10] shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_8px_40px_rgba(0,0,0,0.4)] p-5 sm:p-6 hover:bg-white/[0.07] hover:ring-white/[0.18] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_16px_56px_rgba(0,0,0,0.5),0_0_80px_rgba(255,255,255,0.05)] hover:scale-[1.01]"
-                      : "bg-white/[0.015] ring-1 ring-white/[0.03] shadow-none p-5 sm:p-6 hover:bg-white/[0.03] hover:ring-white/[0.08] hover:shadow-[0_4px_24px_rgba(0,0,0,0.25)]"
-                }`}
+                ${plan.tier === 3 ? "bg-gradient-to-b from-white/[0.12] to-white/[0.04]" : plan.tier === 2 ? "bg-gradient-to-b from-white/[0.08] to-white/[0.02]" : plan.tier === 1 ? "bg-white/[0.05]" : "bg-white/[0.015]"}
+                ${ringClass} ${shadowClass} p-5 sm:p-6 ${hoverScale}`}
               style={{ animationDelay: `${i * 140}ms` }}
             >
-              {/* ── Premium/Enterprise: ambient glow behind card ── */}
-              {(isPremium || isEnterprise) && (
-                <div className="absolute -inset-px rounded-2xl pointer-events-none z-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700"
-                  style={{
-                    background: `radial-gradient(ellipse at 50% 0%, ${isEnterprise ? 'rgba(201,168,76,0.10)' : 'rgba(255,255,255,0.12)'} 0%, transparent 55%)`,
-                  }}
-                />
-              )}
-
               {/* ── Top accent ── */}
-              <div className={`absolute top-0 left-4 right-4 h-px transition-all duration-700 z-10 ${
-                isEnterprise
-                  ? "bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent group-hover:via-[#C9A84C]/70"
-                  : isPremium
-                    ? "bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:via-white/50"
-                    : isMid
-                      ? "bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:via-white/35"
-                      : "bg-gradient-to-r from-transparent via-white/[0.04] to-transparent group-hover:via-white/12"
-              }`} />
+              <div className={`absolute top-0 left-4 right-4 transition-all duration-500 z-10 ${topAccentClass}`} />
 
               {/* ── Badge ── */}
-              {isEnterprise && (
-                <span className="absolute top-0 right-0 bg-[#C9A84C] text-black text-[9px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl-lg z-20">
-                  Custom
-                </span>
-              )}
-              {isPremium && (
-                <span className="absolute top-0 right-0 bg-white text-black text-[9px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl-lg z-20">
-                  Best value
-                </span>
-              )}
-              {isMid && (
-                <span className="absolute top-0 right-0 bg-white text-black text-[9px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-bl-lg z-20">
-                  Most picked
+              {badgeLabel && (
+                <span className={`absolute top-0 right-0 z-20 ${badgeClass}`}>
+                  {badgeLabel}
                 </span>
               )}
 
               {/* ── Plan name ── */}
-              <p className={`relative z-10 font-[family-name:var(--font-display)] font-bold mb-3 uppercase transition-all duration-500 ${
-                isEnterprise
-                  ? "text-xl sm:text-2xl tracking-wide text-[#C9A84C] group-hover:tracking-[0.12em]"
-                  : isPremium
-                    ? "text-xl sm:text-2xl tracking-wide text-white group-hover:tracking-[0.10em]"
-                    : isMid
-                      ? "text-base sm:text-lg tracking-wide text-white group-hover:tracking-[0.10em]"
-                      : "text-base sm:text-lg tracking-wide text-white group-hover:tracking-[0.06em]"
-              }`}>
+              <p className={`relative z-10 font-[family-name:var(--font-display)] mb-3 uppercase transition-all duration-500 ${nameClass} group-hover:tracking-[0.08em]`}>
                 {plan.name}
               </p>
 
               {/* ── Price ── */}
-              <div className={`relative z-10 mb-3 transition-all duration-500 origin-left ${
-                isEnterprise || isPremium ? "group-hover:scale-[1.02]" : ""
-              }`}>
-                <span className={`font-[family-name:var(--font-display)] font-extrabold inline-block transition-all duration-500 ${
-                  isEnterprise ? "text-3xl sm:text-4xl text-[#C9A84C]" : isPremium ? "text-3xl sm:text-4xl text-white" : "text-2xl sm:text-3xl text-white"
-                }`}>
+              <div className="relative z-10 mb-3 transition-all duration-500 origin-left group-hover:scale-[1.01]">
+                <span className={`font-[family-name:var(--font-display)] inline-block transition-all duration-500 text-white ${priceSizeClass} ${priceWeightClass}`}>
                   {plan.price}
                 </span>
               </div>
 
               {/* ── Description ── */}
-              <p className={`relative z-10 text-xs sm:text-sm leading-relaxed mb-6 transition-colors duration-500 ${
-                isEnterprise
-                  ? "text-white/55 group-hover:text-white/75"
-                  : isPremium
-                    ? "text-white/50 group-hover:text-white/70"
-                    : isMid
-                      ? "text-white/35 group-hover:text-white/55"
-                      : "text-white/30 group-hover:text-white/45"
-              }`}>
+              <p className={`relative z-10 text-xs sm:text-sm leading-relaxed mb-6 transition-colors duration-500 ${descClass}`}>
                 {plan.desc}
               </p>
 
               {/* ── Separator ── */}
-              <div className={`relative z-10 h-px w-full mb-6 transition-all duration-500 ${
-                isEnterprise
-                  ? "bg-gradient-to-r from-[#C9A84C]/[0.15] via-[#C9A84C]/[0.08] to-transparent group-hover:from-[#C9A84C]/[0.25] group-hover:via-[#C9A84C]/[0.14]"
-                  : isPremium
-                    ? "bg-gradient-to-r from-white/[0.10] via-white/[0.06] to-white/[0.02] group-hover:from-white/[0.20] group-hover:via-white/[0.12]"
-                    : isMid
-                      ? "bg-white/[0.06] group-hover:bg-white/[0.12]"
-                      : "bg-white/[0.03] group-hover:bg-white/[0.06]"
-              }`} />
+              <div className={`relative z-10 h-px w-full mb-6 transition-all duration-500 ${separatorClass}`} />
 
               {/* ── Features ── */}
               <ul className="relative z-10 space-y-2 mb-6 flex-1">
                 {plan.features.map((feat, fi) => (
                   <li
                     key={feat}
-                    className={`flex items-start gap-2.5 text-xs sm:text-sm transition-all duration-400 ${
-                      isEnterprise
-                        ? "text-white/55 group-hover:text-white/75"
-                        : isPremium
-                          ? "text-white/50 group-hover:text-white/70"
-                          : isMid
-                            ? "text-white/40 group-hover:text-white/60"
-                            : "text-white/35 group-hover:text-white/50"
-                    }`}
+                    className={`flex items-start gap-2.5 text-xs sm:text-sm transition-all duration-400 ${featureClass}`}
                     style={{ transitionDelay: `${fi * 50}ms` }}
                   >
-                    <span className={`mt-px shrink-0 transition-all duration-500 ${
-                      isEnterprise ? "text-[#C9A84C]/40 group-hover:text-[#C9A84C]/60" : "text-white/15 group-hover:text-white/30"
-                    }`}>
+                    <span className={`mt-px shrink-0 transition-all duration-500 ${bulletClass}`}>
                       &bull;
                     </span>
                     {feat}
@@ -229,23 +252,13 @@ export default function Pricing() {
               {/* ── CTA Button ── */}
               <a
                 href="#contact"
-                className={`relative z-10 block text-center text-xs sm:text-sm font-semibold uppercase tracking-wider py-2.5 px-4 rounded-full transition-all duration-500 overflow-hidden ${
-                  isEnterprise
-                    ? "bg-[#C9A84C] text-black hover:bg-[#D4B35A] hover:scale-[1.04] hover:shadow-[0_0_40px_rgba(201,168,76,0.25),0_0_80px_rgba(201,168,76,0.10)]"
-                    : isPremium
-                      ? "bg-white text-black hover:bg-white/95 hover:scale-[1.04] hover:shadow-[0_0_40px_rgba(255,255,255,0.20),0_0_80px_rgba(255,255,255,0.08)]"
-                      : isMid
-                        ? "bg-white text-black hover:bg-white/90 hover:scale-[1.03] hover:shadow-[0_0_24px_rgba(255,255,255,0.15)]"
-                        : "bg-white/[0.06] text-white/65 hover:bg-white/[0.10] hover:text-white hover:scale-[1.02] ring-1 ring-white/[0.06] hover:ring-white/[0.12]"
-                }`}
+                className={`relative z-10 block text-center text-xs sm:text-sm font-semibold uppercase tracking-wider py-2.5 px-4 rounded-full transition-all duration-500 overflow-hidden ${ctaClass}`}
               >
                 <span className="relative z-10">{plan.cta}</span>
                 {/* Shine sweep on hover */}
-                <span className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out ${
-                  isEnterprise || isPremium ? "group-hover:duration-500" : ""
-                }`}
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
                   style={{
-                    background: `linear-gradient(90deg, transparent 0%, rgba(255,255,255,${isEnterprise ? '0.18' : isPremium ? '0.14' : '0.08'}) 40%, rgba(255,255,255,${isEnterprise ? '0.25' : isPremium ? '0.20' : '0.12'}) 50%, rgba(255,255,255,${isEnterprise ? '0.18' : isPremium ? '0.14' : '0.08'}) 60%, transparent 100%)`,
+                    background: `linear-gradient(90deg, transparent 0%, rgba(255,255,255,${shineOpacity}) 40%, rgba(255,255,255,${shinePeak}) 50%, rgba(255,255,255,${shineOpacity}) 60%, transparent 100%)`,
                   }}
                 />
               </a>
