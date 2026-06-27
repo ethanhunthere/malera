@@ -37,7 +37,7 @@ export default function Contact() {
 
           <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white leading-[0.9] mb-4"
             style={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}>
-            Let&apos;s talk<br />business
+            LET&apos;S TALK<br />BUSINESS
           </h2>
 
           <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[380px] 2xl:max-w-[520px]">
