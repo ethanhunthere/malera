@@ -7,14 +7,14 @@ import Container from "@/src/features/layout/components/Container";
 ║   CONTACT  ·  100/100  ·  Editorial glass layout            ║
 ║                                                              ║
 ║   Ghost watermark behind the heading.                        ║
-║   Split layout: email card (left) + social strips (right).   ║
+║   Left:  email + WhatsApp (serious contact channels)         ║
+║   Right: Instagram, LinkedIn, Facebook (social presence)     ║
 ║   Vertical gold hairline between columns.                    ║
-║   Every hover reveals something. Every pixel intentional.    ║
+║   Right side matches left height exactly.                    ║
 ╚══════════════════════════════════════════════════════════════╝
 */
 
 const SOCIALS = [
-  { label: "WhatsApp", href: "https://wa.me/+38346814700", Icon: FaWhatsapp, sub: "Chat with us" },
   { label: "Instagram", href: "https://instagram.com/malera.studio", Icon: FaInstagram, sub: "@malera.studio" },
   { label: "LinkedIn", href: "https://linkedin.com/company/malerastudio", Icon: FaLinkedin, sub: "/malerastudio" },
   { label: "Facebook", href: "https://facebook.com/malerastudio", Icon: FaFacebook, sub: "/malerastudio" },
@@ -53,16 +53,17 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* ═══════════ Split layout: email (left) | divider | socials (right) ═══════════ */}
+        {/* ═══════════ Split layout: primary (left) | divider | social (right) ═══════════ */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1px_380px] xl:grid-cols-[1fr_1px_440px] 2xl:grid-cols-[1fr_1px_520px] gap-0 max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
 
-          {/* ── LEFT: Email card ── */}
-          <div className="pr-0 lg:pr-8 xl:pr-12 2xl:pr-16">
+          {/* ── LEFT: Email + WhatsApp (stacked) ── */}
+          <div className="flex flex-col gap-3 sm:gap-4 pr-0 lg:pr-8 xl:pr-12 2xl:pr-16">
+            {/* ── Email card ── */}
             <a
               href="mailto:hello@malera.studio"
-              className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.008]"
+              className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.006] flex-1"
             >
-              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-6 sm:p-10 md:p-12 lg:p-10 xl:p-14 2xl:p-16 overflow-hidden transition-all duration-700">
+              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 overflow-hidden transition-all duration-700 h-full flex flex-col">
                 {/* ── Gold corner accent (top-left) ── */}
                 <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 overflow-hidden opacity-40 group-hover:opacity-70 transition-opacity duration-700">
                   <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
@@ -80,12 +81,12 @@ export default function Contact() {
                 </h3>
 
                 {/* ── Description ── */}
-                <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed mb-6 sm:mb-8 max-w-[440px] 2xl:max-w-[520px]">
+                <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed mb-6 sm:mb-8 flex-1">
                   Drop us a line and we&apos;ll get back to you, usually within a day. No forms, no robots — just a real person on the other end.
                 </p>
 
                 {/* ── CTA button ── */}
-                <span className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm 2xl:text-base font-semibold
+                <span className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm 2xl:text-base font-semibold self-start
                   group-hover:bg-[#C9A84C] group-hover:text-black group-hover:gap-3 group-hover:shadow-[0_4px_32px_rgba(201,168,76,0.3)]
                   transition-all duration-500">
                   Send a message
@@ -93,75 +94,84 @@ export default function Contact() {
                 </span>
               </div>
             </a>
+
+            {/* ── WhatsApp card ── */}
+            <a
+              href="https://wa.me/+38346814700"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.006]"
+            >
+              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-5 sm:p-6 md:p-8 xl:p-10 2xl:p-12 overflow-hidden transition-all duration-700">
+                {/* ── Gold corner accent (top-left) ── */}
+                <div className="absolute top-0 left-0 w-6 sm:w-8 h-6 sm:h-8 overflow-hidden opacity-30 group-hover:opacity-60 transition-opacity duration-700">
+                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/50 via-[#C9A84C]/25 to-transparent" />
+                  <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/50 via-[#C9A84C]/25 to-transparent" />
+                </div>
+
+                <div className="flex items-center gap-4 sm:gap-5">
+                  {/* Icon ring */}
+                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 2xl:w-14 2xl:h-14 rounded-2xl bg-[#C9A84C]/8 ring-1 ring-[#C9A84C]/15 shrink-0
+                    group-hover:bg-[#C9A84C]/12 group-hover:ring-[#C9A84C]/30 group-hover:scale-105 transition-all duration-500">
+                    <FaWhatsapp className="text-[#C9A84C] w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7" fill="currentColor" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-[family-name:var(--font-display)] font-bold text-white text-sm sm:text-lg lg:text-xl 2xl:text-2xl group-hover:tracking-wide transition-all duration-500">
+                      WhatsApp
+                    </p>
+                    <p className="text-white/30 text-[0.625rem] sm:text-xs lg:text-sm 2xl:text-base group-hover:text-white/45 transition-colors duration-500 mt-1">
+                      Chat with us directly
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#C9A84C]/0 group-hover:text-[#C9A84C]/40 transition-all duration-500 -translate-x-2 group-hover:translate-x-0 shrink-0" />
+                </div>
+              </div>
+            </a>
           </div>
 
           {/* ── DIVIDER: vertical gold rule (desktop only) ── */}
           <div className="hidden lg:block w-px bg-gradient-to-b from-transparent via-[#C9A84C]/20 to-transparent" />
 
-          {/* ── RIGHT: Social strips ── */}
-          <div className="mt-8 lg:mt-0 lg:pl-8 xl:pl-12 2xl:pl-16 flex flex-col justify-center">
-            {/* Mobile: 2×2 grid. Desktop: vertical stack */}
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
-              {SOCIALS.map(({ label, href, Icon, sub }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/strip relative flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-2.5 sm:py-3.5 lg:py-3 rounded-xl overflow-hidden
-                    transition-all duration-500
-                    hover:translate-x-0.5 lg:hover:translate-x-1.5
-                    bg-white/[0.02] hover:bg-white/[0.04]
-                    ring-1 ring-white/[0.04] hover:ring-[#C9A84C]/15"
-                >
-                  {/* Left gold accent line */}
-                  <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/20 to-transparent
-                    group-hover/strip:via-[#C9A84C]/45 transition-all duration-500" />
+          {/* ── RIGHT: Instagram, LinkedIn, Facebook — matches left height ── */}
+          <div className="mt-8 lg:mt-0 lg:pl-8 xl:pl-12 2xl:pl-16 flex flex-col gap-2 sm:gap-3 lg:gap-0">
+            {SOCIALS.map(({ label, href, Icon, sub }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/strip relative flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-3 sm:py-4 lg:flex-1 rounded-xl overflow-hidden
+                  transition-all duration-500
+                  hover:translate-x-0.5 lg:hover:translate-x-1.5
+                  bg-white/[0.02] hover:bg-white/[0.04]
+                  ring-1 ring-white/[0.04] hover:ring-[#C9A84C]/15"
+              >
+                {/* Left gold accent line */}
+                <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/20 to-transparent
+                  group-hover/strip:via-[#C9A84C]/45 transition-all duration-500" />
 
-                  {/* Icon */}
-                  <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/[0.03] ring-1 ring-white/[0.04]
-                    group-hover/strip:bg-[#C9A84C]/8 group-hover/strip:ring-[#C9A84C]/20 transition-all duration-500">
-                    <Icon className="text-white/30 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/strip:text-[#C9A84C] transition-colors duration-500"
-                      fill="currentColor" />
-                  </div>
+                {/* Icon */}
+                <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/[0.03] ring-1 ring-white/[0.04]
+                  group-hover/strip:bg-[#C9A84C]/8 group-hover/strip:ring-[#C9A84C]/20 transition-all duration-500">
+                  <Icon className="text-white/30 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/strip:text-[#C9A84C] transition-colors duration-500"
+                    fill="currentColor" />
+                </div>
 
-                  {/* Label + sub */}
-                  <div className="relative z-10 flex-1 min-w-0">
-                    <p className="text-[0.6875rem] sm:text-xs font-medium text-white/45 group-hover/strip:text-white/75 transition-colors duration-500 truncate">
-                      {label}
-                    </p>
-                    <p className="text-[0.5625rem] sm:text-[0.625rem] text-white/15 group-hover/strip:text-white/22 transition-colors duration-500 truncate mt-0.5">
-                      {sub}
-                    </p>
-                  </div>
+                {/* Label + sub */}
+                <div className="relative z-10 flex-1 min-w-0">
+                  <p className="text-[0.6875rem] sm:text-xs lg:text-sm font-medium text-white/45 group-hover/strip:text-white/75 transition-colors duration-500 truncate">
+                    {label}
+                  </p>
+                  <p className="text-[0.5625rem] sm:text-[0.625rem] lg:text-xs text-white/15 group-hover/strip:text-white/22 transition-colors duration-500 truncate mt-0.5">
+                    {sub}
+                  </p>
+                </div>
 
-                  {/* Arrow — hidden until hover */}
-                  <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C9A84C]/0 group-hover/strip:text-[#C9A84C]/40
-                    transition-all duration-500 -translate-x-2 group-hover/strip:translate-x-0 shrink-0" />
-                </a>
-              ))}
-            </div>
-
-            {/* ── Sub-label ── */}
-            <p className="hidden lg:block mt-4 text-[0.625rem] text-white/10 tracking-[0.08em] font-mono text-center">
-              Find us wherever you are
-            </p>
-          </div>
-        </div>
-
-        {/* ═══════════ Response time badge ═══════════ */}
-        <div className="relative z-10 mt-10 sm:mt-14 flex justify-center">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full
-            bg-white/[0.02] ring-1 ring-white/[0.04]
-            backdrop-blur-sm">
-            {/* Green/gold dot */}
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C9A84C]/40 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C9A84C]/60" />
-            </span>
-            <span className="font-mono text-[0.625rem] sm:text-[0.6875rem] text-white/20 tracking-[0.08em]">
-              We usually respond within a few hours
-            </span>
+                {/* Arrow — hidden until hover */}
+                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C9A84C]/0 group-hover/strip:text-[#C9A84C]/40
+                  transition-all duration-500 -translate-x-2 group-hover/strip:translate-x-0 shrink-0" />
+              </a>
+            ))}
           </div>
         </div>
       </Container>
