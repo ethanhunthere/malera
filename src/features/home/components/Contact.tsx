@@ -1,5 +1,66 @@
 import Container from "@/src/features/layout/components/Container";
 
+/*
+╔══════════════════════════════════════════════════════════════╗
+║   CONTACT  ·  Malera glass design                           ║
+║                                                              ║
+║   Layered transparency with gold whispers.                   ║
+║   Email card anchors the section; social cards sit below     ║
+║   in a clean row, each one a small glass tile.               ║
+║   Minimal, serious, confident.                               ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ── Accurate stroke icons for each platform ── */
+const SOCIALS = [
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/+38346814700",
+    /* Speech bubble with phone handset */
+    icon: (
+      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.8 3.8L3 21" />
+    ),
+    sub: "Chat with us",
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/malera.studio",
+    /* Camera outline in rounded rect */
+    icon: (
+      <>
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="17.5" cy="6.5" r="1.2" />
+      </>
+    ),
+    sub: "@malera.studio",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/malerastudio",
+    /* Rounded square with "in" letterforms */
+    icon: (
+      <>
+        <rect x="2" y="2" width="20" height="20" rx="4" />
+        <path d="M8 8v8M8 12h4M12 8v8M18 8v5a3 3 0 0 1-3 3v0a3 3 0 0 1-3-3" />
+      </>
+    ),
+    sub: "/malerastudio",
+  },
+  {
+    label: "Facebook",
+    href: "https://facebook.com/malerastudio",
+    /* Circle with "f" */
+    icon: (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <path d="M15 7h-3a2 2 0 0 0-2 2v2H8v3h2v6h3v-6h2l.5-3H13V9h2" />
+      </>
+    ),
+    sub: "/malerastudio",
+  },
+];
+
 export default function Contact() {
   return (
     <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44">
@@ -11,7 +72,7 @@ export default function Contact() {
         {/* ── Header ── */}
         <div className="mb-8 sm:mb-14 text-center">
           <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C] mb-4">
-            LET&apos;S TALK
+            CONTACT US
           </p>
 
           <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white leading-[0.9] mb-4"
@@ -19,7 +80,7 @@ export default function Contact() {
               fontSize: 'clamp(1.5rem, 5vw, 7rem)',
             }}
           >
-            Ready to build<br />something great?
+            Let&apos;s talk<br />business
           </h2>
 
           <p className="text-white/40 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[360px] 2xl:max-w-[480px] mx-auto">
@@ -27,17 +88,17 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* ── Hero CTA: dominant email card ── */}
+        {/* ── Email card — dominant glass tile ── */}
         <a
           href="mailto:hello@malera.studio"
-          className="group block relative mb-4 sm:mb-6 rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.01] max-w-[850px] 2xl:max-w-[1000px] mx-auto"
+          className="group block relative mb-6 sm:mb-10 rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.01] max-w-[850px] 2xl:max-w-[1000px] mx-auto"
         >
-          {/* Dark glass container */}
-          <div className="relative glass-deep rounded-2xl p-4 sm:p-10 md:p-12 text-center overflow-hidden transition-all duration-700 group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_20px_80px_rgba(0,0,0,0.5),0_0_120px_rgba(201,168,76,0.08)]">
-            {/* Top gold accent line */}
+          <div className="relative rounded-2xl p-5 sm:p-10 md:p-12 text-center overflow-hidden transition-all duration-700
+            glass-card-gold glass-card-gold-hover">
+            {/* Top gold accent */}
             <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent group-hover:via-[#C9A84C]/70 transition-all duration-700" />
 
-            {/* Icon ring */}
+            {/* Email icon ring */}
             <div className="inline-flex items-center justify-center w-12 h-12 sm:w-20 sm:h-20 2xl:w-24 2xl:h-24 rounded-2xl bg-[#C9A84C]/10 ring-1 ring-[#C9A84C]/20 mb-4 sm:mb-6 group-hover:bg-[#C9A84C]/15 group-hover:ring-[#C9A84C]/35 group-hover:scale-105 transition-all duration-500">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#C9A84C] sm:w-7 sm:h-7 2xl:w-8 2xl:h-8">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -64,34 +125,53 @@ export default function Contact() {
           </div>
         </a>
 
-        {/* ── Instagram  balanced beside the hero card ── */}
-        <div className="flex justify-center">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl glass-card glass-card-hover transition-all duration-500 hover:-translate-y-0.5 w-full max-w-[420px]"
-          >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.06] flex items-center justify-center shrink-0 group-hover:bg-white/[0.08] group-hover:ring-white/[0.14] transition-all duration-500">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 group-hover:text-[#C9A84C] transition-colors duration-500">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="5" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-              </svg>
-            </div>
-            <div className="flex-1 min-w-0">
-              <h3 className="text-sm sm:text-base font-medium text-white/80 group-hover:text-white transition-colors duration-500 mb-0.5">
-                Instagram
-              </h3>
-              <p className="text-xs sm:text-sm text-white/40 group-hover:text-white/55 transition-colors duration-500">
-                @malera.studio
-              </p>
-            </div>
-            <span className="font-mono text-white/10 group-hover:text-[#C9A84C] group-hover:translate-x-0.5 transition-all duration-500 shrink-0 text-sm">
-              →
-            </span>
-          </a>
+        {/* ── Social grid — glass tiles, 2×2 on mobile, 4 across on desktop ── */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 max-w-[850px] 2xl:max-w-[1000px] mx-auto mb-6 sm:mb-8">
+          {SOCIALS.map(({ label, href, icon, sub }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-0.5"
+            >
+              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-3 sm:p-5 text-center transition-all duration-500
+                group-hover:shadow-[0_0_0_1px_rgba(201,168,76,0.18),0_0_24px_rgba(201,168,76,0.04)]">
+                {/* Icon */}
+                <div className="inline-flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 2xl:w-12 2xl:h-12 rounded-xl bg-white/[0.03] ring-1 ring-white/[0.05] mb-2 sm:mb-3 group-hover:bg-white/[0.06] group-hover:ring-[#C9A84C]/25 transition-all duration-500">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white/35 sm:w-5 sm:h-5 group-hover:text-[#C9A84C] transition-colors duration-500"
+                  >
+                    {icon}
+                  </svg>
+                </div>
+
+                {/* Label */}
+                <p className="text-[0.625rem] sm:text-xs font-medium text-white/50 group-hover:text-white/80 transition-colors duration-500">
+                  {label}
+                </p>
+
+                {/* Subtitle */}
+                <p className="text-[0.5625rem] sm:text-[0.625rem] text-white/18 group-hover:text-white/25 transition-colors duration-500 mt-0.5 truncate">
+                  {sub}
+                </p>
+              </div>
+            </a>
+          ))}
         </div>
+
+        {/* ── Response time note ── */}
+        <p className="text-center font-mono text-[0.625rem] sm:text-[0.6875rem] text-white/12 tracking-[0.1em]">
+          We usually respond within a few hours.
+        </p>
       </Container>
     </section>
   );
