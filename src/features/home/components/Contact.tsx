@@ -16,9 +16,9 @@ import ContactForm from "@/src/features/home/components/ContactForm";
 */
 
 const SOCIALS = [
+  { label: "Facebook", href: "https://facebook.com/malerastudio", Icon: FaFacebook, sub: "/malerastudio" },
   { label: "Instagram", href: "https://instagram.com/malera.studio", Icon: FaInstagram, sub: "@malera.studio" },
   { label: "LinkedIn", href: "https://linkedin.com/company/malerastudio", Icon: FaLinkedin, sub: "/malerastudio" },
-  { label: "Facebook", href: "https://facebook.com/malerastudio", Icon: FaFacebook, sub: "/malerastudio" },
 ];
 
 export default function Contact() {
@@ -46,7 +46,7 @@ export default function Contact() {
         </div>
 
         {/* ═══════════ Split layout: primary (left) | divider | social (right) ═══════════ */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1px_380px] xl:grid-cols-[1fr_1px_440px] 2xl:grid-cols-[1fr_1px_520px] gap-0 max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1px_280px] xl:grid-cols-[1fr_1px_320px] 2xl:grid-cols-[1fr_1px_380px] gap-0 max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
 
           {/* ── LEFT: Contact form + WhatsApp (stacked) ── */}
           <div className="flex flex-col gap-3 sm:gap-4 pr-0 lg:pr-8 xl:pr-12 2xl:pr-16">
@@ -58,9 +58,10 @@ export default function Contact() {
               href="https://wa.me/+38346814700"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.006]"
+              className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.006] flex-auto"
             >
-              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-5 sm:p-6 md:p-8 xl:p-10 2xl:p-12 overflow-hidden transition-all duration-700">
+              <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-5 sm:p-6 md:p-8 xl:p-10 2xl:p-12 overflow-hidden transition-all duration-700 h-full flex items-center
+                !border !border-[#C9A84C]/20 hover:!border-[#C9A84C]/45">
                 {/* ── Gold corner accent (top-left) ── */}
                 <div className="absolute top-0 left-0 w-6 sm:w-8 h-6 sm:h-8 overflow-hidden opacity-30 group-hover:opacity-60 transition-opacity duration-700">
                   <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/50 via-[#C9A84C]/25 to-transparent" />
@@ -90,43 +91,42 @@ export default function Contact() {
           {/* ── DIVIDER: vertical gold rule (desktop only) ── */}
           <div className="hidden lg:block w-px bg-gradient-to-b from-transparent via-[#C9A84C]/20 to-transparent" />
 
-          {/* ── RIGHT: Instagram, LinkedIn, Facebook — matches left height ── */}
-          <div className="mt-8 lg:mt-0 lg:pl-8 xl:pl-12 2xl:pl-16 flex flex-col gap-3 sm:gap-4">
+          {/* ── RIGHT: Instagram, LinkedIn, Facebook — glass, no fill ── */}
+          <div className="mt-8 lg:mt-0 lg:pl-6 xl:pl-8 2xl:pl-10 flex flex-col gap-3 sm:gap-4 md:flex-row lg:flex-col lg:gap-3">
             {SOCIALS.map(({ label, href, Icon, sub }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/strip relative flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-3 sm:py-4 lg:flex-1 rounded-xl overflow-hidden
+                className="group/strip relative flex items-center gap-3 sm:gap-4 pl-4 sm:pl-5 pr-2 sm:pr-3 py-3 sm:py-4 md:flex-1 lg:flex-1 rounded-xl overflow-hidden
                   transition-all duration-500
                   hover:translate-x-0.5 lg:hover:translate-x-1.5
-                  bg-white/[0.02] hover:bg-white/[0.04]
-                  ring-1 ring-white/[0.04] hover:ring-[#C9A84C]/15"
+                  backdrop-blur-[6px] hover:backdrop-blur-[10px]
+                  bg-transparent hover:bg-white/[0.03]
+                  ring-1 ring-white/[0.05] hover:ring-[#C9A84C]/25"
               >
                 {/* Left gold accent line */}
-                <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/20 to-transparent
-                  group-hover/strip:via-[#C9A84C]/45 transition-all duration-500" />
+                <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/35 to-transparent
+                  group-hover/strip:via-[#C9A84C]/55 transition-all duration-500" />
 
-                {/* Icon */}
-                <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/[0.03] ring-1 ring-white/[0.04]
-                  group-hover/strip:bg-[#C9A84C]/8 group-hover/strip:ring-[#C9A84C]/20 transition-all duration-500">
-                  <Icon className="text-white/30 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/strip:text-[#C9A84C] transition-colors duration-500"
-                    fill="currentColor" />
-                </div>
+                {/* Icon — bare, no container */}
+                <Icon className="relative z-10 text-white/40 w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5 shrink-0
+                  group-hover/strip:text-[#C9A84C] transition-colors duration-500"
+                  fill="currentColor" />
 
                 {/* Label + sub */}
                 <div className="relative z-10 flex-1 min-w-0">
-                  <p className="text-[0.6875rem] sm:text-xs lg:text-sm font-medium text-white/45 group-hover/strip:text-white/75 transition-colors duration-500 truncate">
+                  <p className="text-[0.6875rem] sm:text-xs lg:text-sm font-semibold text-white/55 group-hover/strip:text-white/85 transition-colors duration-500 truncate">
                     {label}
                   </p>
-                  <p className="text-[0.5625rem] sm:text-[0.625rem] lg:text-xs text-white/15 group-hover/strip:text-white/22 transition-colors duration-500 truncate mt-0.5">
+                  <p className="text-[0.5625rem] sm:text-[0.625rem] lg:text-xs text-white/22 group-hover/strip:text-white/32 transition-colors duration-500 truncate mt-0.5">
                     {sub}
                   </p>
                 </div>
 
                 {/* Arrow — hidden until hover */}
-                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C9A84C]/0 group-hover/strip:text-[#C9A84C]/40
+                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C9A84C]/0 group-hover/strip:text-[#C9A84C]/45
                   transition-all duration-500 -translate-x-2 group-hover/strip:translate-x-0 shrink-0" />
               </a>
             ))}

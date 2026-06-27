@@ -128,9 +128,9 @@ export default function ContactForm() {
               type="text"
               required
               placeholder="John Doe"
-              className="w-full bg-white/[0.03] ring-1 ring-white/[0.06] rounded-lg px-3.5 py-2.5 sm:py-3 text-white text-xs sm:text-sm
-                placeholder:text-white/[0.08]
-                focus:outline-none focus:ring-[#C9A84C]/30 focus:bg-white/[0.05]
+              className="w-full bg-white/[0.07] ring-1 ring-white/[0.10] rounded-lg px-3.5 py-2.5 sm:py-3 text-white text-xs sm:text-sm
+                placeholder:text-white/[0.13]
+                focus:outline-none focus:ring-[#C9A84C]/35 focus:bg-white/[0.10] focus:ring-[1.5px]
                 transition-all duration-300"
             />
           </div>
@@ -145,9 +145,9 @@ export default function ContactForm() {
               type="email"
               required
               placeholder="john@example.com"
-              className="w-full bg-white/[0.03] ring-1 ring-white/[0.06] rounded-lg px-3.5 py-2.5 sm:py-3 text-white text-xs sm:text-sm
-                placeholder:text-white/[0.08]
-                focus:outline-none focus:ring-[#C9A84C]/30 focus:bg-white/[0.05]
+              className="w-full bg-white/[0.07] ring-1 ring-white/[0.10] rounded-lg px-3.5 py-2.5 sm:py-3 text-white text-xs sm:text-sm
+                placeholder:text-white/[0.13]
+                focus:outline-none focus:ring-[#C9A84C]/35 focus:bg-white/[0.10] focus:ring-[1.5px]
                 transition-all duration-300"
             />
           </div>
@@ -163,9 +163,9 @@ export default function ContactForm() {
             required
             rows={4}
             placeholder="Tell us about your project — what you need, your timeline, your budget if you have one..."
-            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] bg-white/[0.03] ring-1 ring-white/[0.06] rounded-lg px-3.5 py-2.5 sm:py-3 text-white text-xs sm:text-sm
-              placeholder:text-white/[0.08] resize-none
-              focus:outline-none focus:ring-[#C9A84C]/30 focus:bg-white/[0.05]
+            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] bg-white/[0.07] ring-1 ring-white/[0.10] rounded-lg px-3.5 py-2.5 sm:py-3 text-white text-xs sm:text-sm
+              placeholder:text-white/[0.13] resize-none
+              focus:outline-none focus:ring-[#C9A84C]/35 focus:bg-white/[0.10] focus:ring-[1.5px]
               transition-all duration-300"
           />
         </div>
