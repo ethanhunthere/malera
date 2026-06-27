@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap && bash scripts/inject-preloads.sh out",
+    "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -15,13 +16,15 @@
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "three": "^0.184.0"
+    "three": "^0.185.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.9",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "next-sitemap": "^4.2.3",

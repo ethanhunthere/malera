@@ -575,7 +575,7 @@ export default function Services() {
       </Container>
 
       {/* Sentinel  triggers hero shards to shatter near end of services */}
-      <div data-shard-sentinel="hero" className="w-full h-px pointer-events-none" />
+      <div className="w-full h-px pointer-events-none" />
     </section>
   );
 }

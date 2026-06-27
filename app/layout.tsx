@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Malera Studio",
     images: [
       {
-        url: "/malera-transparent.png",
+        url: "/malera-transparent.webp",
         width: 1200,
         height: 630,
         alt: "Malera Studio - We Just Build Good Stuff",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: "Malera Studio - We Just Build Good Stuff",
     description:
       "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
-    images: ["/malera-transparent.png"],
+    images: ["/malera-transparent.webp"],
   },
   manifest: "/manifest.json",
   alternates: {
@@ -100,10 +100,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="preload" as="image" href="/malera-transparent.webp" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href="/malera-transparent.webp" fetchPriority="high" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             (function() {
               var s = document.createElement('script');

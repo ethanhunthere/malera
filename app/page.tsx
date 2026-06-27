@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "@/src/features/layout/components/Navbar";
 import Hero from "@/src/features/home/components/Hero";
-import Services from "@/src/features/home/components/Services";
 import Footer from "@/src/features/layout/components/Footer";
 import GlassDivider from "@/src/features/layout/components/GlassDivider";
-import { Portfolio, Pricing, Contact } from "@/src/features/home/dynamic";
+import {
+  Portfolio,
+  Pricing,
+  Contact,
+} from "@/src/features/home/dynamic";
+
+const Services = dynamic(
+  () => import("@/src/features/home/components/Services"),
+  {
+    loading: () => (
+      <section className="relative min-h-[600px] sm:min-h-[700px]" />
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: "Malera Studio - We Just Build Good Stuff",
@@ -18,7 +31,7 @@ const structuredData = [
     "@type": "Organization",
     name: "Malera Studio",
     url: "https://www.malera.studio",
-    logo: "https://www.malera.studio/malera-transparent.png",
+    logo: "https://www.malera.studio/malera-transparent.webp",
     description:
       "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
     foundingDate: "2026",
@@ -54,7 +67,7 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Malera Studio",
-    image: "https://www.malera.studio/malera-transparent.png",
+    image: "https://www.malera.studio/malera-transparent.webp",
     url: "https://www.malera.studio",
     telephone: "+383-44-000-000",
     email: "hello@malera.studio",

@@ -107,13 +107,38 @@ export default function Portfolio() {
 function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }) {
   const [reveal, setReveal] = useState(false);
   const [iframeFailed, setIframeFailed] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   const iframeDone = useRef(false);
   const minTimeDone = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const fallbackRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const loadTimestamp = useRef(0);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Only load the iframe when the card approaches the viewport
+    const card = cardRef.current;
+    if (!card) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(card);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
+
     // Minimum 3-second loading window so sites can fully fetch
     timerRef.current = setTimeout(() => {
       minTimeDone.current = true;
@@ -137,8 +162,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
       if (timerRef.current) clearTimeout(timerRef.current);
       if (fallbackRef.current) clearTimeout(fallbackRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [shouldLoad, iframeFailed]);
 
   const handleLoad = () => {
     loadTimestamp.current = Date.now();
@@ -148,6 +172,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
 
   return (
     <div
+      ref={cardRef}
       className="group relative rounded-2xl overflow-hidden
         glass-card-gold glass-card-gold-hover
         animate-[pricing-card-in_0.6s_ease-out_both]"
@@ -185,15 +210,16 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
               OPEN IN NEW TAB <ExternalIcon />
             </a>
           </div>
-        ) : (
+        ) : shouldLoad ? (
           <iframe
             src={project.url}
             title={project.title}
+            loading="lazy"
             className={`absolute inset-0 w-full h-full border-none z-[2] transition-opacity duration-700 ${reveal ? 'opacity-100' : 'opacity-0'}`}
             scrolling="yes"
             onLoad={handleLoad}
           />
-        )}
+        ) : null}
 
         {/* ── Glass rim ── */}
         <div className="absolute inset-0 pointer-events-none z-[3]

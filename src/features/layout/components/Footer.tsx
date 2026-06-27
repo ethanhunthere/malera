@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="relative mt-8 sm:mt-16">
       {/* Sentinel – triggers services shards to shatter when footer comes into view */}
-      <div data-shard-sentinel="services" className="w-full h-px pointer-events-none" />
+      <div className="w-full h-px pointer-events-none" />
 
       {/* ── Glass separator line ── */}
       <Container>

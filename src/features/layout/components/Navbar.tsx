@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Container from "@/src/features/layout/components/Container";
 
 const NAV_LINKS = ["Services", "Pricing", "Contact"];
@@ -45,15 +44,15 @@ export default function Navbar() {
       <header className="relative z-30">
         <Container>
           <nav className="relative z-10 flex items-center h-12 sm:h-16">
-            {/* Logo  left */}
+            {/* Logo  left — plain img for instant rendering, no JS decode delay */}
             <a href="/" className="flex-shrink-0">
-              <Image
+              <img
                 src="/malera-transparent.webp"
                 alt="Malera Studio"
                 width={160}
                 height={40}
                 className="h-6 sm:h-9 2xl:h-10 min-[3000px]:h-12 w-auto opacity-90 hover:opacity-100 transition-opacity"
-                priority
+                fetchPriority="high"
               />
             </a>
 
@@ -175,7 +174,7 @@ export default function Navbar() {
         }`}
       >
         <a href="/">
-          <Image
+          <img
             src="/malera-transparent.webp"
             alt="Malera Studio"
             width={120}
