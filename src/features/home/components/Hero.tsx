@@ -270,18 +270,18 @@ export default function Hero() {
         </div>
 
         {/* ── Subtext + buttons ── */}
-        <div className="flex flex-col items-center gap-4 sm:gap-10 mb-10 sm:mb-14 w-full max-w-[min(100%,360px)] sm:max-w-[550px] 2xl:max-w-[720px]">
-          <p className="text-[0.75rem] sm:text-base lg:text-lg 2xl:text-xl min-[3000px]:text-2xl text-white/35 font-light leading-relaxed text-center tracking-wide">
+        <div className="flex flex-col items-center gap-4 sm:gap-10 mb-10 sm:mb-14 w-full max-w-[min(100%,360px)] sm:max-w-[550px] 2xl:max-w-[720px] min-[3000px]:max-w-[1000px] min-[5000px]:max-w-[1300px]">
+          <p className="text-[0.75rem] sm:text-base lg:text-lg 2xl:text-xl min-[3000px]:text-3xl min-[5000px]:text-4xl text-white/35 font-light leading-relaxed text-center tracking-wide">
             Websites, apps &amp; video.<br />Built from Kosovo.
           </p>
 
-          <div className="w-20 sm:w-28 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+          <div className="w-20 sm:w-28 2xl:w-36 min-[3000px]:w-56 min-[5000px]:w-72 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto justify-center">
             {/* Primary  See our work */}
             <a
               href="#services"
-              className="hero-btn-primary group inline-flex items-center justify-center gap-2 text-[0.6875rem] sm:text-base 2xl:text-lg font-semibold px-6 sm:px-10 py-3 sm:py-5 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
+              className="hero-btn-primary group inline-flex items-center justify-center gap-2 text-[0.6875rem] sm:text-base 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl font-semibold px-6 sm:px-10 2xl:px-12 min-[3000px]:px-16 min-[5000px]:px-20 py-3 sm:py-5 min-[3000px]:py-7 min-[5000px]:py-9 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
             >
               See our work
               <span className="hero-btn-arrow text-black/25 group-hover:text-black/50">→</span>
@@ -289,7 +289,7 @@ export default function Hero() {
             {/* Secondary  Get in touch */}
             <a
               href="#contact"
-              className="hero-btn-secondary group inline-flex items-center justify-center gap-2 text-white/70 text-[0.6875rem] sm:text-base 2xl:text-lg font-medium px-6 sm:px-10 py-3 sm:py-5 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
+              className="hero-btn-secondary group inline-flex items-center justify-center gap-2 text-white/70 text-[0.6875rem] sm:text-base 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl font-medium px-6 sm:px-10 2xl:px-12 min-[3000px]:px-16 min-[5000px]:px-20 py-3 sm:py-5 min-[3000px]:py-7 min-[5000px]:py-9 rounded-full tracking-[0.06em] sm:tracking-[0.08em] w-full sm:w-auto"
             >
               Get in touch
               <span className="hero-btn-arrow text-white/10 group-hover:text-white/50">→</span>

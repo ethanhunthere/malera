@@ -51,18 +51,18 @@ export default function Navbar() {
                 alt="Malera Studio"
                 width={160}
                 height={40}
-                className="h-6 sm:h-9 2xl:h-10 min-[3000px]:h-12 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                className="h-6 sm:h-9 2xl:h-10 min-[3000px]:h-14 min-[5000px]:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity"
                 fetchPriority="high"
               />
             </a>
 
             {/* Center nav  absolutely centered */}
-            <ul className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+            <ul className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-3 min-[3000px]:gap-4 min-[5000px]:gap-6 absolute left-1/2 -translate-x-1/2">
               {NAV_LINKS.map((link) => (
                 <li key={link}>
                   <a
                     href={`/#${link.toLowerCase()}`}
-                    className="relative group inline-flex items-center h-8 px-3 xl:px-4 text-xs xl:text-sm font-medium text-white/45 hover:text-[#C9A84C] transition-colors duration-300"
+                    className="relative group inline-flex items-center h-8 px-3 xl:px-4 text-xs xl:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl font-medium text-white/45 hover:text-[#C9A84C] transition-colors duration-300"
                   >
                     {/* Gold underline  slides in from center */}
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-[#C9A84C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out origin-center" />
@@ -77,7 +77,7 @@ export default function Navbar() {
               {/* CTA  hidden below lg */}
               <a
                 href="/#contact"
-                className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-[0.65rem] 2xl:text-sm min-[3000px]:text-base font-medium px-4 xl:px-5 py-1.5 xl:py-2 rounded-full whitespace-nowrap"
+                className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-[0.65rem] 2xl:text-sm min-[3000px]:text-xl min-[5000px]:text-2xl font-medium px-4 xl:px-5 min-[3000px]:px-8 min-[5000px]:px-10 py-1.5 xl:py-2 min-[3000px]:py-3 min-[5000px]:py-4 rounded-full whitespace-nowrap"
               >
                 BUILD WITH MALERA
               </a>
@@ -179,7 +179,7 @@ export default function Navbar() {
             alt="Malera Studio"
             width={120}
             height={28}
-            className="h-4 sm:h-5 2xl:h-6 min-[3000px]:h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            className="h-4 sm:h-5 2xl:h-6 min-[3000px]:h-10 min-[5000px]:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
           />
         </a>
       </div>

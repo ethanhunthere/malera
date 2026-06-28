@@ -214,19 +214,20 @@ export default function Pricing() {
               )}
 
               {/* ── Plan name ── */}
-              <p className={`relative z-10 font-[family-name:var(--font-display)] mb-3 uppercase transition-all duration-500 ${nameClass} group-hover:tracking-[0.08em]`}>
+              <p className={`relative z-10 font-[family-name:var(--font-display)] mb-3 uppercase transition-all duration-500 ${nameClass} group-hover:tracking-[0.08em]`}
+                style={{}}>
                 {plan.name}
               </p>
 
               {/* ── Price ── */}
               <div className="relative z-10 mb-3 transition-all duration-500 origin-left group-hover:scale-[1.01]">
-                <span className={`font-[family-name:var(--font-display)] inline-block transition-all duration-500 text-white ${priceSizeClass} ${priceWeightClass}`}>
+                <span className={`font-[family-name:var(--font-display)] inline-block transition-all duration-500 text-white ${priceSizeClass} ${priceWeightClass} 2xl:text-4xl min-[3000px]:text-6xl min-[5000px]:text-7xl`}>
                   {plan.price}
                 </span>
               </div>
 
               {/* ── Description ── */}
-              <p className={`relative z-10 text-xs sm:text-sm leading-relaxed mb-6 transition-colors duration-500 ${descClass}`}>
+              <p className={`relative z-10 text-xs sm:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl leading-relaxed mb-6 transition-colors duration-500 ${descClass}`}>
                 {plan.desc}
               </p>
 
@@ -234,11 +235,11 @@ export default function Pricing() {
               <div className={`relative z-10 h-px w-full mb-6 transition-all duration-500 ${separatorClass}`} />
 
               {/* ── Features ── */}
-              <ul className="relative z-10 space-y-2 mb-6 flex-1">
+              <ul className="relative z-10 space-y-2 2xl:space-y-3 min-[3000px]:space-y-5 min-[5000px]:space-y-6 mb-6 flex-1">
                 {plan.features.map((feat, fi) => (
                   <li
                     key={feat}
-                    className={`flex items-start gap-2.5 text-xs sm:text-sm transition-all duration-400 ${featureClass}`}
+                    className={`flex items-start gap-2.5 text-xs sm:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl transition-all duration-400 ${featureClass}`}
                     style={{ transitionDelay: `${fi * 50}ms` }}
                   >
                     <span className={`mt-px shrink-0 transition-all duration-500 ${bulletClass}`}>
@@ -252,7 +253,7 @@ export default function Pricing() {
               {/* ── CTA Button ── */}
               <a
                 href="#contact"
-                className={`relative z-10 block text-center text-xs sm:text-sm font-semibold uppercase tracking-wider py-2.5 px-4 rounded-full transition-all duration-500 overflow-hidden ${ctaClass}`}
+                className={`relative z-10 block text-center text-xs sm:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl font-semibold uppercase tracking-wider py-2.5 px-4 2xl:py-3.5 2xl:px-6 min-[3000px]:py-5 min-[3000px]:px-8 min-[5000px]:py-6 min-[5000px]:px-10 rounded-full transition-all duration-500 overflow-hidden ${ctaClass}`}
               >
                 <span className="relative z-10">{plan.cta}</span>
                 {/* Shine sweep on hover */}
@@ -266,7 +267,7 @@ export default function Pricing() {
               {/* ── Detail link ── */}
               <a
                 href={["/starterdetails", "/prodetails", "/businessdetails", "/enterprisedetails"][tier]}
-                className="relative z-10 block text-center font-mono text-[0.6875rem] text-white/40 hover:text-white/80 transition-colors duration-200 mt-2 hover:underline"
+                className="relative z-10 block text-center font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl text-white/40 hover:text-white/80 transition-colors duration-200 mt-2 hover:underline"
               >
                 See what&apos;s included
               </a>

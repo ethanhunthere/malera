@@ -179,14 +179,14 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       {/* ── Preview window ── */}
-      <div className="relative w-full aspect-[5/6] sm:aspect-[2/1] lg:aspect-[2/1] 2xl:aspect-[2.5/1] min-[3000px]:aspect-[2/1] overflow-hidden bg-black/60">
+      <div className="relative w-full aspect-[5/6] sm:aspect-[2/1] lg:aspect-[2/1] 2xl:aspect-[2.5/1] min-[3000px]:aspect-[2/1] min-[5000px]:aspect-[2.5/1] overflow-hidden bg-black/60">
         {/* ── Gold spinning indicator ── */}
         <div className={`absolute inset-0 z-[4] flex flex-col items-center justify-center gap-3 transition-opacity duration-700 ${reveal ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-          <svg className="animate-spin h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 32 32" fill="none">
+          <svg className="animate-spin h-6 w-6 sm:h-7 sm:w-7 2xl:h-9 2xl:w-9 min-[3000px]:h-12 min-[3000px]:w-12 min-[5000px]:h-16 min-[5000px]:w-16" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="13" stroke="rgba(255,255,255,0.04)" strokeWidth="1.5" />
             <circle cx="16" cy="16" r="13" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="60 80" strokeDashoffset="20" strokeOpacity="0.5" />
           </svg>
-          <span className="font-mono text-[0.5625rem] sm:text-[0.625rem] tracking-[0.12em] text-white/25">
+          <span className="font-mono text-[0.5625rem] sm:text-[0.625rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.12em] text-white/25">
             LOADING LIVE PREVIEW
           </span>
         </div>
@@ -195,14 +195,14 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
         {iframeFailed ? (
           <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center gap-4 bg-black/70 px-6 text-center">
             <AlertIcon />
-            <p className="text-white/35 text-[0.6875rem] sm:text-sm leading-relaxed max-w-[320px]">
+            <p className="text-white/35 text-[0.6875rem] sm:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl leading-relaxed max-w-[320px] 2xl:max-w-[420px] min-[3000px]:max-w-[600px]">
               This site&apos;s security policy prevents embedding a live preview.
             </p>
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-[0.625rem] sm:text-[0.6875rem] tracking-[0.12em] text-[#C9A84C]/80
+              className="inline-flex items-center gap-2 font-mono text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.12em] text-[#C9A84C]/80
                 border border-[#C9A84C]/40 rounded-full px-5 py-2
                 hover:text-[#C9A84C] hover:border-[#C9A84C]/60 hover:bg-[#C9A84C]/[0.08]
                 transition-all duration-300"
@@ -228,22 +228,22 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
       </div>
 
       {/* ── Info panel ── */}
-      <div className="relative px-5 sm:px-6 py-6 sm:py-5 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 lg:gap-8">
+      <div className="relative px-5 sm:px-6 2xl:px-8 min-[3000px]:px-12 min-[5000px]:px-16 py-6 sm:py-5 2xl:py-8 min-[3000px]:py-12 min-[5000px]:py-16 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 lg:gap-8 min-[3000px]:gap-12">
         {/* ── Left: title + hero ── */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="font-mono text-[0.5625rem] sm:text-[0.625rem] tracking-[0.08em] text-white/55">
+          <div className="flex items-center gap-2 mb-1 min-[3000px]:mb-3">
+            <span className="font-mono text-[0.5625rem] sm:text-[0.625rem] 2xl:text-xs min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.08em] text-white/55">
               {project.category}
             </span>
           </div>
-          <h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base lg:text-lg font-bold tracking-[-0.02em] text-white/90
+          <h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base lg:text-lg 2xl:text-xl min-[3000px]:text-3xl min-[5000px]:text-4xl font-bold tracking-[-0.02em] text-white/90
             group-hover:text-white transition-colors duration-500 mb-0.5">
             {project.title}
           </h3>
-          <p className="text-[0.625rem] sm:text-[0.6875rem] text-[#C9A84C]/55 font-mono tracking-[0.06em] italic mb-2">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl text-[#C9A84C]/55 font-mono tracking-[0.06em] italic mb-2">
             {project.hero}
           </p>
-          <p className="text-[0.6875rem] sm:text-xs leading-relaxed text-white/[0.40] group-hover:text-white/[0.55] transition-colors duration-500 max-w-[55ch]">
+          <p className="text-[0.6875rem] sm:text-xs 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl leading-relaxed text-white/[0.40] group-hover:text-white/[0.55] transition-colors duration-500 max-w-[55ch]">
             {project.description}
           </p>
         </div>
@@ -254,8 +254,8 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] text-[#C9A84C]/70
-              border border-[#C9A84C]/35 rounded-full px-4 py-1.5
+            className="font-mono text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.15em] text-[#C9A84C]/70
+              border border-[#C9A84C]/35 rounded-full px-4 py-1.5 2xl:px-5 2xl:py-2 min-[3000px]:px-7 min-[3000px]:py-3 min-[5000px]:px-9 min-[5000px]:py-4
               hover:text-[#C9A84C] hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/[0.06]
               transition-all duration-300
               group-hover:border-[#C9A84C]/45"

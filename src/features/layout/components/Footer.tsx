@@ -24,10 +24,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 text-center justify-items-center">
           {/* ── About ── */}
           <div>
-            <h4 className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
+            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-[#C9A84C] mb-5 min-[3000px]:mb-7">
               About
             </h4>
-            <div className="space-y-0.5 text-white/35 text-sm leading-relaxed">
+            <div className="space-y-0.5 text-white/35 text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl leading-relaxed">
               <p>A small creative studio</p>
               <p>building digital products,</p>
               <p>brands, and experiences.</p>
@@ -37,15 +37,15 @@ export default function Footer() {
 
           {/* ── Company ── */}
           <div>
-            <h4 className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
+            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-[#C9A84C] mb-5 min-[3000px]:mb-7">
               Company
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 min-[3000px]:space-y-4">
               {COMPANY_LINKS.map((l) => (
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    className="text-white/35 text-sm hover:text-white/65 transition-colors duration-300"
+                    className="text-white/35 text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl hover:text-white/65 transition-colors duration-300"
                   >
                     {l.label}
                   </a>
@@ -56,14 +56,14 @@ export default function Footer() {
 
           {/* ── Contact ── */}
           <div>
-            <h4 className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[#C9A84C] mb-5">
+            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-[#C9A84C] mb-5 min-[3000px]:mb-7">
               Contact
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 min-[3000px]:space-y-4">
               <li>
                 <a
                   href="mailto:hello@malera.studio"
-                  className="text-white/35 text-sm hover:text-white/65 transition-colors duration-300"
+                  className="text-white/35 text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl hover:text-white/65 transition-colors duration-300"
                 >
                   hello@malera.studio
                 </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/35 text-sm hover:text-white/65 transition-colors duration-300"
+                  className="text-white/35 text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl hover:text-white/65 transition-colors duration-300"
                 >
                   @malera.studio
                 </a>
@@ -84,10 +84,10 @@ export default function Footer() {
 
         {/* ── Bottom bar ── */}
         <div className="mt-10 sm:mt-14 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-center gap-6">
-          <p className="text-white/18 text-xs font-mono">
+          <p className="text-white/18 text-xs 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl font-mono">
             ©&nbsp;{year}&nbsp;Malera Studio. All rights reserved.
           </p>
-          <p className="text-white/12 text-xs">
+          <p className="text-white/12 text-xs 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl">
             Pristina, Kosovo
           </p>
         </div>

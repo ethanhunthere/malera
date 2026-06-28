@@ -534,7 +534,7 @@ export default function Services() {
               </div>
 
               {/* Description */}
-              <p className="lg:max-w-[320px] 2xl:max-w-[400px] text-white/40 text-sm sm:text-base 2xl:text-lg leading-relaxed lg:text-right">
+              <p className="lg:max-w-[320px] 2xl:max-w-[400px] min-[3000px]:max-w-[600px] min-[5000px]:max-w-[800px] text-white/40 text-sm sm:text-base 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl leading-relaxed lg:text-right">
                 End-to-end digital solutions from a team that cares about craft.
               </p>
             </div>
@@ -551,20 +551,20 @@ export default function Services() {
               ref={(el) => { cardRefs.current[idx] = el; }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="w-full max-w-[94%] sm:max-w-[86%] lg:max-w-[82%] 2xl:max-w-[78%] group relative z-10 flex items-center gap-3 sm:gap-5 px-3 sm:px-6 py-3 sm:py-5 cursor-pointer rounded-2xl glass-card-gold glass-card-gold-hover services-card-no-line"
+              className="w-full max-w-[94%] sm:max-w-[86%] lg:max-w-[82%] 2xl:max-w-[78%] min-[3000px]:max-w-[70%] min-[5000px]:max-w-[62%] group relative z-10 flex items-center gap-3 sm:gap-5 min-[3000px]:gap-8 min-[5000px]:gap-10 px-3 sm:px-6 min-[3000px]:px-10 min-[5000px]:px-12 py-3 sm:py-5 min-[3000px]:py-8 min-[5000px]:py-10 cursor-pointer rounded-2xl min-[3000px]:rounded-3xl glass-card-gold glass-card-gold-hover services-card-no-line"
             >
               {/* Content */}
               <div className="relative z-10 flex-1 min-w-0">
-                <h3 className="text-[0.75rem] sm:text-[0.9375rem] 2xl:text-lg font-medium text-white/90 group-hover:text-white uppercase tracking-[0.04em] transition-colors duration-[600ms] mb-1 sm:mb-1.5">
+                <h3 className="text-[0.75rem] sm:text-[0.9375rem] 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl font-medium text-white/90 group-hover:text-white uppercase tracking-[0.04em] transition-colors duration-[600ms] mb-1 sm:mb-1.5">
                   {svc.title}
                 </h3>
-                <p className="text-[0.6875rem] sm:text-[0.8125rem] 2xl:text-base text-white/50 group-hover:text-white/70 leading-relaxed transition-colors duration-[600ms]">
+                <p className="text-[0.6875rem] sm:text-[0.8125rem] 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl text-white/50 group-hover:text-white/70 leading-relaxed transition-colors duration-[600ms]">
                   {svc.desc}
                 </p>
               </div>
 
               {/* Binary number  right side, nearly invisible */}
-              <span className="relative z-0 font-mono text-[0.75rem] sm:text-sm font-light text-white/[0.05] group-hover:text-[#C9A84C]/[0.12] transition-all duration-600 shrink-0 select-none">
+              <span className="relative z-0 font-mono text-[0.75rem] sm:text-sm 2xl:text-base min-[3000px]:text-2xl min-[5000px]:text-3xl font-light text-white/[0.05] group-hover:text-[#C9A84C]/[0.12] transition-all duration-600 shrink-0 select-none">
                 {binary}
               </span>
             </div>
