@@ -66,11 +66,11 @@ export default function Portfolio() {
       <div className="absolute top-1/3 left-0 w-[min(400px,50vw)] h-[min(400px,50vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.4 }} />
       <div className="absolute bottom-1/4 right-0 w-[min(300px,40vw)] h-[min(300px,40vw)] ambient-orb" style={{ opacity: 0.25 }} />
 
-      <Container id="portfolio" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
+      <Container id="work" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         {/* ── Header ── */}
         <div className="mb-8 sm:mb-14">
           <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C]/35 mb-4">
-            PORTFOLIO
+            WORK
           </p>
 
           <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white/65 mb-4 leading-[0.9]"
