@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Container from "@/src/features/layout/components/Container";
 
 export const metadata: Metadata = {
-  title: "Starter Plan — Scope of Work | Malera Studio",
+  title: "Starter Plan - Scope of Work | Malera Studio",
   description:
     "Full scope breakdown for the Starter plan. Five pages, responsive on every device, SEO foundation, one revision round, source code and credentials delivered.",
   robots: { index: false, follow: true },
   alternates: { canonical: "https://www.malera.studio/starterdetails" },
   openGraph: {
-    title: "Starter Plan — Scope of Work | Malera Studio",
+    title: "Starter Plan - Scope of Work | Malera Studio",
     description:
       "Full scope breakdown for the Starter plan. Five pages, responsive on every device, SEO foundation, one revision round, source code and credentials delivered.",
     url: "https://www.malera.studio/starterdetails",
@@ -27,7 +27,7 @@ export default function StarterDetailsPage() {
         </a>
 
         <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#C9A84C] mb-4">
-          Starter — $299
+          Starter $299
         </p>
         <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] leading-[1.05] mb-6">
           Scope of work
@@ -43,10 +43,10 @@ export default function StarterDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              The Starter plan covers up to five pages. The default structure we recommend is Home, About, Services, Portfolio or Gallery, and Contact. This covers the essentials — who you are, what you do, proof that you can do it, and a way for people to reach you.
+              The Starter plan covers up to five pages. The default structure we recommend is Home, About, Services, Portfolio or Gallery, and Contact. This covers the essentials: who you are, what you do, proof that you can do it, and a way for people to reach you.
             </p>
             <p>
-              Before we write any code we sit down (virtually or in person) and map out exactly what goes on each page. We ask about your business, your customers, and what you want the site to achieve. If five pages structured differently makes more sense for your situation — for example a landing page that drives signups rather than a traditional About page — we adjust the structure accordingly. The limit is five pages regardless of how they are arranged.
+              Before we write any code we sit down (virtually or in person) and map out exactly what goes on each page. We ask about your business, your customers, and what you want the site to achieve. If five pages structured differently makes more sense for your situation, we adjust the structure accordingly. For example, a landing page that drives signups rather than a traditional About page. The limit is five pages regardless of how they are arranged.
             </p>
             <p>
               Every page is built from scratch. We do not use page builders or pre-made templates. The code is written specifically for your content and your requirements.
@@ -63,10 +63,10 @@ export default function StarterDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              We build mobile-first, which means the phone experience is treated as the primary one and the desktop layout builds from there. Every element — text, images, buttons, navigation, forms — is tested on real phones, tablets, and desktop screens across multiple browsers.
+              We build mobile-first, which means the phone experience is treated as the primary one and the desktop layout builds from there. Text, images, buttons, navigation, and forms are all tested on real phones, tablets, and desktop screens across multiple browsers.
             </p>
             <p>
-              The site will work correctly at every screen width from 320 pixels up to wide desktop displays. Nothing breaks, nothing overflows, nothing becomes impossible to tap on a phone. This is not a separate mobile version — it is the same site that adapts to the device it is viewed on.
+              The site will work correctly at every screen width from 320 pixels up to wide desktop displays. Nothing breaks, nothing overflows, nothing becomes impossible to tap on a phone. This is not a separate mobile version. It is the same site that adapts to the device it is viewed on.
             </p>
           </div>
         </section>
@@ -86,7 +86,7 @@ export default function StarterDetailsPage() {
               Page speed is a ranking factor, so we make sure the site loads fast. We optimize images, minimize JavaScript and CSS, and configure caching headers. The goal is a Lighthouse performance score above 90 on both mobile and desktop.
             </p>
             <p>
-              This is the foundation. It puts your site on the map and gives it the technical structure to rank for relevant searches. If you need ongoing SEO work — keyword research, content strategy, link building — that is a separate service we can discuss.
+              This is the foundation. It puts your site on the map and gives it the technical structure to rank for relevant searches. If you need ongoing SEO work like keyword research, content strategy, or link building, that is a separate service we can discuss.
             </p>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function StarterDetailsPage() {
               The Starter plan includes one revision round. We build the full site based on the scope we agreed on. You then review everything and send us a single consolidated list of changes. We address all of them in one pass.
             </p>
             <p>
-              A revision round covers adjustments within the original scope — moving sections, changing colors, rewriting text, swapping images. It does not cover new pages, new features, or changes in direction that go beyond what was originally scoped. If you want additional work beyond the revision round, we quote it separately before continuing.
+              A revision round covers adjustments within the original scope, such as moving sections, changing colors, rewriting text, swapping images. It does not cover new pages, new features, or changes in direction that go beyond what was originally scoped. If you want additional work beyond the revision round, we quote it separately before continuing.
             </p>
           </div>
         </section>
@@ -120,7 +120,7 @@ export default function StarterDetailsPage() {
               When the project is complete you receive the full source code, credentials to your hosting account and domain registrar, and a handover document that explains how everything is set up and how to make common updates yourself.
             </p>
             <p>
-              You own everything outright. The code, the design, the domain, the hosting — all in your name, under your accounts. There is no vendor lock-in and no ongoing license fee for the site itself. If you ever want to take it to another developer, everything they need is yours.
+              You own everything outright. The code, the design, the domain, and the hosting are all in your name, under your accounts. There is no vendor lock-in and no ongoing license fee for the site itself. If you ever want to take it to another developer, everything they need is yours.
             </p>
           </div>
         </section>
@@ -137,7 +137,7 @@ export default function StarterDetailsPage() {
               We remain reachable by email for 30 days after the site goes live. If something is broken or not working as specified, we fix it at no additional cost. If you want changes or additions beyond the original scope, we handle those under a separate agreement.
             </p>
             <p>
-              Many clients choose to set up a maintenance arrangement after the 30-day window closes — simple updates, content changes, security patches — which we can structure on a monthly retainer or per-request basis.
+              Many clients choose to set up a maintenance arrangement after the 30-day window closes. Simple updates, content changes, and security patches can be structured on a monthly retainer or per-request basis.
             </p>
           </div>
         </section>
@@ -151,7 +151,7 @@ export default function StarterDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              A Starter project typically takes two to three weeks from kickoff to launch. Week one is design and structure — we present the layout and get your feedback. Week two is development — we build the pages. Week three is your revision round followed by final polish and deployment.
+              A Starter project typically takes two to three weeks from kickoff to launch. Week one is design and structure, when we present the layout and get your feedback. Week two is development, when we build the pages. Week three is your revision round followed by final polish and deployment.
             </p>
             <p>
               The timeline depends on how quickly you provide content and feedback. If you have your text and images ready at the start, things move faster. If we are waiting on content from your side, the timeline extends accordingly.

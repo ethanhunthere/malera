@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Container from "@/src/features/layout/components/Container";
 
 export const metadata: Metadata = {
-  title: "Enterprise — Engagement Model | Malera Studio",
+  title: "Enterprise - Engagement Model | Malera Studio",
   description:
     "How Enterprise engagements work at Malera Studio. Scoping conversation, mobile apps, SaaS platforms, AI and automation, ongoing development, and long-term collaboration with a dedicated team.",
   robots: { index: false, follow: true },
   alternates: { canonical: "https://www.malera.studio/enterprisedetails" },
   openGraph: {
-    title: "Enterprise — Engagement Model | Malera Studio",
+    title: "Enterprise - Engagement Model | Malera Studio",
     description:
       "How Enterprise engagements work at Malera Studio. Scoping conversation, mobile apps, SaaS platforms, AI and automation, ongoing development, and long-term collaboration with a dedicated team.",
     url: "https://www.malera.studio/enterprisedetails",
@@ -43,10 +43,10 @@ export default function EnterpriseDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              Enterprise starts with a conversation — not a form, not a proposal template. We sit down (virtually or in person), you walk us through what you are building, and we ask the questions that matter. What is the product? Who uses it? What problem does it solve? What does success look like six months after launch? What are the technical constraints, the timeline pressures, the things that keep you up at night?
+              Enterprise starts with a conversation, not a form and not a proposal template. We sit down (virtually or in person), you walk us through what you are building, and we ask the questions that matter. What is the product? Who uses it? What problem does it solve? What does success look like six months after launch? What are the technical constraints, the timeline pressures, the things that keep you up at night?
             </p>
             <p>
-              We come back with a scope document that describes the work in detail — what we will build, how it will work, what technologies we will use, how long it will take, and what it will cost. This is a fixed price for a defined scope. There is a number agreed before anything starts. No hourly billing, no open-ended engagement, no surprise invoices.
+              We come back with a scope document that describes the work in detail, covering what we will build, how it will work, what technologies we will use, how long it will take, and what it will cost. This is a fixed price for a defined scope. There is a number agreed before anything starts. No hourly billing, no open-ended engagement, no surprise invoices.
             </p>
             <p>
               The scoping process itself is part of the engagement. We treat it as real work, not a sales exercise. By the time the scope document is finalized, both sides have a clear, shared understanding of what we are building and why.
@@ -66,10 +66,10 @@ export default function EnterpriseDetailsPage() {
               We build mobile apps for Android and iOS from a single codebase using React Native and Expo. One codebase, two platforms, full native performance. This approach eliminates the cost and complexity of maintaining separate iOS and Android codebases while delivering apps that feel native on each platform.
             </p>
             <p>
-              We handle the full publishing process — App Store submission, Google Play submission, review compliance, and the inevitable back-and-forth with Apple's review team. If your app requires specific native functionality — camera access, Bluetooth, background processing, push notifications — we build that natively where necessary and bridge it to the shared codebase.
+              We handle the full publishing process: App Store submission, Google Play submission, review compliance, and the inevitable back-and-forth with Apple's review team. If your app requires specific native functionality like camera access, Bluetooth, background processing, or push notifications, we build that natively where necessary and bridge it to the shared codebase.
             </p>
             <p>
-              Mobile apps at the Enterprise level are typically part of a larger system — an API back end, a web admin panel, a user-facing website. We design the mobile experience in the context of that larger system so everything works together coherently.
+              Mobile apps at the Enterprise level are typically part of a larger system: an API back end, a web admin panel, a user-facing website. We design the mobile experience in the context of that larger system so everything works together coherently.
             </p>
           </div>
         </section>
@@ -83,13 +83,13 @@ export default function EnterpriseDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              If you are building something users subscribe to or return to regularly, we treat it accordingly. SaaS products have requirements that brochure sites do not — user management, subscription billing, role-based access control, multi-tenancy if you serve different organizations, usage analytics, and the infrastructure to handle growth.
+              If you are building something users subscribe to or return to regularly, we treat it accordingly. SaaS products have requirements that brochure sites do not, such as user management, subscription billing, role-based access control, multi-tenancy if you serve different organizations, usage analytics, and the infrastructure to handle growth.
             </p>
             <p>
               Architecture decisions at this level have long-term consequences. We make those decisions with the future in mind. The database schema should support features you will need in twelve months. The API design should accommodate integrations you have not thought of yet. The deployment infrastructure should scale without requiring a rewrite.
             </p>
             <p>
-              We have built SaaS products from zero to launch and understand the full lifecycle — from the early prototype that validates the idea, to the production system that serves paying customers, to the mature platform that supports thousands of users.
+              We have built SaaS products from zero to launch and understand the full lifecycle, from the early prototype that validates the idea to the production system that serves paying customers to the mature platform that supports thousands of users.
             </p>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function EnterpriseDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              At the Enterprise level, AI work is typically deeper than a single feature. We build AI tools trained on your business data — customer support agents that understand your product, internal assistants that help your team find information, automated workflows that process data without human intervention, and analysis systems that surface patterns your team would miss.
+              At the Enterprise level, AI work is typically deeper than a single feature. We build AI tools trained on your business data: customer support agents that understand your product, internal assistants that help your team find information, automated workflows that process data without human intervention, and analysis systems that surface patterns your team would miss.
             </p>
             <p>
               This is not about adding a chatbot widget to a website. It is about identifying the work in your business that is repetitive, error-prone, or too slow when done manually, and building systems that handle it reliably. We test these systems against real scenarios before they are deployed and we set up monitoring so you know when they are working correctly and when they are not.
@@ -120,10 +120,10 @@ export default function EnterpriseDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              Enterprise is rarely a one-time delivery. Products evolve. Users request features. The market shifts. Competitors launch something you need to respond to. If you want us involved after launch — iterating on the product, shipping new features, handling maintenance and monitoring — we can structure that as an ongoing arrangement.
+              Enterprise is rarely a one-time delivery. Products evolve. Users request features. The market shifts. Competitors launch something you need to respond to. If you want us involved after launch, iterating on the product, shipping new features, and handling maintenance and monitoring, we can structure that as an ongoing arrangement.
             </p>
             <p>
-              The structure depends on what you need. Some clients work with us on a monthly retainer with a defined capacity — a set number of development hours per month, prioritized against a shared backlog. Others engage us on a per-project basis for specific feature additions. We are flexible about the arrangement as long as the expectations are clear on both sides.
+              The structure depends on what you need. Some clients work with us on a monthly retainer with a defined capacity, a set number of development hours per month prioritized against a shared backlog. Others engage us on a per-project basis for specific feature additions. We are flexible about the arrangement as long as the expectations are clear on both sides.
             </p>
           </div>
         </section>
@@ -137,10 +137,10 @@ export default function EnterpriseDetailsPage() {
           </h2>
           <div className="text-white/50 text-sm sm:text-base leading-relaxed space-y-3">
             <p>
-              Some of our best work has come from relationships that started with a single project and grew into something ongoing. We are a small team and we are selective about who we work with long term. The fit has to be right on both sides — technically, commercially, and personally.
+              Some of our best work has come from relationships that started with a single project and grew into something ongoing. We are a small team and we are selective about who we work with long term. The fit has to be right on both sides: technically, commercially, and personally.
             </p>
             <p>
-              When the fit is right, we stay. We learn your business deeply. We understand your customers because we have been building for them. We can move faster because we do not need to be brought up to speed. Over time, we become less like a vendor and more like a part of your team — one that happens to be external but operates with the same level of investment in the outcome.
+              When the fit is right, we stay. We learn your business deeply. We understand your customers because we have been building for them. We can move faster because we do not need to be brought up to speed. Over time, we become less like a vendor and more like a part of your team, one that happens to be external but operates with the same level of investment in the outcome.
             </p>
           </div>
         </section>

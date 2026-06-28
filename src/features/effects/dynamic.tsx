@@ -11,7 +11,7 @@ const AnimatedBackground = dynamic(
   }
 );
 
-/* ── Golden cursor trail — fires instantly while Three.js downloads ──
+/* ── Golden cursor trail: fires instantly while Three.js downloads ──
    Disabled on touch devices (useless without a mouse cursor).  On desktop
    the resize handler is debounced to 150 ms so pinch / trackpad zoom
    doesn't flood the canvas with reallocations. */
@@ -58,7 +58,7 @@ function GoldenTrail() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    // Debounced resize — zoom fires hundreds of events, we only need one
+    // Debounced resize: zoom fires hundreds of events, we only need one
     let resizeTimer: ReturnType<typeof setTimeout>;
     const onResize = () => {
       clearTimeout(resizeTimer);
@@ -164,7 +164,7 @@ function BackgroundPlaceholder() {
           `,
         }}
       />
-      {/* Golden cursor trail — interactive, instant */}
+      {/* Golden cursor trail: interactive, instant */}
       <GoldenTrail />
     </div>
   );

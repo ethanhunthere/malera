@@ -107,14 +107,14 @@ export default function Pricing() {
             ][tier];
 
             const shadowClass = [
-              "",                                                                    // 25% — none
-              "shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]",                     // 50% — whisper
+              "",                                                                    // 25%: none
+              "shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]",                     // 50%: whisper
               "shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_4px_24px_rgba(0,0,0,0.3)]", // 75%
               "shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_8px_32px_rgba(0,0,0,0.4)]", // 100%
             ][tier];
 
             const nameClass = [
-              "text-sm sm:text-base tracking-wide font-medium text-white/60",          // 25% — understated
+              "text-sm sm:text-base tracking-wide font-medium text-white/60",          // 25%: understated
               "text-base sm:text-lg tracking-wide font-semibold text-white/75",        // 50%
               "text-lg sm:text-xl tracking-wide font-bold text-white/90",              // 75%
               "text-xl sm:text-2xl tracking-wide font-bold text-white",                // 100%
@@ -128,7 +128,7 @@ export default function Pricing() {
             ][tier];
 
             const priceWeightClass = [
-              "font-light",       // 25% — light
+              "font-light",       // 25%: light
               "font-medium",       // 50%
               "font-bold",         // 75%
               "font-extrabold",    // 100%

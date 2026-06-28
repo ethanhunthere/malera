@@ -7,22 +7,22 @@ const SERVICES = [
   {
     num: "01",
     title: "Web Development",
-    desc: "Custom websites and web applications built with modern frameworks. Fast, accessible, and SEO-optimized.",
+    desc: "Websites and web apps built for the long term. Solid foundations, clean structure and code that makes sense to whoever touches it next.",
   },
   {
     num: "02",
     title: "Mobile Apps",
-    desc: "Native and cross-platform mobile applications for iOS and Android. Seamless user experiences.",
+    desc: "Android and iOS applications built with the understanding that mobile software exists inside a person's daily life in a way that other software does not, and that the standard for quality reflects that.",
   },
   {
     num: "03",
     title: "Video Production",
-    desc: "Professional video production from concept to final cut. Brand films, commercials, and social content.",
+    desc: "Video editing and production for businesses that take their content seriously. Social, commercial and advertising material handled with the same level of attention.",
   },
   {
     num: "04",
     title: "AI Bots & Automation",
-    desc: "Intelligent automation solutions and AI-powered chatbots that streamline your business workflows.",
+    desc: "AI tools and automation developed for businesses that have identified a genuine use case and want it handled properly.",
   },
 
 ];
@@ -493,13 +493,13 @@ export default function Services() {
 
         {/* ── Parent showcase panel ── */}
         <div className="relative"> {/* wrapper so edges span panel + cards */}
-          {/* ── Left gold conduit — runs the full height, connecting panel to all cards ── */}
+          {/* ── Left gold conduit, runs the full height, connecting panel to all cards ── */}
           <div
             className="absolute left-0 w-[1.5px] pointer-events-none z-20 edge-conduit-left"
             style={{ top: '12%', bottom: '-2%' }}
           />
 
-          {/* ── Right gold conduit — mirrors left, frames the entire service stack ── */}
+          {/* ── Right gold conduit, mirrors left, frames the entire service stack ── */}
           <div
             className="absolute right-0 w-[1.5px] pointer-events-none z-20 edge-conduit-right"
             style={{ top: '12%', bottom: '-2%' }}
@@ -511,7 +511,7 @@ export default function Services() {
             shadow-[0_0_0_1px_rgba(0,0,0,0.25),0_4px_20px_rgba(0,0,0,0.18),0_0_40px_rgba(201,168,76,0.03)]
             backdrop-blur-[4px]"
           >
-            {/* Premium gradient border — top only, no bottom */}
+            {/* Premium gradient border, top only, no bottom */}
             <div className="absolute inset-x-0 top-0 h-px pointer-events-none"
               style={{
                 background: 'linear-gradient(90deg, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.08) 50%, rgba(201,168,76,0.22) 100%)',
@@ -535,7 +535,7 @@ export default function Services() {
 
               {/* Description */}
               <p className="lg:max-w-[320px] 2xl:max-w-[400px] min-[3000px]:max-w-[600px] min-[5000px]:max-w-[800px] text-white/40 text-sm sm:text-base 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl leading-relaxed lg:text-right">
-                End-to-end digital solutions from a team that cares about craft.
+                Websites, mobile apps, video content and AI tools. We treat the work seriously because the businesses depending on it deserve that.
               </p>
             </div>
           </div>

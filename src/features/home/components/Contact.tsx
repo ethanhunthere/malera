@@ -11,7 +11,7 @@ import ContactForm from "@/src/features/home/components/ContactForm";
 ║   Left:  inline contact form + WhatsApp (serious channels)   ║
 ║   Right: Instagram, LinkedIn, Facebook (social presence)     ║
 ║   Vertical gold hairline between columns.                    ║
-║   Form posts via AJAX — no redirect, straight to Gmail.      ║
+║   Form posts via AJAX, no redirect, straight to Gmail.      ║
 ╚══════════════════════════════════════════════════════════════╝
 */
 
@@ -24,7 +24,7 @@ const SOCIALS = [
 export default function Contact() {
   return (
     <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-36 2xl:py-44 min-[3000px]:py-52 min-[5000px]:py-64">
-      {/* ── Ambient orbs — scale with viewport ── */}
+      {/* ── Ambient orbs: scale with viewport ── */}
       <div className="absolute top-[10%] left-[-5%] w-[min(600px,70vw)] h-[min(600px,70vw)] 2xl:w-[min(900px,70vw)] 2xl:h-[min(900px,70vw)] min-[3000px]:w-[min(1200px,70vw)] min-[3000px]:h-[min(1200px,70vw)] ambient-orb ambient-orb-gold" />
       <div className="absolute bottom-0 right-[-5%] w-[min(450px,55vw)] h-[min(450px,55vw)] 2xl:w-[min(700px,55vw)] 2xl:h-[min(700px,55vw)] min-[3000px]:w-[min(950px,55vw)] min-[3000px]:h-[min(950px,55vw)] ambient-orb ambient-orb-white" />
 
@@ -91,7 +91,7 @@ export default function Contact() {
           {/* ── DIVIDER: vertical gold rule (desktop only) ── */}
           <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-[#C9A84C]/15 md:via-[#C9A84C]/18 lg:via-[#C9A84C]/20 to-transparent" />
 
-          {/* ── RIGHT: Instagram, LinkedIn, Facebook — glass, no fill ── */}
+          {/* ── RIGHT: Instagram, LinkedIn, Facebook, glass, no fill ── */}
           <div className="mt-8 md:mt-0 md:pl-6 lg:pl-6 xl:pl-8 2xl:pl-10 min-[3000px]:pl-14 min-[5000px]:pl-18 flex flex-col gap-3 sm:gap-4 md:gap-5 min-[3000px]:gap-6">
             {SOCIALS.map(({ label, href, Icon, sub }) => (
               <a
@@ -110,7 +110,7 @@ export default function Contact() {
                 <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/35 to-transparent
                   group-hover/strip:via-[#C9A84C]/55 transition-all duration-500" />
 
-                {/* Icon — bare, no container */}
+                {/* Icon, bare, no container */}
                 <Icon className="relative z-10 text-white/40 w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5 min-[3000px]:w-7 min-[3000px]:h-7 min-[5000px]:w-9 min-[5000px]:h-9 shrink-0
                   group-hover/strip:text-[#C9A84C] transition-colors duration-500"
                   fill="currentColor" />
@@ -125,7 +125,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {/* Arrow — hidden until hover */}
+                {/* Arrow: hidden until hover */}
                 <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 min-[3000px]:w-6 min-[3000px]:h-6 min-[5000px]:w-7 min-[5000px]:h-7 text-[#C9A84C]/0 group-hover/strip:text-[#C9A84C]/45
                   transition-all duration-500 -translate-x-2 group-hover/strip:translate-x-0 shrink-0" />
               </a>

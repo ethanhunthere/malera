@@ -44,7 +44,7 @@ export default function Navbar() {
       <header className="relative z-30">
         <Container>
           <nav className="relative z-10 flex items-center h-12 sm:h-16">
-            {/* Logo  left — plain img for instant rendering, no JS decode delay */}
+            {/* Logo left, plain img for instant rendering, no JS decode delay */}
             <a href="/" className="flex-shrink-0">
               <img
                 src="/malera-transparent.webp"
@@ -103,7 +103,7 @@ export default function Navbar() {
         </Container>
       </header>
 
-      {/* Mobile fullscreen overlay — premium glass */}
+      {/* Mobile fullscreen overlay, premium glass */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}

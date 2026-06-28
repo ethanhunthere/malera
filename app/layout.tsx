@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.malera.studio"),
   title: "Malera Studio - We Just Build Good Stuff",
   description:
-    "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
+    "We build websites, apps, and videos from a small dev studio in Kosovo. AI-powered, human-driven.",
   keywords: [
     "web development Kosovo",
     "mobile apps Kosovo",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Malera Studio - We Just Build Good Stuff",
     description:
-      "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
+      "We build websites, apps, and videos from a small dev studio in Kosovo. AI-powered, human-driven.",
     url: "/",
     siteName: "Malera Studio",
     images: [
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     creator: "@malerastudio",
     title: "Malera Studio - We Just Build Good Stuff",
     description:
-      "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
+      "We build websites, apps, and videos from a small dev studio in Kosovo. AI-powered, human-driven.",
     images: ["/malera-transparent.webp"],
   },
   manifest: "/manifest.json",

@@ -4,7 +4,7 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-// Suppress THREE.Clock deprecation — @react-three/fiber uses it internally.
+// Suppress THREE.Clock deprecation: @react-three/fiber uses it internally.
 // Remove when fiber migrates to THREE.Timer.
 if (typeof window !== "undefined") {
   const _warn = console.warn;

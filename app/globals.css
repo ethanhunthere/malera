@@ -853,7 +853,7 @@
    CINEMA-GRADE AMBIENT LIGHT  three-point lighting system
    Key (main), Fill (wash), Rim (accent)  no gold
    ══════════════════════════════════════════════════════════ */
-/* GPU-layer promoted — blur is rasterised once as a texture, not
+/* GPU-layer promoted, blur is rasterised once as a texture, not
    recalculated every zoom frame. Saves ~15 × 160 px blur passes. */
 .ambient-orb {
   position: absolute;
@@ -1175,7 +1175,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Prevent horizontal scroll at the root — `clip` is zoom-safe */
+  /* Prevent horizontal scroll at the root, `clip` is zoom-safe */
   overflow-x: clip;
   /* Ultra-wide: scale base font size up so rem-based elements grow */
   font-size: 16px;
@@ -1203,7 +1203,7 @@ body {
 
 /* ── Grain texture overlay ──
    GPU-layer promoted so zoom doesn't re-raster the SVG filter.
-   numOctaves=3 (was 5) — indistinguishable at 0.025 opacity, 4× cheaper. */
+   numOctaves=3 (was 5), indistinguishable at 0.025 opacity, 4x cheaper. */
 body::before {
   content: "";
   position: fixed;
@@ -1339,19 +1339,19 @@ body::after {
 /* ── Left conduit: base gradient + 2 data packets ── */
 .edge-conduit-left {
   background:
-    /* packet 1 — fast, bright */
+    /* packet 1, fast, bright */
     linear-gradient(to bottom,
       transparent 0%, transparent 35%,
       rgba(201,168,76,0.6) 38%, rgba(201,168,76,0.55) 42%,
       rgba(201,168,76,0.15) 48%, transparent 52%,
       transparent 100%) 0% 0% / 100% 300%,
-    /* packet 2 — slower, trailing */
+    /* packet 2, slower, trailing */
     linear-gradient(to bottom,
       transparent 0%, transparent 55%,
       rgba(201,168,76,0.35) 58%, rgba(201,168,76,0.3) 62%,
       rgba(201,168,76,0.08) 67%, transparent 71%,
       transparent 100%) 0% 20% / 100% 300%,
-    /* base gradient — gold fades to dissolve */
+    /* base gradient, gold fades to dissolve */
     linear-gradient(to bottom,
       rgba(201,168,76,0.22) 0%,
       rgba(201,168,76,0.16) 15%,

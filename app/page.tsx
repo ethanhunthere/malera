@@ -20,7 +20,7 @@ const Services = dynamic(
 export const metadata: Metadata = {
   title: "Malera Studio - We Just Build Good Stuff",
   description:
-    "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
+    "We build websites, apps, and videos from a small dev studio in Kosovo. AI-powered, human-driven.",
 };
 
 const structuredData = [
@@ -31,7 +31,7 @@ const structuredData = [
     url: "https://www.malera.studio",
     logo: "https://www.malera.studio/malera-transparent.webp",
     description:
-      "We build websites, apps, and videos — a small dev studio from Kosovo. AI-powered, human-driven.",
+      "We build websites, apps, and videos from a small dev studio in Kosovo. AI-powered, human-driven.",
     foundingDate: "2026",
     foundingLocation: {
       "@type": "Place",
