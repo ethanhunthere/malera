@@ -77,7 +77,7 @@ export default function Navbar() {
               {/* CTA  hidden below lg */}
               <a
                 href="/#contact"
-                className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-xs 2xl:text-sm min-[3000px]:text-base font-medium px-3 xl:px-5 py-1.5 xl:py-2 rounded-full"
+                className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-[0.65rem] 2xl:text-sm min-[3000px]:text-base font-medium px-4 xl:px-5 py-1.5 xl:py-2 rounded-full whitespace-nowrap"
               >
                 BUILD WITH MALERA
               </a>
