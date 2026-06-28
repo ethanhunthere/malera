@@ -154,7 +154,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="glass-btn-solid text-[#080808] text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full tracking-[0.04em]"
             >
-              Start a Project
+              BUILD WITH MALERA
             </a>
             <p className="text-white/10 text-[0.625rem] sm:text-[0.6875rem] font-mono tracking-[0.12em]">
               Pristina&nbsp;&nbsp;·&nbsp;&nbsp;Est&nbsp;2026
