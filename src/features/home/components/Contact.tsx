@@ -99,7 +99,7 @@ export default function Contact() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/strip relative flex items-center gap-3 sm:gap-4 min-[3000px]:gap-6 pl-4 sm:pl-5 min-[3000px]:pl-7 pr-2 sm:pr-3 min-[3000px]:pr-4 py-3 sm:py-4 min-[3000px]:py-6 lg:flex-1 rounded-xl min-[3000px]:rounded-2xl overflow-hidden
+                className="group/strip relative flex items-center gap-3 sm:gap-4 min-[3000px]:gap-6 pl-4 sm:pl-5 min-[3000px]:pl-7 pr-2 sm:pr-3 min-[3000px]:pr-4 py-4 sm:py-5 md:py-7 lg:py-4 min-[3000px]:py-6 md:flex-1 rounded-xl min-[3000px]:rounded-2xl overflow-hidden
                   transition-all duration-500
                   hover:translate-x-0.5 lg:hover:translate-x-1.5
                   backdrop-blur-[6px] hover:backdrop-blur-[10px]

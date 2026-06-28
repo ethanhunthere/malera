@@ -138,9 +138,9 @@ export default function ContactForm() {
               type="text"
               required
               placeholder="John Doe"
-              className="w-full bg-white/[0.12] ring-1 ring-white/[0.20] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
-                placeholder:text-white/[0.22]
-                focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.16] focus:ring-[1.5px]
+              className="w-full bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+                placeholder:text-white/[0.32]
+                focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.24] focus:ring-[1.5px]
                 transition-all duration-300"
             />
           </div>
@@ -155,9 +155,9 @@ export default function ContactForm() {
               type="email"
               required
               placeholder="john@example.com"
-              className="w-full bg-white/[0.12] ring-1 ring-white/[0.20] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
-                placeholder:text-white/[0.22]
-                focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.16] focus:ring-[1.5px]
+              className="w-full bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+                placeholder:text-white/[0.32]
+                focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.24] focus:ring-[1.5px]
                 transition-all duration-300"
             />
           </div>
@@ -173,9 +173,9 @@ export default function ContactForm() {
             required
             rows={4}
             placeholder="Tell us about your project: what you need, your timeline, your budget if you have one..."
-            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] min-[3000px]:min-h-[180px] min-[5000px]:min-h-[220px] bg-white/[0.12] ring-1 ring-white/[0.20] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
-              placeholder:text-white/[0.22] resize-none
-              focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.16] focus:ring-[1.5px]
+            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] min-[3000px]:min-h-[180px] min-[5000px]:min-h-[220px] bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+              placeholder:text-white/[0.32] resize-none
+              focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.24] focus:ring-[1.5px]
               transition-all duration-300"
           />
         </div>
