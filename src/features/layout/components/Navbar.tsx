@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Container from "@/src/features/layout/components/Container";
 
-const NAV_LINKS = ["Work", "Services", "Pricing", "Contact"];
+const NAV_LINKS = ["Services", "Work", "Pricing", "Contact"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
