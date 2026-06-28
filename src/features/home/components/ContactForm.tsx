@@ -129,7 +129,7 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 min-[3000px]:gap-6">
           <div>
-            <label htmlFor="contact-name" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/25 mb-1.5 min-[3000px]:mb-3">
+            <label htmlFor="contact-name" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/50 mb-1.5 min-[3000px]:mb-3">
               Your name
             </label>
             <input
@@ -146,7 +146,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="contact-email" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/25 mb-1.5 min-[3000px]:mb-3">
+            <label htmlFor="contact-email" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/50 mb-1.5 min-[3000px]:mb-3">
               Your email
             </label>
             <input
@@ -164,7 +164,7 @@ export default function ContactForm() {
         </div>
 
         <div className="flex-1 flex flex-col">
-          <label htmlFor="contact-message" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/25 mb-1.5 min-[3000px]:mb-3">
+          <label htmlFor="contact-message" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/50 mb-1.5 min-[3000px]:mb-3">
             Your message
           </label>
           <textarea
