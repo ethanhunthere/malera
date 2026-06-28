@@ -3,7 +3,7 @@ import Container from "@/src/features/layout/components/Container";
 const PLANS = [
   {
     name: "Starter",
-    price: "€499",
+    price: "$299",
     desc: "You know what you need. A clean site, up fast, done right.",
     features: [
       "Up to 5 pages built properly from scratch",
@@ -17,7 +17,7 @@ const PLANS = [
   },
   {
     name: "Pro",
-    price: "€999",
+    price: "$699",
     desc: "Something bigger is in motion. You need a site that grows with you.",
     features: [
       "Up to 15 pages structured to expand",
@@ -33,7 +33,7 @@ const PLANS = [
   },
   {
     name: "Business",
-    price: "€2,499",
+    price: "$1,499",
     desc: "You are building something real. A product that needs to work. We treat it like one.",
     features: [
       "Web app or e-commerce built for actual use",
