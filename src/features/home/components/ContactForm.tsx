@@ -103,8 +103,8 @@ export default function ContactForm() {
 
       {/* ── Header ── */}
       <div className="flex items-center gap-3 sm:gap-4 min-[3000px]:gap-6 mb-5 sm:mb-8 min-[3000px]:mb-12">
-        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 2xl:w-14 2xl:h-14 min-[3000px]:w-20 min-[3000px]:h-20 min-[5000px]:w-24 min-[5000px]:h-24 rounded-2xl min-[3000px]:rounded-3xl bg-[#C9A84C]/12 ring-1 ring-[#C9A84C]/35 shadow-[0_0_18px_rgba(201,168,76,0.3),0_0_40px_rgba(201,168,76,0.1)]">
-          <Mail className="text-[#C9A84C] w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7 min-[3000px]:w-10 min-[3000px]:h-10 min-[5000px]:w-12 min-[5000px]:h-12 drop-shadow-[0_0_8px_rgba(201,168,76,0.5)]" strokeWidth={1.5} />
+        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 2xl:w-14 2xl:h-14 min-[3000px]:w-20 min-[3000px]:h-20 min-[5000px]:w-24 min-[5000px]:h-24 rounded-2xl min-[3000px]:rounded-3xl bg-[#C9A84C]/10 ring-1 ring-[#C9A84C]/25 shadow-[0_0_10px_rgba(201,168,76,0.15)]">
+          <Mail className="text-[#C9A84C] w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7 min-[3000px]:w-10 min-[3000px]:h-10 min-[5000px]:w-12 min-[5000px]:h-12" strokeWidth={1.5} />
         </div>
         <div>
           <h3 className="font-[family-name:var(--font-display)] font-bold text-white text-base sm:text-xl md:text-2xl 2xl:text-3xl min-[3000px]:text-4xl min-[5000px]:text-5xl">
@@ -138,9 +138,9 @@ export default function ContactForm() {
               type="text"
               required
               placeholder="John Doe"
-              className="w-full bg-white/[0.07] ring-1 ring-white/[0.10] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
-                placeholder:text-white/[0.13]
-                focus:outline-none focus:ring-[#C9A84C]/35 focus:bg-white/[0.10] focus:ring-[1.5px]
+              className="w-full bg-white/[0.12] ring-1 ring-white/[0.20] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+                placeholder:text-white/[0.22]
+                focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.16] focus:ring-[1.5px]
                 transition-all duration-300"
             />
           </div>
@@ -155,9 +155,9 @@ export default function ContactForm() {
               type="email"
               required
               placeholder="john@example.com"
-              className="w-full bg-white/[0.07] ring-1 ring-white/[0.10] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
-                placeholder:text-white/[0.13]
-                focus:outline-none focus:ring-[#C9A84C]/35 focus:bg-white/[0.10] focus:ring-[1.5px]
+              className="w-full bg-white/[0.12] ring-1 ring-white/[0.20] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+                placeholder:text-white/[0.22]
+                focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.16] focus:ring-[1.5px]
                 transition-all duration-300"
             />
           </div>
@@ -173,9 +173,9 @@ export default function ContactForm() {
             required
             rows={4}
             placeholder="Tell us about your project — what you need, your timeline, your budget if you have one..."
-            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] min-[3000px]:min-h-[180px] min-[5000px]:min-h-[220px] bg-white/[0.07] ring-1 ring-white/[0.10] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
-              placeholder:text-white/[0.13] resize-none
-              focus:outline-none focus:ring-[#C9A84C]/35 focus:bg-white/[0.10] focus:ring-[1.5px]
+            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] min-[3000px]:min-h-[180px] min-[5000px]:min-h-[220px] bg-white/[0.12] ring-1 ring-white/[0.20] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+              placeholder:text-white/[0.22] resize-none
+              focus:outline-none focus:ring-[#C9A84C]/40 focus:bg-white/[0.16] focus:ring-[1.5px]
               transition-all duration-300"
           />
         </div>
