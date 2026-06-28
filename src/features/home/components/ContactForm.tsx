@@ -52,11 +52,16 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="relative glass-card-gold rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col items-center justify-center text-center">
-        {/* Gold corner accent */}
-        <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-40 transition-opacity duration-700">
-          <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
-          <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
+      <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col items-center justify-center text-center !ring-1 !ring-[#C9A84C]/35 !shadow-[0_0_30px_rgba(201,168,76,0.08),0_0_60px_rgba(201,168,76,0.03)]">
+        {/* Gold corner accent (top-left) */}
+        <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-50 transition-opacity duration-700">
+          <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
+          <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
+        </div>
+        {/* Gold corner accent (bottom-right) */}
+        <div className="absolute bottom-0 right-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-50 transition-opacity duration-700">
+          <div className="absolute bottom-0 right-0 w-px h-full bg-gradient-to-t from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
+          <div className="absolute bottom-0 right-0 h-px w-full bg-gradient-to-l from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
         </div>
 
         <CheckCircle2 className="text-[#C9A84C] w-12 h-12 sm:w-16 sm:h-16 2xl:w-20 2xl:h-20 min-[3000px]:w-28 min-[3000px]:h-28 min-[5000px]:w-36 min-[5000px]:h-36 mb-4 sm:mb-6 min-[3000px]:mb-10" strokeWidth={1.5} />
@@ -84,11 +89,16 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="relative glass-card-gold rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col">
+    <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col !ring-1 !ring-[#C9A84C]/35 !shadow-[0_0_30px_rgba(201,168,76,0.08),0_0_60px_rgba(201,168,76,0.03)]">
       {/* Gold corner accent (top-left) */}
-      <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-40 transition-opacity duration-700">
-        <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
-        <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-50 transition-opacity duration-700">
+        <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
+        <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
+      </div>
+      {/* Gold corner accent (bottom-right) */}
+      <div className="absolute bottom-0 right-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-50 transition-opacity duration-700">
+        <div className="absolute bottom-0 right-0 w-px h-full bg-gradient-to-t from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
+        <div className="absolute bottom-0 right-0 h-px w-full bg-gradient-to-l from-[#C9A84C]/70 via-[#C9A84C]/35 to-transparent" />
       </div>
 
       {/* ── Header ── */}
