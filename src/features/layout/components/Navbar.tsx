@@ -79,7 +79,7 @@ export default function Navbar() {
                 href="/#contact"
                 className="hidden lg:inline-flex items-center glass-btn-solid text-[#080808] text-xs 2xl:text-sm min-[3000px]:text-base font-medium px-3 xl:px-5 py-1.5 xl:py-2 rounded-full"
               >
-                Start a Project
+                BUILD WITH MALERA
               </a>
 
               {/* Hamburger  mobile only */}
