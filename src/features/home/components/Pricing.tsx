@@ -3,47 +3,46 @@ import Container from "@/src/features/layout/components/Container";
 const PLANS = [
   {
     name: "Starter",
-    price: "$299",
-    desc: "You know what you need. A clean site, up fast, done right.",
+    price: "€299",
+    desc: "You know what you need and you want it done properly without a long process around it.",
     features: [
-      "Up to 5 pages built properly from scratch",
-      "Looks right on every screen and every device",
-      "Search engines can find you",
-      "One round of revisions before we wrap up",
-      "You own everything when we are done",
+      "Up to 5 pages planned and built around what the business actually needs",
+      "Works correctly on every screen size and device",
+      "Set up so search engines can find and index it properly",
+      "One round of revisions after the first version is ready",
+      "Everything handed over at the end in your name",
     ],
     cta: "Tell me more",
     tier: 0,
   },
   {
     name: "Pro",
-    price: "$699",
-    desc: "Something bigger is in motion. You need a site that grows with you.",
+    price: "€499",
+    desc: "The right plan for a business that has outgrown a simple website and needs something that works harder.",
     features: [
-      "Up to 15 pages structured to expand",
-      "A CMS so you can update things yourself",
-      "SEO that goes deeper than the basics",
-      "Animations and interactions that feel considered",
-      "Analytics set up and working from day one",
-      "Two revision rounds so we get the details right",
-      "Reachable after launch if something comes up",
+      "Up to 15 pages structured around the business and planned before anything is designed",
+      "A content management system so the business can update things without touching code",
+      "SEO that goes beyond the basics and is built into the structure of the site",
+      "Animations and interactions added where they improve the experience",
+      "Analytics configured and working from the moment the site goes live",
+      "Two rounds of revisions so the details are right before launch",
+      "Available after launch if something needs attention",
     ],
     cta: "Tell me more",
     tier: 1,
   },
   {
     name: "Business",
-    price: "$1,499",
-    desc: "You are building something real. A product that needs to work. We treat it like one.",
+    price: "€1,199",
+    desc: "For businesses building something that goes beyond a website. A product, a platform or a tool that needs to be built properly from the ground up.",
     features: [
-      "Web app or e-commerce built for actual use",
-      "Front end and back end handled by us",
-      "AI features integrated where they genuinely help",
-      "Admin dashboards and internal tools if needed",
-      "Payment systems APIs and third-party integrations",
-      "Three revision rounds across the full build",
-      "We stay after launch",
-      "Full documentation so your team can take over",
+      "Web application or e-commerce built to work properly under real conditions",
+      "Full stack development in one place with consistent decisions at every layer",
+      "AI features added where they serve the product and the people using it",
+      "Internal tools and dashboards built around genuine operational requirements",
+      "Payment systems, API connections and third party integrations documented properly",
+      "Three revision rounds so the final product reflects what was scoped and agreed",
+      "Involved after handover until everything is working the way it was built to work",
     ],
     cta: "Tell me more",
     tier: 2,
@@ -51,15 +50,15 @@ const PLANS = [
   {
     name: "Enterprise",
     price: "LET'S TALK",
-    desc: "A platform a SaaS or a mobile app that deserves its own conversation. We sit down figure out the scope together and agree on a number that works for both sides.",
+    desc: "Some projects cannot be priced from a list. This is the plan for those. We talk through what is being built and structure the engagement around the actual requirements.",
     features: [
-      "Android and iOS mobile apps",
-      "Complex platforms and SaaS products",
-      "Custom AI bots trained on your business",
-      "Automation that saves your team real time",
-      "Ongoing development after delivery",
-      "A team you can call when things get serious",
-      "We treat your product like we built it for ourselves",
+      "Android and iOS apps built to perform under the conditions real users create",
+      "Complex platforms and SaaS products scoped before any development decisions are made",
+      "Custom AI tools developed for the specific needs of the business",
+      "Automation where it addresses something that genuinely costs time or accuracy",
+      "Ongoing development available after the initial delivery if the product continues to evolve",
+      "Full system documentation so the team can take ownership of the product after delivery",
+      "Available after handover for as long as the engagement requires",
     ],
     cta: "Let's figure it out",
     tier: 3,
@@ -85,11 +84,11 @@ export default function Pricing() {
               fontSize: 'clamp(1.5rem, 5vw, 7rem)',
             }}
           >
-            A PRICE THAT MAKES SENSE
+            Clear pricing for every project type.
           </h2>
 
           <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[420px] 2xl:max-w-[550px] min-[3000px]:max-w-[700px]">
-            Fixed-price engagements with detailed scope documents upfront. Any changes beyond original scope are discussed and quoted separately before work continues.
+            The price you see is the price you pay. Every project starts with a scope document so both sides know exactly what is included.
           </p>
         </div>
 
