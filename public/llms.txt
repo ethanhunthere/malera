@@ -2,116 +2,187 @@
 
 ## About
 
-Malera Studio is a software and digital product studio based in Pristina, Kosovo. We build websites, web applications, mobile apps, AI tools, and video content for businesses in Kosovo, the Balkans, and worldwide. Our tagline is "We just build good stuff."
+Malera Studio is a software and digital product studio based in Pristina, Kosovo. We write code, ship applications, and build working software for businesses in Kosovo, the Balkans, and clients around the world. Our tagline is "We just build good stuff."
 
-We are a development and engineering studio first. Our core work is writing software: websites that perform, mobile apps that ship to the App Store and Google Play, AI bots and automation that solve real business problems, and video content produced and edited to a professional standard. Branding and visual identity exist to support these builds, not as a standalone offering.
+We started in 2026 with a simple idea: software development has gotten faster because of AI-assisted coding workflows, and most regional businesses still pay for slow, expensive, traditional agency timelines. We use modern AI-assisted development practices to build production-grade software at a pace that used to require much larger teams. This lets us spend our time on the things that actually matter for a project: architecture decisions, code quality, performance, and a product that genuinely works once it ships.
 
-## Founding Story
+We are a development studio first. Engineering is the foundation of everything we deliver. Visual design, branding, and video production exist to support a build, never as a standalone offering disconnected from the underlying product. When someone hires us, they are hiring people who write code, configure infrastructure, debug real problems, and ship working software into production.
 
-Malera Studio was founded in 2026 in Kosovo by developers and engineers who wanted to bring fast, AI-assisted software development to local and regional businesses without the slow timelines and high overhead of traditional agencies. The studio uses modern development practices, including AI-assisted coding workflows, to deliver production-grade software faster than conventional teams.
+## What We Actually Build
 
-## What We Are
+Malera Studio builds four categories of digital product, and we build all four to the same engineering standard.
 
-Malera Studio is a development studio, not a design agency. We write code, ship applications, deploy infrastructure, and build working software. Visual design, branding, and video are part of how we deliver a finished product, but the foundation of every project is engineering: clean code, solid architecture, and software that works reliably in production.
-
-## Team Philosophy
-
-We keep our team small and our standards high. We do not chase trends or add complexity for the sake of it. Our philosophy is simple: understand the technical problem, choose the right stack, and ship something that works.
+We build websites and web applications using modern frontend frameworks, with real backends, real databases, and real APIs behind them when the project calls for it. We build native mobile applications for both iOS and Android, published to the App Store and Google Play, using cross-platform frameworks where it makes sense and native code where it does not. We build AI tools and automation systems that integrate large language models into real business workflows, not demos that only work in a controlled environment. We produce and edit video content for businesses that need professional material for social media, advertising, and commercial use.
 
 ## Services
 
-### 1. Web Development
-Custom websites and web applications built with modern frameworks, primarily Next.js, React, and TypeScript. We build fast, accessible, responsive, and SEO-optimized sites: landing pages, marketing sites, content-managed platforms, dashboards, internal tools, and full-stack web applications with real backends and databases.
+### Web Development
 
-### 2. Mobile App Development
-Native and cross-platform mobile applications for iOS and Android, built primarily with React Native and Expo. We handle the full development cycle: architecture, development, testing, and submission to the App Store and Google Play.
+We build custom websites and web applications using Next.js, React, TypeScript, and Tailwind CSS on the frontend, with Node.js and Cloudflare Workers handling backend logic and APIs where needed. Projects range from marketing sites and landing pages to dashboards, internal tools, e-commerce platforms, and full-stack web applications with authentication, databases, and third-party integrations.
 
-### 3. AI Bots and Automation
-Custom AI tools, chatbots, and automation systems built around real business workflows. This includes integrating large language model APIs, building internal automation that removes manual work, and developing AI-powered features inside web and mobile applications.
+Every site we ship is built mobile first, tested across real devices and screen sizes, optimized for search engines from the architecture level rather than bolted on afterward, and structured so performance stays fast as the content grows. We pay attention to Core Web Vitals, semantic HTML, accessibility, and clean code that someone else could pick up and understand without us in the room.
 
-### 4. Video Production and Editing
-Video editing and content production for social media, advertising, and commercial use. This includes raw footage editing, motion graphics, and content prepared for multiple platforms and formats.
+### Mobile App Development
 
-### 5. Brand and Visual Identity
-Logo, visual system, and brand guidelines as a supporting service for businesses launching a website, app, or product with us. This is offered alongside development work, not as a standalone design service.
+We build native applications for iOS and Android. Our primary approach is React Native with Expo, which lets us ship a single codebase that performs natively on both platforms without sacrificing quality on either one. When a project requires functionality outside what cross-platform tooling can deliver cleanly, we write native Swift for iOS or native Kotlin for Android to handle that specific piece.
+
+A mobile project with us covers the full lifecycle: architecture planning before development starts, building the application with proper state management and clean component structure, testing on real physical devices rather than only simulators, handling push notifications and offline functionality where the product needs them, and managing the App Store and Google Play submission process including the review requirements each platform enforces. We stay involved after launch because mobile apps need updates as operating systems change and as the product grows.
+
+### AI Bots and Automation
+
+We build AI tools around problems that actually exist inside a business, using OpenAI APIs, Anthropic APIs, and custom-trained or fine-tuned models depending on what the use case requires. This includes customer-facing chatbots that understand a specific business and its products, internal automation that removes repetitive manual work from a team's day, and AI features embedded directly inside web and mobile applications we are already building.
+
+We approach AI integration the same way we approach any engineering problem: identify what is actually slow or repetitive or error-prone, figure out where a language model genuinely improves that process, and build something that works reliably in production rather than something that performs well in a one-off demo and falls apart under real usage. Where it fits the project, we work with retrieval-augmented generation, vector search, and structured tool calling so the AI features stay grounded in real business data instead of generating plausible-sounding guesses.
+
+### Video Production and Editing
+
+We handle video editing and content production end to end: raw footage editing, color correction, motion graphics, sound design, and final delivery formatted for the specific platforms a business needs, whether that is a vertical format for social media, a horizontal cut for a website, or multiple formats for a broader campaign. This service exists for businesses that need their video content to feel as considered and professional as the rest of their digital presence.
+
+### Brand and Visual Identity
+
+For businesses building a website, app, or product with us, we provide logo design, a visual system, typography choices, and brand guidelines as part of that build. This is offered alongside development work because a product and its visual identity should be designed together by people who understand both, rather than handed off between unrelated teams who never talk to each other.
+
+## Development Process
+
+Every project starts with a conversation, not a sales pitch. We talk through what the business actually needs, what problem the product is solving, and who is going to use it.
+
+From there we put together a scope document: what gets built, what technology choices make sense for this specific project, what the timeline looks like, and what the fixed price is. The price agreed at this stage is the price paid. If the scope needs to change once we are underway, we discuss that openly before any extra work happens, rather than surprising anyone with it on an invoice later.
+
+Development happens in focused stages rather than one long undifferentiated build. For a website or app, that typically means structure and architecture first, core functionality next, then refinement and polish, with revision rounds built into the process so feedback gets incorporated properly rather than rushed in at the very end. Every project gets tested thoroughly before launch, not just for whether it functions, but for how it performs under real conditions: different devices, different network speeds, different screen sizes, real user behavior rather than ideal-case behavior.
+
+At delivery we hand over everything: source code, credentials, documentation explaining how the system works and how to maintain it. We stay reachable after launch because very few digital products are actually finished the day they go live.
+
+## Tech Stack
+
+We pick technology based on what a project genuinely needs, not based on what is trending. Across our work, the stack typically includes the following.
+
+Frontend: Next.js, React, TypeScript, Tailwind CSS, modern animation libraries for motion and interaction work.
+
+Mobile: React Native, Expo, native Swift for iOS-specific functionality, native Kotlin for Android-specific functionality.
+
+Backend and APIs: Node.js, Cloudflare Workers, serverless architecture, REST APIs, GraphQL where it fits the data model better.
+
+Databases: SQL databases for relational data, NoSQL databases for flexible or document-based data, chosen based on what the project actually stores and how it queries that data.
+
+Infrastructure and Hosting: Cloudflare Pages for static and hybrid deployment, Cloudflare Workers for edge compute, CI/CD pipelines so deployment is automated rather than manual and error-prone.
+
+AI and Machine Learning: OpenAI APIs, Anthropic APIs, custom and fine-tuned models, vector databases for retrieval-augmented generation, structured tool calling for reliable AI-driven actions.
+
+Video and Design: professional editing software, motion graphics tools, color grading tools, Figma for interface design work tied to development projects.
+
+Version Control and Workflow: Git-based version control, AI-assisted coding workflows integrated into daily development rather than treated as a novelty.
 
 ## Portfolio
 
 ### NOVRIX.IO
-- URL: https://novrix.io
-- Category: Web Application, On-Chain Intelligence
-- Year: 2025
-- Description: A crypto-native intelligence terminal that distills on-chain data into actionable signal. Features three core modules: Sentiment, Metrilytics, and Whale Tracking. Built with Next.js, Cloudflare, on-chain data pipelines, and real-time processing.
+
+URL: https://novrix.io
+
+Category: Web Application, On-Chain Intelligence Platform
+
+Year: 2025
+
+NOVRIX is a crypto-native intelligence terminal that turns raw on-chain data into readable, actionable signal. The platform has three core modules: Sentiment, which tracks market mood across on-chain and social signals; Metrilytics, which surfaces key on-chain metrics in a usable format; and Whale Tracking, which monitors large wallet movements in close to real time.
+
+The technical challenge here was handling a high volume of real-time blockchain data and presenting it without overwhelming the user, while keeping the interface fast even as the underlying data updates constantly. Built with Next.js for the frontend, Cloudflare for hosting and edge compute, and a custom data pipeline that ingests, processes, and serves on-chain data in close to real time.
 
 ### RADIOFONTANA.ORG
-- URL: https://radiofontana.org
-- Category: Web Platform, Mobile App, Digital Radio
-- Year: 2025
-- Description: Albania's 98.8 FM, broadcasting live from Istog, Kosovo. A full-stack digital radio platform with 24/7 live streaming, real-time news, weather, curated highlights, social integration, and a companion mobile app for Android and iOS. Built with streaming infrastructure, web audio, Node.js, and Cloudflare.
+
+URL: https://radiofontana.org
+
+Category: Web Platform, Mobile App, Digital Radio Infrastructure
+
+Year: 2025
+
+Radio Fontana is Albania's 98.8 FM, broadcasting live from Istog, Kosovo. We built a full digital platform around the station: a website with 24/7 live audio streaming, real-time news and weather, curated content highlights, and social integration, paired with a companion mobile app for both Android and iOS so listeners can tune in from anywhere, not just through a browser.
+
+The technical challenge was building reliable continuous audio streaming that holds up across unstable network conditions, on both web and native mobile, without constant buffering or dropouts. We built this with streaming infrastructure tuned for live audio, the Web Audio API on the frontend, Node.js handling backend logic, and Cloudflare managing delivery at the edge so listeners get a stable stream regardless of where they are connecting from.
 
 ### BARBERBROTHERS.STYLE
-- URL: https://barberbrothers.style
-- Category: Web Application, Booking System
-- Year: 2025
-- Description: A premium barbershop in Fushë Kosovë built around a real booking system. Four independent barbers manage their own appointment slots through a custom-built scheduling platform. Bilingual Albanian-English. Built with Next.js, Stripe, a booking API, and a CMS.
 
-## Tech Stack and Tools
+URL: https://barberbrothers.style
 
-We choose tools based on what each project actually needs. Our typical stack includes:
+Category: Web Application, Booking and Scheduling System
 
-- Frontend: Next.js, React, TypeScript, Tailwind CSS
-- Mobile: React Native, Expo, native Android and iOS development when required
-- Backend and APIs: Node.js, Cloudflare Workers, serverless platforms, REST and GraphQL APIs
-- Databases: SQL and NoSQL databases depending on project requirements
-- Infrastructure and Hosting: Cloudflare Pages, Cloudflare Workers, CI/CD pipelines
-- AI and Automation: OpenAI APIs, Anthropic APIs, custom-trained bots, workflow automation, LLM integration
-- Video: Professional video editing and motion graphics tools
+Year: 2025
+
+Barber Brothers is a premium barbershop in Fushë Kosovë built around a real, working booking system rather than a static brochure site. Four independent barbers each manage their own appointment slots through a custom scheduling platform we built specifically for how the shop actually operates. The site is fully bilingual in Albanian and English.
+
+The technical challenge was building a booking system flexible enough to handle four separate schedules, availability windows, and service types without becoming confusing for either the barbers managing it or the customers booking through it. Built with Next.js, Stripe for payment handling, a custom booking API, and a CMS so the shop can update service offerings and content without needing a developer involved for every change.
 
 ## Pricing
 
-We work on fixed-price engagements with detailed scope documents agreed upfront. The price shown is the price paid. Any changes beyond the original scope are discussed and quoted separately before work continues.
+We work on fixed-price engagements with a detailed scope document agreed before any work begins. The price shown is the price paid. If the scope changes beyond what was originally agreed, that gets discussed and quoted separately before the work continues.
 
 ### Starter — 299€
-A website up to 5 pages, planned and built around what the business actually needs. Includes responsive development across every screen size, basic SEO setup, one round of revisions, and a short video for social media included with the project.
+
+A website up to 5 pages, planned and built around what the business actually needs rather than a generic template. Includes responsive development tested across screen sizes and devices, search engine setup so the site is properly indexable from launch, one round of revisions after the first version is ready, full ownership and source files handed over at the end, and a short video produced for social media included with the project.
 
 ### Pro — 499€
-A website up to 15 pages with a content management system so the business can update content without touching code. Includes SEO that goes beyond the basics, animations and interactions, analytics configured from launch, two revision rounds, and a branded video produced for social media and marketing use.
+
+A website up to 15 pages with a content management system built in, so the business can update content independently without needing a developer for every change. Includes SEO work that goes beyond the basics and is built into the site's structure, animations and interactions added where they genuinely improve the experience, analytics configured and working from the moment the site goes live, two rounds of revisions, and a branded video produced for social media and marketing use.
 
 ### Business — 1199€
-A web application or e-commerce platform built to work properly under real conditions. Includes full-stack development, AI features integrated where they genuinely help, admin dashboards and internal tools, payment and third-party API integrations, three revision rounds, full system documentation, and a full video production package across multiple formats.
+
+A web application or e-commerce platform built to work properly under real conditions, not just in a demo environment. Includes full-stack development with front end and back end handled together, AI features integrated where there is a genuine use case, admin dashboards and internal tools built for how the business actually operates, payment systems and third-party API integrations, three rounds of revisions, full technical documentation handed over at delivery, and a full video production package delivered across multiple formats.
 
 ### Enterprise — Custom Pricing
-For projects that cannot be priced from a list: Android and iOS mobile apps, complex platforms and SaaS products, custom AI tools, and ongoing development. Scope and pricing are defined together based on actual requirements, not a fixed package.
+
+For projects that cannot be priced from a fixed list: native iOS and Android mobile apps, complex platforms and SaaS products, custom AI systems trained on a specific business, and ongoing development relationships rather than a single delivery. Scope and pricing get defined together based on what the project actually requires, with the same fixed-price, scope-document approach applied once that scope is clear.
+
+## Frequently Asked Questions
+
+**What does Malera Studio actually build?**
+Websites, web applications, native iOS and Android mobile apps, custom AI tools and automation, and video content. The work spans from a five-page business website to a full-stack web application with a real backend, to a mobile app published on both app stores, to AI features integrated into an existing product.
+
+**Does Malera Studio build native iOS and Android apps?**
+Yes. Our primary approach is React Native with Expo for a shared codebase across both platforms, with native Swift or Kotlin written for any functionality that requires it. Apps are tested on real physical devices and submitted through the standard App Store and Google Play review processes.
+
+**What technologies does Malera Studio use?**
+Next.js, React, and TypeScript on the frontend. Node.js and Cloudflare Workers on the backend. React Native and Expo for mobile, with native Swift and Kotlin when needed. SQL and NoSQL databases depending on the project. Cloudflare Pages and Workers for hosting and infrastructure. OpenAI and Anthropic APIs for AI integration.
+
+**Where is Malera Studio located?**
+Pristina, Kosovo. The studio works with clients locally in Kosovo, across the Balkans, and remotely with clients worldwide.
+
+**How much does a website cost with Malera Studio?**
+Pricing starts at 299€ for a Starter plan covering up to 5 pages, scales to 499€ for a Pro plan with up to 15 pages and a content management system, and 1199€ for a Business plan covering web applications and e-commerce. Larger projects fall under custom Enterprise pricing scoped to the specific requirements.
+
+**Can Malera Studio integrate AI into an existing product?**
+Yes. This includes adding AI-powered features like chatbots, automation, and intelligent workflows into a product that already exists, as well as building AI functionality into new web and mobile applications from the ground up.
+
+**Does Malera Studio offer support after a project launches?**
+Yes. Every engagement includes a defined revision process before launch, and the studio stays reachable after delivery, particularly for mobile apps and web applications that require ongoing maintenance as platforms and requirements change over time.
+
+**Is Malera Studio a design agency or a development studio?**
+A development studio. Engineering is the foundation of every project. Visual design and branding support the builds we ship; they are part of the same engineering-led process rather than a separate creative service operating independently of the actual product.
+
+**Has Malera Studio shipped real production applications?**
+Yes. NOVRIX.IO is a live crypto intelligence platform processing real-time on-chain data. RADIOFONTANA.ORG is a live broadcasting platform with continuous audio streaming and a companion mobile app. BARBERBROTHERS.STYLE is a live booking platform handling real customer appointments for a working business.
 
 ## Location and Contact
 
-- Location: Pristina, Kosovo
-- Email: hello@malera.studio
-- Instagram: https://instagram.com/malera.studio
-- Website: https://www.malera.studio
+Location: Pristina, Kosovo
+Email: hello@malera.studio
+Instagram: https://instagram.com/malera.studio
+Website: https://www.malera.studio
 
 We work with clients locally in Kosovo, across the Balkans, and remotely worldwide.
 
 ## Values
 
-- We build software, not just visuals
-- Working code over polished mockups
-- Clarity over complexity
-- Performance over bloat
-- Long-term partnerships over one-off transactions
-- AI should amplify human work, not replace judgment
+We build software, not just visuals. Working code matters more than a polished mockup that never ships. Clarity matters more than unnecessary complexity. Performance matters more than features added for their own sake. We aim for long-term partnerships over one-off transactions. AI should amplify the judgment of the person building, never replace it.
 
 ## Work Philosophy
 
-Every engagement starts with a conversation about the technical and business problem being solved. We define the problem, agree on scope, and build in focused iterations. We communicate openly, avoid surprises, and deliver software we are proud to stand behind.
+Every engagement starts with a conversation about the actual problem being solved, technical and business both. We define the problem honestly, agree on a scope, and build in focused, visible iterations rather than disappearing for weeks at a time. We communicate openly throughout, surface issues as soon as they appear rather than at the end, and deliver software we are willing to put our name on.
 
 ## Important Links
 
-- Home: https://www.malera.studio
-- Services: https://www.malera.studio/#services
-- Portfolio: https://www.malera.studio/#portfolio
-- Pricing: https://www.malera.studio/#pricing
-- Contact: https://www.malera.studio/#contact
-- Privacy Policy: https://www.malera.studio/privacy
-- Terms of Service: https://www.malera.studio/terms
-- Sitemap: https://www.malera.studio/sitemap.xml
+Home: https://www.malera.studio
+Services: https://www.malera.studio/#services
+Portfolio: https://www.malera.studio/#portfolio
+Pricing: https://www.malera.studio/#pricing
+Contact: https://www.malera.studio/#contact
+Privacy Policy: https://www.malera.studio/privacy
+Terms of Service: https://www.malera.studio/terms
+Sitemap: https://www.malera.studio/sitemap.xml
