@@ -2,78 +2,86 @@
 
 ## About
 
-Malera Studio is a small creative studio based in Pristina, Kosovo. We build digital products, brands, and experiences for clients in Kosovo, the Balkans, and worldwide. Our tagline is "We just build good stuff."
+Malera Studio is a software and digital product studio based in Pristina, Kosovo. We build websites, web applications, mobile apps, AI tools, and video content for businesses in Kosovo, the Balkans, and worldwide. Our tagline is "We just build good stuff."
 
-We combine modern web and mobile development with video production, brand identity design, and AI-powered automation. Every project is approached with a focus on clarity, performance, and long-term value.
+We are a development and engineering studio first. Our core work is writing software: websites that perform, mobile apps that ship to the App Store and Google Play, AI bots and automation that solve real business problems, and video content produced and edited to a professional standard. Branding and visual identity exist to support these builds, not as a standalone offering.
 
 ## Founding Story
 
-Malera Studio was founded in 2026 in Kosovo by a team of designers, developers, and makers who believe good work should speak for itself. The studio was started to bring world-class digital craft to local and regional businesses without the overhead and complexity of traditional agencies.
+Malera Studio was founded in 2026 in Kosovo by developers and engineers who wanted to bring fast, AI-assisted software development to local and regional businesses without the slow timelines and high overhead of traditional agencies. The studio uses modern development practices, including AI-assisted coding workflows, to deliver production-grade software faster than conventional teams.
+
+## What We Are
+
+Malera Studio is a development studio, not a design agency. We write code, ship applications, deploy infrastructure, and build working software. Visual design, branding, and video are part of how we deliver a finished product, but the foundation of every project is engineering: clean code, solid architecture, and software that works reliably in production.
 
 ## Team Philosophy
 
-We keep our team small and our standards high. We do not chase trends or add complexity for the sake of it. Our philosophy is simple: understand the problem, choose the right tools, and build something that works beautifully.
+We keep our team small and our standards high. We do not chase trends or add complexity for the sake of it. Our philosophy is simple: understand the technical problem, choose the right stack, and ship something that works.
 
 ## Services
 
 ### 1. Web Development
-Custom websites and web applications built with modern frameworks. Our work is fast, accessible, responsive, and SEO-optimized. We build landing pages, marketing sites, CMS-driven platforms, dashboards, and full-stack web applications.
+Custom websites and web applications built with modern frameworks, primarily Next.js, React, and TypeScript. We build fast, accessible, responsive, and SEO-optimized sites: landing pages, marketing sites, content-managed platforms, dashboards, internal tools, and full-stack web applications with real backends and databases.
 
-### 2. Mobile Apps
-Native and cross-platform mobile applications for iOS and Android. We focus on seamless user experiences, clean interfaces, and reliable performance.
+### 2. Mobile App Development
+Native and cross-platform mobile applications for iOS and Android, built primarily with React Native and Expo. We handle the full development cycle: architecture, development, testing, and submission to the App Store and Google Play.
 
-### 3. Video Production
-Professional video production from concept to final cut. This includes brand films, commercials, promotional content, and social media videos.
+### 3. AI Bots and Automation
+Custom AI tools, chatbots, and automation systems built around real business workflows. This includes integrating large language model APIs, building internal automation that removes manual work, and developing AI-powered features inside web and mobile applications.
 
-### 4. AI Bots and Automation
-Intelligent automation solutions and AI-powered chatbots that streamline business workflows. We build tools that save time, reduce manual work, and improve customer experiences.
+### 4. Video Production and Editing
+Video editing and content production for social media, advertising, and commercial use. This includes raw footage editing, motion graphics, and content prepared for multiple platforms and formats.
 
-### 5. Brand Identity
-Complete brand identity design including logos, typography, color systems, brand guidelines, and visual direction.
+### 5. Brand and Visual Identity
+Logo, visual system, and brand guidelines as a supporting service for businesses launching a website, app, or product with us. This is offered alongside development work, not as a standalone design service.
 
 ## Portfolio
 
 ### NOVRIX.IO
 - URL: https://novrix.io
-- Category: On-Chain Intelligence
+- Category: Web Application, On-Chain Intelligence
 - Year: 2025
-- Description: A crypto-native intelligence terminal that distills on-chain data into actionable signal. Features three core modules: Sentiment, Metrilytics, and Whale Tracking. Built with Next.js, Cloudflare, on-chain data, and real-time processing.
+- Description: A crypto-native intelligence terminal that distills on-chain data into actionable signal. Features three core modules: Sentiment, Metrilytics, and Whale Tracking. Built with Next.js, Cloudflare, on-chain data pipelines, and real-time processing.
 
 ### RADIOFONTANA.ORG
 - URL: https://radiofontana.org
-- Category: Digital Radio and News
+- Category: Web Platform, Mobile App, Digital Radio
 - Year: 2025
-- Description: Albania's 98.8 FM, broadcasting live from Istog, Kosovo. A full-spectrum digital radio platform with 24/7 live streaming, real-time news, weather, curated highlights, and social integration. Built with streaming, web audio, Node.js, and Cloudflare.
+- Description: Albania's 98.8 FM, broadcasting live from Istog, Kosovo. A full-stack digital radio platform with 24/7 live streaming, real-time news, weather, curated highlights, social integration, and a companion mobile app for Android and iOS. Built with streaming infrastructure, web audio, Node.js, and Cloudflare.
 
 ### BARBERBROTHERS.STYLE
 - URL: https://barberbrothers.style
-- Category: Booking and Brand
+- Category: Web Application, Booking System
 - Year: 2025
-- Description: A premium barbershop in Fushë Kosovë built around real online appointments. Four independent barbers run their own booking slots through a streamlined system. Bilingual Albanian-English. Built with Next.js, Stripe, a booking API, and a CMS.
+- Description: A premium barbershop in Fushë Kosovë built around a real booking system. Four independent barbers manage their own appointment slots through a custom-built scheduling platform. Bilingual Albanian-English. Built with Next.js, Stripe, a booking API, and a CMS.
 
 ## Tech Stack and Tools
 
 We choose tools based on what each project actually needs. Our typical stack includes:
 
 - Frontend: Next.js, React, TypeScript, Tailwind CSS
-- Backend and APIs: Node.js, Cloudflare Workers, serverless platforms
-- Mobile: React Native and native platforms when needed
-- Infrastructure: Cloudflare Pages, Cloudflare Workers
-- Design and Video: Figma, Adobe Creative Suite, motion tools
-- AI and Automation: OpenAI APIs, custom bots, workflow automation
+- Mobile: React Native, Expo, native Android and iOS development when required
+- Backend and APIs: Node.js, Cloudflare Workers, serverless platforms, REST and GraphQL APIs
+- Databases: SQL and NoSQL databases depending on project requirements
+- Infrastructure and Hosting: Cloudflare Pages, Cloudflare Workers, CI/CD pipelines
+- AI and Automation: OpenAI APIs, Anthropic APIs, custom-trained bots, workflow automation, LLM integration
+- Video: Professional video editing and motion graphics tools
 
 ## Pricing
 
-We work on fixed-price engagements with detailed scope documents upfront. Any changes beyond the original scope are discussed and quoted separately before work continues.
+We work on fixed-price engagements with detailed scope documents agreed upfront. The price shown is the price paid. Any changes beyond the original scope are discussed and quoted separately before work continues.
 
-### Essential — €1,500
-Best for a landing page or small site up to 5 pages. Includes responsive design, basic SEO, two revision rounds, and delivery within one week.
+### Starter — 299€
+A website up to 5 pages, planned and built around what the business actually needs. Includes responsive development across every screen size, basic SEO setup, one round of revisions, and a short video for social media included with the project.
 
-### Business — €4,500
-Best for growing businesses that need up to 15 pages, a CMS, deeper SEO, motion and interaction, analytics, and three revision rounds.
+### Pro — 499€
+A website up to 15 pages with a content management system so the business can update content without touching code. Includes SEO that goes beyond the basics, animations and interactions, analytics configured from launch, two revision rounds, and a branded video produced for social media and marketing use.
 
-### Build It Together — Custom Pricing
-Best for platforms, SaaS products, full-stack applications, AI integrations, dashboards, and ongoing partnerships. Scope and pricing are defined together.
+### Business — 1199€
+A web application or e-commerce platform built to work properly under real conditions. Includes full-stack development, AI features integrated where they genuinely help, admin dashboards and internal tools, payment and third-party API integrations, three revision rounds, full system documentation, and a full video production package across multiple formats.
+
+### Enterprise — Custom Pricing
+For projects that cannot be priced from a list: Android and iOS mobile apps, complex platforms and SaaS products, custom AI tools, and ongoing development. Scope and pricing are defined together based on actual requirements, not a fixed package.
 
 ## Location and Contact
 
@@ -86,15 +94,16 @@ We work with clients locally in Kosovo, across the Balkans, and remotely worldwi
 
 ## Values
 
+- We build software, not just visuals
+- Working code over polished mockups
 - Clarity over complexity
 - Performance over bloat
 - Long-term partnerships over one-off transactions
-- Good design is good business
 - AI should amplify human work, not replace judgment
 
 ## Work Philosophy
 
-Every engagement starts with a conversation. We define the problem, agree on scope, and build in focused iterations. We communicate openly, avoid surprises, and deliver work we are proud to stand behind.
+Every engagement starts with a conversation about the technical and business problem being solved. We define the problem, agree on scope, and build in focused iterations. We communicate openly, avoid surprises, and deliver software we are proud to stand behind.
 
 ## Important Links
 
