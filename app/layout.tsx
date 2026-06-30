@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import Script from "next/script";
-import { LanguageProvider } from "@/src/shared/context/LanguageContext";
-import AnimatedBackground from "@/src/features/effects/dynamic";
+import AnimatedBackground from "@/src/features/effects/lazy";
 import Navbar from "@/src/features/layout/components/Navbar";
 import Footer from "@/src/features/layout/components/Footer";
 import "./globals.css";
@@ -128,11 +127,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
         <AnimatedBackground />
-        <LanguageProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </LanguageProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

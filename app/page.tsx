@@ -6,7 +6,7 @@ import {
   Portfolio,
   Pricing,
   Contact,
-} from "@/src/features/home/dynamic";
+} from "@/src/features/home/lazy";
 
 const Services = dynamic(
   () => import("@/src/features/home/components/Services"),
