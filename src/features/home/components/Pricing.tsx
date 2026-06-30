@@ -3,7 +3,7 @@ import Container from "@/src/features/layout/components/Container";
 const PLANS = [
   {
     name: "Starter",
-    price: "€299",
+    price: "299€",
     desc: "You know what you need and you want it done properly without a long process around it.",
     features: [
       "Up to 5 pages planned and built around what the business actually needs",
@@ -18,7 +18,7 @@ const PLANS = [
   },
   {
     name: "Pro",
-    price: "€499",
+    price: "499€",
     desc: "The right plan for a business that has outgrown a simple website and needs something that works harder.",
     features: [
       "Up to 15 pages structured around the business and planned before anything is designed",
@@ -35,7 +35,7 @@ const PLANS = [
   },
   {
     name: "Business",
-    price: "€1,199",
+    price: "1,199€",
     desc: "For businesses building something that goes beyond a website. A product, a platform or a tool that needs to be built properly from the ground up.",
     features: [
       "Web application or e-commerce built to work properly under real conditions",

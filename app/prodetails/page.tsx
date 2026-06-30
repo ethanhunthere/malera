@@ -27,7 +27,7 @@ export default function ProDetailsPage() {
         </a>
 
         <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#C9A84C] mb-4">
-          Pro €499
+          Pro 499€
         </p>
         <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] leading-[1.05] mb-6">
           Scope of work
