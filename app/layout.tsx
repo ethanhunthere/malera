@@ -101,11 +101,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" sizes="48x48" href="/icon.png" />
+        {/*
+          Favicon strategy — covers every browser and platform:
+          • 32px:  legacy browser tab icon
+          • 48px:  Next.js convention-based favicon (app/icon.png)
+          • 192px: Android Chrome, Google Search, Safari high-res tab
+          • 512px: PWA splash, Google Play
+          • ICO:   Internet Explorer / old bookmark compatibility
+          • 180px: Apple touch icon (iOS Home Screen, Safari, macOS Dock)
+        */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="48x48" href="/icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/malera-transparent.webp" fetchPriority="high" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
