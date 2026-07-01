@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/src/features/layout/components/Container";
+import BackLink from "@/src/features/layout/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Enterprise - Engagement Model | Malera Studio",
@@ -18,12 +19,7 @@ export default function EnterpriseDetailsPage() {
   return (
     <main className="relative z-10 pt-28 sm:pt-36 pb-28 sm:pb-40">
       <Container className="max-w-[720px]">
-        <a
-          href="/"
-          className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-white/30 hover:text-white/60 transition-colors mb-12"
-        >
-          <span>&larr;</span> Back to main site
-        </a>
+        <BackLink />
 
         <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#C9A84C] mb-4">
           Enterprise

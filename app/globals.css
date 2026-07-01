@@ -465,141 +465,6 @@
 }
 
 /* ══════════════════════════════════════════════════════════
-   SPECULAR HIGHLIGHT  dual-angle Apple edge flash, v2 wider
-   ══════════════════════════════════════════════════════════ */
-.glass-specular {
-  position: relative;
-  overflow: hidden;
-}
-.glass-specular::before {
-  content: "";
-  position: absolute; inset: 0; border-radius: inherit;
-  pointer-events: none; z-index: 2;
-  background: linear-gradient(
-    195deg,
-    transparent 0%,
-    transparent 24%,
-    rgba(255,255,255,0.04) 38%,
-    rgba(255,255,255,0.12) 46%,
-    rgba(255,255,255,0.06) 54%,
-    rgba(255,255,255,0.015) 66%,
-    transparent 78%,
-    transparent 100%
-  );
-  transition: opacity 0.8s ease;
-}
-.glass-specular::after {
-  content: "";
-  position: absolute; inset: 0; border-radius: inherit;
-  pointer-events: none; z-index: 2;
-  background: linear-gradient(
-    -20deg,
-    transparent 0%,
-    transparent 50%,
-    rgba(255,255,255,0.03) 65%,
-    rgba(255,255,255,0.08) 72%,
-    rgba(255,255,255,0.035) 79%,
-    transparent 90%,
-    transparent 100%
-  );
-}
-
-/* ══════════════════════════════════════════════════════════
-   GLASS RIM LIGHT  Chrome-like edge glow (NEW v2)
-   ══════════════════════════════════════════════════════════ */
-.glass-rim {
-  position: relative;
-}
-.glass-rim::before {
-  content: "";
-  position: absolute; inset: -0.5px; border-radius: inherit;
-  pointer-events: none; z-index: 3;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.18) 0%,
-    rgba(255,255,255,0.06) 15%,
-    transparent 30%,
-    transparent 65%,
-    rgba(255,255,255,0.03) 80%,
-    rgba(255,255,255,0.08) 100%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  padding: 0.5px;
-}
-
-/* ══════════════════════════════════════════════════════════
-   VIBRANCY OVERLAY  iOS's secret: text that glows through glass
-   Place on text elements INSIDE glass containers.
-   ══════════════════════════════════════════════════════════ */
-.glass-vibrant {
-  text-shadow:
-    0 0 2px rgba(255,255,255,0.20),
-    0 0 12px rgba(255,255,255,0.06),
-    0 0 30px rgba(255,255,255,0.02);
-}
-.glass-vibrant-gold {
-  text-shadow:
-    0 0 2px rgba(201,168,76,0.40),
-    0 0 16px rgba(201,168,76,0.18),
-    0 0 40px rgba(201,168,76,0.06),
-    0 0 80px rgba(201,168,76,0.02);
-}
-
-/* ══════════════════════════════════════════════════════════
-   BUTTONS  outline variant, v2 richer
-   ══════════════════════════════════════════════════════════ */
-.glass-btn {
-  background:
-    linear-gradient(155deg,
-      rgba(255,255,255,0.14) 0%,
-      rgba(255,255,255,0.07) 35%,
-      rgba(255,255,255,0.03) 55%,
-      rgba(255,255,255,0.05) 75%,
-      rgba(255,255,255,0.10) 100%);
-  border: 0.5px solid rgba(255,255,255,0.13);
-  box-shadow:
-    inset 0 0.5px 0 0 rgba(255,255,255,0.20),
-    inset 0 1px 0 0 rgba(255,255,255,0.09),
-    0 0 0 1px rgba(0,0,0,0.07),
-    0 2px 8px rgba(0,0,0,0.28),
-    0 6px 28px rgba(0,0,0,0.35);
-  backdrop-filter: blur(60px) saturate(240%);
-  transition:
-    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.45s ease,
-    border-color 0.45s ease,
-    background 0.45s ease;
-}
-.glass-btn:hover {
-  background:
-    linear-gradient(155deg,
-      rgba(255,255,255,0.20) 0%,
-      rgba(255,255,255,0.11) 35%,
-      rgba(255,255,255,0.05) 55%,
-      rgba(255,255,255,0.08) 75%,
-      rgba(255,255,255,0.14) 100%);
-  border-color: rgba(255,255,255,0.22);
-  box-shadow:
-    inset 0 0.5px 0 0 rgba(255,255,255,0.28),
-    inset 0 1px 0 0 rgba(255,255,255,0.14),
-    0 0 0 1px rgba(0,0,0,0.10),
-    0 6px 20px rgba(0,0,0,0.40),
-    0 12px 48px rgba(0,0,0,0.30),
-    0 0 60px rgba(201,168,76,0.14),
-    0 0 120px rgba(201,168,76,0.05);
-  transform: translateY(-2px);
-}
-.glass-btn:active {
-  transform: translateY(0) scale(0.98);
-  transition: transform 0.1s ease;
-  box-shadow:
-    inset 0 0.5px 0 0 rgba(255,255,255,0.10),
-    0 1px 4px rgba(0,0,0,0.35);
-}
-
-/* ══════════════════════════════════════════════════════════
    BUTTONS  solid fill variant (CTAs), v2 premium
    ══════════════════════════════════════════════════════════ */
 .glass-btn-solid {
@@ -835,18 +700,6 @@
 }
 
 /* ══════════════════════════════════════════════════════════
-   GLASS SELECTION INDICATOR  iOS-style active pill dot
-   ══════════════════════════════════════════════════════════ */
-.glass-indicator {
-  width: 6px; height: 6px;
-  border-radius: 3px;
-  background: rgba(201,168,76,0.85);
-  box-shadow:
-    0 0 8px rgba(201,168,76,0.5),
-    0 0 20px rgba(201,168,76,0.20);
-}
-
-/* ══════════════════════════════════════════════════════════
    AMBIENT LIGHT ORBS  v2 2x intensity, deeper volumetric
    ══════════════════════════════════════════════════════════ */
 /* ══════════════════════════════════════════════════════════
@@ -979,22 +832,6 @@
 }
 
 /* ══════════════════════════════════════════════════════════
-   PREMIUM TEXT  layered depth for hero headlines
-   ══════════════════════════════════════════════════════════ */
-.premium-text {
-  text-shadow:
-    /* Tight inner-glow  crisp edge */
-    0 0 1px rgba(255,255,255,0.35),
-    /* Mid-distance halo  soft bloom */
-    0 0 8px rgba(255,255,255,0.10),
-    0 0 24px rgba(255,255,255,0.04),
-    /* Far scatter  ambient depth */
-    0 0 60px rgba(255,255,255,0.015),
-    /* Subtle directional light from top-left */
-    0 -1px 2px rgba(255,255,255,0.06);
-}
-
-/* ══════════════════════════════════════════════════════════
    MORPH CHARACTER  spatial O↔L swap (driven by JS Web Animations API)
    CSS only sets the resting state; animations handled in Hero.tsx
    ══════════════════════════════════════════════════════════ */
@@ -1116,49 +953,6 @@
   background-image:
     radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 32px 32px;
-}
-
-/* ══════════════════════════════════════════════════════════
-   CHROME EDGE  metallic border for premium accent, v2
-   ══════════════════════════════════════════════════════════ */
-.chrome-edge {
-  border: 1px solid transparent;
-  background:
-    linear-gradient(#050505, #050505) padding-box,
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.20) 0%,
-      rgba(255,255,255,0.08) 25%,
-      rgba(255,255,255,0.02) 50%,
-      rgba(255,255,255,0.06) 70%,
-      rgba(255,255,255,0.16) 100%
-    ) border-box;
-}
-.chrome-edge-gold {
-  border: 1px solid transparent;
-  background:
-    linear-gradient(#050505, #050505) padding-box,
-    linear-gradient(
-      135deg,
-      rgba(201,168,76,0.35) 0%,
-      rgba(201,168,76,0.12) 25%,
-      rgba(201,168,76,0.03) 50%,
-      rgba(201,168,76,0.08) 70%,
-      rgba(201,168,76,0.28) 100%
-    ) border-box;
-}
-
-/* ══════════════════════════════════════════════════════════
-   TEXT READABILITY OVERRIDES  ensures all text is visible
-   ══════════════════════════════════════════════════════════ */
-.text-readable-dim {
-  color: rgba(255,255,255,0.55);
-}
-.text-readable-mid {
-  color: rgba(255,255,255,0.72);
-}
-.text-readable-bright {
-  color: rgba(255,255,255,0.90);
 }
 
 /* ══════════════════════════════════════════════════════════
