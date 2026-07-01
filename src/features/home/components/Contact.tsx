@@ -34,7 +34,7 @@ export default function Contact() {
           label="CONTACT US"
           labelClassName="text-gold min-[3000px]:text-base"
           headline="LET&apos;S TALK BUSINESS"
-          headlineClassName="text-white"
+          headlineClassName="text-white whitespace-nowrap"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
           subtitle="Tell us about your project. No strings attached, just a conversation to see if we&apos;re the right fit."
           subtitleClassName="text-white/35 max-w-[380px] 2xl:max-w-[520px] min-[3000px]:max-w-[700px] min-[5000px]:max-w-[900px] min-[5000px]:text-2xl"
