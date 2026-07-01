@@ -518,7 +518,9 @@
    HERO BUTTONS  frosted glass (white) & smoked glass (dark)
    ══════════════════════════════════════════════════════════ */
 
-/* ── White frosted glass: "See our work" ── */
+/* ══════════════════════════════════════════════════════════
+   WHITE FROSTED GLASS: "SEE OUR WORK"
+   ══════════════════════════════════════════════════════════ */
 .hero-btn-primary {
   position: relative;
   color: rgba(6,6,6,0.94);
@@ -583,7 +585,9 @@
     0 1px 3px rgba(0,0,0,0.12);
 }
 
-/* ── Dark smoked glass: "Get in touch" ── */
+/* ══════════════════════════════════════════════════════════
+   DARK SMOKED GLASS: "GET IN TOUCH"
+   ══════════════════════════════════════════════════════════ */
 .hero-btn-secondary {
   position: relative;
   color: rgba(255,255,255,0.88);
@@ -857,11 +861,14 @@
           drop-shadow(0 0 0.18em rgba(201, 168, 76, 0.07));
 }
 
-/* ── Partial gold flanking chars ──
+/* ══════════════════════════════════════════════════════════
+   PARTIAL GOLD FLANKING CHARS
+
    Gold radiates outward from the morph center:
    • D (right):  gold on left edge  → warm ivory on right edge  (90deg)
    • O (left):   gold on right edge → warm ivory on left edge   (270deg)
-   The warm champagne/cream bridge colors make the gold→white transition invisible. */
+   The warm champagne/cream bridge colors make the gold→white transition invisible.
+   ══════════════════════════════════════════════════════════ */
 
 .char-gold-partial-r {
   font-weight: 800;
@@ -995,9 +1002,12 @@ body {
   overflow-x: clip;
 }
 
-/* ── Grain texture overlay ──
+/* ══════════════════════════════════════════════════════════
+   GRAIN TEXTURE OVERLAY
+
    GPU-layer promoted so zoom doesn't re-raster the SVG filter.
-   numOctaves=3 (was 5), indistinguishable at 0.025 opacity, 4x cheaper. */
+   numOctaves=3 (was 5), indistinguishable at 0.025 opacity, 4x cheaper.
+   ══════════════════════════════════════════════════════════ */
 body::before {
   content: "";
   position: fixed;
@@ -1010,7 +1020,9 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ── Subtle background grid ── */
+/* ══════════════════════════════════════════════════════════
+   SUBTLE BACKGROUND GRID
+   ══════════════════════════════════════════════════════════ */
 body::after {
   content: "";
   position: fixed;
@@ -1025,7 +1037,9 @@ body::after {
   background-size: 100px 100px;
 }
 
-/* ── Scrollbar ── */
+/* ══════════════════════════════════════════════════════════
+   SCROLLBAR
+   ══════════════════════════════════════════════════════════ */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
@@ -1034,7 +1048,9 @@ body::after {
 }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
 
-/* ── Selection ── */
+/* ══════════════════════════════════════════════════════════
+   SELECTION
+   ══════════════════════════════════════════════════════════ */
 ::selection {
   background: rgba(201,168,76,0.28);
   color: #fff;
@@ -1122,7 +1138,9 @@ body::after {
    and a dissolving particle fade at the bottom.
    ══════════════════════════════════════════════════════════ */
 
-/* ── Shared base for both conduits ── */
+/* ══════════════════════════════════════════════════════════
+   SHARED BASE FOR BOTH CONDUITS
+   ══════════════════════════════════════════════════════════ */
 .edge-conduit-left,
 .edge-conduit-right {
   --conduit-glow: rgba(201,168,76,0.25);
@@ -1130,7 +1148,9 @@ body::after {
   border-radius: 1px;
 }
 
-/* ── Left conduit: base gradient + 2 data packets ── */
+/* ══════════════════════════════════════════════════════════
+   LEFT CONDUIT: BASE GRADIENT + 2 DATA PACKETS
+   ══════════════════════════════════════════════════════════ */
 .edge-conduit-left {
   background:
     /* packet 1, fast, bright */
@@ -1162,7 +1182,9 @@ body::after {
     0 0 18px rgba(201,168,76,0.04);
 }
 
-/* ── Right conduit: slightly different timing for organic feel ── */
+/* ══════════════════════════════════════════════════════════
+   RIGHT CONDUIT: SLIGHTLY DIFFERENT TIMING FOR ORGANIC FEEL
+   ══════════════════════════════════════════════════════════ */
 .edge-conduit-right {
   background:
     /* packet 1 */
@@ -1194,7 +1216,9 @@ body::after {
     0 0 18px rgba(201,168,76,0.04);
 }
 
-/* ── Dissolving particle spray at conduit bottom ── */
+/* ══════════════════════════════════════════════════════════
+   DISSOLVING PARTICLE SPRAY AT CONDUIT BOTTOM
+   ══════════════════════════════════════════════════════════ */
 .edge-conduit-left::after,
 .edge-conduit-right::after {
   content: '';
@@ -1214,7 +1238,9 @@ body::after {
   z-index: 0;
 }
 
-/* ── Keyframes ── */
+/* ══════════════════════════════════════════════════════════
+   KEYFRAMES
+   ══════════════════════════════════════════════════════════ */
 @keyframes conduitPacket1 {
   0%   { background-position: 0% 0%, 0% 20%, 0% 0%; }
   100% { background-position: 0% 100%, 0% 20%, 0% 0%; }
@@ -1230,7 +1256,9 @@ body::after {
   100% { opacity: 0.9; transform: translate(-50%, 50%) scaleY(1.3); }
 }
 
-/* ── Card left-edge breathes in sync with conduit ── */
+/* ══════════════════════════════════════════════════════════
+   CARD LEFT-EDGE BREATHES IN SYNC WITH CONDUIT
+   ══════════════════════════════════════════════════════════ */
 .glass-card-gold::before {
   animation: cardEdgeBreathe 4s ease-in-out infinite;
 }
@@ -1241,7 +1269,9 @@ body::after {
   60%      { opacity: 0.7; }
 }
 
-/* ── Mobile menu link stagger entrance ── */
+/* ══════════════════════════════════════════════════════════
+   MOBILE MENU LINK STAGGER ENTRANCE
+   ══════════════════════════════════════════════════════════ */
 @keyframes menuLinkIn {
   from {
     opacity: 0;
