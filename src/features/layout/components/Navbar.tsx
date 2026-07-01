@@ -7,9 +7,10 @@ const NAV_LINKS = ["Services", "Work", "Pricing", "Contact"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open (or during close animation)
   useEffect(() => {
     if (menuOpen) {
       document.documentElement.style.overflow = "hidden";
@@ -29,6 +30,16 @@ export default function Navbar() {
       document.body.style.width = "";
     };
   }, [menuOpen]);
+
+  // Animated close: play exit animation, then unmount
+  const handleClose = () => {
+    if (closing) return; // prevent double-tap during animation
+    setClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setClosing(false);
+    }, 300);
+  };
 
   // Show scroll navbar when past the main header
   useEffect(() => {
@@ -106,8 +117,11 @@ export default function Navbar() {
       {/* Mobile fullscreen overlay, premium glass */}
       {menuOpen && (
         <div
-          onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 z-40 flex flex-col lg:hidden overflow-hidden glass-overlay rounded-none"
+          onClick={handleClose}
+          className={`fixed inset-0 z-40 flex flex-col lg:hidden overflow-hidden glass-overlay rounded-none ${
+            closing ? 'pointer-events-none' : ''
+          }`}
+          style={closing ? { opacity: 0, transition: 'opacity 0.28s ease' } : undefined}
         >
           {/* ── Ambient depth ── */}
           <div className="absolute inset-0 pointer-events-none">
@@ -125,13 +139,15 @@ export default function Navbar() {
                 key={link}
                 className="glass-subtle rounded-2xl group relative"
                 style={{
-                  animation: `menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) ${i * 0.1}s both`,
+                  animation: closing
+                    ? `menuLinkOut 0.25s ease ${(NAV_LINKS.length - 1 - i) * 0.05}s both`
+                    : `menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) ${i * 0.1}s both`,
                   borderColor: 'rgba(201,168,76,0.07)',
                 }}
               >
                 <a
                   href={`/#${link.toLowerCase()}`}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={handleClose}
                   className="block px-5 py-4 sm:py-5"
                 >
                   <span className="block font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-[-0.02em] text-white/70 group-hover:text-white transition-colors duration-300">
@@ -146,12 +162,14 @@ export default function Navbar() {
           <div
             className="pb-10 sm:pb-14 flex flex-col items-center gap-5 px-8"
             style={{
-              animation: 'menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s both',
+              animation: closing
+                ? 'menuLinkOut 0.25s ease 0s both'
+                : 'menuLinkIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s both',
             }}
           >
             <a
               href="/#contact"
-              onClick={() => setMenuOpen(false)}
+              onClick={handleClose}
               className="glass-btn-solid text-[#080808] text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full tracking-[0.04em]"
             >
               BUILD WITH MALERA
