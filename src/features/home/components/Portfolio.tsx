@@ -72,11 +72,8 @@ export default function Portfolio() {
           label="WORK"
           labelClassName="text-gold/35"
           headline="WHAT WE'VE BUILT"
-          headlineClassName="text-white/65"
-          headlineStyle={{
-            fontSize: 'clamp(1.5rem, 5vw, 6rem)',
-            textShadow: '0 0 120px rgba(201,168,76,0.08), 0 0 40px rgba(201,168,76,0.04)',
-          }}
+          headlineClassName="text-white"
+          headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
           subtitle="Live previews of our latest work. Click a card to visit the full site."
           subtitleClassName="text-white/28 max-w-[550px] 2xl:max-w-[700px]"
           className="mb-8 sm:mb-14"
