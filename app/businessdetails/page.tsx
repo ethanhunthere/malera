@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: "Business Plan - Scope of Work | Malera Studio",
   description:
     "Full scope breakdown for the Business plan. Web applications, e-commerce, full-stack development, AI integration, dashboards, payment systems, three revision rounds, documentation, and post-launch support.",
-  robots: { index: false, follow: true },
   alternates: { canonical: "https://www.malera.studio/businessdetails" },
   openGraph: {
     title: "Business Plan - Scope of Work | Malera Studio",

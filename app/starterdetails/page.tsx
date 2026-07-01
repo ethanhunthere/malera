@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: "Starter Plan - Scope of Work | Malera Studio",
   description:
     "Full scope breakdown for the Starter plan. Five pages, responsive on every device, SEO foundation, one revision round, source code and credentials delivered.",
-  robots: { index: false, follow: true },
   alternates: { canonical: "https://www.malera.studio/starterdetails" },
   openGraph: {
     title: "Starter Plan - Scope of Work | Malera Studio",

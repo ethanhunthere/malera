@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: "Pro Plan - Scope of Work | Malera Studio",
   description:
     "Full scope breakdown for the Pro plan. Up to fifteen pages, CMS integration, advanced SEO with keyword research, animations, analytics setup, two revision rounds, and post-launch availability.",
-  robots: { index: false, follow: true },
   alternates: { canonical: "https://www.malera.studio/prodetails" },
   openGraph: {
     title: "Pro Plan - Scope of Work | Malera Studio",

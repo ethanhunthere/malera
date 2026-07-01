@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: "Enterprise - Engagement Model | Malera Studio",
   description:
     "How Enterprise engagements work at Malera Studio. Scoping conversation, mobile apps, SaaS platforms, AI and automation, ongoing development, and long-term collaboration with a dedicated team.",
-  robots: { index: false, follow: true },
   alternates: { canonical: "https://www.malera.studio/enterprisedetails" },
   openGraph: {
     title: "Enterprise - Engagement Model | Malera Studio",
