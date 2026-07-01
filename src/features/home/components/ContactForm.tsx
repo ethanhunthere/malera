@@ -29,6 +29,16 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    if (!name || !email || !message) {
+      setStatus("error");
+      setErrorMsg("Please fill in your name, email, and message before sending.");
+      return;
+    }
+
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
@@ -52,7 +62,7 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="relative glass-card-gold rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col items-center justify-center text-center !ring-1 !ring-gold/35 !shadow-[0_0_30px_rgba(201,168,76,0.08),0_0_60px_rgba(201,168,76,0.03)]">
+      <div className="relative glass-card-gold bg-black/[0.02] rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col items-center justify-center text-center !ring-1 !ring-gold/35 !shadow-[0_0_30px_rgba(201,168,76,0.08),0_0_60px_rgba(201,168,76,0.03)]">
         {/* Gold corner accent (top-left) */}
         <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-50 transition-opacity duration-700">
           <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-gold/70 via-gold/35 to-transparent" />
@@ -89,7 +99,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="relative glass-card-gold rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col !ring-1 !ring-gold/35 !shadow-[0_0_30px_rgba(201,168,76,0.08),0_0_60px_rgba(201,168,76,0.03)]">
+    <div className="relative glass-card-gold bg-black/[0.02] rounded-2xl p-6 sm:p-8 md:p-10 xl:p-12 2xl:p-14 min-[3000px]:p-20 min-[5000px]:p-28 overflow-hidden h-full flex flex-col !ring-1 !ring-gold/35 !shadow-[0_0_30px_rgba(201,168,76,0.08),0_0_60px_rgba(201,168,76,0.03)]">
       {/* Gold corner accent (top-left) */}
       <div className="absolute top-0 left-0 w-8 sm:w-12 h-8 sm:h-12 min-[3000px]:w-16 min-[3000px]:h-16 overflow-hidden opacity-50 transition-opacity duration-700">
         <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-gold/70 via-gold/35 to-transparent" />
@@ -117,7 +127,7 @@ export default function ContactForm() {
       </div>
 
       {/* ── Form ── */}
-      <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4 min-[3000px]:gap-6 flex-1" noValidate>
+      <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4 min-[3000px]:gap-6 flex-1">
         {/* Honeypot for spam prevention */}
         <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
@@ -129,7 +139,7 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 min-[3000px]:gap-6">
           <div>
-            <label htmlFor="contact-name" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/50 mb-1.5 min-[3000px]:mb-3">
+            <label htmlFor="contact-name" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/78 mb-1.5 min-[3000px]:mb-3">
               Your name
             </label>
             <input
@@ -138,7 +148,7 @@ export default function ContactForm() {
               type="text"
               required
               placeholder="John Doe"
-              className="w-full bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+              className="w-full bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white/72 text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
                 placeholder:text-white/[0.32]
                 focus:outline-none focus:ring-gold/40 focus:bg-white/[0.24] focus:ring-[1.5px]
                 transition-all duration-300"
@@ -146,7 +156,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="contact-email" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/50 mb-1.5 min-[3000px]:mb-3">
+            <label htmlFor="contact-email" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/78 mb-1.5 min-[3000px]:mb-3">
               Your email
             </label>
             <input
@@ -155,7 +165,7 @@ export default function ContactForm() {
               type="email"
               required
               placeholder="john@example.com"
-              className="w-full bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+              className="w-full bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white/72 text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
                 placeholder:text-white/[0.32]
                 focus:outline-none focus:ring-gold/40 focus:bg-white/[0.24] focus:ring-[1.5px]
                 transition-all duration-300"
@@ -164,7 +174,7 @@ export default function ContactForm() {
         </div>
 
         <div className="flex-1 flex flex-col">
-          <label htmlFor="contact-message" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/50 mb-1.5 min-[3000px]:mb-3">
+          <label htmlFor="contact-message" className="block text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-base min-[5000px]:text-lg font-medium text-white/78 mb-1.5 min-[3000px]:mb-3">
             Your message
           </label>
           <textarea
@@ -173,7 +183,7 @@ export default function ContactForm() {
             required
             rows={4}
             placeholder="Tell us about your project: what you need, your timeline, your budget if you have one..."
-            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] min-[3000px]:min-h-[180px] min-[5000px]:min-h-[220px] bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
+            className="w-full flex-1 min-h-[100px] sm:min-h-[120px] min-[3000px]:min-h-[180px] min-[5000px]:min-h-[220px] bg-white/[0.18] ring-1 ring-white/[0.28] rounded-lg min-[3000px]:rounded-xl px-3.5 py-2.5 sm:py-3 min-[3000px]:px-6 min-[3000px]:py-5 min-[5000px]:px-8 min-[5000px]:py-6 text-white/72 text-xs sm:text-sm min-[3000px]:text-lg min-[5000px]:text-xl
               placeholder:text-white/[0.32] resize-none
               focus:outline-none focus:ring-gold/40 focus:bg-white/[0.24] focus:ring-[1.5px]
               transition-all duration-300"

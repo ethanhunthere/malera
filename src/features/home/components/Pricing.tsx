@@ -80,7 +80,7 @@ export default function Pricing() {
         <SectionHeader
           label="PRICING"
           labelClassName="text-white/30"
-          headline="Clear pricing for every project type."
+          headline="CLEAR PRICING FOR EVERY PROJECT TYPE."
           headlineClassName="text-white"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
           subtitle="The price you see is the price you pay. Every project starts with a scope document so both sides know exactly what is included."

@@ -95,34 +95,35 @@ export default function Contact() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/strip relative flex items-center gap-3 sm:gap-4 min-[3000px]:gap-6 pl-4 sm:pl-5 min-[3000px]:pl-7 pr-2 sm:pr-3 min-[3000px]:pr-4 py-4 sm:py-5 md:py-7 lg:py-4 min-[3000px]:py-6 md:flex-1 rounded-xl min-[3000px]:rounded-2xl overflow-hidden
+                className="group/strip relative flex items-center gap-3 sm:gap-4 min-[3000px]:gap-6 pl-4 sm:pl-5 min-[3000px]:pl-7 pr-3 sm:pr-4 min-[3000px]:pr-5 py-4 sm:py-4 md:py-4 lg:py-4 min-[3000px]:py-6 md:flex-1 rounded-xl min-[3000px]:rounded-2xl overflow-hidden
                   transition-all duration-500
                   hover:translate-x-0.5 lg:hover:translate-x-1.5
-                  backdrop-blur-[6px] hover:backdrop-blur-[10px]
-                  bg-transparent hover:bg-white/[0.03]
-                  ring-1 ring-white/[0.05] hover:ring-gold/25"
+                  backdrop-blur-[8px] hover:backdrop-blur-[12px]
+                  bg-white/[0.05] hover:bg-white/[0.08]
+                  ring-1 ring-white/[0.14] hover:ring-gold/35
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_6px_26px_rgba(0,0,0,0.22)]"
               >
                 {/* Left gold accent line */}
                 <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-gold/35 to-transparent
-                  group-hover/strip:via-gold/55 transition-all duration-500" />
+                  group-hover/strip:via-gold/70 transition-all duration-500" />
 
                 {/* Icon, bare, no container */}
-                <Icon className="relative z-10 text-white/40 w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5 min-[3000px]:w-7 min-[3000px]:h-7 min-[5000px]:w-9 min-[5000px]:h-9 shrink-0
+                <Icon className="relative z-10 text-white/72 w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5 min-[3000px]:w-7 min-[3000px]:h-7 min-[5000px]:w-9 min-[5000px]:h-9 shrink-0
                   group-hover/strip:text-gold transition-colors duration-500"
                   fill="currentColor" />
 
                 {/* Label + sub */}
                 <div className="relative z-10 flex-1 min-w-0">
-                  <p className="text-[0.6875rem] sm:text-xs lg:text-sm min-[3000px]:text-lg min-[5000px]:text-2xl font-semibold text-white/55 group-hover/strip:text-white/85 transition-colors duration-500 truncate">
+                  <p className="text-xs sm:text-xs lg:text-sm min-[3000px]:text-lg min-[5000px]:text-2xl font-semibold text-white/80 group-hover/strip:text-white transition-colors duration-500 truncate">
                     {label}
                   </p>
-                  <p className="text-[0.5625rem] sm:text-[0.625rem] lg:text-xs min-[3000px]:text-base min-[5000px]:text-lg text-white/22 group-hover/strip:text-white/32 transition-colors duration-500 truncate mt-0.5">
+                  <p className="text-[0.625rem] sm:text-[0.6875rem] lg:text-xs min-[3000px]:text-base min-[5000px]:text-lg text-white/52 group-hover/strip:text-white/70 transition-colors duration-500 truncate mt-0.5">
                     {sub}
                   </p>
                 </div>
 
                 {/* Arrow: hidden until hover */}
-                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 min-[3000px]:w-6 min-[3000px]:h-6 min-[5000px]:w-7 min-[5000px]:h-7 text-gold/0 group-hover/strip:text-gold/45
+                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 min-[3000px]:w-6 min-[3000px]:h-6 min-[5000px]:w-7 min-[5000px]:h-7 text-gold/25 group-hover/strip:text-gold/65
                   transition-all duration-500 -translate-x-2 group-hover/strip:translate-x-0 shrink-0" />
               </a>
             ))}
