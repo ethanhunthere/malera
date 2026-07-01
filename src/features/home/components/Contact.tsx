@@ -1,4 +1,4 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import Container from "@/src/features/layout/components/Container";
 import SectionHeader from "@/src/features/layout/components/SectionHeader";
@@ -34,7 +34,7 @@ export default function Contact() {
           label="CONTACT US"
           labelClassName="text-gold min-[3000px]:text-base"
           headline="LET&apos;S TALK BUSINESS"
-          headlineClassName="text-white whitespace-nowrap"
+          headlineClassName="text-white"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
           subtitle="Tell us about your project. No strings attached, just a conversation to see if we&apos;re the right fit."
           subtitleClassName="text-white/35 max-w-[380px] 2xl:max-w-[520px] min-[3000px]:max-w-[700px] min-[5000px]:max-w-[900px] min-[5000px]:text-2xl"
@@ -42,7 +42,7 @@ export default function Contact() {
         />
 
         {/* ═══════════ Split layout: primary (left) | divider | social (right) ═══════════ */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_1px_240px] lg:grid-cols-[1fr_1px_280px] xl:grid-cols-[1fr_1px_320px] 2xl:grid-cols-[1fr_1px_380px] min-[3000px]:grid-cols-[1fr_1px_520px] min-[4000px]:grid-cols-[1fr_1px_640px] min-[5000px]:grid-cols-[1fr_1px_760px] gap-0 max-w-[1200px] 2xl:max-w-[1800px] min-[3000px]:max-w-[2200px] min-[4000px]:max-w-[2600px] min-[5000px]:max-w-[3000px] mx-auto">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_1px_240px] lg:grid-cols-[1fr_1px_280px] xl:grid-cols-[1fr_1px_320px] 2xl:grid-cols-[1fr_1px_380px] min-[3000px]:grid-cols-[1fr_1px_520px] min-[4000px]:grid-cols-[1fr_1px_640px] min-[5000px]:grid-cols-[1fr_1px_760px] gap-0">
 
           {/* ── LEFT: Contact form + WhatsApp (stacked) ── */}
           <div className="flex flex-col gap-3 sm:gap-4 pr-0 md:pr-6 lg:pr-8 xl:pr-12 2xl:pr-16 min-[3000px]:pr-20 min-[5000px]:pr-28">
