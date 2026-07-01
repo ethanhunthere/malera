@@ -192,7 +192,31 @@ export default function ContactForm() {
 
         {/* ── Error ── */}
         {status === "error" && (
-          <p className="text-red-400/70 text-[0.625rem] sm:text-xs min-[3000px]:text-base">{errorMsg}</p>
+          <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl min-[3000px]:rounded-2xl
+            bg-red-950/20 backdrop-blur-sm
+            border border-red-500/15
+            shadow-[inset_0_1px_0_rgba(239,68,68,0.08),0_4px_20px_rgba(239,68,68,0.05)]
+            animate-in fade-in slide-in-from-top-1 duration-300">
+            {/* Icon ring */}
+            <div className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 min-[3000px]:w-12 min-[3000px]:h-12 min-[5000px]:w-14 min-[5000px]:h-14 rounded-full
+              bg-red-500/8 ring-1 ring-red-500/15 shrink-0 mt-0.5">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 min-[3000px]:w-5 min-[3000px]:h-5 min-[5000px]:w-6 min-[5000px]:h-6 text-red-400/90"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-red-300/80 font-semibold text-[0.6875rem] sm:text-xs min-[3000px]:text-base tracking-wide">
+                Missing required fields
+              </p>
+              <p className="text-red-400/50 text-[0.625rem] sm:text-[0.6875rem] min-[3000px]:text-sm min-[5000px]:text-base mt-0.5 leading-relaxed">
+                {errorMsg}
+              </p>
+            </div>
+          </div>
         )}
 
         {/* ── Submit ── */}
