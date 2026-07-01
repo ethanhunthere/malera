@@ -79,7 +79,7 @@ export default function Pricing() {
       <Container id="pricing" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         <SectionHeader
           label="PRICING"
-          labelClassName="text-gold/35"
+          labelClassName="text-gold"
           headline="CLEAR PRICING FOR EVERY PROJECT TYPE."
           headlineClassName="text-white"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}

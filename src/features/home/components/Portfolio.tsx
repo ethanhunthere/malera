@@ -70,7 +70,7 @@ export default function Portfolio() {
       <Container id="work" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         <SectionHeader
           label="WORK"
-          labelClassName="text-gold/35"
+          labelClassName="text-gold"
           headline="WHAT WE'VE BUILT"
           headlineClassName="text-white"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
