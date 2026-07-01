@@ -7,7 +7,7 @@ import SectionHeader from "@/src/features/layout/components/SectionHeader";
 
 /* Inline icons to avoid lucide-react dep */
 const AlertIcon = () => (
-  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-[#C9A84C]/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-gold/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
     <line x1="12" y1="9" x2="12" y2="13" />
     <line x1="12" y1="17" x2="12.01" y2="17" />
@@ -70,7 +70,7 @@ export default function Portfolio() {
       <Container id="work" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         <SectionHeader
           label="WORK"
-          labelClassName="text-[#C9A84C]/35"
+          labelClassName="text-gold/35"
           headline="WHAT WE'VE BUILT"
           headlineClassName="text-white/65"
           headlineStyle={{
@@ -197,9 +197,9 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.12em] text-[#C9A84C]/80
-                border border-[#C9A84C]/40 rounded-full px-5 py-2
-                hover:text-[#C9A84C] hover:border-[#C9A84C]/60 hover:bg-[#C9A84C]/[0.08]
+              className="inline-flex items-center gap-2 font-mono text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.12em] text-gold/80
+                border border-gold/40 rounded-full px-5 py-2
+                hover:text-gold hover:border-gold/60 hover:bg-gold/[0.08]
                 transition-all duration-300"
             >
               OPEN IN NEW TAB <ExternalIcon />
@@ -235,7 +235,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             group-hover:text-white transition-colors duration-500 mb-0.5">
             {project.title}
           </h3>
-          <p className="text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl text-[#C9A84C]/55 font-mono tracking-[0.06em] italic mb-2">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl text-gold/55 font-mono tracking-[0.06em] italic mb-2">
             {project.hero}
           </p>
           <p className="text-[0.6875rem] sm:text-xs 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl leading-relaxed text-white/[0.40] group-hover:text-white/[0.55] transition-colors duration-500 max-w-[55ch]">
@@ -249,11 +249,11 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.15em] text-[#C9A84C]/70
-              border border-[#C9A84C]/35 rounded-full px-4 py-1.5 2xl:px-5 2xl:py-2 min-[3000px]:px-7 min-[3000px]:py-3 min-[5000px]:px-9 min-[5000px]:py-4
-              hover:text-[#C9A84C] hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/[0.06]
+            className="font-mono text-[0.625rem] sm:text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl tracking-[0.15em] text-gold/70
+              border border-gold/35 rounded-full px-4 py-1.5 2xl:px-5 2xl:py-2 min-[3000px]:px-7 min-[3000px]:py-3 min-[5000px]:px-9 min-[5000px]:py-4
+              hover:text-gold hover:border-gold/50 hover:bg-gold/[0.06]
               transition-all duration-300
-              group-hover:border-[#C9A84C]/45"
+              group-hover:border-gold/45"
           >
             VISIT SITE ↗
           </a>
@@ -262,7 +262,7 @@ function SiteCard({ project, idx }: { project: typeof PROJECTS[0]; idx: number }
 
       {/* ── Gold accent divider between preview and info ── */}
       <div className="absolute left-4 right-4 top-[calc(100%-var(--info-height,0px))] pointer-events-none
-        h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent
+        h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent
         opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
       {/* ── Hover gold accent glow ── */}

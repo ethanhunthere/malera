@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 text-center justify-items-center">
           {/* ── About ── */}
           <div>
-            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-[#C9A84C] mb-5 min-[3000px]:mb-7">
+            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-gold mb-5 min-[3000px]:mb-7">
               About
             </h4>
             <div className="space-y-0.5 text-white/35 text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl leading-relaxed">
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* ── Company ── */}
           <div>
-            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-[#C9A84C] mb-5 min-[3000px]:mb-7">
+            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-gold mb-5 min-[3000px]:mb-7">
               Company
             </h4>
             <ul className="space-y-2.5 min-[3000px]:space-y-4">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* ── Contact ── */}
           <div>
-            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-[#C9A84C] mb-5 min-[3000px]:mb-7">
+            <h4 className="font-mono text-[0.6875rem] 2xl:text-sm min-[3000px]:text-lg min-[5000px]:text-xl uppercase tracking-[0.25em] text-gold mb-5 min-[3000px]:mb-7">
               Contact
             </h4>
             <ul className="space-y-2.5 min-[3000px]:space-y-4">

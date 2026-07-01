@@ -167,8 +167,8 @@ export default function Pricing() {
             const ctaClass = [
               "bg-transparent ring-1 ring-white/[0.08] text-white/45 hover:bg-white/[0.04] hover:ring-white/[0.14] hover:text-white/65 hover:scale-[1.01]",
               "bg-white/[0.05] ring-1 ring-white/[0.10] text-white/60 hover:bg-white/[0.08] hover:ring-white/[0.18] hover:text-white/85 hover:scale-[1.02]",
-              "bg-[#C9A84C] text-black hover:bg-[#D4B35A] hover:scale-[1.02] hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)]",
-              "bg-[#C9A84C] text-black hover:bg-[#DDBE6B] hover:scale-[1.03] hover:shadow-[0_4px_36px_rgba(201,168,76,0.35),0_0_80px_rgba(201,168,76,0.12)]",
+              "bg-gold text-black hover:bg-[#D4B35A] hover:scale-[1.02] hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)]",
+              "bg-gold text-black hover:bg-[#DDBE6B] hover:scale-[1.03] hover:shadow-[0_4px_36px_rgba(201,168,76,0.35),0_0_80px_rgba(201,168,76,0.12)]",
             ][tier];
 
             const shineOpacity = ["0.05", "0.06", "0.08", "0.12"][tier];

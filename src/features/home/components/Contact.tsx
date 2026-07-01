@@ -32,7 +32,7 @@ export default function Contact() {
       <Container id="contact" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
         <SectionHeader
           label="CONTACT US"
-          labelClassName="text-[#C9A84C] min-[3000px]:text-base"
+          labelClassName="text-gold min-[3000px]:text-base"
           headline={<>LET&apos;S TALK<br />BUSINESS</>}
           headlineClassName="text-white"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
@@ -57,18 +57,18 @@ export default function Contact() {
               className="group block relative rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.006] flex-auto"
             >
               <div className="relative glass-card-gold glass-card-gold-hover rounded-2xl p-5 sm:p-6 md:p-8 xl:p-10 2xl:p-12 min-[3000px]:p-16 min-[5000px]:p-20 overflow-hidden transition-all duration-700 h-full flex items-center
-                !border !border-[#C9A84C]/20 hover:!border-[#C9A84C]/45">
+                !border !border-gold/20 hover:!border-gold/45">
                 {/* ── Gold corner accent (top-left) ── */}
                 <div className="absolute top-0 left-0 w-6 sm:w-8 h-6 sm:h-8 min-[3000px]:w-12 min-[3000px]:h-12 overflow-hidden opacity-30 group-hover:opacity-60 transition-opacity duration-700">
-                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-[#C9A84C]/50 via-[#C9A84C]/25 to-transparent" />
-                  <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#C9A84C]/50 via-[#C9A84C]/25 to-transparent" />
+                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-gold/50 via-gold/25 to-transparent" />
+                  <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-gold/50 via-gold/25 to-transparent" />
                 </div>
 
                 <div className="flex items-center gap-4 sm:gap-5 min-[3000px]:gap-8 min-[5000px]:gap-10">
                   {/* Icon ring */}
-                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 2xl:w-14 2xl:h-14 min-[3000px]:w-20 min-[3000px]:h-20 min-[5000px]:w-24 min-[5000px]:h-24 rounded-2xl min-[3000px]:rounded-3xl bg-[#C9A84C]/8 ring-1 ring-[#C9A84C]/15 shrink-0
-                    group-hover:bg-[#C9A84C]/12 group-hover:ring-[#C9A84C]/30 group-hover:scale-105 transition-all duration-500">
-                    <FaWhatsapp className="text-[#C9A84C] w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7 min-[3000px]:w-10 min-[3000px]:h-10 min-[5000px]:w-12 min-[5000px]:h-12" fill="currentColor" />
+                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 2xl:w-14 2xl:h-14 min-[3000px]:w-20 min-[3000px]:h-20 min-[5000px]:w-24 min-[5000px]:h-24 rounded-2xl min-[3000px]:rounded-3xl bg-gold/8 ring-1 ring-gold/15 shrink-0
+                    group-hover:bg-gold/12 group-hover:ring-gold/30 group-hover:scale-105 transition-all duration-500">
+                    <FaWhatsapp className="text-gold w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7 min-[3000px]:w-10 min-[3000px]:h-10 min-[5000px]:w-12 min-[5000px]:h-12" fill="currentColor" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-[family-name:var(--font-display)] font-bold text-white text-sm sm:text-lg lg:text-xl 2xl:text-2xl min-[3000px]:text-4xl min-[5000px]:text-5xl group-hover:tracking-wide transition-all duration-500">
@@ -78,14 +78,14 @@ export default function Contact() {
                       Chat with us directly
                     </p>
                   </div>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 min-[3000px]:w-8 min-[3000px]:h-8 min-[5000px]:w-10 min-[5000px]:h-10 text-[#C9A84C]/0 group-hover:text-[#C9A84C]/40 transition-all duration-500 -translate-x-2 group-hover:translate-x-0 shrink-0" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 min-[3000px]:w-8 min-[3000px]:h-8 min-[5000px]:w-10 min-[5000px]:h-10 text-gold/0 group-hover:text-gold/40 transition-all duration-500 -translate-x-2 group-hover:translate-x-0 shrink-0" />
                 </div>
               </div>
             </a>
           </div>
 
           {/* ── DIVIDER: vertical gold rule (desktop only) ── */}
-          <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-[#C9A84C]/15 md:via-[#C9A84C]/18 lg:via-[#C9A84C]/20 to-transparent" />
+          <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-gold/15 md:via-gold/18 lg:via-gold/20 to-transparent" />
 
           {/* ── RIGHT: Instagram, LinkedIn, Facebook, glass, no fill ── */}
           <div className="mt-8 md:mt-0 md:pl-6 lg:pl-6 xl:pl-8 2xl:pl-10 min-[3000px]:pl-14 min-[5000px]:pl-18 flex flex-col gap-3 sm:gap-4 md:gap-5 min-[3000px]:gap-6">
@@ -100,15 +100,15 @@ export default function Contact() {
                   hover:translate-x-0.5 lg:hover:translate-x-1.5
                   backdrop-blur-[6px] hover:backdrop-blur-[10px]
                   bg-transparent hover:bg-white/[0.03]
-                  ring-1 ring-white/[0.05] hover:ring-[#C9A84C]/25"
+                  ring-1 ring-white/[0.05] hover:ring-gold/25"
               >
                 {/* Left gold accent line */}
-                <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/35 to-transparent
-                  group-hover/strip:via-[#C9A84C]/55 transition-all duration-500" />
+                <div className="absolute left-0 top-[15%] bottom-[15%] w-px bg-gradient-to-b from-transparent via-gold/35 to-transparent
+                  group-hover/strip:via-gold/55 transition-all duration-500" />
 
                 {/* Icon, bare, no container */}
                 <Icon className="relative z-10 text-white/40 w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5 min-[3000px]:w-7 min-[3000px]:h-7 min-[5000px]:w-9 min-[5000px]:h-9 shrink-0
-                  group-hover/strip:text-[#C9A84C] transition-colors duration-500"
+                  group-hover/strip:text-gold transition-colors duration-500"
                   fill="currentColor" />
 
                 {/* Label + sub */}
@@ -122,7 +122,7 @@ export default function Contact() {
                 </div>
 
                 {/* Arrow: hidden until hover */}
-                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 min-[3000px]:w-6 min-[3000px]:h-6 min-[5000px]:w-7 min-[5000px]:h-7 text-[#C9A84C]/0 group-hover/strip:text-[#C9A84C]/45
+                <ArrowRight className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 min-[3000px]:w-6 min-[3000px]:h-6 min-[5000px]:w-7 min-[5000px]:h-7 text-gold/0 group-hover/strip:text-gold/45
                   transition-all duration-500 -translate-x-2 group-hover/strip:translate-x-0 shrink-0" />
               </a>
             ))}

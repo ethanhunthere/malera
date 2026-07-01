@@ -62,10 +62,10 @@ export default function Navbar() {
                 <li key={link}>
                   <a
                     href={`/#${link.toLowerCase()}`}
-                    className="relative group inline-flex items-center h-8 px-3 xl:px-4 text-xs xl:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl font-medium text-white/45 hover:text-[#C9A84C] transition-colors duration-300"
+                    className="relative group inline-flex items-center h-8 px-3 xl:px-4 text-xs xl:text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl font-medium text-white/45 hover:text-gold transition-colors duration-300"
                   >
                     {/* Gold underline  slides in from center */}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-[#C9A84C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out origin-center" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gold rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out origin-center" />
                     <span className="tracking-wide">{link}</span>
                   </a>
                 </li>
@@ -116,7 +116,7 @@ export default function Navbar() {
           </div>
 
           {/* ── Top: subtle gold line ── */}
-          <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
+          <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
           {/* ── Nav links: glass tiles with gold edge glow ── */}
           <nav className="flex-1 flex flex-col justify-center px-5 sm:px-10 gap-3">
@@ -162,7 +162,7 @@ export default function Navbar() {
           </div>
 
           {/* ── Bottom: subtle gold line ── */}
-          <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent" />
+          <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
         </div>
       )}
       {/* Scroll navbar  real dark glass, logo only */}

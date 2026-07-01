@@ -186,7 +186,7 @@ export default function PrivacyPage() {
       <main className="relative z-10 pt-28 sm:pt-36 pb-20 sm:pb-28">
         <Container className="max-w-[680px]">
           {/* Header */}
-          <p className="font-mono text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.22em] text-[#C9A84C] mb-5">
+          <p className="font-mono text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.22em] text-gold mb-5">
             Legal
           </p>
           <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.04em] leading-[1] mb-5">

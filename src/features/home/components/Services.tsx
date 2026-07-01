@@ -518,7 +518,7 @@ export default function Services() {
               }}
             />
             {/* Parent-only top sheen */}
-            <div className="absolute inset-x-[15%] top-0 h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/15 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-[15%] top-0 h-[1px] bg-gradient-to-r from-transparent via-gold/15 to-transparent pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-10 p-5 sm:p-7 md:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-8">
@@ -564,7 +564,7 @@ export default function Services() {
               </div>
 
               {/* Binary number  right side, nearly invisible */}
-              <span className="relative z-0 font-mono text-[0.75rem] sm:text-sm 2xl:text-base min-[3000px]:text-2xl min-[5000px]:text-3xl font-light text-white/[0.05] group-hover:text-[#C9A84C]/[0.12] transition-all duration-600 shrink-0 select-none">
+              <span className="relative z-0 font-mono text-[0.75rem] sm:text-sm 2xl:text-base min-[3000px]:text-2xl min-[5000px]:text-3xl font-light text-white/[0.05] group-hover:text-gold/[0.12] transition-all duration-600 shrink-0 select-none">
                 {binary}
               </span>
             </div>

@@ -21,7 +21,7 @@ export default function BusinessDetailsPage() {
       <Container className="max-w-[720px]">
         <BackLink />
 
-        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#C9A84C] mb-4">
+        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-gold mb-4">
           Business 1,199€
         </p>
         <h1 className="font-[family-name:var(--font-display)] font-extrabold text-white text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] leading-[1.05] mb-6">
@@ -213,7 +213,7 @@ export default function BusinessDetailsPage() {
         <p className="text-white/45 text-sm mb-5">Ready to talk scope?</p>
         <a
           href="/#contact"
-          className="inline-block bg-[#C9A84C] text-black text-sm font-semibold uppercase tracking-wider py-3 px-6 rounded-full hover:bg-[#D4B35A] hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)] transition-all duration-500"
+          className="inline-block bg-gold text-black text-sm font-semibold uppercase tracking-wider py-3 px-6 rounded-full hover:bg-[#D4B35A] hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)] transition-all duration-500"
         >
           Tell me more
         </a>

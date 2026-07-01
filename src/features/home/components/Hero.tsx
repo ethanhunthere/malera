@@ -227,7 +227,7 @@ export default function Hero() {
         {/* ── Studio name (flies in from navbar logo) ── */}
         <p
           ref={studioRef}
-          className="font-mono text-[0.625rem] sm:text-[0.8125rem] 2xl:text-base min-[3000px]:text-lg uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[#C9A84C] text-center mb-3 sm:mb-7 select-none"
+          className="font-mono text-[0.625rem] sm:text-[0.8125rem] 2xl:text-base min-[3000px]:text-lg uppercase tracking-[0.15em] sm:tracking-[0.3em] text-gold text-center mb-3 sm:mb-7 select-none"
           aria-label={studioText}
         >
           {studioText.split("").map((char, i) => (
