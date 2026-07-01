@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import GlassDivider from "@/src/features/layout/components/GlassDivider";
 import Container from "@/src/features/layout/components/Container";
+import SectionHeader from "@/src/features/layout/components/SectionHeader";
 
 /* Inline icons to avoid lucide-react dep */
 const AlertIcon = () => (
@@ -67,25 +68,19 @@ export default function Portfolio() {
       <div className="absolute bottom-1/4 right-0 w-[min(300px,40vw)] h-[min(300px,40vw)] ambient-orb" style={{ opacity: 0.25 }} />
 
       <Container id="work" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
-        {/* ── Header ── */}
-        <div className="mb-8 sm:mb-14">
-          <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#C9A84C]/35 mb-4">
-            WORK
-          </p>
-
-          <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white/65 mb-4 leading-[0.9]"
-            style={{
-              fontSize: 'clamp(1.5rem, 5vw, 6rem)',
-              textShadow: '0 0 120px rgba(201,168,76,0.08), 0 0 40px rgba(201,168,76,0.04)',
-            }}
-          >
-            WHAT WE&apos;VE BUILT
-          </h2>
-
-          <p className="text-white/28 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[550px] 2xl:max-w-[700px]">
-            Live previews of our latest work. Click a card to visit the full site.
-          </p>
-        </div>
+        <SectionHeader
+          label="WORK"
+          labelClassName="text-[#C9A84C]/35"
+          headline="WHAT WE'VE BUILT"
+          headlineClassName="text-white/65"
+          headlineStyle={{
+            fontSize: 'clamp(1.5rem, 5vw, 6rem)',
+            textShadow: '0 0 120px rgba(201,168,76,0.08), 0 0 40px rgba(201,168,76,0.04)',
+          }}
+          subtitle="Live previews of our latest work. Click a card to visit the full site."
+          subtitleClassName="text-white/28 max-w-[550px] 2xl:max-w-[700px]"
+          className="mb-8 sm:mb-14"
+        />
 
         {/* ── Grid ── */}
         <div className="grid grid-cols-1 gap-10 sm:gap-8 lg:gap-10 2xl:gap-12">

@@ -1,4 +1,5 @@
 import Container from "@/src/features/layout/components/Container";
+import SectionHeader from "@/src/features/layout/components/SectionHeader";
 
 const PLANS = [
   {
@@ -76,24 +77,16 @@ export default function Pricing() {
       <div className="absolute bottom-0 left-0 w-[min(350px,40vw)] h-[min(350px,40vw)] 2xl:w-[min(600px,40vw)] 2xl:h-[min(600px,40vw)] ambient-orb ambient-orb-white" style={{ opacity: 0.5 }} />
 
       <Container id="pricing" className="relative z-10 scroll-mt-2 sm:scroll-mt-10">
-        {/* ── Header  minimal, no glass, no gold ── */}
-        <div className="mb-8 sm:mb-14">
-          <p className="font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-white/30 mb-4">
-            PRICING
-          </p>
-
-          <h2 className="font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] text-white mb-4 leading-[0.9]"
-            style={{
-              fontSize: 'clamp(1.5rem, 5vw, 7rem)',
-            }}
-          >
-            Clear pricing for every project type.
-          </h2>
-
-          <p className="text-white/35 text-xs sm:text-sm lg:text-base 2xl:text-lg min-[3000px]:text-xl leading-relaxed max-w-[420px] 2xl:max-w-[550px] min-[3000px]:max-w-[700px]">
-            The price you see is the price you pay. Every project starts with a scope document so both sides know exactly what is included.
-          </p>
-        </div>
+        <SectionHeader
+          label="PRICING"
+          labelClassName="text-white/30"
+          headline="Clear pricing for every project type."
+          headlineClassName="text-white"
+          headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
+          subtitle="The price you see is the price you pay. Every project starts with a scope document so both sides know exactly what is included."
+          subtitleClassName="text-white/35 max-w-[420px] 2xl:max-w-[550px] min-[3000px]:max-w-[700px]"
+          className="mb-8 sm:mb-14"
+        />
 
         {/* ── Cards ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-4">
