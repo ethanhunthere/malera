@@ -33,7 +33,7 @@ export default function Contact() {
         <SectionHeader
           label="CONTACT US"
           labelClassName="text-gold min-[3000px]:text-base"
-          headline={<>LET&apos;S TALK<br />BUSINESS</>}
+          headline="LET&apos;S TALK BUSINESS"
           headlineClassName="text-white"
           headlineStyle={{ fontSize: 'clamp(1.5rem, 5vw, 7rem)' }}
           subtitle="Tell us about your project. No strings attached, just a conversation to see if we&apos;re the right fit."
