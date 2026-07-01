@@ -18,7 +18,7 @@ import ContactForm from "@/src/features/home/components/ContactForm";
 const SOCIALS = [
   { label: "Facebook", href: "https://facebook.com/malerastudio", Icon: FaFacebook, sub: "/malerastudio" },
   { label: "Instagram", href: "https://instagram.com/malera.studio", Icon: FaInstagram, sub: "@malera.studio" },
-  { label: "LinkedIn", href: "http://linkedin.com/company/malerastudio", Icon: FaLinkedin, sub: "/malerastudio" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/malerastudio", Icon: FaLinkedin, sub: "/malerastudio" },
 ];
 
 export default function Contact() {

@@ -70,7 +70,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/malera.studio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/35 text-sm 2xl:text-base min-[3000px]:text-xl min-[5000px]:text-2xl hover:text-white/65 transition-colors duration-300"

@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   title: "Terms of Service | Malera Studio",
   description:
     "Terms of Service for Malera Studio. Engagement, payment, IP, and delivery terms.",
-  robots: {
-    index: false,
-    follow: true,
-  },
   alternates: {
     canonical: "https://www.malera.studio/terms",
   },

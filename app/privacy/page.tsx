@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Malera Studio",
   description:
     "How Malera Studio collects, uses, and protects your information.",
-  robots: {
-    index: false,
-    follow: true,
-  },
   alternates: {
     canonical: "https://www.malera.studio/privacy",
   },
