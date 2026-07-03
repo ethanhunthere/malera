@@ -95,18 +95,24 @@ export default function Navbar() {
 
               {/* Hamburger  mobile only */}
               <button
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={() => {
+                  if (menuOpen) {
+                    handleClose();
+                  } else {
+                    setMenuOpen(true);
+                  }
+                }}
                 className="lg:hidden flex flex-col items-center justify-center gap-[5px] w-8 h-8 group"
-                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-label={menuOpen && !closing ? "Close menu" : "Open menu"}
               >
                 <span className={`block h-[2px] w-5 rounded-full bg-white/70 group-hover:bg-white transition-all duration-300 origin-center ${
-                  menuOpen ? "rotate-45 translate-y-[7px]" : ""
+                  menuOpen && !closing ? "rotate-45 translate-y-[7px]" : ""
                 }`} />
                 <span className={`block h-[2px] w-5 rounded-full bg-white/70 group-hover:bg-white transition-all duration-300 ${
-                  menuOpen ? "opacity-0 scale-x-0" : ""
+                  menuOpen && !closing ? "opacity-0 scale-x-0" : ""
                 }`} />
                 <span className={`block h-[2px] w-5 rounded-full bg-white/70 group-hover:bg-white transition-all duration-300 origin-center ${
-                  menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                  menuOpen && !closing ? "-rotate-45 -translate-y-[7px]" : ""
                 }`} />
               </button>
             </div>
