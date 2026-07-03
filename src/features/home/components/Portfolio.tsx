@@ -34,6 +34,7 @@ const PROJECTS = [
       "A crypto-native intelligence terminal that distills on-chain data into actionable signal. Three core modules, Sentiment, Metrilytics, and Whale Tracking, surface market psychology, protocol-level metrics, and capital flows so you trade with evidence, not noise. Built for clarity in a market that punishes weak assumptions.",
     tags: ["Next.js", "Cloudflare", "On-Chain Data", "Real-Time"],
   },
+  /* ── Temporarily hidden: RTV Fontana ──
   {
     id: "02",
     title: "RADIOFONTANA.ORG",
@@ -46,6 +47,7 @@ const PROJECTS = [
       "Albania's 98.8 FM, broadcasting live from Istog, Kosovo. A full-spectrum digital radio platform with 24/7 live streaming, real-time news across politics, sport, technology, showbiz, health, and business, plus weather, curated highlights, and a growing social footprint across Facebook, Instagram, YouTube, and TikTok.",
     tags: ["Streaming", "Web Audio", "Node.js", "Cloudflare"],
   },
+  */
   {
     id: "03",
     title: "BARBERBROTHERS.STYLE",
