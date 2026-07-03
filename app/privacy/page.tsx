@@ -53,8 +53,25 @@ const sections = [
           <li>Files, messages, assets, and business information you share</li>
         </ul>
         <p>
-          We do not use tracking cookies, analytics scripts, or automated data
-          collection on this website.
+          We use Google Analytics to collect anonymous usage data. We do not
+          sell or share your personal information with third parties.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "analytics",
+    label: "Analytics & Performance",
+    body: (
+      <>
+        <p>
+          This site uses Google Analytics to collect anonymous usage data.
+          This includes information such as the pages you visit, the time you
+          spend on the site, and your general location.
+        </p>
+        <p>
+          You can opt out of Google Analytics tracking by adjusting your browser
+          settings or by using Google&rsquo;s opt-out tool.
         </p>
       </>
     ),
