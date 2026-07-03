@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Container from "@/src/features/layout/components/Container";
+import SectionHeader from "@/src/features/layout/components/SectionHeader";
 
 const SERVICES = [
   {
@@ -521,22 +522,14 @@ export default function Services() {
             <div className="absolute inset-x-[15%] top-0 h-[1px] bg-gradient-to-r from-transparent via-gold/15 to-transparent pointer-events-none" />
 
             {/* Content */}
-            <div className="relative z-10 p-5 sm:p-7 md:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-8">
-              <div className="flex-1 min-w-0">
-                {/* Headline */}
-                <h2 className="font-[family-name:var(--font-display)] font-bold uppercase tracking-[0.02em] text-white/90 leading-[0.95]"
-                  style={{
-                    fontSize: 'clamp(1.6rem, 5vw, 6rem)',
-                  }}
-                >
-                  Our Core Services
-                </h2>
-              </div>
-
-              {/* Description */}
-              <p className="lg:max-w-[320px] 2xl:max-w-[400px] min-[3000px]:max-w-[600px] min-[5000px]:max-w-[800px] text-white/40 text-sm sm:text-base 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl leading-relaxed lg:text-right">
-                Websites, mobile apps, video content and AI tools. We treat the work seriously because the businesses depending on it deserve that.
-              </p>
+            <div className="relative z-10 p-5 sm:p-7 md:p-8 lg:p-10">
+              <SectionHeader
+                headline="Our Core Services"
+                headlineClassName="font-bold uppercase tracking-[0.02em] text-white/90 !leading-[0.95]"
+                headlineStyle={{ fontSize: 'clamp(1.6rem, 5vw, 6rem)' }}
+                subtitle="Websites, mobile apps, video content and AI tools. We treat the work seriously because the businesses depending on it deserve that."
+                subtitleClassName="text-white/40 text-sm sm:text-base 2xl:text-lg min-[3000px]:text-2xl min-[5000px]:text-3xl leading-relaxed"
+              />
             </div>
           </div>
         </div>

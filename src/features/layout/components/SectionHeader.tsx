@@ -2,7 +2,7 @@ import type { ReactNode, CSSProperties } from "react";
 
 interface SectionHeaderProps {
   /** Uppercase mono label above the headline */
-  label: string;
+  label?: string;
   /** CSS class overrides for the label <p> */
   labelClassName?: string;
   /** Headline content — pass a string or JSX (e.g. "LET'S TALK<br />BUSINESS") */
@@ -31,11 +31,13 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={className}>
-      <p
-        className={`font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] mb-4 ${labelClassName}`}
-      >
-        {label}
-      </p>
+      {label && (
+        <p
+          className={`font-mono text-[0.625rem] sm:text-xs 2xl:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] mb-4 ${labelClassName}`}
+        >
+          {label}
+        </p>
+      )}
 
       <h2
         className={`font-[family-name:var(--font-display)] font-extrabold tracking-[-0.03em] mb-4 leading-[0.9] ${headlineClassName}`}

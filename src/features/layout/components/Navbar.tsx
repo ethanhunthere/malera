@@ -41,6 +41,32 @@ export default function Navbar() {
     }, 300);
   };
 
+  // Link click: immediately unlock scroll, navigate to section, then animate close
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    // Immediately restore body scroll so the browser can scroll to the target
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
+    // Trigger close animation
+    if (!closing) {
+      setClosing(true);
+      setTimeout(() => {
+        setMenuOpen(false);
+        setClosing(false);
+      }, 300);
+    }
+    // Navigate to the target section
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Fallback: update URL hash so the browser can scroll
+      window.location.hash = sectionId;
+    }
+  };
+
   // Show scroll navbar when past the main header
   useEffect(() => {
     const onScroll = () => {
@@ -153,7 +179,7 @@ export default function Navbar() {
               >
                 <a
                   href={`/#${link.toLowerCase()}`}
-                  onClick={handleClose}
+                  onClick={(e) => handleLinkClick(e, link.toLowerCase())}
                   className="block px-5 py-4 sm:py-5"
                 >
                   <span className="block font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-[-0.02em] text-white/70 group-hover:text-white transition-colors duration-300">
@@ -175,7 +201,7 @@ export default function Navbar() {
           >
             <a
               href="/#contact"
-              onClick={handleClose}
+              onClick={(e) => handleLinkClick(e, "contact")}
               className="glass-btn-solid text-[#080808] text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full tracking-[0.04em]"
             >
               BUILD WITH MALERA
