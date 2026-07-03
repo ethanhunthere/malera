@@ -551,7 +551,7 @@ export default function Services() {
               ref={(el) => { cardRefs.current[idx] = el; }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="w-full max-w-[90%] sm:max-w-[82%] lg:max-w-[78%] 2xl:max-w-[74%] min-[3000px]:max-w-[66%] min-[5000px]:max-w-[58%] group relative z-10 flex items-center gap-3 sm:gap-5 min-[3000px]:gap-8 min-[5000px]:gap-10 px-3 sm:px-6 min-[3000px]:px-10 min-[5000px]:px-12 py-3 sm:py-5 min-[3000px]:py-8 min-[5000px]:py-10 cursor-pointer rounded-2xl min-[3000px]:rounded-3xl glass-card-gold glass-card-gold-hover services-card-no-line"
+              className="w-full max-w-[90%] sm:max-w-[82%] lg:max-w-[84%] 2xl:max-w-[80%] min-[3000px]:max-w-[72%] min-[5000px]:max-w-[64%] group relative z-10 flex items-center gap-3 sm:gap-5 min-[3000px]:gap-8 min-[5000px]:gap-10 px-3 sm:px-6 min-[3000px]:px-10 min-[5000px]:px-12 py-3 sm:py-5 min-[3000px]:py-8 min-[5000px]:py-10 cursor-pointer rounded-2xl min-[3000px]:rounded-3xl glass-card-gold glass-card-gold-hover services-card-no-line"
             >
               {/* Content */}
               <div className="relative z-10 flex-1 min-w-0">
