@@ -20,7 +20,15 @@ const Services = dynamic(
 export const metadata: Metadata = {
   title: "Malera Studio - We Just Build Good Stuff",
   description:
-    "We build websites, apps, and videos from a small dev studio in Kosovo. AI-powered, human-driven.",
+    "We build websites, apps, AI bots and videos for businesses that take their work seriously. A digital agency based in Pristina, Kosovo.",
+  openGraph: {
+    description:
+      "We build websites, apps, AI bots and videos for businesses that take their work seriously. A digital agency based in Pristina, Kosovo.",
+  },
+  twitter: {
+    description:
+      "We build websites, apps, AI bots and videos for businesses that take their work seriously. A digital agency based in Pristina, Kosovo.",
+  },
 };
 
 const structuredData = [
