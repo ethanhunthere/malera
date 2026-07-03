@@ -1,8 +1,8 @@
 import Container from "@/src/features/layout/components/Container";
 
 const COMPANY_LINKS = [
-  { label: "Privacy Policy", href: "/privacy/" },
   { label: "Work", href: "/#work" },
+  { label: "Privacy Policy", href: "/privacy/" },
   { label: "Terms of Service", href: "/terms/" },
 ];
 
