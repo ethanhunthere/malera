@@ -52,10 +52,6 @@ const sections = [
           <li>Budget range and timeline</li>
           <li>Files, messages, assets, and business information you share</li>
         </ul>
-        <p>
-          We use Google Analytics to collect anonymous usage data. We do not
-          sell or share your personal information with third parties.
-        </p>
       </>
     ),
   },
@@ -108,8 +104,8 @@ const sections = [
     label: "Communication",
     body: (
       <p>
-        Email correspondence is stored on our email provider&rsquo;s servers
-        (Google Workspace). We retain communications for the duration of the
+        Email correspondence is stored on our email provider&rsquo;s servers.
+        We retain communications for the duration of the
         professional relationship and a reasonable period afterward. You may
         request deletion of your correspondence at any time.
       </p>
@@ -157,20 +153,12 @@ const sections = [
     id: "rights",
     label: "Your Rights",
     body: (
-      <>
-        <p>You may request, at any time:</p>
-        <ul>
-          <li>Access to the personal information we hold about you</li>
-          <li>Correction of inaccurate or incomplete data</li>
-          <li>Deletion of your personal information</li>
-          <li>Withdrawal of consent for us to contact you</li>
-        </ul>
-        <p>
-          To exercise any of these rights, email{" "}
-          <a href="mailto:hello@malera.studio">hello@malera.studio</a>.
-          We will respond within 30 days.
-        </p>
-      </>
+      <p>
+        You may request deletion of any correspondence or information you have
+        shared with us by emailing{" "}
+        <a href="mailto:hello@malera.studio">hello@malera.studio</a>. We will
+        respond within 30 days.
+      </p>
     ),
   },
   {
