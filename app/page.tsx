@@ -210,6 +210,14 @@ const structuredData = [
 export default function Home() {
   return (
     <>
+      <style>{`
+        html, body {
+          overflow: hidden !important;
+          position: fixed !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+      `}</style>
       <ComingSoon />
       <script
         type="application/ld+json"

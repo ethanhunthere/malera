@@ -1,24 +1,4 @@
-"use client";
-
-import { useEffect } from "react";
-
 export default function ComingSoon() {
-  // Lock body scroll so no background scroll is possible
-  useEffect(() => {
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-    document.body.style.height = "100%";
-    return () => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.width = "";
-      document.body.style.height = "";
-    };
-  }, []);
-
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#080808] overflow-hidden p-4">
       {/* Background ambient glow */}
