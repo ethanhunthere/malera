@@ -36,9 +36,10 @@ export default function ComingSoon() {
         <div className="w-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         {/* Footer */}
-        <p className="text-white/10 text-[0.5rem] sm:text-[0.625rem] font-mono tracking-[0.15em]">
-          MALERA STUDIO &nbsp;·&nbsp; 01 . 09 . 2026
-        </p>
+        <div className="text-white/10 text-[0.5rem] sm:text-[0.625rem] font-mono tracking-[0.15em] leading-[1.8]">
+          <p>MALERA STUDIO</p>
+          <p>01 . 09 . 2026</p>
+        </div>
       </div>
     </div>
   );
