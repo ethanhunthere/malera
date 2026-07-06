@@ -23,7 +23,7 @@ export default function ComingSoon() {
         {/* IS LOADING — muted grey, not full white */}
         <div className="space-y-2">
           <h1 className="font-[family-name:var(--font-body)] text-[clamp(2rem,8vw,3.5rem)] font-semibold text-white/65 tracking-[-0.02em] leading-[0.95]">
-            IS LOADING
+            IS LOADING.
           </h1>
           <p className="text-white/25 text-xs sm:text-sm max-w-xs mx-auto leading-relaxed">
             We&rsquo;re putting the final touches on something great.
