@@ -41,7 +41,7 @@ export default function ComingSoon() {
         {/* Coming Soon text */}
         <div className="space-y-2">
           <h1 className="font-[family-name:var(--font-body)] text-5xl sm:text-7xl md:text-8xl font-semibold text-white tracking-[-0.02em] leading-[0.95]">
-            is loading
+            IS LOADING
           </h1>
           <p className="text-white/30 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
             We&rsquo;re putting the final touches on something great.
