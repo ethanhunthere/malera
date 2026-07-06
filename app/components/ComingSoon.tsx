@@ -1,8 +1,26 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function ComingSoon() {
+  // Lock body scroll so no background scroll is possible
+  useEffect(() => {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.height = "100%";
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      document.body.style.height = "";
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#080808]">
+    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#080808] overflow-hidden">
       {/* Ambient depth */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[min(600px,80vw)] h-[min(600px,80vw)] rounded-full bg-gold opacity-[0.08] blur-[120px]" />
@@ -22,8 +40,8 @@ export default function ComingSoon() {
 
         {/* Coming Soon text */}
         <div className="space-y-2">
-          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-7xl md:text-8xl font-extrabold text-white tracking-[-0.03em] leading-[0.95]">
-            Coming Soon
+          <h1 className="font-[family-name:var(--font-body)] text-5xl sm:text-7xl md:text-8xl font-semibold text-white tracking-[-0.02em] leading-[0.95]">
+            is loading
           </h1>
           <p className="text-white/30 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
             We&rsquo;re putting the final touches on something great.
