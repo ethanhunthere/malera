@@ -37,7 +37,7 @@ export default function ComingSoon() {
 
         {/* Footer */}
         <p className="text-white/10 text-[0.5rem] sm:text-[0.625rem] font-mono tracking-[0.15em]">
-          MALERA STUDIO &nbsp;·&nbsp; ESTR. 2026
+          MALERA STUDIO &nbsp;·&nbsp; 01 . 09 . 2026
         </p>
       </div>
     </div>
