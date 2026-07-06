@@ -20,41 +20,43 @@ export default function ComingSoon() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#080808] overflow-hidden">
-      {/* Ambient depth */}
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#080808] overflow-hidden p-4">
+      {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[min(600px,80vw)] h-[min(600px,80vw)] rounded-full bg-gold opacity-[0.08] blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[min(400px,60vw)] h-[min(400px,60vw)] rounded-full bg-white opacity-[0.03] blur-[100px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[min(500px,70vw)] h-[min(500px,70vw)] rounded-full bg-gold opacity-[0.06] blur-[150px]" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-8 px-6 text-center">
+      {/* Premium glass card */}
+      <div className="relative z-10 w-full max-w-[420px] sm:max-w-[460px] rounded-3xl sm:rounded-[28px] border border-white/[0.06] bg-white/[0.02] backdrop-blur-[24px] backdrop-saturate-[1.4] shadow-[0_0_0_1px_rgba(201,168,76,0.06),0_32px_80px_rgba(0,0,0,0.55),0_8px_24px_rgba(0,0,0,0.3)] px-8 sm:px-10 py-12 sm:py-14 flex flex-col items-center text-center gap-5 sm:gap-6">
         {/* Logo */}
         <img
           src="/malera-transparent.webp"
           alt="Malera Studio"
-          width={240}
-          height={60}
-          className="h-8 sm:h-10 w-auto opacity-80"
+          width={200}
+          height={50}
+          className="h-7 sm:h-9 w-auto opacity-75"
         />
 
-        {/* Coming Soon text */}
+        {/* Divider */}
+        <div className="w-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+        {/* IS LOADING — muted grey, not full white */}
         <div className="space-y-2">
-          <h1 className="font-[family-name:var(--font-body)] text-5xl sm:text-7xl md:text-8xl font-semibold text-white tracking-[-0.02em] leading-[0.95]">
+          <h1 className="font-[family-name:var(--font-body)] text-[clamp(2rem,8vw,3.5rem)] font-semibold text-white/65 tracking-[-0.02em] leading-[0.95]">
             IS LOADING
           </h1>
-          <p className="text-white/30 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
+          <p className="text-white/25 text-xs sm:text-sm max-w-xs mx-auto leading-relaxed">
             We&rsquo;re putting the final touches on something great.
             <br />
             Stay tuned.
           </p>
         </div>
 
-        {/* Decorative line */}
-        <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+        {/* Bottom divider */}
+        <div className="w-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         {/* Footer */}
-        <p className="text-white/10 text-xs font-mono tracking-[0.15em]">
+        <p className="text-white/10 text-[0.5rem] sm:text-[0.625rem] font-mono tracking-[0.15em]">
           MALERA STUDIO &nbsp;·&nbsp; ESTR. 2026
         </p>
       </div>
