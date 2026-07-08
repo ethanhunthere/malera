@@ -1,13 +1,13 @@
 export default function ComingSoon() {
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#080808] overflow-hidden p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#080808] overflow-hidden p-0 sm:p-4">
       {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[min(500px,70vw)] h-[min(500px,70vw)] rounded-full bg-gold opacity-[0.06] blur-[150px]" />
       </div>
 
-      {/* Premium glass card */}
-      <div className="relative z-10 w-full max-w-[420px] sm:max-w-[460px] rounded-3xl sm:rounded-[28px] border border-white/[0.06] bg-white/[0.02] backdrop-blur-[24px] backdrop-saturate-[1.4] shadow-[0_0_0_1px_rgba(201,168,76,0.06),0_32px_80px_rgba(0,0,0,0.55),0_8px_24px_rgba(0,0,0,0.3)] px-8 sm:px-10 py-12 sm:py-14 flex flex-col items-center text-center gap-5 sm:gap-6">
+      {/* Premium glass card — seamless on mobile, glass card on desktop */}
+      <div className="relative z-10 w-full max-w-full sm:max-w-[460px] sm:rounded-[28px] rounded-none border-0 sm:border sm:border-white/[0.06] bg-[#080808] sm:bg-white/[0.02] backdrop-blur-none sm:backdrop-blur-[24px] sm:backdrop-saturate-[1.4] shadow-none sm:shadow-[0_0_0_1px_rgba(201,168,76,0.06),0_32px_80px_rgba(0,0,0,0.55),0_8px_24px_rgba(0,0,0,0.3)] px-8 sm:px-10 py-12 sm:py-14 flex flex-col items-center text-center gap-5 sm:gap-6 min-h-screen sm:min-h-0">
         {/* Logo */}
         <img
           src="/malera-transparent.webp"

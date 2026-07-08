@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import ComingSoon from "@/app/components/ComingSoon";
+// import ComingSoon from "@/app/components/ComingSoon";
 import Hero from "@/src/features/home/components/Hero";
 import GlassDivider from "@/src/features/layout/components/GlassDivider";
 import {
@@ -210,15 +210,7 @@ const structuredData = [
 export default function Home() {
   return (
     <>
-      <style>{`
-        html, body {
-          overflow: hidden !important;
-          position: fixed !important;
-          width: 100% !important;
-          height: 100% !important;
-        }
-      `}</style>
-      <ComingSoon />
+      {/* <ComingSoon /> */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
