@@ -4,6 +4,7 @@ import Script from "next/script";
 import AnimatedBackground from "@/src/features/effects/lazy";
 import Navbar from "@/src/features/layout/components/Navbar";
 import Footer from "@/src/features/layout/components/Footer";
+import ChatWidget from "@/src/features/chat/components/ChatWidget";
 import "./globals.css";
 
 const inter = Inter({
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         {children}
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );

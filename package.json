@@ -11,7 +11,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^4.0.19",
     "@react-three/fiber": "^9.6.1",
+    "ai": "^7.0.36",
     "lucide-react": "^1.21.0",
     "next": "16.2.9",
     "react": "19.2.4",
