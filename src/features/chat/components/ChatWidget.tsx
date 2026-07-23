@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Bot, BotMessageSquare } from "lucide-react";
+import { PiRobotDuotone, PiChatsDuotone } from "react-icons/pi";
 
 const CloseIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -186,7 +186,7 @@ export default function ChatWidget() {
           border: "1px solid rgba(201,168,76,0.18)",
         }}
       >
-        {open ? <BotMessageSquare className="w-5 h-5" /> : <Bot className="w-5 h-5" />}
+        {open ? <PiChatsDuotone className="w-5 h-5" /> : <PiRobotDuotone className="w-5 h-5" />}
         {/* Soft glow ring on hover — only when closed */}
         {!open && (
           <span
