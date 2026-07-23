@@ -443,7 +443,7 @@ export default function ChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               placeholder={streaming ? "MBOT is typing..." : "Type a message..."}
               disabled={streaming}
-              className="flex-1 bg-transparent text-white/90 text-xs placeholder:text-white/25 outline-none disabled:opacity-40"
+              className="flex-1 bg-transparent text-white/90 text-base sm:text-xs placeholder:text-white/25 outline-none disabled:opacity-40"
             />
             <button
               type="submit"
