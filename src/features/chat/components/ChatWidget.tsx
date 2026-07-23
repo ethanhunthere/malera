@@ -198,9 +198,19 @@ export default function ChatWidget() {
         )}
       </button>
 
+      {/* ═══════════════ BACKDROP ═══════════════ */}
+      {open && (
+        <div
+          className="fixed inset-0 z-[9997] animate-[fadeIn_0.2s_ease-out]"
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* ═══════════════ CHAT PANEL ═══════════════ */}
       {open && (
         <div
+          onClick={(e) => e.stopPropagation()}
           className={`
             fixed right-3 sm:right-6 z-[9998]
             w-[calc(100vw-1.5rem)] sm:w-[400px]
@@ -219,27 +229,16 @@ export default function ChatWidget() {
             WebkitBackdropFilter: "blur(48px) saturate(200%)",
           }}
         >
-          {/* ── Gold accent line at top ── */}
-          <div className="shrink-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-
-          {/* ── Header ── */}
-          <div className="shrink-0 flex items-center justify-between px-5 py-3.5 border-b border-white/[0.08]" style={{ background: "rgba(255,255,255,0.015)" }}>
-            <div className="flex items-center gap-2">
-              <span className="font-[family-name:var(--font-display)] text-white text-sm font-semibold tracking-wide">
-                Malera
-              </span>
-            </div>
+          {/* ── Messages ── */}
+          <div className="flex-1 overflow-y-auto px-4 pt-4 pb-0 space-y-3.5 relative">
+            {/* Subtle close button */}
             <button
               onClick={() => setOpen(false)}
-              className="text-white/30 hover:text-white/70 transition-colors p-1"
+              className="absolute top-3 right-3 text-white/20 hover:text-white/50 transition-colors p-1 z-10"
               aria-label="Close chat"
             >
               <CloseIcon />
             </button>
-          </div>
-
-          {/* ── Messages ── */}
-          <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3.5">
             {/* Empty state */}
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center gap-5">
@@ -338,6 +337,10 @@ export default function ChatWidget() {
             opacity: 1;
             transform: translateY(0) scale(1);
           }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
       `}</style>
     </>
