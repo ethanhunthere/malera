@@ -162,6 +162,24 @@ export default function ChatWidget() {
     }
   }, [open]);
 
+  // Lock body scroll when chat is open
+  useEffect(() => {
+    if (open) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = "-" + scrollY + "px";
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [open]);
+
   // Close on Escape
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -308,11 +326,14 @@ export default function ChatWidget() {
         )}
       </button>
 
-      {/* ═══════════════ BACKDROP ═══════════════ */}
+      {/* ═══════════════ BACKDROP (desktop only, non-interactive) ═══════════════ */}
       {open && (
         <div
-          className="fixed inset-0 z-[9997] animate-[fadeIn_0.2s_ease-out]"
-          onClick={() => setOpen(false)}
+          className="hidden min-[701px]:block fixed inset-0 z-[9997] animate-[fadeIn_0.2s_ease-out]"
+          style={{
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+          }}
           aria-hidden="true"
         />
       )}
@@ -323,16 +344,24 @@ export default function ChatWidget() {
           onClick={(e) => e.stopPropagation()}
           className={`
             fixed z-[9998]
-            right-[calc(0.75rem+env(safe-area-inset-right))] sm:right-[calc(1.5rem+env(safe-area-inset-right))]
-            w-[calc(100vw-1.5rem)] sm:w-[400px]
-            bottom-[calc(4.75rem+env(safe-area-inset-bottom))] sm:bottom-[calc(5.5rem+env(safe-area-inset-bottom))]
-            max-h-[calc(100dvh-5.75rem-env(safe-area-inset-bottom))] sm:max-h-[calc(100dvh-7rem-env(safe-area-inset-bottom))]
-            rounded-2xl
+            right-0 top-0 left-0
+            w-full
+            bottom-[calc(3.5rem+env(safe-area-inset-bottom))]
+            h-[calc(100dvh-3.5rem-env(safe-area-inset-bottom))]
+            rounded-none
+            animate-[slideUpMobile_0.3s_cubic-bezier(0.16,1,0.3,1)]
+            min-[701px]:right-[calc(1.5rem+env(safe-area-inset-right))]
+            min-[701px]:left-auto
+            min-[701px]:w-[400px]
+            min-[701px]:bottom-[calc(5.5rem+env(safe-area-inset-bottom))]
+            min-[701px]:h-auto
+            min-[701px]:max-h-[calc(100dvh-7rem-env(safe-area-inset-bottom))]
+            min-[701px]:rounded-2xl
+            min-[701px]:animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)]
             border border-gold/30
             shadow-[0_0_0_1px_rgba(0,0,0,0.4),0_20px_60px_rgba(0,0,0,0.7),0_0_60px_rgba(201,168,76,0.06),inset_0_1px_0_rgba(255,255,255,0.03)]
             flex flex-col
             overflow-hidden
-            animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)]
           `}
           style={{
             background: "rgba(6,6,6,0.82)",
