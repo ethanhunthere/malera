@@ -144,13 +144,17 @@ export default function ChatWidget() {
           signal: abortRef.current.signal,
         });
 
-        if (!res.ok) throw new Error(`API returned ${res.status}`);
+        if (!res.ok) {
+          const errBody = await res.text().catch(() => "");
+          throw new Error(errBody || `API returned ${res.status}`);
+        }
 
         const reader = res.body?.getReader();
         if (!reader) throw new Error("No response body");
 
         const decoder = new TextDecoder();
         let assistantContent = "";
+        let buffer = "";
 
         // Add empty assistant message to stream into
         setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
@@ -159,13 +163,32 @@ export default function ChatWidget() {
           const { done, value } = await reader.read();
           if (done) break;
 
-          const chunk = decoder.decode(value, { stream: true });
-          assistantContent += chunk;
-          setMessages((prev) => {
-            const copy = [...prev];
-            copy[copy.length - 1] = { role: "assistant", content: assistantContent };
-            return copy;
-          });
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          // Keep the last partial line in the buffer
+          buffer = lines.pop() || "";
+
+          for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed || !trimmed.startsWith("data:")) continue;
+            const data = trimmed.slice(5).trim();
+            if (data === "[DONE]") continue;
+
+            try {
+              const parsed = JSON.parse(data);
+              const delta = parsed?.choices?.[0]?.delta?.content;
+              if (delta) {
+                assistantContent += delta;
+                setMessages((prev) => {
+                  const copy = [...prev];
+                  copy[copy.length - 1] = { role: "assistant", content: assistantContent };
+                  return copy;
+                });
+              }
+            } catch {
+              // Skip unparseable chunks
+            }
+          }
         }
       } catch (err: unknown) {
         if (err instanceof Error && err.name === "AbortError") return;
