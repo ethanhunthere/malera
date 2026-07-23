@@ -1,10 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { DotLottieReact, setWasmUrl } from "@lottiefiles/dotlottie-react";
-
-// Point to local WASM (copied to public/)
-setWasmUrl("/dotlottie-player.wasm");
+import Lottie from "lottie-react";
 
 const CloseIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -53,9 +50,18 @@ export default function ChatWidget() {
   const [input, setInput] = useState("");
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [animationData, setAnimationData] = useState<object | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  // Load Lottie animation JSON
+  useEffect(() => {
+    fetch("/robot-animation.json")
+      .then((res) => res.json())
+      .then(setAnimationData)
+      .catch(() => {});
+  }, []);
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
@@ -189,12 +195,16 @@ export default function ChatWidget() {
           border: "1px solid rgba(201,168,76,0.18)",
         }}
       >
-        <DotLottieReact
-          src="https://lottie.host/347f51b0-5d2b-44de-ad8f-602506f51259/qDdrMkvEJx.lottie"
-          autoplay
-          loop
-          style={{ width: "2rem", height: "2rem" }}
-        />
+        {animationData ? (
+          <Lottie
+            animationData={animationData}
+            loop
+            autoplay
+            style={{ width: "2.5rem", height: "2.5rem" }}
+          />
+        ) : (
+          <span className="w-5 h-5 rounded-full bg-gold/20 animate-pulse" />
+        )}
         {/* Soft glow ring on hover — only when closed */}
         {!open && (
           <span
