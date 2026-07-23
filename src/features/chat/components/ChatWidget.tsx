@@ -327,14 +327,11 @@ export default function ChatWidget() {
         )}
       </button>
 
-      {/* ═══════════════ BACKDROP (desktop only, non-interactive) ═══════════════ */}
+      {/* ═══════════════ BACKDROP (desktop only — click to close) ═══════════════ */}
       {open && (
         <div
           className="hidden min-[701px]:block fixed inset-0 z-[9997] animate-[fadeIn_0.2s_ease-out]"
-          style={{
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
-          }}
+          onClick={() => setOpen(false)}
           aria-hidden="true"
         />
       )}
@@ -356,7 +353,7 @@ export default function ChatWidget() {
             min-[701px]:w-[400px]
             min-[701px]:bottom-[calc(5.5rem+env(safe-area-inset-bottom))]
             min-[701px]:h-auto
-            min-[701px]:max-h-[calc(100dvh-7rem-env(safe-area-inset-bottom))]
+            min-[701px]:max-h-[550px]
             min-[701px]:rounded-2xl
             min-[701px]:animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)]
             border border-gold/30
