@@ -288,6 +288,7 @@ export default function ChatWidget() {
           bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))]
           sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] sm:right-[calc(1.5rem+env(safe-area-inset-right))]
           flex items-center justify-center
+          ${open ? 'max-[700px]:hidden' : ''}
           w-11 h-11 sm:w-12 sm:h-12
           rounded-full
           text-gold
@@ -346,8 +347,8 @@ export default function ChatWidget() {
             fixed z-[9998]
             right-0 top-0 left-0
             w-full
-            bottom-[calc(3.5rem+env(safe-area-inset-bottom))]
-            h-[calc(100dvh-3.5rem-env(safe-area-inset-bottom))]
+            bottom-0
+            h-[100dvh]
             rounded-none
             animate-[slideUpMobile_0.3s_cubic-bezier(0.16,1,0.3,1)]
             min-[701px]:right-[calc(1.5rem+env(safe-area-inset-right))]
