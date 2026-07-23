@@ -162,9 +162,8 @@ const CloseIcon = () => (
 );
 
 const SendIcon = () => (
-  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13" />
-    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
   </svg>
 );
 
@@ -324,15 +323,19 @@ export default function ChatWidget() {
           flex items-center justify-center
           w-11 h-11 sm:w-12 sm:h-12
           rounded-full
-          bg-[#0a0a0a]/90
           text-gold
-          shadow-[0_0_18px_rgba(201,168,76,0.06)]
-          hover:shadow-[0_0_26px_rgba(201,168,76,0.16)]
+          shadow-[0_0_24px_rgba(201,168,76,0.1),0_8px_32px_rgba(0,0,0,0.5)]
+          hover:shadow-[0_0_36px_rgba(201,168,76,0.25),0_12px_40px_rgba(0,0,0,0.6)]
           transition-all duration-300
           group
           pointer-events-auto
         `}
-        style={{ backdropFilter: "blur(20px)", border: "1px solid rgba(201,168,76,0.12)" }}
+        style={{
+          background: "rgba(8,8,8,0.75)",
+          backdropFilter: "blur(24px) saturate(180%)",
+          WebkitBackdropFilter: "blur(24px) saturate(180%)",
+          border: "1px solid rgba(201,168,76,0.18)",
+        }}
       >
         {open ? <RunningRobotIcon /> : <RobotIcon />}
         {/* Soft glow ring on hover — only when closed */}
@@ -355,28 +358,31 @@ export default function ChatWidget() {
             max-h-[calc(100dvh-90px)]
             bottom-[calc(3rem+12px)] sm:bottom-[calc(3.5rem+16px)]
             rounded-2xl
-            bg-gradient-to-b from-[#0a0a0a] to-[#030303]
-            border border-gold/20
-            shadow-[0_0_0_1px_rgba(0,0,0,0.5),0_20px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(201,168,76,0.03)]
+            border border-gold/30
+            shadow-[0_0_0_1px_rgba(0,0,0,0.4),0_20px_60px_rgba(0,0,0,0.7),0_0_60px_rgba(201,168,76,0.06),inset_0_1px_0_rgba(255,255,255,0.03)]
             flex flex-col
             overflow-hidden
             animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)]
           `}
-          style={{ backdropFilter: "blur(40px)" }}
+          style={{
+            background: "rgba(6,6,6,0.82)",
+            backdropFilter: "blur(48px) saturate(200%)",
+            WebkitBackdropFilter: "blur(48px) saturate(200%)",
+          }}
         >
           {/* ── Gold accent line at top ── */}
-          <div className="shrink-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+          <div className="shrink-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
           {/* ── Header ── */}
-          <div className="shrink-0 flex items-center justify-between px-5 py-3.5 border-b border-white/[0.05]">
+          <div className="shrink-0 flex items-center justify-between px-5 py-3.5 border-b border-white/[0.08]" style={{ background: "rgba(255,255,255,0.015)" }}>
             <div className="flex items-center gap-2">
-              <span className="font-[family-name:var(--font-display)] text-white/90 text-sm font-semibold tracking-wide">
+              <span className="font-[family-name:var(--font-display)] text-white text-sm font-semibold tracking-wide">
                 Malera
               </span>
             </div>
             <button
               onClick={() => setOpen(false)}
-              className="text-white/20 hover:text-white/50 transition-colors p-1"
+              className="text-white/30 hover:text-white/70 transition-colors p-1"
               aria-label="Close chat"
             >
               <CloseIcon />
@@ -388,13 +394,13 @@ export default function ChatWidget() {
             {/* Empty state */}
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center gap-5">
-                <p className="text-white/20 text-xs font-medium tracking-wide">Ask me anything about Malera</p>
+                <p className="text-white/40 text-xs font-medium tracking-wide">Ask me anything about Malera</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {SUGGESTED.map((q) => (
                     <button
                       key={q}
                       onClick={() => handleSuggestion(q)}
-                      className="text-[0.7rem] text-white/40 hover:text-gold bg-white/[0.03] hover:bg-gold/10 border border-white/[0.05] hover:border-gold/20 rounded-full px-3.5 py-2 transition-all duration-300"
+                      className="text-[0.7rem] text-white/60 hover:text-gold bg-white/[0.04] hover:bg-gold/10 border border-white/[0.1] hover:border-gold/25 rounded-full px-3.5 py-2 transition-all duration-300"
                     >
                       {q}
                     </button>
@@ -412,8 +418,8 @@ export default function ChatWidget() {
                   className={`
                     max-w-[85%] rounded-2xl px-4 py-3 text-xs leading-relaxed
                     ${msg.role === "user"
-                      ? "bg-gold/10 border border-gold/20 text-white/85 rounded-br-md shadow-[0_2px_8px_rgba(201,168,76,0.04)]"
-                      : "bg-white/[0.03] border border-white/[0.06] text-white/70 rounded-bl-md"
+                      ? "bg-gold/[0.12] border border-gold/25 text-white/95 rounded-br-md shadow-[0_2px_12px_rgba(201,168,76,0.08)]"
+                      : "bg-white/[0.05] border border-white/[0.1] text-white/85 rounded-bl-md"
                     }
                   `}
                 >
@@ -441,7 +447,8 @@ export default function ChatWidget() {
           {/* ── Input ── */}
           <form
             onSubmit={handleSubmit}
-            className="shrink-0 flex items-center gap-2.5 px-4 py-3 border-t border-white/[0.06] bg-white/[0.015]"
+            className="shrink-0 flex items-center gap-2.5 px-4 py-3.5 border-t border-white/[0.08]"
+            style={{ background: "rgba(255,255,255,0.02)" }}
           >
             <input
               ref={inputRef}
@@ -450,12 +457,12 @@ export default function ChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               placeholder={streaming ? "Malera is typing..." : "Type a message..."}
               disabled={streaming}
-              className="flex-1 bg-transparent text-white/80 text-xs placeholder:text-white/15 outline-none disabled:opacity-40"
+              className="flex-1 bg-transparent text-white/90 text-xs placeholder:text-white/25 outline-none disabled:opacity-40"
             />
             <button
               type="submit"
               disabled={!input.trim() || streaming}
-              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-gold/50 hover:text-gold hover:bg-gold/10 disabled:opacity-15 disabled:hover:bg-transparent transition-all"
+              className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gold bg-gold/15 hover:bg-gold/25 hover:scale-105 disabled:opacity-15 disabled:hover:bg-gold/15 disabled:hover:scale-100 transition-all"
               aria-label="Send message"
             >
               <SendIcon />
@@ -463,8 +470,8 @@ export default function ChatWidget() {
           </form>
 
           {/* ── Branded footer ── */}
-          <div className="shrink-0 flex items-center justify-center py-1.5 border-t border-white/[0.02]">
-            <p className="text-white/8 text-[0.5rem]">
+          <div className="shrink-0 flex items-center justify-center py-1.5 border-t border-white/[0.04]">
+            <p className="text-white/15 text-[0.5rem]">
               Powered by Malera Studio
             </p>
           </div>
