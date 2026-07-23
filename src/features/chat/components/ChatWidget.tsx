@@ -85,13 +85,27 @@ function linkifyAssistant(escaped: string): string {
     (match) =>
       `<a href="https://wa.me/38346814700" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match} us →</a>`
   );
-  // Social handles — link the actual @handle mentions
+
+  // Social handles — link the actual URL / handle mentions
+  // (platform names like "Instagram", "Facebook" are NOT linked)
+  // Instagram
   html = html.replace(
     /@malera\.studio\b(?!")/gi,
     (match) =>
       `<a href="https://instagram.com/malera.studio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
   );
-
+  // Facebook
+  html = html.replace(
+    /facebook\.com\/malerastudio\b(?!")/gi,
+    (match) =>
+      `<a href="https://facebook.com/malerastudio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
+  );
+  // LinkedIn
+  html = html.replace(
+    /linkedin\.com\/company\/malerastudio\b(?!")/gi,
+    (match) =>
+      `<a href="https://linkedin.com/company/malerastudio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
+  );
   return html;
 }
 
