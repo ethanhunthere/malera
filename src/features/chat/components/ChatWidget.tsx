@@ -352,8 +352,8 @@ export default function ChatWidget() {
             min-[701px]:left-auto
             min-[701px]:w-[400px]
             min-[701px]:bottom-[calc(5.5rem+env(safe-area-inset-bottom))]
-            min-[701px]:h-auto
-            min-[701px]:max-h-[550px]
+            min-[701px]:top-auto
+            min-[701px]:h-[420px]
             min-[701px]:rounded-2xl
             min-[701px]:animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)]
             border border-gold/30
