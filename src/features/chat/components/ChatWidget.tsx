@@ -93,6 +93,10 @@ type Message = {
   content: string;
 };
 
+function formatContent(text: string): string {
+  return text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -319,7 +323,13 @@ export default function ChatWidget() {
                     }
                   `}
                 >
-                  {msg.content || (msg.role === "assistant" && <LoadingDots />)}
+                  {msg.content ? (
+                    <span
+                      dangerouslySetInnerHTML={{ __html: formatContent(msg.content) }}
+                    />
+                  ) : (
+                    msg.role === "assistant" && <LoadingDots />
+                  )}
                 </div>
               </div>
             ))}
