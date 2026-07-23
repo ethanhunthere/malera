@@ -187,7 +187,7 @@ export default function ChatWidget() {
         }}
       >
         <DotLottieReact
-          src="https://lottie.host/72fe20d9-f9d5-4cba-85a3-dd4cf17f5028/oLUbRo5puE.lottie"
+          src="https://lottie.host/347f51b0-5d2b-44de-ad8f-602506f51259/qDdrMkvEJx.lottie"
           autoplay
           loop
           className="w-8 h-8 sm:w-9 sm:h-9"
