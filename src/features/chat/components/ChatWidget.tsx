@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { PiRobotDuotone, PiChatsDuotone } from "react-icons/pi";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const CloseIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -186,7 +186,12 @@ export default function ChatWidget() {
           border: "1px solid rgba(201,168,76,0.18)",
         }}
       >
-        {open ? <PiChatsDuotone className="w-5 h-5" /> : <PiRobotDuotone className="w-5 h-5" />}
+        <DotLottieReact
+          src="https://lottie.host/72fe20d9-f9d5-4cba-85a3-dd4cf17f5028/oLUbRo5puE.lottie"
+          autoplay
+          loop
+          className="w-8 h-8 sm:w-9 sm:h-9"
+        />
         {/* Soft glow ring on hover — only when closed */}
         {!open && (
           <span
