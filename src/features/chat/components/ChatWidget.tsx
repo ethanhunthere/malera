@@ -190,7 +190,7 @@ export default function ChatWidget() {
           src="https://lottie.host/347f51b0-5d2b-44de-ad8f-602506f51259/qDdrMkvEJx.lottie"
           autoplay
           loop
-          className="w-8 h-8 sm:w-9 sm:h-9"
+          style={{ width: "2rem", height: "2rem" }}
         />
         {/* Soft glow ring on hover — only when closed */}
         {!open && (
