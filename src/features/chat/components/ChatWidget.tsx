@@ -1,7 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { DotLottieReact, setWasmUrl } from "@lottiefiles/dotlottie-react";
+
+// Point to local WASM (copied to public/)
+setWasmUrl("/dotlottie-player.wasm");
 
 const CloseIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
