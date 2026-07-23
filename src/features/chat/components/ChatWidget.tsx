@@ -275,7 +275,7 @@ export default function ChatWidget() {
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close chat" : "Chat with Malera Bot"}
         className={`
-          fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[9999]
+          fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[99999]
           flex items-center justify-center
           w-11 h-11 sm:w-12 sm:h-12
           rounded-full
@@ -285,6 +285,7 @@ export default function ChatWidget() {
           hover:shadow-[0_0_26px_rgba(201,168,76,0.16)]
           transition-all duration-300
           group
+          pointer-events-auto
         `}
         style={{ backdropFilter: "blur(20px)", border: "1px solid rgba(201,168,76,0.12)" }}
       >
@@ -321,14 +322,8 @@ export default function ChatWidget() {
           {/* ── Header ── */}
           <div className="shrink-0 flex items-center justify-between px-4 py-3 border-b border-white/[0.04]">
             <div className="flex items-center gap-2">
-              <div className="text-gold w-5 h-5 flex items-center justify-center">
-                <RobotIcon />
-              </div>
               <span className="font-[family-name:var(--font-display)] text-white text-xs font-bold tracking-wide">
-                Malera Bot
-              </span>
-              <span className="text-[0.55rem] text-white/20 font-mono bg-white/[0.03] px-1.5 py-px rounded-full">
-                AI
+                Malera
               </span>
             </div>
             <button
@@ -345,10 +340,7 @@ export default function ChatWidget() {
             {/* Empty state */}
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center gap-4">
-                <div className="text-gold/40 w-10 h-10">
-                  <RobotIcon />
-                </div>
-                <p className="text-white/15 text-xs">Ask me anything about Malera Studio</p>
+                <p className="text-white/20 text-xs">Ask me anything about Malera</p>
                 <div className="flex flex-wrap justify-center gap-1.5">
                   {SUGGESTED.map((q) => (
                     <button
