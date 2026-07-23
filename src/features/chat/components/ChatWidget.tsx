@@ -85,30 +85,12 @@ function linkifyAssistant(escaped: string): string {
     (match) =>
       `<a href="https://wa.me/38346814700" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match} us →</a>`
   );
-
-  const socials: [RegExp, string][] = [
-    [/\bInstagram\b/gi, "https://instagram.com/malera.studio"],
-    [/\bTikTok\b/gi, "https://tiktok.com/@malera.studio"],
-    [/\bLinkedIn\b/gi, "https://linkedin.com/company/malera-studio"],
-    [/\bFacebook\b/gi, "https://facebook.com/malera.studio"],
-    [/\bTwitter(?:\/X)?\b/gi, "https://x.com/malera.studio"],
-  ];
-  for (const [pattern, url] of socials) {
-    html = html.replace(
-      pattern,
-      (match) =>
-        `<a href="${url}" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
-    );
-  }
-
   // Social handles — link the actual @handle mentions
   html = html.replace(
     /@malera\.studio\b(?!")/gi,
     (match) =>
       `<a href="https://instagram.com/malera.studio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
   );
-
-
 
   return html;
 }
