@@ -88,28 +88,6 @@ function linkifyAssistant(escaped: string): string {
       `<a href="https://instagram.com/malera.studio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
   );
 
-  // Facebook (name and URL) — both "Facebook" word and the URL get linked
-  html = html.replace(
-    /\bFacebook\b/gi,
-    (match) =>
-      `<a href="https://facebook.com/malerastudio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
-  );
-  html = html.replace(
-    /facebook\.com\/malerastudio\b(?!")/gi,
-    (match) =>
-      `<a href="https://facebook.com/malerastudio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
-  );
-  // LinkedIn (name and URL) — both "LinkedIn" word and the URL get linked
-  html = html.replace(
-    /\bLinkedIn\b/gi,
-    (match) =>
-      `<a href="https://linkedin.com/company/malerastudio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
-  );
-  html = html.replace(
-    /linkedin\.com\/company\/malerastudio\b(?!")/gi,
-    (match) =>
-      `<a href="https://linkedin.com/company/malerastudio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
-  );
   return html;
 }
 
