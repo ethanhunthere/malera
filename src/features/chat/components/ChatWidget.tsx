@@ -59,6 +59,60 @@ const RobotIcon = () => (
   </svg>
 );
 
+/* ── Running robot icon (energetic, for when chat is open) ── */
+const RunningRobotIcon = () => (
+  <svg
+    className="w-6 h-6"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Antenna — fast wiggle */}
+    <line x1="20" y1="6" x2="20" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <animate attributeName="y2" values="10;8;10" dur="0.4s" repeatCount="indefinite" />
+    </line>
+    <circle cx="20" cy="5" r="2.5" fill="#C9A84C" stroke="currentColor" strokeWidth="1">
+      <animate attributeName="cy" values="5;3;5" dur="0.4s" repeatCount="indefinite" />
+      <animate attributeName="r" values="2.5;3.3;2.5" dur="0.4s" repeatCount="indefinite" />
+    </circle>
+    {/* Head — bouncing faster */}
+    <rect x="10" y="10" width="20" height="15" rx="5" stroke="currentColor" strokeWidth="2" fill="none">
+      <animate attributeName="y" values="10;8;10" dur="0.35s" repeatCount="indefinite" />
+    </rect>
+    {/* Eyes — wide open, determined */}
+    <circle cx="16" cy="16" r="2.2" fill="currentColor" />
+    <circle cx="24" cy="16" r="2.2" fill="currentColor" />
+    {/* Cheeks */}
+    <circle cx="13" cy="19.5" r="1.5" fill="#C9A84C" opacity="0.8" />
+    <circle cx="27" cy="19.5" r="1.5" fill="#C9A84C" opacity="0.8" />
+    {/* Mouth — determined grin */}
+    <path d="M 15 21.5 L 18 23 L 22 23 L 25 21.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    {/* Body — bouncing */}
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="0.35s" repeatCount="indefinite" />
+      <rect x="12" y="26" width="16" height="10" rx="4" stroke="currentColor" strokeWidth="2" fill="none" />
+    </g>
+    {/* Arms — pumping like a runner */}
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-25 10 30;15 10 30;-25 10 30" dur="0.35s" repeatCount="indefinite" />
+      <line x1="12" y1="30" x2="2" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="25 30 30;-15 30 30;25 30 30" dur="0.35s" repeatCount="indefinite" />
+      <line x1="28" y1="30" x2="38" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </g>
+    {/* Legs — fast alternating stride */}
+    <line x1="16" y1="36" x2="12" y2="40" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <animate attributeName="x2" values="12;20;12" dur="0.35s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="40;38;40" dur="0.35s" repeatCount="indefinite" />
+    </line>
+    <line x1="24" y1="36" x2="28" y2="40" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <animate attributeName="x2" values="28;20;28" dur="0.35s" repeatCount="indefinite" begin="0.175s" />
+      <animate attributeName="y2" values="40;38;40" dur="0.35s" repeatCount="indefinite" begin="0.175s" />
+    </line>
+  </svg>
+);
+
 const CloseIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="18" y1="6" x2="6" y2="18" />
@@ -234,7 +288,7 @@ export default function ChatWidget() {
         `}
         style={{ backdropFilter: "blur(20px)", border: "1px solid rgba(201,168,76,0.12)" }}
       >
-        {open ? <CloseIcon /> : <RobotIcon />}
+        {open ? <RunningRobotIcon /> : <RobotIcon />}
         {/* Soft glow ring on hover */}
         {!open && (
           <span
