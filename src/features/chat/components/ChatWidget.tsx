@@ -162,19 +162,22 @@ export default function ChatWidget() {
     }
   }, [open]);
 
-  // Lock body scroll when chat is open
+  // Lock body scroll when chat is open (compensate scrollbar width to prevent layout shift)
   useEffect(() => {
     if (open) {
       const scrollY = window.scrollY;
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.position = "fixed";
       document.body.style.top = "-" + scrollY + "px";
       document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = scrollbarWidth + "px";
       return () => {
         document.body.style.position = "";
         document.body.style.top = "";
         document.body.style.width = "";
         document.body.style.overflow = "";
+        document.body.style.paddingRight = "";
         window.scrollTo(0, scrollY);
       };
     }
