@@ -270,12 +270,12 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* ═══════════════ FLOATING BUBBLE — CUTE DANCING ROBOT ═══════════════ */}
+      {/* ═══════════════ FLOATING BUBBLE — DANCING / RUNNING ROBOT ═══════════════ */}
       <button
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close chat" : "Chat with Malera Bot"}
         className={`
-          fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[9999]
+          fixed z-[9999]
           flex items-center justify-center
           w-11 h-11 sm:w-12 sm:h-12
           rounded-full
@@ -283,13 +283,17 @@ export default function ChatWidget() {
           text-gold
           shadow-[0_0_18px_rgba(201,168,76,0.06)]
           hover:shadow-[0_0_26px_rgba(201,168,76,0.16)]
-          transition-all duration-300
+          transition-all duration-500 ease-out
           group
+          ${open
+            ? "bottom-[calc(3rem+20px)] right-0.5 sm:bottom-[calc(3.5rem+24px)] sm:right-1"
+            : "bottom-5 right-5 sm:bottom-6 sm:right-6"
+          }
         `}
         style={{ backdropFilter: "blur(20px)", border: "1px solid rgba(201,168,76,0.12)" }}
       >
         {open ? <RunningRobotIcon /> : <RobotIcon />}
-        {/* Soft glow ring on hover */}
+        {/* Soft glow ring on hover — only when closed */}
         {!open && (
           <span
             className="absolute inset-[-3px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
