@@ -40,8 +40,85 @@ type Message = {
   content: string;
 };
 
-function formatContent(text: string): string {
-  return text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+const LINK_CLASS =
+  "text-gold underline decoration-gold/40 underline-offset-2 hover:decoration-gold transition-colors";
+
+// Wraps recognized contact patterns (email, phone, WhatsApp, socials, bare
+// domain mentions) in anchor tags. Runs only on already-escaped text, and
+// only on assistant messages — the plan-detail buttons are handled
+// separately below the bubble, not inline here.
+function linkifyAssistant(escaped: string): string {
+  let html = escaped;
+
+  // Bare "malera.studio" mentions — skip ones already part of an email
+  // (preceded by @) or a URL (preceded by / or . e.g. www.malera.studio)
+  html = html.replace(
+    /(?<![\w@./])malera\.studio(?!\.[a-z])/gi,
+    (match) =>
+      `<a href="https://malera.studio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
+  );
+
+  // Email
+  html = html.replace(
+    /hello@malera\.studio/gi,
+    (match) => `<a href="mailto:hello@malera.studio" class="${LINK_CLASS}">${match}</a>`
+  );
+
+  // Phone number — matches both "+383 46 814 700" and "+38346814700"
+  html = html.replace(
+    /\+383\s?46\s?814\s?700/g,
+    () => `<a href="tel:+38346814700" class="${LINK_CLASS}">+383 46 814 700</a>`
+  );
+
+  // WhatsApp mention
+  html = html.replace(
+    /\bWhatsApp\b/gi,
+    (match) =>
+      `<a href="https://wa.me/38346814700" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match} us →</a>`
+  );
+
+  // Social platforms
+  const socials: [RegExp, string][] = [
+    [/\bInstagram\b/gi, "https://instagram.com/malera.studio"],
+    [/\bTikTok\b/gi, "https://tiktok.com/@malera.studio"],
+    [/\bLinkedIn\b/gi, "https://linkedin.com/company/malera-studio"],
+    [/\bFacebook\b/gi, "https://facebook.com/malera.studio"],
+    [/\bTwitter(?:\/X)?\b/gi, "https://x.com/malera.studio"],
+  ];
+  for (const [pattern, url] of socials) {
+    html = html.replace(
+      pattern,
+      (match) =>
+        `<a href="${url}" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
+    );
+  }
+
+  return html;
+}
+
+function formatContent(text: string, role: Message["role"]): string {
+  const escaped = escapeHtml(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  return role === "assistant" ? linkifyAssistant(escaped) : escaped;
+}
+
+const PLAN_LINKS: { label: string; url: string; pattern: RegExp }[] = [
+  { label: "Starter", url: "https://malera.studio/starterdetails", pattern: /\bstarter\b/i },
+  { label: "Pro", url: "https://malera.studio/prodetails", pattern: /\bpro\b/i },
+  { label: "Business", url: "https://malera.studio/businessdetails", pattern: /\bbusiness\b/i },
+  { label: "Enterprise", url: "https://malera.studio/enterprisedetails", pattern: /\benterprise\b/i },
+];
+
+function detectPlans(text: string) {
+  return PLAN_LINKS.filter((plan) => plan.pattern.test(text));
 }
 
 export default function ChatWidget() {
@@ -299,30 +376,49 @@ export default function ChatWidget() {
               </div>
             )}
 
-            {messages.map((msg, i) => (
-              <div
-                key={i}
-                className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-              >
+            {messages.map((msg, i) => {
+              const plans = msg.role === "assistant" && msg.content ? detectPlans(msg.content) : [];
+              return (
                 <div
-                  className={`
-                    max-w-[85%] rounded-2xl px-4 py-3 text-xs leading-relaxed
-                    ${msg.role === "user"
-                      ? "bg-gold/[0.12] border border-gold/25 text-white/95 rounded-br-md shadow-[0_2px_12px_rgba(201,168,76,0.08)]"
-                      : "bg-white/[0.05] border border-white/[0.1] text-white/85 rounded-bl-md"
-                    }
-                  `}
+                  key={i}
+                  className={`flex flex-col gap-1.5 ${msg.role === "user" ? "items-end" : "items-start"}`}
                 >
-                  {msg.content ? (
-                    <span
-                      dangerouslySetInnerHTML={{ __html: formatContent(msg.content) }}
-                    />
-                  ) : (
-                    msg.role === "assistant" && <LoadingDots />
+                  <div
+                    className={`
+                      max-w-[85%] rounded-2xl px-4 py-3 text-xs leading-relaxed
+                      ${msg.role === "user"
+                        ? "bg-gold/[0.12] border border-gold/25 text-white/95 rounded-br-md shadow-[0_2px_12px_rgba(201,168,76,0.08)]"
+                        : "bg-white/[0.05] border border-white/[0.1] text-white/85 rounded-bl-md"
+                      }
+                    `}
+                  >
+                    {msg.content ? (
+                      <span
+                        dangerouslySetInnerHTML={{ __html: formatContent(msg.content, msg.role) }}
+                      />
+                    ) : (
+                      msg.role === "assistant" && <LoadingDots />
+                    )}
+                  </div>
+
+                  {plans.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 max-w-[85%]">
+                      {plans.map((plan) => (
+                        <a
+                          key={plan.label}
+                          href={plan.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[0.7rem] font-medium text-gold bg-gold/10 hover:bg-gold/20 border border-gold/25 hover:border-gold/40 rounded-full px-3 py-1.5 transition-all duration-300"
+                        >
+                          View {plan.label} details →
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             {/* Error state */}
             {error && (
