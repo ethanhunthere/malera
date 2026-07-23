@@ -2,122 +2,155 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 
-/* ── Cute dancing robot icon ── */
+/* ── Dancing cutie (front view, idle/closed) ── */
 const RobotIcon = () => (
-  <svg
-    className="w-6 h-6"
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    {/* Antenna */}
-    <line x1="20" y1="6" x2="20" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <animate attributeName="y2" values="10;8;10" dur="1.4s" repeatCount="indefinite" />
-    </line>
-    <circle cx="20" cy="5" r="2.5" fill="#C9A84C" stroke="currentColor" strokeWidth="1">
-      <animate attributeName="cy" values="5;3;5" dur="1.4s" repeatCount="indefinite" />
-      <animate attributeName="r" values="2.5;3;2.5" dur="1.4s" repeatCount="indefinite" />
-    </circle>
-    {/* Head */}
-    <rect x="10" y="10" width="20" height="15" rx="5" stroke="currentColor" strokeWidth="2" fill="none">
-      <animate attributeName="y" values="10;9;10" dur="1.2s" repeatCount="indefinite" />
-    </rect>
-    {/* Eyes */}
-    <circle cx="16" cy="16" r="2" fill="currentColor">
-      <animate attributeName="ry" values="2;0.3;2" dur="3s" repeatCount="indefinite" begin="0s" />
-    </circle>
-    <circle cx="24" cy="16" r="2" fill="currentColor">
-      <animate attributeName="ry" values="2;0.3;2" dur="3s" repeatCount="indefinite" begin="0.15s" />
-    </circle>
-    {/* Cheeks */}
-    <circle cx="13" cy="19.5" r="1.5" fill="#C9A84C" opacity="0.6" />
-    <circle cx="27" cy="19.5" r="1.5" fill="#C9A84C" opacity="0.6" />
-    {/* Mouth */}
-    <path d="M 16 21 Q 20 24 24 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    {/* Body */}
-    <rect x="12" y="26" width="16" height="10" rx="4" stroke="currentColor" strokeWidth="2" fill="none">
-      <animateTransform attributeName="transform" type="rotate" values="-3 20 31;3 20 31;-3 20 31" dur="0.8s" repeatCount="indefinite" />
-    </rect>
-    {/* Arms */}
+  <svg className="w-6 h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="blushGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#C9A84C" stopOpacity="0.7"/>
+        <stop offset="100%" stopColor="#C9A84C" stopOpacity="0"/>
+      </radialGradient>
+    </defs>
+
+    {/* ── Dancing body group ── */}
     <g>
-      <animateTransform attributeName="transform" type="rotate" values="-10 10 30;10 10 30;-10 10 30" dur="0.6s" repeatCount="indefinite" />
-      <line x1="12" y1="30" x2="4" y2="25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="4" y1="25" x2="2" y2="20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="0.7s" repeatCount="indefinite" />
+
+      {/* ── Legs ── */}
+      <g>
+        {/* Left leg */}
+        <path d="M18 40 Q16 42 14 44" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" fill="none">
+          <animateTransform attributeName="transform" type="rotate" values="-5 18 40;8 18 40;-5 18 40" dur="0.55s" repeatCount="indefinite" />
+        </path>
+        {/* Right leg */}
+        <path d="M30 40 Q32 42 34 44" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" fill="none">
+          <animateTransform attributeName="transform" type="rotate" values="5 30 40;-8 30 40;5 30 40" dur="0.55s" repeatCount="indefinite" begin="0.275s" />
+        </path>
+      </g>
+
+      {/* ── Body (hoodie) ── */}
+      <path d="M13 28 Q12 28 11 32 L10 40 Q10 42 14 42 L34 42 Q38 42 38 40 L37 32 Q36 28 35 28 Z" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2" />
+      {/* Hoodie pocket line */}
+      <path d="M18 36 Q24 39 30 36" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.4" />
+
+      {/* ── Arms ── */}
+      {/* Left arm — waving */}
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-20 12 30;15 12 30;-20 12 30" dur="0.6s" repeatCount="indefinite" />
+        <path d="M12 30 Q6 26 5 22" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      </g>
+      {/* Right arm — waving opposite */}
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="15 36 30;-20 36 30;15 36 30" dur="0.6s" repeatCount="indefinite" begin="0.3s" />
+        <path d="M36 30 Q42 26 43 22" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      </g>
+
+      {/* ── Neck ── */}
+      <rect x="20" y="24" width="8" height="4" rx="2" fill="currentColor" fillOpacity="0.15" />
+
+      {/* ── Head ── */}
+      <ellipse cx="24" cy="17" rx="11" ry="10" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="2" />
+
+      {/* ── Antenna / cap ── */}
+      <path d="M16 13 Q14 6 18 3 Q24 2 28 5 Q32 8 32 13" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="1.5" />
+      {/* Antenna tip */}
+      <circle cx="18" cy="3" r="2" fill="#C9A84C">
+        <animate attributeName="cy" values="3;1.5;3" dur="0.7s" repeatCount="indefinite" />
+      </circle>
+
+      {/* ── Eyes (big cute eyes) ── */}
+      <ellipse cx="20" cy="17" rx="3" ry="3.5" fill="currentColor" />
+      <ellipse cx="28" cy="17" rx="3" ry="3.5" fill="currentColor" />
+      {/* Eye shine */}
+      <circle cx="21" cy="15.5" r="1.2" fill="white" opacity="0.9" />
+      <circle cx="29" cy="15.5" r="1.2" fill="white" opacity="0.9" />
+      {/* Blinking */}
+      <ellipse cx="20" cy="17" rx="3" ry="3.5" fill="currentColor" opacity="0">
+        <animate attributeName="ry" values="3.5;0.2;3.5" dur="3.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" />
+      </ellipse>
+      <ellipse cx="28" cy="17" rx="3" ry="3.5" fill="currentColor" opacity="0">
+        <animate attributeName="ry" values="3.5;0.2;3.5" dur="3.5s" repeatCount="indefinite" begin="0.15s" />
+        <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="0.15s" />
+      </ellipse>
+
+      {/* ── Blush ── */}
+      <ellipse cx="16" cy="21" rx="3.5" ry="2.5" fill="url(#blushGrad)" />
+      <ellipse cx="32" cy="21" rx="3.5" ry="2.5" fill="url(#blushGrad)" />
+
+      {/* ── Smile ── */}
+      <path d="M19 21 Q24 25 29 21" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none" />
     </g>
-    <g>
-      <animateTransform attributeName="transform" type="rotate" values="10 30 30;-10 30 30;10 30 30" dur="0.6s" repeatCount="indefinite" />
-      <line x1="28" y1="30" x2="36" y2="25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="36" y1="25" x2="38" y2="20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </g>
-    {/* Legs */}
-    <line x1="16" y1="36" x2="14" y2="40" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <animate attributeName="y2" values="40;38;40" dur="0.7s" repeatCount="indefinite" />
-    </line>
-    <line x1="24" y1="36" x2="26" y2="40" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <animate attributeName="y2" values="40;38;40" dur="0.7s" repeatCount="indefinite" begin="0.35s" />
-    </line>
   </svg>
 );
 
-/* ── Running robot icon — side profile, looks like it's sprinting ── */
+/* ── Running cutie (side profile, chat open) ── */
 const RunningRobotIcon = () => (
-  <svg
-    className="w-6 h-6"
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    {/* Antenna — fast wiggle, leaning forward */}
-    <line x1="22" y1="5" x2="26" y2="9" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <animate attributeName="y1" values="5;3;5" dur="0.35s" repeatCount="indefinite" />
-    </line>
-    <circle cx="27" cy="4" r="2.2" fill="#C9A84C" stroke="currentColor" strokeWidth="1">
-      <animate attributeName="cy" values="4;2;4" dur="0.35s" repeatCount="indefinite" />
-      <animate attributeName="r" values="2.2;3;2.2" dur="0.35s" repeatCount="indefinite" />
-    </circle>
+  <svg className="w-6 h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="blushRun" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#C9A84C" stopOpacity="0.6"/>
+        <stop offset="100%" stopColor="#C9A84C" stopOpacity="0"/>
+      </radialGradient>
+    </defs>
 
-    {/* Head — side view, oval-ish, leaning forward */}
+    {/* ── Running body group ── */}
     <g>
-      <animateTransform attributeName="transform" type="rotate" values="-5 20 18;5 20 18;-5 20 18" dur="0.35s" repeatCount="indefinite" />
-      <ellipse cx="23" cy="18" rx="9" ry="8" stroke="currentColor" strokeWidth="2" fill="none" />
-      {/* One eye — side view */}
-      <circle cx="26" cy="17" r="2" fill="currentColor" />
-      {/* Cheek */}
-      <circle cx="22" cy="21" r="1.2" fill="#C9A84C" opacity="0.8" />
-      {/* Mouth — side grin */}
-      <path d="M 24 22 Q 26 24 28 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -1.5;0 0" dur="0.3s" repeatCount="indefinite" />
+
+      {/* ── Far arm (background) ── */}
+      <path d="M20 32 Q14 30 12 27" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.35">
+        <animateTransform attributeName="transform" type="rotate" values="8 20 32;-5 20 32;8 20 32" dur="0.3s" repeatCount="indefinite" />
+      </path>
+
+      {/* ── Far leg (background) ── */}
+      <path d="M20 40 Q10 42 8 46" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.35">
+        <animateTransform attributeName="transform" type="rotate" values="-15 20 40;15 20 40;-15 20 40" dur="0.3s" repeatCount="indefinite" />
+      </path>
+
+      {/* ── Head (side view, leaning forward) ── */}
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-6 28 18;3 28 18;-6 28 18" dur="0.3s" repeatCount="indefinite" />
+        <ellipse cx="28" cy="17" rx="11" ry="10" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="2" />
+
+        {/* ── Cap / antenna (side view) ── */}
+        <path d="M22 11 Q20 5 26 3 Q32 2 35 7 Q37 11 37 13" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="26" cy="3" r="2" fill="#C9A84C">
+          <animate attributeName="cy" values="3;1.5;3" dur="0.3s" repeatCount="indefinite" />
+        </circle>
+
+        {/* ── Eye (side view, one visible, determined) ── */}
+        <ellipse cx="32" cy="16" rx="3" ry="3.2" fill="currentColor" />
+        <circle cx="33" cy="14.5" r="1.1" fill="white" opacity="0.9" />
+
+        {/* ── Determined eyebrow ── */}
+        <line x1="29" y1="12" x2="34" y2="13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+
+        {/* ── Blush ── */}
+        <ellipse cx="24" cy="21" rx="3" ry="2" fill="url(#blushRun)" />
+
+        {/* ── Determined mouth ── */}
+        <path d="M28 22 Q30 23 32 21" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none" />
+      </g>
+
+      {/* ── Body (side view, leaning) ── */}
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-10 26 32;0 26 32;-10 26 32" dur="0.3s" repeatCount="indefinite" />
+        <path d="M20 28 Q18 28 17 32 L15 40 Q15 42 19 42 L33 42 Q37 42 37 40 L36 32 Q35 28 33 28 Z" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2" />
+      </g>
+
+      {/* ── Near arm (pumping forward) ── */}
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-35 30 30;15 30 30;-35 30 30" dur="0.3s" repeatCount="indefinite" />
+        <path d="M30 30 Q38 26 41 20" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      </g>
+
+      {/* ── Near leg (stride) ── */}
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="20 28 40;-15 28 40;20 28 40" dur="0.3s" repeatCount="indefinite" begin="0.15s" />
+        <path d="M28 40 Q36 42 38 46" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      </g>
     </g>
-
-    {/* Body — leaning forward */}
-    <g>
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -1.5;0 0" dur="0.35s" repeatCount="indefinite" />
-      <rect x="15" y="27" width="16" height="10" rx="4" stroke="currentColor" strokeWidth="2" fill="none" transform="rotate(-8 23 32)" />
-    </g>
-
-    {/* Far arm — back swing */}
-    <g>
-      <animateTransform attributeName="transform" type="rotate" values="15 18 32;5 18 32;15 18 32" dur="0.35s" repeatCount="indefinite" />
-      <line x1="18" y1="32" x2="10" y2="30" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.5" />
-    </g>
-
-    {/* Near arm — pumping forward */}
-    <g>
-      <animateTransform attributeName="transform" type="rotate" values="-30 24 30;10 24 30;-30 24 30" dur="0.35s" repeatCount="indefinite" />
-      <line x1="24" y1="30" x2="34" y2="27" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="34" y1="27" x2="38" y2="22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </g>
-
-    {/* Far leg — back stride */}
-    <line x1="17" y1="36" x2="9" y2="40" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.5">
-      <animate attributeName="x2" values="9;23;9" dur="0.35s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="40;37;40" dur="0.35s" repeatCount="indefinite" />
-    </line>
-
-    {/* Near leg — forward stride */}
-    <line x1="24" y1="36" x2="34" y2="40" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <animate attributeName="x2" values="34;18;34" dur="0.35s" repeatCount="indefinite" begin="0.175s" />
-      <animate attributeName="y2" values="40;37;40" dur="0.35s" repeatCount="indefinite" begin="0.175s" />
-    </line>
   </svg>
 );
 
