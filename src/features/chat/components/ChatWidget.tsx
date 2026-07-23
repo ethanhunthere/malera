@@ -54,6 +54,7 @@ export default function ChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const lottieRef = useRef<any>(null);
 
   // Load Lottie animation JSON
   useEffect(() => {
@@ -71,6 +72,17 @@ export default function ChatWidget() {
   // Focus input when chat opens
   useEffect(() => {
     if (open) inputRef.current?.focus();
+  }, [open]);
+
+  // Play/pause Lottie animation based on chat open state
+  useEffect(() => {
+    const instance = lottieRef.current;
+    if (!instance) return;
+    if (open) {
+      instance.play();
+    } else {
+      instance.stop();
+    }
   }, [open]);
 
   // Close on Escape
@@ -199,7 +211,8 @@ export default function ChatWidget() {
           <Lottie
             animationData={animationData}
             loop
-            autoplay
+            autoplay={false}
+            lottieRef={lottieRef}
             style={{ width: "2.5rem", height: "2.5rem" }}
           />
         ) : (
