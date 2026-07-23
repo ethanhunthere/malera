@@ -189,7 +189,9 @@ export default function ChatWidget() {
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close chat" : "Chat with Malera Bot"}
         className={`
-          fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[99999]
+          fixed z-[99999]
+          bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))]
+          sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] sm:right-[calc(1.5rem+env(safe-area-inset-right))]
           flex items-center justify-center
           w-11 h-11 sm:w-12 sm:h-12
           rounded-full
@@ -243,10 +245,11 @@ export default function ChatWidget() {
         <div
           onClick={(e) => e.stopPropagation()}
           className={`
-            fixed right-3 sm:right-6 z-[9998]
+            fixed z-[9998]
+            right-[calc(0.75rem+env(safe-area-inset-right))] sm:right-[calc(1.5rem+env(safe-area-inset-right))]
             w-[calc(100vw-1.5rem)] sm:w-[400px]
-            max-h-[calc(100dvh-90px)]
-            bottom-[calc(3rem+12px)] sm:bottom-[calc(3.5rem+16px)]
+            bottom-[calc(4.75rem+env(safe-area-inset-bottom))] sm:bottom-[calc(5.5rem+env(safe-area-inset-bottom))]
+            max-h-[calc(100dvh-5.75rem-env(safe-area-inset-bottom))] sm:max-h-[calc(100dvh-7rem-env(safe-area-inset-bottom))]
             rounded-2xl
             border border-gold/30
             shadow-[0_0_0_1px_rgba(0,0,0,0.4),0_20px_60px_rgba(0,0,0,0.7),0_0_60px_rgba(201,168,76,0.06),inset_0_1px_0_rgba(255,255,255,0.03)]
@@ -260,16 +263,27 @@ export default function ChatWidget() {
             WebkitBackdropFilter: "blur(48px) saturate(200%)",
           }}
         >
-          {/* ── Messages ── */}
-          <div className="flex-1 overflow-y-auto px-4 pt-4 pb-0 space-y-3.5 relative">
-            {/* Subtle close button */}
+          {/* ── Header ── */}
+          <div className="shrink-0 flex items-center justify-between gap-3 pl-4 pr-2 py-2.5 border-b border-white/[0.08]">
+            <div className="flex items-center gap-2.5 min-w-0">
+              <span className="relative shrink-0 w-2 h-2 rounded-full bg-gold">
+                <span className="absolute inset-0 rounded-full bg-gold animate-ping opacity-60" />
+              </span>
+              <span className="text-white/70 text-xs font-semibold tracking-wide truncate">
+                Malera Studio
+              </span>
+            </div>
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-3 right-3 text-white/20 hover:text-white/50 transition-colors p-1 z-10"
+              className="shrink-0 flex items-center justify-center w-9 h-9 rounded-full text-white/35 hover:text-white/80 hover:bg-white/[0.08] transition-colors"
               aria-label="Close chat"
             >
               <CloseIcon />
             </button>
+          </div>
+
+          {/* ── Messages ── */}
+          <div className="flex-1 min-h-0 overflow-y-auto px-4 pt-4 pb-0 space-y-3.5">
             {/* Empty state */}
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center gap-5">
