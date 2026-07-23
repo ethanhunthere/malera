@@ -187,7 +187,7 @@ export default function ChatWidget() {
       {/* ═══════════════ FLOATING BUBBLE — DANCING / RUNNING ROBOT ═══════════════ */}
       <button
         onClick={() => setOpen(!open)}
-        aria-label={open ? "Close chat" : "Chat with Malera Bot"}
+        aria-label={open ? "Close chat" : "Chat with MBOT"}
         className={`
           fixed z-[99999]
           bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))]
@@ -266,11 +266,8 @@ export default function ChatWidget() {
           {/* ── Header ── */}
           <div className="shrink-0 flex items-center justify-between gap-3 pl-4 pr-2 py-2.5 border-b border-white/[0.08]">
             <div className="flex items-center gap-2.5 min-w-0">
-              <span className="relative shrink-0 w-2 h-2 rounded-full bg-gold">
-                <span className="absolute inset-0 rounded-full bg-gold animate-ping opacity-60" />
-              </span>
               <span className="text-white/70 text-xs font-semibold tracking-wide truncate">
-                Malera Studio
+                MBOT
               </span>
             </div>
             <button
@@ -348,7 +345,7 @@ export default function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={streaming ? "Malera is typing..." : "Type a message..."}
+              placeholder={streaming ? "MBOT is typing..." : "Type a message..."}
               disabled={streaming}
               className="flex-1 bg-transparent text-white/90 text-xs placeholder:text-white/25 outline-none disabled:opacity-40"
             />
