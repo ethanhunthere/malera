@@ -79,18 +79,11 @@ function linkifyAssistant(escaped: string): string {
     () => `<a href="tel:+38346814700" class="${LINK_CLASS}">+383 46 814 700</a>`
   );
 
-  // WhatsApp mention
-  html = html.replace(
-    /\bWhatsApp\b/gi,
-    (match) =>
-      `<a href="https://wa.me/38346814700" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match} us →</a>`
-  );
-
   // Social handles — link the actual URL / handle mentions
   // (platform names like "Instagram", "Facebook" are NOT linked)
   // Instagram
   html = html.replace(
-    /@malera\.studio\b(?!")/gi,
+    /(?<!hello)@malera\.studio\b(?!")/gi,
     (match) =>
       `<a href="https://instagram.com/malera.studio" target="_blank" rel="noopener noreferrer" class="${LINK_CLASS}">${match}</a>`
   );
