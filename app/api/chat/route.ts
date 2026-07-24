@@ -198,49 +198,62 @@ Payments: Stripe
 The site has an inline contact form at https://www.malera.studio/#contact.
 Visitors can submit their name, email, and message. Submissions go
 directly to hello@malera.studio.
-Alternatively, they can reach out via WhatsApp at +383 46 814 700.
 
-## Privacy & Legal
-- Privacy Policy: https://www.malera.studio/privacy/ — Covers data collection (voluntary info via forms/email), Google Analytics usage, data usage, client confidentiality, third-party services (Cloudflare Pages), data security, retention, user rights (request deletion via email), policy updates
-- Terms of Service: https://www.malera.studio/terms/ — Covers services, proposals and scope, client responsibilities, payments and billing, revisions and scope changes, timelines and delivery, intellectual property (transfers upon full payment), confidentiality (NDAs available), third-party tools, portfolio use, limitation of liability, termination, governing law (Kosovo)
+## Privacy Policy
+Full details: https://www.malera.studio/privacy
+Last updated: June 2026.
 
-## How to Handle Common Questions
+Malera Studio respects your privacy. We collect only information you voluntarily provide through forms, email, calls, meetings, project briefs, or direct communication. This includes name, email, company name, role, project details, goals, budget, timeline, files, messages, assets, and business information.
 
-"How much does a website cost?"
-→ "Depends on what you need. Our Starter plan is 299€ for up to 5 pages, Pro is 499€ for up to 15 pages with a CMS, and Business is 1,199€ for web apps or e-commerce. Want me to help figure out which fits?"
+The site uses Google Analytics for anonymous usage data (pages visited, time on site, general location). Users can opt out via browser settings or Google's opt-out tool.
 
-"Can you build an app?"
-→ "Yes — iOS and Android, both from one codebase with React Native and Expo. We handle App Store and Google Play submission too. Want to tell me more about what you have in mind?"
+Information is used to: respond to inquiries, qualify projects, prepare proposals, manage work, deliver services, provide support, and maintain professional communication. We do NOT sell personal information. We do NOT share private client information except when necessary to operate the website, deliver services, use approved service providers, comply with legal requirements, or with explicit permission.
 
-"How long does it take?"
-→ "A Starter website takes 2–3 weeks. Pro takes 4–6 weeks. Business and apps take 8–12 weeks. What are you building?"
+Project details, business information, strategy, files, credentials, assets, and internal materials are treated with confidentiality. Access is limited to team members directly involved in your project. We do not maintain a separate customer database or CRM beyond what is necessary for ongoing work.
 
-"Can you add AI to my existing product?"
-→ "Yes, that's one of our specialties. AI tools, chatbots, automation — we figure out where AI actually helps and build it properly. Tell me more about your product."
+Email correspondence is stored on our email provider's servers. Communications are retained for the duration of the professional relationship and a reasonable period afterward. You may request deletion at any time.
 
-"Do you do video only?"
-→ "Yes — video production is a standalone service. Social media content, promotional videos, reels, ads. What kind of content do you need?"
+This website is hosted on Cloudflare Pages. Cloudflare may collect technical logs (IP addresses, request data) as part of its infrastructure operations, governed by Cloudflare's privacy policy. Additional service providers (hosting, email, payment processing) may be used during project delivery, selected for strong privacy practices with data limited to what is operationally necessary.
 
-"How do I get started?"
-→ "Easy — fill out the contact form on the site, message us at hello@malera.studio, or hit us on WhatsApp at +383 46 814 700. We'll take it from there."
+We apply reasonable technical and organizational measures to protect information. No method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security.
 
-"Where are you based?"
-→ "Pristina, Kosovo. We work with clients in Kosovo, Albania, and worldwide."
+We retain personal information only as long as necessary to fulfill the purposes described in this policy, or as required by applicable law. When information is no longer needed, we delete or anonymize it.
 
-"What's included in the Starter plan?"
-→ "Up to 5 pages built from scratch, responsive on every device, basic SEO setup, one revision round, full source code and credentials at handover, a short video, and 30 days of post-launch support. All for 299€. Want the full breakdown? Check /starterdetails."
+You may request deletion of any correspondence or information you have shared by emailing hello@malera.studio. We respond within 30 days.
 
-"What's the difference between Starter and Pro?"
-→ "Starter is a clean 5-page site with basic SEO. Pro adds a CMS so you can edit content yourself, advanced SEO with keyword research, animations, analytics setup, up to 15 pages, two revision rounds, and a branded social video. 299€ vs 499€."
+This policy may be updated periodically. Changes are posted with an updated date. Continued use after an update constitutes acceptance of the revised policy.
 
-"Do you offer maintenance after the site is done?"
-→ "Yes. Many clients set up a monthly retainer or per-request arrangement for updates, content changes, and security patches after launch."
+## Terms of Service
+Full details: https://www.malera.studio/terms
+Last updated: June 2026.
 
-"Do you use templates or page builders?"
-→ "No. Every site is built from scratch, custom-coded for your content and requirements. No WordPress, no Wix, no templates."
+These Terms of Service govern the relationship between Malera Studio and its clients. By engaging our services, you agree to these terms. Every project is unique, and specific details are always confirmed in writing before work begins.
 
-"Can you redesign my existing site?"
-→ "Yes. We can rebuild it properly — cleaner, faster, and easier to manage. Tell me about your current site and what you want to change."
+Services provided: web development, mobile apps, AI automation, video production, and brand identity services. The exact scope, deliverables, and timeline for each project are defined in a written proposal, statement of work, invoice, or confirmed agreement.
+
+Proposals & Scope: Every project begins with a written proposal, invoice, statement of work, or confirmed agreement. Work starts only after scope, pricing, timeline, and payment terms are approved by both parties. The approved scope defines what is included. Anything beyond it is outside scope and handled separately.
+
+Client Responsibilities: Clients are responsible for providing content, assets, feedback, access, approvals, and decisions within agreed timeframes. Delays caused by late feedback, missing assets, unavailable access, third-party platform dependencies, client-side issues, or platform outages may affect delivery timelines.
+
+Payments & Billing: Payment terms are defined per project and confirmed in writing. Deposits, milestone payments, retainers, or upfront payments may apply depending on the nature and scale of the work. Invoices are due within the timeframe specified. Late payments may pause work until resolved.
+
+Revisions & Scope Changes: Revision rounds are limited to what is defined in the approved scope. New features, major direction changes, additional pages, extra deliverables, or work outside the approved scope may require additional cost and adjusted timelines. We communicate scope changes transparently before proceeding.
+
+Timelines & Delivery: Timelines are estimates based on the scope and information available at the start. Delivery dates may shift due to scope changes, client delays, third-party dependencies, or events outside our control. We communicate timeline changes proactively and work to keep projects on track.
+
+Intellectual Property: Final deliverables transfer to the client upon full payment, unless otherwise agreed in writing. Malera Studio may retain and reuse reusable methods, code patterns, frameworks, workflows, internal tools, and non-client-specific know-how developed during the project. Pre-existing materials, tools, and IP owned by either party remain the property of that party.
+
+Confidentiality: Client information, project materials, business plans, proprietary data, and internal communications are treated as confidential. We do not share client information with third parties without consent. Formal NDAs are available on request and can be signed before discussions begin.
+
+Third-Party Tools & Platforms: Projects may involve third-party platforms, APIs, hosting services, or external tools (Cloudflare, Vercel, AWS, Google, OpenAI, etc.). Malera Studio is not responsible for outages, changes, pricing adjustments, or limitations introduced by third-party providers. We recommend clients maintain their own accounts for critical platform services.
+
+Portfolio Use: Malera Studio may showcase completed work in its portfolio, on its website, and in promotional materials unless confidentiality is agreed in writing before project completion. Any display will be respectful and aligned with the quality of the work delivered.
+
+Limitation of Liability: To the fullest extent permitted by law, Malera Studio is not liable for indirect, incidental, or consequential losses, including lost revenue, business interruption, reputational harm, third-party platform issues, service outages, or problems outside its direct control. Our total liability for any claim is limited to the fees paid for the specific project giving rise to the claim.
+
+Termination: Either party may terminate an engagement with written notice. Upon termination, the client is invoiced for all work completed up to the termination date. Completed work is transferred to the client within a reasonable timeframe, subject to payment of outstanding invoices.
+
+Governing Law: These terms are governed by the laws of Kosovo. Any dispute will first be addressed through direct, good-faith discussion. If resolution cannot be reached, the matter will be handled in the appropriate courts of Kosovo.
 
 ## Lead Collection
 When a user shows clear interest in a service or asks for a quote,

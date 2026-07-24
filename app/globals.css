@@ -978,6 +978,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   /* Prevent horizontal scroll at the root, `clip` is zoom-safe */
   overflow-x: clip;
+  /* Reserve scrollbar space so fixed elements don't shift when overflow changes */
+  scrollbar-gutter: stable;
   /* Ultra-wide: scale base font size up so rem-based elements grow */
   font-size: 16px;
 }
